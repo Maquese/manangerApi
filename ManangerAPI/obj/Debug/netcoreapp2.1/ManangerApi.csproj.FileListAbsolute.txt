@@ -1,0 +1,14 @@
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\bin\Debug\netcoreapp2.1\ManangerApi.deps.json
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\bin\Debug\netcoreapp2.1\ManangerApi.runtimeconfig.json
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\bin\Debug\netcoreapp2.1\ManangerApi.runtimeconfig.dev.json
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\bin\Debug\netcoreapp2.1\ManangerApi.dll
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\bin\Debug\netcoreapp2.1\ManangerApi.pdb
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.csprojAssemblyReference.cache
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.csproj.CoreCompileInputs.cache
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.RazorAssemblyInfo.cache
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.RazorAssemblyInfo.cs
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.AssemblyInfoInputs.cache
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.AssemblyInfo.cs
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.RazorTargetAssemblyInfo.cache
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.dll
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi\obj\Debug\netcoreapp2.1\ManangerApi.pdb

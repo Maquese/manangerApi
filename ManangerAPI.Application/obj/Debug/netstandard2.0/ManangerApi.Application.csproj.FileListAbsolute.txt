@@ -1,0 +1,9 @@
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\bin\Debug\netstandard2.0\ManangerApi.Application.deps.json
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\bin\Debug\netstandard2.0\ManangerApi.Application.dll
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\bin\Debug\netstandard2.0\ManangerApi.Application.pdb
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\ManangerApi.Application.csprojAssemblyReference.cache
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\ManangerApi.Application.csproj.CoreCompileInputs.cache
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\ManangerApi.Application.AssemblyInfoInputs.cache
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\ManangerApi.Application.AssemblyInfo.cs
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\ManangerApi.Application.dll
+C:\Users\clastech\Desktop\CCt\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\ManangerApi.Application.pdb

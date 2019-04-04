@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\CCt\\manangerApi\\manangerapi.application\\ManangerApi.Application\\ManangerApi.Application.csproj",
+      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\CCt\\manangerApi\\manangerapi.application\\ManangerApi.Application.csproj",
       "projectName": "ManangerApi.Application",
-      "projectPath": "C:\\Users\\clastech\\Desktop\\CCt\\manangerApi\\manangerapi.application\\ManangerApi.Application\\ManangerApi.Application.csproj",
+      "projectPath": "C:\\Users\\clastech\\Desktop\\CCt\\manangerApi\\manangerapi.application\\ManangerApi.Application.csproj",
       "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\clastech\\Desktop\\CCt\\manangerApi\\manangerapi.application\\ManangerApi.Application\\obj\\",
+      "outputPath": "C:\\Users\\clastech\\Desktop\\CCt\\manangerApi\\manangerapi.application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
