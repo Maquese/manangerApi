@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\manangerapi.application\manangerapi.application.csproj" />
+    <ProjectReference Include="..\manangerapi.data\ManangerApi.Data.csproj" />
   </ItemGroup>
 
 </Project>

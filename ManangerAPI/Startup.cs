@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ManangerAPI.Application.Contratos;
+using ManangerAPI.Data.Contexto;
+using ManangerAPI.Data.Contratos;
+using ManangerAPI.Data.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -26,10 +30,11 @@ namespace ManangerApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IApplication,ManangerAPI.Application.ApplicationApp.Application>();            
             services.AddSingleton<IUsuarioApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddSingleton<IUsuarioRepositorio,UsuarioRepositorio>();
+            //services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +48,8 @@ namespace ManangerApi
             {
                 app.UseHsts();
             }
-
+            
+            
             app.UseHttpsRedirection();
             app.UseMvc();
         }
