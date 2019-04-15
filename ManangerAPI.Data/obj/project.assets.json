@@ -3073,11 +3073,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Projetos\\Tcc\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+      "projectUniqueName": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
       "projectName": "ManangerApi.Data",
-      "projectPath": "c:\\Projetos\\Tcc\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+      "projectPath": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
       "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
-      "outputPath": "c:\\Projetos\\Tcc\\manangerApi\\manangerapi.data\\obj\\",
+      "outputPath": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi.data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

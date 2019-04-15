@@ -19,6 +19,7 @@ namespace ManangerApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            //.UseKestrel(t => {t.Listen(System.Net.IPAddress.Loopback, 7000);})
                 .UseStartup<Startup>();
     }
 }

@@ -32,8 +32,14 @@ namespace ManangerApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IApplication,ManangerAPI.Application.ApplicationApp.Application>();            
-            services.AddSingleton<IUsuarioApplication,ManangerAPI.Application.ApplicationApp.Application>();
-            services.AddSingleton<IUsuarioRepositorio,UsuarioRepositorio>();
+            services.AddSingleton<IUsuarioApplication,ManangerAPI.Application.ApplicationApp.Application>();            
+            services.AddSingleton<IContratanteApplication,ManangerAPI.Application.ApplicationApp.Application>();            
+            services.AddSingleton<IAdministradorApplication,ManangerAPI.Application.ApplicationApp.Application>();
+
+
+            services.AddSingleton<IUsuarioRepositorio,UsuarioRepositorio>();            
+            services.AddSingleton<IAdministradorRepositorio,AdministradorRepositorio>();
+            services.AddSingleton<IContratanteRepositorio,ContratanteRepositorio>();
             //services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"));
         }
 
@@ -49,7 +55,7 @@ namespace ManangerApi
                 app.UseHsts();
             }
             
-            
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseHttpsRedirection();
             app.UseMvc();
         }

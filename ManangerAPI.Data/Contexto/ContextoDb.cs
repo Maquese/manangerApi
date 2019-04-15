@@ -11,6 +11,9 @@ namespace ManangerAPI.Data.Contexto
         public DbSet<Funcionalidade> Funcionalidade { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
 
+        public DbSet<Contratante> Contratante { get; set; }
+        public DbSet<Administrador> Administrador { get; set; }
+
         public ContextoDb() 
         {
             

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ManangerAPI.Application.Contratos;
 using ManangerAPI.Application.DTOS;
+using ManangerAPI.RequestsData;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ManangerAPI.Controllers
@@ -24,6 +25,13 @@ namespace ManangerAPI.Controllers
         public IList<UsuarioDTO> ListarTodos()
         {
             return _UsuarioApplication.ListarTodos();
+        }
+
+        [Route("api/usuario/logar")]
+        [HttpPost]
+        public UsuarioDTO Logar(LoginRequest  request)
+        {
+            return _UsuarioApplication.Logar(request.Login,request.Senha);
         }
 
     }

@@ -11,5 +11,11 @@ namespace ManangerAPI.Application.ApplicationApp
         {
             return _usuarioRepositorio.Listar().Select(x => new UsuarioDTO{Id = x.Id, Nome = x.Nome}).ToList();
         }
+
+        public UsuarioDTO Logar(string login, string senha)
+        {
+            var usuario = _usuarioRepositorio.Logar(login,senha);
+            return new UsuarioDTO{Id = usuario.Id,Nome = usuario.Nome};
+        }
     }
 }

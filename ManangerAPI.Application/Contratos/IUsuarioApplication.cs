@@ -6,5 +6,7 @@ namespace ManangerAPI.Application.Contratos
     public interface IUsuarioApplication
     {
          IList<UsuarioDTO> ListarTodos();
+
+         UsuarioDTO Logar(string login, string senha);
     }
 }
