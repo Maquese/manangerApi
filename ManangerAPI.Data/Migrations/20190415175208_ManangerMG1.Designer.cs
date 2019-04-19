@@ -3,14 +3,16 @@ using ManangerAPI.Data.Contexto;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    partial class ContextoDbModelSnapshot : ModelSnapshot
+    [Migration("20190415175208_ManangerMG1")]
+    partial class ManangerMG1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,7 +94,7 @@ namespace ManangerApi.Data.Migrations
 
                     b.Property<int>("Paciente");
 
-                    b.ToTable("Cotratante");
+                    b.ToTable("Contratante");
 
                     b.HasDiscriminator().HasValue("Contratante");
                 });
