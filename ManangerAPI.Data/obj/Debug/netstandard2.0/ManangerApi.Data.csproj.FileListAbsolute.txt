@@ -1,0 +1,9 @@
+C:\Projetos\Tcc\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.deps.json
+C:\Projetos\Tcc\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.dll
+C:\Projetos\Tcc\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.pdb
+C:\Projetos\Tcc\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.csprojAssemblyReference.cache
+C:\Projetos\Tcc\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.csproj.CoreCompileInputs.cache
+C:\Projetos\Tcc\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.AssemblyInfoInputs.cache
+C:\Projetos\Tcc\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.AssemblyInfo.cs
+C:\Projetos\Tcc\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.dll
+C:\Projetos\Tcc\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.pdb

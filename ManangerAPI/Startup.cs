@@ -35,11 +35,14 @@ namespace ManangerApi
             services.AddSingleton<IUsuarioApplication,ManangerAPI.Application.ApplicationApp.Application>();            
             services.AddSingleton<IContratanteApplication,ManangerAPI.Application.ApplicationApp.Application>();            
             services.AddSingleton<IAdministradorApplication,ManangerAPI.Application.ApplicationApp.Application>();
-
+            services.AddSingleton<IPrestadorDeServicoApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddSingleton<IGestorApplication,ManangerAPI.Application.ApplicationApp.Application>();
 
             services.AddSingleton<IUsuarioRepositorio,UsuarioRepositorio>();            
             services.AddSingleton<IAdministradorRepositorio,AdministradorRepositorio>();
             services.AddSingleton<IContratanteRepositorio,ContratanteRepositorio>();
+            services.AddSingleton<IGestorRepositorio,GestorRepositorio>();
+            services.AddSingleton<IPrestadorDeServicoRepositorio,PrestadorDeServicoRepositorio>();
             //services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"));
         }
 
