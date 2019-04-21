@@ -34,6 +34,11 @@ namespace ManangerAPI.Data.Repositorios
             return _contexto.Set<T>().ToList();
         }
 
+        public void LogicDelete(T entidade)
+        {
+            entidade.Status = 1;
+        }
+
         public void Save()
         {
             _contexto.SaveChanges();

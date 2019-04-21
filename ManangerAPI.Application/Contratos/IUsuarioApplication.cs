@@ -8,5 +8,7 @@ namespace ManangerAPI.Application.Contratos
          IList<UsuarioDTO> ListarTodos();
 
          UsuarioDTO Logar(string login, string senha);
+
+         void Deletar(int id);
     }
 }

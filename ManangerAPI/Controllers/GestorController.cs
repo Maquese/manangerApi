@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using ManangerAPI.Application.Contratos;
+using ManangerAPI.Application.DTOS;
 using ManangerAPI.RequestsData;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +23,13 @@ namespace ManangerAPI.Controllers
             _gestorApplication.Cadastrar(request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,request.Cpf,
                                          request.Telefone,request.Comentario,request.Termos,request.Cidade,request.Estado,request.Estado,request.Cep,
                                          request.Rua, request.Numero,request.Complemento,request.Historico,request.Cursos);
+        }
+
+        [Route("api/gestor/listarnaoaprovados")]
+        [HttpPost]
+        public IList<GestorDTO> ListarNaoAprovados()
+        {
+            return _gestorApplication.ListarPorAprovacao(false);
         }
     }
 }

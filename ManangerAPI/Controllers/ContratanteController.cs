@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using ManangerAPI.Application.Contratos;
+using ManangerAPI.Application.DTOS;
 using ManangerAPI.RequestsData;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +26,20 @@ namespace ManangerAPI.Controllers
                                               contratante.Sexo, contratante.Cpf,contratante.Telefone,contratante.Comentario,contratante.Termos,
                                               contratante.Cidade,contratante.Estado,contratante.Bairro,contratante.Cep,contratante.Numero,contratante.Complemento,
                                               contratante.Rua);
+        }
+
+        [Route("api/contratante/listarnaoanalidos")]
+        [HttpPost]
+        public IList<ContratanteDTO> ListarNaoAnalisados()
+        {
+            return _contratanteApplication.ListarPorAnalise(false);
+        }
+
+        [Route("api/contratante/listarnaoaprovados")]
+        [HttpPost]
+        public IList<ContratanteDTO> ListarNaoAprovados()
+        {
+            return _contratanteApplication.ListarPorAprovacao(false);
         }
 
     }

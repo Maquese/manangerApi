@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using ManangerAPI.Application.Contratos;
+using ManangerAPI.Application.DTOS;
 using ManangerAPI.Data.Entidades;
 
 namespace ManangerAPI.Application.ApplicationApp
@@ -60,6 +63,37 @@ namespace ManangerAPI.Application.ApplicationApp
             };
             _gestorRepositorio.Insert(gestor);
             _gestorRepositorio.Save();
+        }
+
+        IList<GestorDTO> IGestorApplication.ListarNaoAnalisadosEAprovados()
+        {
+            IList<GestorDTO> retorno = null;
+            var data = _gestorRepositorio.ListarNaoAnalisadosEReprovados();
+
+            retorno = data.Select(x =>  new GestorDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento}).ToList();
+
+            return retorno;
+        }
+
+        IList<GestorDTO> IGestorApplication.ListarPorAnalise(bool analisado)
+        {
+            IList<GestorDTO> retorno = null;
+            var data = _gestorRepositorio.ListarPorAnalise(analisado);
+
+            retorno = data.Select(x =>  new GestorDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento}).ToList();
+
+            return retorno;
+        }
+
+        IList<GestorDTO> IGestorApplication.ListarPorAprovacao(bool aprovado)
+        {
+            IList<GestorDTO> retorno = null;
+            var data = _gestorRepositorio.ListarPorAprovacao(aprovado);
+
+            retorno = data.Select(x =>  new GestorDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento,
+                                                       HistoricoProfissional = x.HistoricoProfissional, CursosCertificacoes = x.CursosCertificacoes}).ToList();
+
+            return retorno;
         }
     }
 }

@@ -16,5 +16,6 @@ namespace ManangerAPI.Data.Contratos
 
          void Save();
 
+         void LogicDelete(T document);
     }
 }

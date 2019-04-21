@@ -34,5 +34,12 @@ namespace ManangerAPI.Controllers
             return _UsuarioApplication.Logar(request.Login,request.Senha);
         }
 
+        [Route("api/usuario/deletar")]
+        [HttpPost]
+        public void Deletar(BaseRequest  request)
+        {
+            _UsuarioApplication.Deletar(request.Id);
+        }
+
     }
 }

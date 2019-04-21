@@ -6,6 +6,6 @@ namespace ManangerAPI.Data.Entidades
          public int FuncionalidadeId {get;set;}  
 
          public Usuario Usuario {get;set;}
-         public Funcionalidade FUncionalidade {get;set;}
+         public virtual Funcionalidade Funcionalidade {get;set;}
     }
 }

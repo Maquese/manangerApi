@@ -1,6 +1,7 @@
 using System.Linq;
 using ManangerAPI.Data.Contratos;
 using ManangerAPI.Data.Entidades;
+using Microsoft.EntityFrameworkCore;
 
 namespace ManangerAPI.Data.Repositorios
 {
@@ -13,7 +14,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public Usuario Logar(string login, string senha)
         {
-            return _contexto.Usuario.Where(x => x.Login == login && x.Senha == senha).FirstOrDefault();
+            return _contexto.Usuario.Where(x => x.Login == login && x.Senha == senha && x.Status == 0).FirstOrDefault();
         }
     }
 }

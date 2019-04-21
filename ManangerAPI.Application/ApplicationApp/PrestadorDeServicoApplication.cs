@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using ManangerAPI.Application.Contratos;
+using ManangerAPI.Application.DTOS;
 using ManangerAPI.Data.Entidades;
 
 namespace ManangerAPI.Application.ApplicationApp
@@ -37,6 +40,32 @@ namespace ManangerAPI.Application.ApplicationApp
             };
             _prestadorDeServicoRepositorio.Insert(prestadorServico);
             _prestadorDeServicoRepositorio.Save();
+        }
+
+        IList<PrestadorDeServicoDTO> IPrestadorDeServicoApplication.ListarNaoAnalisadosEAprovados()
+        {
+            throw new NotImplementedException();
+        }
+
+        IList<PrestadorDeServicoDTO> IPrestadorDeServicoApplication.ListarPorAnalise(bool analisado)
+        {
+             IList<PrestadorDeServicoDTO> retorno = null;
+            var data = _prestadorDeServicoRepositorio.ListarPorAnalise(analisado);
+
+            retorno = data.Select(x =>  new PrestadorDeServicoDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento}).ToList();
+
+            return retorno;
+        }
+
+        IList<PrestadorDeServicoDTO> IPrestadorDeServicoApplication.ListarPorAprovacao(bool aprovado)
+        {
+            IList<PrestadorDeServicoDTO> retorno = null;
+            var data = _prestadorDeServicoRepositorio.ListarPorAprovacao(aprovado);
+
+            retorno = data.Select(x =>  new PrestadorDeServicoDTO {Id = x.Id, Nome = x.Nome, Email = x.Email,
+                                                                   DataNascimento = x.DataNascimento, Competencias = x.Competencias}).ToList();
+
+            return retorno;
         }
     }
 }

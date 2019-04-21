@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ManangerAPI.Application.Contratos;
 using ManangerAPI.Application.DTOS;
 using ManangerAPI.Data.Entidades;
@@ -46,9 +47,34 @@ namespace ManangerAPI.Application.ApplicationApp
             throw new System.NotImplementedException();
         }
 
-        public IList<ContratanteDTO> ListarContratantes(bool analisado)
+        public IList<ContratanteDTO> ListarNaoAnalisadosEAprovados()
         {
-            throw new System.NotImplementedException();
+            IList<ContratanteDTO>  retorno = null;
+            var data = _contratanteRepositorio.ListarNaoAnalisadosEReprovados();
+
+            retorno = data.Select(x => new ContratanteDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento }).ToList();
+
+            return retorno;
+        }
+
+        public IList<ContratanteDTO> ListarPorAnalise(bool analisado)
+        {
+            IList<ContratanteDTO>  retorno = null;
+            var data = _contratanteRepositorio.ListarPorAnalise(analisado);
+
+            retorno = data.Select(x => new ContratanteDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento }).ToList();
+
+            return retorno;
+        }
+
+        public IList<ContratanteDTO> ListarPorAprovacao(bool aprovado)
+        {
+            IList<ContratanteDTO>  retorno = null;
+            var data = _contratanteRepositorio.ListarPorAprovacao(aprovado);
+
+            retorno = data.Select(x => new ContratanteDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento }).ToList();
+
+            return retorno;
         }
     }
 }

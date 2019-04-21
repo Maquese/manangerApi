@@ -5,7 +5,7 @@ namespace ManangerAPI.Data.Entidades
 {
     public class Usuario : EntidadeBase
     {
-        public IList<Acesso> Acessos {get;set;}
+        public virtual IList<Acesso> Acessos {get;set;}
         public string Nome { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
@@ -17,6 +17,8 @@ namespace ManangerAPI.Data.Entidades
         public string Comentario { get; set; }
         public bool Termos { get; set; }
         public Endereco Endereco { get; set; }
+        public bool Aprovado { get; set; }
+        public bool Analisado { get; set; }
 
     }
 }
