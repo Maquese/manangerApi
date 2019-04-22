@@ -7,6 +7,15 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IUsuarioApplication
     {
+        
+        public void Analisar(int idUsuario, bool aprovado)
+        {
+            var usuario =_usuarioRepositorio.Encontrar(idUsuario);
+            usuario.Aprovado = aprovado;
+            usuario.Analisado = true;
+            _usuarioRepositorio.Save();
+        }
+
         public void Deletar(int id)
         {
             _usuarioRepositorio.LogicDelete(_usuarioRepositorio.Encontrar(id));
