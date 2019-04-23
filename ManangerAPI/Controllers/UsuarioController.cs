@@ -41,5 +41,12 @@ namespace ManangerAPI.Controllers
             _UsuarioApplication.Deletar(request.Id);
         }
 
+        [Route("api/usuario/analisar")]
+        [HttpPost]
+        public void Analisar(AnalisarRequest  request)
+        {
+            _UsuarioApplication.Analisar(request.Id,request.Aprovado);
+        }
+
     }
 }
