@@ -14,7 +14,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public Usuario Logar(string login, string senha)
         {
-            return _contexto.Usuario.Where(x => x.Login == login && x.Senha == senha && x.Status == 0).FirstOrDefault();
+            return _contexto.Usuario.Where(x => x.Login == login && x.Senha == senha && x.StatusEntidadeId == 0).FirstOrDefault();
         }
     }
 }

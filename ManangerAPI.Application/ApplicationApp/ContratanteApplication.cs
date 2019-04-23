@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ManangerAPI.Application.Contratos;
 using ManangerAPI.Application.DTOS;
+using ManangerAPI.Application.Enums;
 using ManangerAPI.Data.Entidades;
 
 namespace ManangerAPI.Application.ApplicationApp
@@ -25,7 +26,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Telefone = telefone,
                 Comentario = comentarios,
                 Termos = termos,
-                Status = 0,
+                StatusEntidadeId = (int)StatusEnum.Ativo,
                 Endereco = new Endereco 
                 {
                     Estado = estado,
@@ -35,7 +36,7 @@ namespace ManangerAPI.Application.ApplicationApp
                     Numero = numero,
                     Complemento = complemento,
                     Rua = rua,
-                    Status = 0
+                    StatusEntidadeId = (int)StatusEnum.Ativo
                 }
             };
             _contratanteRepositorio.Insert(contratante);

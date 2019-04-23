@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ManangerAPI.Application.Contratos;
 using ManangerAPI.Application.DTOS;
+using ManangerAPI.Application.Enums;
 using ManangerAPI.Data.Entidades;
 
 namespace ManangerAPI.Application.ApplicationApp
@@ -49,7 +50,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 CursosCertificacoes = certificacoes,
                 HistoricoProfissional = historicoProfissional,
                 Sexo = sexo,
-                Status = 0,
+                StatusEntidadeId = (int)StatusEnum.Ativo,
                 Endereco = new Endereco{
                     Estado = estado,
                     Cidade = cidade,
@@ -58,7 +59,7 @@ namespace ManangerAPI.Application.ApplicationApp
                     Numero = numero,
                     Cep = cep,
                     Complemento = complemento,
-                    Status = 0
+                    StatusEntidadeId = (int)StatusEnum.Ativo
                 }
             };
             _gestorRepositorio.Insert(gestor);

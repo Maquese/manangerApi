@@ -4,6 +4,7 @@ namespace ManangerAPI.Data.Entidades
     {
         public int Id {get;set;}
         
-        public int Status { get; set; }
+        public int StatusEntidadeId { get; set; }
+        public StatusEntidade StatusEntidade { get; set; }
     }
 }

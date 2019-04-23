@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "ManangerApi/1.0.0": {
+      "manangerapi/1.0.0": {
         "dependencies": {
           "ManangerApi.Data": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
@@ -31,10 +31,10 @@
           "manangerapi.application": "1.0.0"
         },
         "runtime": {
-          "ManangerApi.dll": {}
+          "manangerapi.dll": {}
         },
         "compile": {
-          "ManangerApi.dll": {}
+          "manangerapi.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -3175,7 +3175,7 @@
     }
   },
   "libraries": {
-    "ManangerApi/1.0.0": {
+    "manangerapi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

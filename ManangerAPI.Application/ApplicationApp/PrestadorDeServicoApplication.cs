@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ManangerAPI.Application.Contratos;
 using ManangerAPI.Application.DTOS;
+using ManangerAPI.Application.Enums;
 using ManangerAPI.Data.Entidades;
 
 namespace ManangerAPI.Application.ApplicationApp
@@ -22,7 +23,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Sexo = sexo,
                 Cpf = cpf,
                 Telefone = telefone,
-                Status = 0,
+                StatusEntidadeId = (int)StatusEnum.Ativo,
                 Competencias = competencias,
                 Comentario = comentario,
                 Termos = termos,
@@ -34,7 +35,7 @@ namespace ManangerAPI.Application.ApplicationApp
                     Rua = rua,
                     Numero = numero,
                     Complemento = complemento,
-                    Status = 0,
+                    StatusEntidadeId = (int)StatusEnum.Ativo,
                     Cep = cep
                 }
             };
