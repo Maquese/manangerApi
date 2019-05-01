@@ -1,8 +1,7 @@
 namespace ManangerAPI.Data.Entidades
 {
-    public class StatusEntidade
+    public class StatusEntidade : EntidadeBase
     {
-        public int Id { get; set; }
         public int Status { get; set; }
         public string Referencia { get; set; }
     }

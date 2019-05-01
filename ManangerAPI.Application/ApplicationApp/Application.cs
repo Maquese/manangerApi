@@ -12,11 +12,12 @@ namespace ManangerAPI.Application.ApplicationApp
         private readonly IGestorRepositorio _gestorRepositorio;
         private readonly IFuncionalidadeRepositorio _funcionalidadeRepositorio;
         private readonly IAcessoRepositorio _acessoRepositorio;
+        private readonly IBeneficiarioRepositorio _beneficiarioRepositorio;
 
         public Application(IUsuarioRepositorio usuarioRepositorio, IAdministradorRepositorio administradorRepositorio, 
                            IContratanteRepositorio contratanteRepositorio, IPrestadorDeServicoRepositorio prestadorDeServicoRepositorio,
                            IGestorRepositorio gestorRepositorio, IFuncionalidadeRepositorio funcionalidadeRepositorio,
-                           IAcessoRepositorio acessoRepositorio)
+                           IAcessoRepositorio acessoRepositorio, IBeneficiarioRepositorio beneficiarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
             _contratanteRepositorio = contratanteRepositorio;
@@ -25,6 +26,7 @@ namespace ManangerAPI.Application.ApplicationApp
             _gestorRepositorio = gestorRepositorio;
             _funcionalidadeRepositorio = funcionalidadeRepositorio;
             _acessoRepositorio = acessoRepositorio;
+            _beneficiarioRepositorio = beneficiarioRepositorio;
         }
     }
 }

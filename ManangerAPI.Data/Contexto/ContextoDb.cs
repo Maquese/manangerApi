@@ -7,13 +7,19 @@ namespace ManangerAPI.Data.Contexto
 {
     public class ContextoDb : DbContext
     {
-        public DbSet<Acesso> Acesso { get; set; }
-        public DbSet<Funcionalidade> Funcionalidade { get; set; }
-        public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Contratante> Contratante { get; set; }
+        public DbSet<Acesso> Acesso { get; set; }        
         public DbSet<Administrador> Administrador { get; set; }
-        public DbSet<PrestadorDeServico> PrestadorDeServico { get; set; }
+        public DbSet<Beneficiario> Beneficiario { get; set; }
+        public DbSet<Contratante> Contratante { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
+        public DbSet<Funcionalidade> Funcionalidade { get; set; }
         public DbSet<Gestor> Gestor { get; set; }
+        public DbSet<Perfil> Perfil { get; set; }
+        public DbSet<PrestadorDeServico> PrestadorDeServico { get; set; }
+        public DbSet<Sexo> Sexo { get; set; }
+        public DbSet<StatusEntidade> StatusEntidade { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+                
 
         public ContextoDb() 
         {
