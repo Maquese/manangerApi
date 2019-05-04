@@ -18,6 +18,6 @@ namespace ManangerAPI.Data.Entidades
         public bool Termos { get; set; }
         public Endereco Endereco { get; set; }
         public bool Aprovado { get; set; }
-        public bool Analisado { get; set; }        
+        public bool Analisado { get; set; }    
     }
 }

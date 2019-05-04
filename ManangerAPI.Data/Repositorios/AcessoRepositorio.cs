@@ -15,7 +15,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<Acesso> AcessoDoUsuario(int idUsuario)
         {
-            return _contexto.Acesso.Where(x => x.UsuarioId == idUsuario).Include(x => x.Funcionalidade).ToList();
+            return _contexto.Acesso.Where(x => x.UsuarioId == idUsuario).Include(x => x.Perfil).ToList();
         }
     }
 }

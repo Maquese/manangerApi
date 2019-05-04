@@ -27,6 +27,13 @@ namespace ManangerAPI.Controllers
             return _UsuarioApplication.ListarTodos();
         }
 
+        [Route("api/usuario/dadoscadastrais")]
+        [HttpPost]
+        public DadosCadastraisDTO BuscarDadosCadastrais(BaseRequest request)
+        {
+            return _UsuarioApplication.BuscarDadosCadastrais(request.Id);
+        }
+
         [Route("api/usuario/logar")]
         [HttpPost]
         public UsuarioDTO Logar(LoginRequest  request)

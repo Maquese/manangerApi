@@ -6,5 +6,6 @@ namespace ManangerAPI.Data.Contratos
     {
          Usuario Logar(string login, string senha);
 
+
     }
 }

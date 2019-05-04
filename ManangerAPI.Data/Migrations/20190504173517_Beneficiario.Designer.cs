@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190421225606_MigrationMG8")]
-    partial class MigrationMG8
+    [Migration("20190504173517_Beneficiario")]
+    partial class Beneficiario
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace ManangerApi.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("FuncionalidadeId");
+                    b.Property<int>("PerfilId");
 
                     b.Property<int>("Status");
 
@@ -35,11 +35,32 @@ namespace ManangerApi.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FuncionalidadeId");
+                    b.HasIndex("PerfilId");
 
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Acesso");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Beneficiario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ContratanteId");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("UsuarioId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContratanteId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Beneficiario");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Endereco", b =>
@@ -84,11 +105,58 @@ namespace ManangerApi.Data.Migrations
 
                     b.Property<string>("Path");
 
+                    b.Property<int>("PerfilId");
+
                     b.Property<int>("Status");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PerfilId");
+
                     b.ToTable("Funcionalidade");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Perfil", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Perfil");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Sexo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sexo");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.StatusEntidade", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Referencia");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StatusEntidade");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Usuario", b =>
@@ -179,13 +247,25 @@ namespace ManangerApi.Data.Migrations
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Acesso", b =>
                 {
-                    b.HasOne("ManangerAPI.Data.Entidades.Funcionalidade", "Funcionalidade")
+                    b.HasOne("ManangerAPI.Data.Entidades.Perfil", "Perfil")
                         .WithMany()
-                        .HasForeignKey("FuncionalidadeId")
+                        .HasForeignKey("PerfilId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ManangerAPI.Data.Entidades.Usuario", "Usuario")
                         .WithMany("Acessos")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Beneficiario", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.Contratante")
+                        .WithMany("Beneficiarios")
+                        .HasForeignKey("ContratanteId");
+
+                    b.HasOne("ManangerAPI.Data.Entidades.Usuario", "Usuario")
+                        .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -195,6 +275,14 @@ namespace ManangerApi.Data.Migrations
                     b.HasOne("ManangerAPI.Data.Entidades.Usuario", "Usuario")
                         .WithOne("Endereco")
                         .HasForeignKey("ManangerAPI.Data.Entidades.Endereco", "UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Funcionalidade", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.Perfil", "Perfil")
+                        .WithMany("Funcionalidades")
+                        .HasForeignKey("PerfilId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

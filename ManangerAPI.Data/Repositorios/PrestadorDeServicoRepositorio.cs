@@ -9,17 +9,17 @@ namespace ManangerAPI.Data.Repositorios
     {
         public IList<PrestadorDeServico> ListarNaoAnalisadosEReprovados()
         {
-            return _contexto.PrestadorDeServico.Where(x => (x.Aprovado == null || x.Aprovado) && x.StatusEntidadeId == 0).ToList();
+            return _contexto.PrestadorDeServico.Where(x => x.Aprovado  && x.Status == 1).ToList();
         }
 
         public IList<PrestadorDeServico> ListarPorAnalise(bool analisado)
         {
-            return _contexto.PrestadorDeServico.Where(x => x.Analisado == analisado && x.StatusEntidadeId == 0).ToList();
+            return _contexto.PrestadorDeServico.Where(x => x.Analisado == analisado && x.Status == 1).ToList();
         }
 
         public IList<PrestadorDeServico> ListarPorAprovacao(bool aprovado)
         {
-           return _contexto.PrestadorDeServico.Where(x => x.Aprovado == aprovado && x.StatusEntidadeId == 0).ToList();
+           return _contexto.PrestadorDeServico.Where(x => x.Aprovado == aprovado && x.Status == 1).ToList();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public void LogicDelete(T entidade)
         {
-            entidade.StatusEntidadeId = 1;
+            entidade.Status = 2;
         }
 
         public void Save()

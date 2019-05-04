@@ -50,7 +50,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 CursosCertificacoes = certificacoes,
                 HistoricoProfissional = historicoProfissional,
                 Sexo = sexo,
-                StatusEntidadeId = (int)StatusEnum.Ativo,
+                Status = (int)StatusEnum.Ativo,
                 Endereco = new Endereco{
                     Estado = estado,
                     Cidade = cidade,
@@ -59,8 +59,9 @@ namespace ManangerAPI.Application.ApplicationApp
                     Numero = numero,
                     Cep = cep,
                     Complemento = complemento,
-                    StatusEntidadeId = (int)StatusEnum.Ativo
-                }
+                    Status = (int)StatusEnum.Ativo
+                },
+                Acessos = new List<Acesso>{new Acesso{PerfilId = (int)PerfilEnum.Gestor, Status = (int)StatusEnum.Ativo} }
             };
             _gestorRepositorio.Insert(gestor);
             _gestorRepositorio.Save();

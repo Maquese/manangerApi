@@ -17,6 +17,20 @@ namespace ManangerAPI.Application.ApplicationApp
             _usuarioRepositorio.Save();
         }
 
+        public DadosCadastraisDTO BuscarDadosCadastrais(int idUsuario)
+        {
+            var retorno = new DadosCadastraisDTO();
+            var usuario = _usuarioRepositorio.Encontrar(idUsuario);
+            retorno.Nome = usuario.Nome;
+            retorno.DataNascimento = usuario.DataNascimento;
+            retorno.Sexo = ((SexoEnum)usuario.Sexo).ToString();
+            retorno.Telefone = usuario.Telefone;
+            retorno.Email = usuario.Email;
+            retorno.Cidade = usuario.Endereco.Cidade;
+            retorno.Comentario = usuario.Comentario;
+            return retorno;
+        }
+
         public void Deletar(int id)
         {
             _usuarioRepositorio.LogicDelete(_usuarioRepositorio.Encontrar(id));
@@ -38,7 +52,7 @@ namespace ManangerAPI.Application.ApplicationApp
             foreach (var item in _acessoRepositorio.AcessoDoUsuario(usuario.Id))
             {
                 var acesso = new AcessoDTO{Perfil = (PerfilEnum)item.PerfilId};
-                acesso.FuncionalidadeDTO = item.Funcionalidade.Select(x => new FuncionalidadeDTO{Id = x.Id, Path = x.Path }).ToList();
+                acesso.FuncionalidadeDTO = _funcionalidadeRepositorio.ListarPorPerfil(item.PerfilId).Select(x => new FuncionalidadeDTO{Id = x.Id, Path = x.Path }).ToList();
             }
             }
             return retorno;

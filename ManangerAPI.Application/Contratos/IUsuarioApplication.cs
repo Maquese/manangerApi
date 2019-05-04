@@ -12,5 +12,7 @@ namespace ManangerAPI.Application.Contratos
          void Deletar(int id);
 
          void Analisar(int idUsuario, bool aprovado);
+
+         DadosCadastraisDTO  BuscarDadosCadastrais(int idUsuario);
     }
 }

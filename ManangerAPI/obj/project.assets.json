@@ -11836,9 +11836,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi\\ManangerApi.csproj",
-      "projectName": "ManangerApi",
-      "projectPath": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi\\ManangerApi.csproj",
+      "projectUniqueName": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi\\manangerapi.csproj",
+      "projectName": "manangerapi",
+      "projectPath": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi\\manangerapi.csproj",
       "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
       "outputPath": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi\\obj\\",
       "projectStyle": "PackageReference",
@@ -11901,13 +11901,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Projetos\\Tcc\\manangerApi\\manangerapi\\obj\\ManangerApi.csproj.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

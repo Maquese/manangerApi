@@ -23,7 +23,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Sexo = sexo,
                 Cpf = cpf,
                 Telefone = telefone,
-                StatusEntidadeId = (int)StatusEnum.Ativo,
+                Status = (int)StatusEnum.Ativo,
                 Competencias = competencias,
                 Comentario = comentario,
                 Termos = termos,
@@ -35,9 +35,10 @@ namespace ManangerAPI.Application.ApplicationApp
                     Rua = rua,
                     Numero = numero,
                     Complemento = complemento,
-                    StatusEntidadeId = (int)StatusEnum.Ativo,
+                    Status = (int)StatusEnum.Ativo,
                     Cep = cep
-                }
+                },
+                Acessos = new List<Acesso>{new Acesso{PerfilId = (int)PerfilEnum.PrestadorDeServico, Status = (int)StatusEnum.Ativo} }
             };
             _prestadorDeServicoRepositorio.Insert(prestadorServico);
             _prestadorDeServicoRepositorio.Save();

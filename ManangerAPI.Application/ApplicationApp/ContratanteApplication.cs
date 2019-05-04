@@ -26,7 +26,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Telefone = telefone,
                 Comentario = comentarios,
                 Termos = termos,
-                StatusEntidadeId = (int)StatusEnum.Ativo,
+                Status = (int)StatusEnum.Ativo,
                 Endereco = new Endereco 
                 {
                     Estado = estado,
@@ -36,8 +36,9 @@ namespace ManangerAPI.Application.ApplicationApp
                     Numero = numero,
                     Complemento = complemento,
                     Rua = rua,
-                    StatusEntidadeId = (int)StatusEnum.Ativo
-                }
+                    Status = (int)StatusEnum.Ativo
+                },
+                Acessos = new List<Acesso>{new Acesso{PerfilId = (int)PerfilEnum.Contratante, Status = (int)StatusEnum.Ativo} }
             };
             _contratanteRepositorio.Insert(contratante);
             _contratanteRepositorio.Save();

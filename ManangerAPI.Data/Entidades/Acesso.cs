@@ -7,7 +7,6 @@ namespace ManangerAPI.Data.Entidades
          public int UsuarioId {get;set;}
          public int PerfilId { get; set; }
          public virtual Perfil Perfil { get; set; }
-         public Usuario Usuario {get;set;}
-         public virtual IList<Funcionalidade> Funcionalidade {get;set;}
+         public virtual Usuario Usuario {get;set;}         
     }
 }
