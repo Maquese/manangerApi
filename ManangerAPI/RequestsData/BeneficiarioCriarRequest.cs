@@ -1,11 +1,9 @@
 using System;
 
-namespace ManangerAPI.Data.Entidades
+namespace ManangerAPI.RequestsData
 {
-    public class Beneficiario : EntidadeBase
+    public class BeneficiarioCriarRequest 
     {
-        public Contratante Usuario { get; set; }
-        public int ContratanteId { get; set; } 
         public string Nome { get; set; }
         public DateTime DataNascimento { get; set; }
         public int Sexo { get; set; }
@@ -18,6 +16,7 @@ namespace ManangerAPI.Data.Entidades
         public string Complemento { get; set; }
         public string CondicoesClinicas { get; set; }
         public bool TermoDeResponsalidade { get; set; }
-        public string Numero { get; set; }
+        public int IdContratante { get;  set; }
+        public string Numero { get;  set; }
     }
 }

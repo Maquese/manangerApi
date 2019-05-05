@@ -46,17 +46,39 @@ namespace ManangerApi.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ContratanteId");
+                    b.Property<string>("Bairro");
+
+                    b.Property<string>("Cep");
+
+                    b.Property<string>("Cidade");
+
+                    b.Property<string>("Complemento");
+
+                    b.Property<string>("CondicoesClinicas");
+
+                    b.Property<int>("ContratanteId");
+
+                    b.Property<DateTime>("DataNascimento");
+
+                    b.Property<string>("Estado");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("Numero");
+
+                    b.Property<string>("Rua");
+
+                    b.Property<int>("Sexo");
 
                     b.Property<int>("Status");
 
-                    b.Property<int>("UsuarioId");
+                    b.Property<string>("Telefone");
+
+                    b.Property<bool>("TermoDeResponsalidade");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ContratanteId");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Beneficiario");
                 });
@@ -258,13 +280,9 @@ namespace ManangerApi.Data.Migrations
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Beneficiario", b =>
                 {
-                    b.HasOne("ManangerAPI.Data.Entidades.Contratante")
+                    b.HasOne("ManangerAPI.Data.Entidades.Contratante", "Usuario")
                         .WithMany("Beneficiarios")
-                        .HasForeignKey("ContratanteId");
-
-                    b.HasOne("ManangerAPI.Data.Entidades.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
+                        .HasForeignKey("ContratanteId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

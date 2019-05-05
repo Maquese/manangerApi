@@ -134,8 +134,20 @@ namespace ManangerApi.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Status = table.Column<int>(nullable: false),
-                    UsuarioId = table.Column<int>(nullable: false),
-                    ContratanteId = table.Column<int>(nullable: true)
+                    ContratanteId = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    DataNascimento = table.Column<DateTime>(nullable: false),
+                    Sexo = table.Column<int>(nullable: false),
+                    Telefone = table.Column<string>(nullable: true),
+                    Cidade = table.Column<string>(nullable: true),
+                    Estado = table.Column<string>(nullable: true),
+                    Rua = table.Column<string>(nullable: true),
+                    Bairro = table.Column<string>(nullable: true),
+                    Cep = table.Column<string>(nullable: true),
+                    Complemento = table.Column<string>(nullable: true),
+                    CondicoesClinicas = table.Column<string>(nullable: true),
+                    TermoDeResponsalidade = table.Column<bool>(nullable: false),
+                    Numero = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -143,12 +155,6 @@ namespace ManangerApi.Data.Migrations
                     table.ForeignKey(
                         name: "FK_Beneficiario_Usuario_ContratanteId",
                         column: x => x.ContratanteId,
-                        principalTable: "Usuario",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Beneficiario_Usuario_UsuarioId",
-                        column: x => x.UsuarioId,
                         principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -195,11 +201,6 @@ namespace ManangerApi.Data.Migrations
                 name: "IX_Beneficiario_ContratanteId",
                 table: "Beneficiario",
                 column: "ContratanteId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Beneficiario_UsuarioId",
-                table: "Beneficiario",
-                column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Endereco_UsuarioId",
