@@ -38,6 +38,7 @@ namespace ManangerApi
             services.AddSingleton<IPrestadorDeServicoApplication,ManangerAPI.Application.ApplicationApp.Application>();
             services.AddSingleton<IGestorApplication,ManangerAPI.Application.ApplicationApp.Application>();
             services.AddSingleton<IBeneficiarioApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddSingleton<IMailApplication,ManangerAPI.Application.ApplicationApp.Application>();
 
             services.AddSingleton<IBeneficiarioRepositorio,BeneficiarioRepositorio>();
             services.AddSingleton<IAcessoRepositorio,AcessoRepositorio>();

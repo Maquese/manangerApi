@@ -13,10 +13,12 @@ namespace ManangerAPI.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioApplication _UsuarioApplication;
+        private readonly IMailApplication _mailApplication;
 
-        public UsuarioController(IUsuarioApplication UsuarioApplication)
+        public UsuarioController(IUsuarioApplication UsuarioApplication, IMailApplication mailApplication)
         {
             _UsuarioApplication = UsuarioApplication;
+            _mailApplication = mailApplication;
         }
 
 
@@ -53,6 +55,8 @@ namespace ManangerAPI.Controllers
         public void Analisar(AnalisarRequest  request)
         {
             _UsuarioApplication.Analisar(request.Id,request.Aprovado);
+            var dados = _UsuarioApplication.BuscarDadosEmail(request.Id);
+            _mailApplication.EnviarEmailAnalise(request.Aprovado,dados.Email,dados.Nome);            
         }
 
     }

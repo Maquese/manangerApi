@@ -2,6 +2,6 @@ namespace ManangerAPI.Application.Contratos
 {
     public interface IMailApplication 
     {
-         void EnviarEmailAnalise(bool Aprovado, string para);
+         void EnviarEmailAnalise(bool Aprovado, string para, string nome);
     }
 }

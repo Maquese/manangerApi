@@ -14,5 +14,7 @@ namespace ManangerAPI.Application.Contratos
          void Analisar(int idUsuario, bool aprovado);
 
          DadosCadastraisDTO  BuscarDadosCadastrais(int idUsuario);
+
+         UsuarioDTO BuscarDadosEmail(int idUsuario);
     }
 }
