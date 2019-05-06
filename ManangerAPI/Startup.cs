@@ -47,7 +47,8 @@ namespace ManangerApi
             services.AddSingleton<IAdministradorRepositorio,AdministradorRepositorio>();
             services.AddSingleton<IContratanteRepositorio,ContratanteRepositorio>();
             services.AddSingleton<IGestorRepositorio,GestorRepositorio>();
-            services.AddSingleton<IPrestadorDeServicoRepositorio,PrestadorDeServicoRepositorio>();
+            services.AddSingleton<IPrestadorDeServicoRepositorio,PrestadorDeServicoRepositorio>();            
+            services.AddSingleton<IEnderecoRepositorio,EnderecoRepositorio>();
             //services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"));
         }
 

@@ -33,8 +33,9 @@ namespace ManangerAPI.Data.Contexto
 
         protected override void  OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             
-            optionsBuilder.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"); //casa
+            //optionsBuilder.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"); //casa
             //optionsBuilder.UseSqlServer(@"Server=DESKTOP-TKPA4BQ\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"); //trabalho
+            optionsBuilder.UseSqlServer(@"Server=GIULIANO\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"); //trabalho
             base.OnConfiguring(optionsBuilder);
         }
     }
