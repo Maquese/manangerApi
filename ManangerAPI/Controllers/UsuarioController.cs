@@ -59,5 +59,18 @@ namespace ManangerAPI.Controllers
             _mailApplication.EnviarEmailAnalise(request.Aprovado,dados.Email,dados.Nome);            
         }
 
+        [Route("api/usuario/verificaremailcadastrado")]
+        [HttpPost]
+        public bool VerificarEmail(VerificacaoRequest  request)
+        {
+           return _UsuarioApplication.VerificaEmailJaCadastrado(request.Email);   
+        }
+
+        [Route("api/usuario/verificarcpfcadastrado")]
+        [HttpPost]
+        public bool VerificarCpf(VerificacaoRequest  request)
+        {
+            return _UsuarioApplication.VerificaCpfJaCadastrado(request.Cpf);         
+        }
     }
 }

@@ -39,6 +39,7 @@ namespace ManangerApi
             services.AddSingleton<IGestorApplication,ManangerAPI.Application.ApplicationApp.Application>();
             services.AddSingleton<IBeneficiarioApplication,ManangerAPI.Application.ApplicationApp.Application>();
             services.AddSingleton<IMailApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddSingleton<IMedicamentoApplication,ManangerAPI.Application.ApplicationApp.Application>();
 
             services.AddSingleton<IBeneficiarioRepositorio,BeneficiarioRepositorio>();
             services.AddSingleton<IAcessoRepositorio,AcessoRepositorio>();
@@ -48,7 +49,8 @@ namespace ManangerApi
             services.AddSingleton<IContratanteRepositorio,ContratanteRepositorio>();
             services.AddSingleton<IGestorRepositorio,GestorRepositorio>();
             services.AddSingleton<IPrestadorDeServicoRepositorio,PrestadorDeServicoRepositorio>();            
-            services.AddSingleton<IEnderecoRepositorio,EnderecoRepositorio>();
+            services.AddSingleton<IEnderecoRepositorio,EnderecoRepositorio>();                        
+            services.AddSingleton<IMedicamentoRepositorio,MedicamentoRepositorio>();
             //services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"));
         }
 

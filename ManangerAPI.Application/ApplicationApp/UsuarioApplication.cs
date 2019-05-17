@@ -65,5 +65,15 @@ namespace ManangerAPI.Application.ApplicationApp
             }
             return retorno;
         }
+
+        public bool VerificaCpfJaCadastrado(string cpf)
+        {
+            return _usuarioRepositorio.VerificaCpfJaCadastrado(cpf);
+        }
+
+        public bool VerificaEmailJaCadastrado(string email)
+        {
+            return _usuarioRepositorio.VerificaEmailJaCadastrado(email);
+        }
     }
 }

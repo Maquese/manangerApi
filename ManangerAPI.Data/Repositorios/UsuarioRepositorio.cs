@@ -17,5 +17,15 @@ namespace ManangerAPI.Data.Repositorios
         {
             return _contexto.Usuario.Where(x => x.Login == login && x.Senha == senha && x.Status == 1 && x.Analisado && x.Aprovado).FirstOrDefault();
         }
+
+        public bool VerificaCpfJaCadastrado(string cfp)
+        {
+            return _contexto.Usuario.Where(x => x.Cpf == cfp).First() != null;
+        }
+
+        public bool VerificaEmailJaCadastrado(string email)
+        {
+            return _contexto.Usuario.Where(x => x.Email == email).First() != null;
+        }
     }
 }

@@ -16,5 +16,9 @@ namespace ManangerAPI.Application.Contratos
          DadosCadastraisDTO  BuscarDadosCadastrais(int idUsuario);
 
          UsuarioDTO BuscarDadosEmail(int idUsuario);
+
+         bool VerificaEmailJaCadastrado(string email);
+
+         bool VerificaCpfJaCadastrado(string cpf);
     }
 }
