@@ -19,7 +19,7 @@ namespace ManangerAPI.Data.Contexto
         public DbSet<Sexo> Sexo { get; set; }
         public DbSet<StatusEntidade> StatusEntidade { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-                
+        public DbSet<Medicamento> Medicamento { get; set; }                
 
         public ContextoDb() 
         {

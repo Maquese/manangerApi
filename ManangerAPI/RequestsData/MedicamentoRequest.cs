@@ -1,6 +1,6 @@
-namespace ManangerAPI.Data.Entidades
+namespace ManangerAPI.RequestsData
 {
-    public class Medicamento : EntidadeBase
+    public class MedicamentoRequest : BaseRequest
     {
         public string Nome { get; set; }
         public string ContraIndicacao { get; set; }
@@ -9,7 +9,6 @@ namespace ManangerAPI.Data.Entidades
         public int Tipo { get; set; }///comprimido, gota, efervece
         public int ViaDeUso { get; set; }///oral, etc
         public string EfeitoColateral  { get; set; }
-        public int BeneficiarioId { get; set; }
-        public virtual Beneficiario Beneficiario { get; set; }
+        public int IdBeneficiario { get; set; }
     }
 }

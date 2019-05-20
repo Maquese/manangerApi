@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ManangerAPI.Data.Entidades
 {
@@ -19,5 +20,7 @@ namespace ManangerAPI.Data.Entidades
         public string CondicoesClinicas { get; set; }
         public bool TermoDeResponsalidade { get; set; }
         public string Numero { get; set; }
+
+        public virtual IList<Medicamento> Medicamentos {get;set;}
     }
 }
