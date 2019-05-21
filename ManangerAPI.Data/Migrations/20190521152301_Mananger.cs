@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ManangerApi.Data.Migrations
 {
-    public partial class Beneficiario : Migration
+    public partial class Mananger : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -187,6 +187,33 @@ namespace ManangerApi.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Medicamento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    ContraIndicacao = table.Column<string>(nullable: true),
+                    Bula = table.Column<string>(nullable: true),
+                    Indicao = table.Column<string>(nullable: true),
+                    Tipo = table.Column<int>(nullable: false),
+                    ViaDeUso = table.Column<int>(nullable: false),
+                    EfeitoColateral = table.Column<string>(nullable: true),
+                    BeneficiarioId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Medicamento", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Medicamento_Beneficiario_BeneficiarioId",
+                        column: x => x.BeneficiarioId,
+                        principalTable: "Beneficiario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Acesso_PerfilId",
                 table: "Acesso",
@@ -212,6 +239,11 @@ namespace ManangerApi.Data.Migrations
                 name: "IX_Funcionalidade_PerfilId",
                 table: "Funcionalidade",
                 column: "PerfilId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Medicamento_BeneficiarioId",
+                table: "Medicamento",
+                column: "BeneficiarioId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -220,13 +252,13 @@ namespace ManangerApi.Data.Migrations
                 name: "Acesso");
 
             migrationBuilder.DropTable(
-                name: "Beneficiario");
-
-            migrationBuilder.DropTable(
                 name: "Endereco");
 
             migrationBuilder.DropTable(
                 name: "Funcionalidade");
+
+            migrationBuilder.DropTable(
+                name: "Medicamento");
 
             migrationBuilder.DropTable(
                 name: "Sexo");
@@ -235,10 +267,13 @@ namespace ManangerApi.Data.Migrations
                 name: "StatusEntidade");
 
             migrationBuilder.DropTable(
-                name: "Usuario");
+                name: "Perfil");
 
             migrationBuilder.DropTable(
-                name: "Perfil");
+                name: "Beneficiario");
+
+            migrationBuilder.DropTable(
+                name: "Usuario");
         }
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190505194421_Beneficiario")]
-    partial class Beneficiario
+    [Migration("20190521152301_Mananger")]
+    partial class Mananger
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -136,6 +136,37 @@ namespace ManangerApi.Data.Migrations
                     b.HasIndex("PerfilId");
 
                     b.ToTable("Funcionalidade");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Medicamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BeneficiarioId");
+
+                    b.Property<string>("Bula");
+
+                    b.Property<string>("ContraIndicacao");
+
+                    b.Property<string>("EfeitoColateral");
+
+                    b.Property<string>("Indicao");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("Tipo");
+
+                    b.Property<int>("ViaDeUso");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BeneficiarioId");
+
+                    b.ToTable("Medicamento");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Perfil", b =>
@@ -301,6 +332,14 @@ namespace ManangerApi.Data.Migrations
                     b.HasOne("ManangerAPI.Data.Entidades.Perfil", "Perfil")
                         .WithMany("Funcionalidades")
                         .HasForeignKey("PerfilId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Medicamento", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.Beneficiario", "Beneficiario")
+                        .WithMany("Medicamentos")
+                        .HasForeignKey("BeneficiarioId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

@@ -27,7 +27,7 @@ values(1,'board','/board',1),-- admin
 (1,'medicamentos','/medicamentos',3),
 
 (1,'board','/board',4),--prestador
-(1,'perfil','/perfil',4),
+(1,'perfil','/perfil',4);
 
 
 
