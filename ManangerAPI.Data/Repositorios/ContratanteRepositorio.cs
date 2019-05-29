@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using ManangerAPI.Data.Contexto;
 using ManangerAPI.Data.Contratos;
 using ManangerAPI.Data.Entidades;
 
@@ -7,8 +8,8 @@ namespace ManangerAPI.Data.Repositorios
 {
     public class ContratanteRepositorio : Repositorio<Contratante>, IContratanteRepositorio
     {
-        public ContratanteRepositorio()
-        {            
+        public ContratanteRepositorio(ContextoDb contexto) : base(contexto)
+        {
         }
 
         public IList<Contratante> ListarNaoAnalisadosEReprovados()

@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ManangerApi.Data.Migrations
+namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190521152301_Mananger")]
-    partial class Mananger
+    [Migration("20190528162317_Teste")]
+    partial class Teste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

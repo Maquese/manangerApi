@@ -1,4 +1,5 @@
 using System.Linq;
+using ManangerAPI.Data.Contexto;
 using ManangerAPI.Data.Contratos;
 using ManangerAPI.Data.Entidades;
 using Microsoft.EntityFrameworkCore;
@@ -7,11 +8,9 @@ namespace ManangerAPI.Data.Repositorios
 {
     public class UsuarioRepositorio : Repositorio<Usuario> , IUsuarioRepositorio
     {
-        public UsuarioRepositorio()
+        public UsuarioRepositorio(ContextoDb contexto) : base(contexto)
         {
-            
         }
-
 
         public Usuario Logar(string login, string senha)
         {

@@ -1,5 +1,7 @@
 
 
+using System;
+using System.Diagnostics;
 using ManangerAPI.Data.Entidades;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,25 +21,32 @@ namespace ManangerAPI.Data.Contexto
         public DbSet<Sexo> Sexo { get; set; }
         public DbSet<StatusEntidade> StatusEntidade { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Medicamento> Medicamento { get; set; }                
+        public DbSet<Medicamento> Medicamento { get; set; }
+        public DbSet<Estado> Estado { get; set; }
+        public DbSet<Cidade> Cidade { get; set; }
 
-        public ContextoDb() 
+        public ContextoDb(DbContextOptions options) : base(options)
         {
             
         }       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<Usuario>().ToTable("Usuario");
+            modelBuilder.Entity<PrestadorDeServico>().ToTable("PrestadorDeServico");
+            modelBuilder.Entity<Contratante>().ToTable("Contratante");
+            modelBuilder.Entity<Administrador>().ToTable("Administrador");
             //base.OnModelCreating(modelBuilder);
         }
 
         protected override void  OnConfiguring(DbContextOptionsBuilder optionsBuilder){
-            
+            //optionsBuilder.
             //optionsBuilder.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"); //casa
             //optionsBuilder.UseSqlServer(@"Server=DESKTOP-TKPA4BQ\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"); //trabalho
-            optionsBuilder.UseSqlServer(@"Server=GIULIANO\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"); //trabalho
+            //optionsBuilder.UseSqlServer(@"Server=GIULIANO\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"); //trabalho
              //optionsBuilder.UseSqlServer(@"Server=LAPTOP-N20JNSB4\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"); //giu
-            base.OnConfiguring(optionsBuilder);
+            //base.OnConfiguring(optionsBuilder);
         }
     }
 }

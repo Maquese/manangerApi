@@ -10,9 +10,9 @@ namespace ManangerAPI.Data.Repositorios
     {
         protected readonly ContextoDb _contexto;
 
-        public Repositorio()
+        public Repositorio(ContextoDb contexto)
         {
-            _contexto = new ContextoDb();
+            _contexto = contexto;
         }
         public T Encontrar(int onde)
         {

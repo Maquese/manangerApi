@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using ManangerAPI.Data.Contexto;
 using ManangerAPI.Data.Contratos;
 using ManangerAPI.Data.Entidades;
 
@@ -7,6 +8,10 @@ namespace ManangerAPI.Data.Repositorios
 {
     public class PrestadorDeServicoRepositorio : Repositorio<PrestadorDeServico>, IPrestadorDeServicoRepositorio
     {
+        public PrestadorDeServicoRepositorio(ContextoDb contexto) : base(contexto)
+        {
+        }
+
         public IList<PrestadorDeServico> ListarNaoAnalisadosEReprovados()
         {
             return _contexto.PrestadorDeServico.Where(x => x.Aprovado  && x.Status == 1).ToList();

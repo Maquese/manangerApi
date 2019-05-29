@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ManangerAPI.Data.Entidades
 {
-    public class Usuario : EntidadeBase
+    public abstract class Usuario : EntidadeBase
     {
         public virtual IList<Acesso> Acessos {get;set;}
         public string Nome { get; set; }

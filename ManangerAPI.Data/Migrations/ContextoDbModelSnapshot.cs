@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ManangerApi.Data.Migrations
+namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
     partial class ContextoDbModelSnapshot : ModelSnapshot

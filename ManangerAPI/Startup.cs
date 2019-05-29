@@ -51,7 +51,7 @@ namespace ManangerApi
             services.AddSingleton<IPrestadorDeServicoRepositorio,PrestadorDeServicoRepositorio>();            
             services.AddSingleton<IEnderecoRepositorio,EnderecoRepositorio>();                        
             services.AddSingleton<IMedicamentoRepositorio,MedicamentoRepositorio>();
-            //services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;User Id=kenney;password=kenney123;"));
+            services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=DESKTOP-TKPA4BQ\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

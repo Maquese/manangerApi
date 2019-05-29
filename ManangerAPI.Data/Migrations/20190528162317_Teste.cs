@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ManangerApi.Data.Migrations
+namespace manangerapi.data.Migrations
 {
-    public partial class Mananger : Migration
+    public partial class Teste : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
