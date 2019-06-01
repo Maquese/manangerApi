@@ -12,12 +12,12 @@ namespace ManangerAPI.Application.ApplicationApp
 
         public IList<KeyValuePair<int, string>> DadosCompetencia()
         {
-            throw new System.NotImplementedException();
+            return _competenciaRepositorio.GerarDropDown();
         }
 
         public IList<KeyValuePair<int, string>> DadosCondicaoClinica()
         {
-            throw new System.NotImplementedException();
+            return _condicaoClinicaRepositorio.GerarDropDown();
         }
 
         public IList<KeyValuePair<string, string>> DadosEstado()

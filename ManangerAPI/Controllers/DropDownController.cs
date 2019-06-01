@@ -29,5 +29,19 @@ namespace ManangerAPI.Controllers
            return _idropDownApplication.DadosCidade(equest.Uf);
         }
 
+        [HttpPost]
+        [Route("api/dropdown/competencias")]
+        public IList<KeyValuePair<int,string>> Competencias()
+        {
+           return _idropDownApplication.DadosCompetencia();
+        }
+
+        [HttpPost]
+        [Route("api/dropdown/condicoesclinicas")]
+        public IList<KeyValuePair<int,string>> CondicoesClinicas()
+        {
+           return _idropDownApplication.DadosCondicaoClinica();
+        }
+
     }
 }

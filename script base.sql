@@ -40,6 +40,24 @@ insert into Acesso
 (PerfilId,Status,UsuarioId)
 values(1,1,1);
 
+insert into Competencia
+(Nome, Status)
+values
+('Serviços de cuidador',1),
+('Enfermagem',1) ,
+('Aplicar medicações1',1),
+('Pernoite',1),
+('Dar banho',1);
+
+insert into CondicaoClinica
+(Nome,Status)
+values
+('Acamado',1),
+('Em coma',1),
+('Possui drenos',1),
+('Se locomove',1),
+('Consegue comer',1);
+
 --Estados
 Insert into Estado (CodigoUf, Nome, Uf,Regiao,Status) values (12, 'Acre', 'AC', 1,1);
 Insert into Estado (CodigoUf, Nome, Uf,Regiao,Status) values (27, 'Alagoas', 'AL', 2,1);

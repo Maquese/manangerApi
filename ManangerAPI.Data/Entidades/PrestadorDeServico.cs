@@ -4,6 +4,6 @@ namespace ManangerAPI.Data.Entidades
 {
     public class PrestadorDeServico : Usuario
     {
-        public IList<Competencia> Competencias { get; set; }
+        public virtual IList<PrestadorDeServicoCompetencia> PrestadorDeServicoCompetencia { get; set; }
     }
 }

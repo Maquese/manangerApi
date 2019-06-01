@@ -27,7 +27,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Numero = numero,
                 Cep = cep,
                 Complemento = complemento,
-                CondicoesClinicas = condicoesClinicas,
+                //CondicoesClinicas = condicoesClinicas,
                 TermoDeResponsalidade = termos,
                 Status = (int)StatusEnum.Ativo,
                 ContratanteId = idContratante
@@ -53,7 +53,7 @@ namespace ManangerAPI.Application.ApplicationApp
               beneficiario.Numero = numero;
               beneficiario.Cep = cep;
               beneficiario.Complemento = complemento;
-              beneficiario.CondicoesClinicas = condicoesClinicas;
+              //beneficiario.CondicoesClinicas = condicoesClinicas;
               beneficiario.TermoDeResponsalidade = termos;
               _beneficiarioRepositorio.Update(beneficiario);
               _beneficiarioRepositorio.Save();
@@ -72,7 +72,7 @@ namespace ManangerAPI.Application.ApplicationApp
                Cep = beneficiario.Cep,
                Complemento = beneficiario.Complemento,
                DataNascimento = beneficiario.DataNascimento,
-               CondicoesClinicas = beneficiario.CondicoesClinicas,
+               //CondicoesClinicas = beneficiario.CondicoesClinicas,
                TermoDeResponsalidade = beneficiario.TermoDeResponsalidade,
                Telefone = beneficiario.Telefone,
                Sexo = beneficiario.Sexo,
@@ -89,7 +89,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Nome = x.Nome,
                 Id = x.Id,
                 DataNascimento = x.DataNascimento,
-                CondicoesClinicas = x.CondicoesClinicas,
+                //CondicoesClinicas = x.CondicoesClinicas,
                 Sexo = x.Sexo
             }).ToList();
 

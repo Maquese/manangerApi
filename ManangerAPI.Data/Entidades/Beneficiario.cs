@@ -17,7 +17,7 @@ namespace ManangerAPI.Data.Entidades
         public string Bairro { get; set; }
         public string Cep { get; set; }
         public string Complemento { get; set; }
-        public string CondicoesClinicas { get; set; }
+        public virtual IList<BeneficiarioCondicaoClinica> BeneficiarioCondicaoClinica { get; set; }
         public bool TermoDeResponsalidade { get; set; }
         public string Numero { get; set; }
 
