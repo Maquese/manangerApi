@@ -15,12 +15,18 @@ namespace ManangerAPI.Application.ApplicationApp
         private readonly IBeneficiarioRepositorio _beneficiarioRepositorio;
         private readonly IEnderecoRepositorio _enderecoRepositorio;
         private readonly IMedicamentoRepositorio _medicamentoRepositorio;
+        private readonly IEstadoRepositorio _estadoRepostorio;
+        private readonly ICidadeRepositorio _cidadeRepositorio;
+        private readonly ICompetenciaRepositorio _competenciaRepositorio;
+        private readonly ICondicaoClinicaRepositorio _condicaoClinicaRepositorio;
 
         public Application(IUsuarioRepositorio usuarioRepositorio, IAdministradorRepositorio administradorRepositorio, 
                            IContratanteRepositorio contratanteRepositorio, IPrestadorDeServicoRepositorio prestadorDeServicoRepositorio,
                            IGestorRepositorio gestorRepositorio, IFuncionalidadeRepositorio funcionalidadeRepositorio,
                            IAcessoRepositorio acessoRepositorio, IBeneficiarioRepositorio beneficiarioRepositorio,
-                           IEnderecoRepositorio enderecoRepositorio, IMedicamentoRepositorio medicamentoRepositorio)
+                           IEnderecoRepositorio enderecoRepositorio, IMedicamentoRepositorio medicamentoRepositorio,
+                           IEstadoRepositorio estadoRepositorio, ICidadeRepositorio cidadeRepositorio,
+                           ICompetenciaRepositorio competenciaRepositorio, ICondicaoClinicaRepositorio condicaoClinicaRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
             _contratanteRepositorio = contratanteRepositorio;
@@ -32,6 +38,10 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioRepositorio = beneficiarioRepositorio;
             _enderecoRepositorio = enderecoRepositorio;
             _medicamentoRepositorio = medicamentoRepositorio;
+            _estadoRepostorio = estadoRepositorio;
+            _cidadeRepositorio = cidadeRepositorio;
+            _competenciaRepositorio = competenciaRepositorio;
+            _condicaoClinicaRepositorio = condicaoClinicaRepositorio;
         }
     }
 }

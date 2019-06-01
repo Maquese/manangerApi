@@ -12,9 +12,9 @@ namespace ManangerAPI.Data.Repositorios
         {
         }
 
-        public IList<KeyValuePair<int, string>> GerarDropDown()
+        public IList<KeyValuePair<string, string>> GerarDropDown()
         {
-            return _contexto.Estado.Select(x => new KeyValuePair<int, string>(x.Id, x.Nome)).ToList();
+            return _contexto.Estado.Select(x => new KeyValuePair<string, string>(x.Uf, x.Nome)).ToList();
         }
     }
 }

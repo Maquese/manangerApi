@@ -5,6 +5,6 @@ namespace ManangerAPI.Data.Contratos
 {
     public interface IEstadoRepositorio : IRepositorio<Estado>
     {
-         IList<KeyValuePair<int,string>> GerarDropDown();
+         IList<KeyValuePair<string,string>> GerarDropDown();
     }
 }

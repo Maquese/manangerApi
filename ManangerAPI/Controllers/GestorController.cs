@@ -16,14 +16,14 @@ namespace ManangerAPI.Controllers
             _gestorApplication = gestorApplication;
         }
 
-        [HttpPost]
+      [HttpPost]
         [Route("api/gestor/cadastrar")]
         public void Cadastrar(GestorRequest request)
         {
             _gestorApplication.Cadastrar(request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,request.Cpf,
                                          request.Telefone,request.Comentario,request.Termos,request.Cidade,request.Estado,request.Estado,request.Cep,
                                          request.Rua, request.Numero,request.Complemento,request.Historico,request.Cursos);
-        }
+        }  
 
         [Route("api/gestor/listarnaoaprovados")]
         [HttpPost]
