@@ -25,7 +25,7 @@ namespace ManangerAPI.Controllers
             _contratanteApplication.Cadastrar(contratante.Nome,contratante.Login,contratante.Senha,contratante.Email,contratante.DataNascimento,
                                               contratante.Sexo, contratante.Cpf,contratante.Telefone,contratante.Comentario,contratante.Termos,
                                               contratante.Cidade,contratante.Estado,contratante.Bairro,contratante.Cep,contratante.Numero,contratante.Complemento,
-                                              contratante.Rua);
+                                              contratante.Rua, contratante.Imagem);
         }
 
         [Route("api/contratante/listarnaoanalidos")]

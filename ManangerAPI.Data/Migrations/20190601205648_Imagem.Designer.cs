@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190601183246_Estado")]
-    partial class Estado
+    [Migration("20190601205648_Imagem")]
+    partial class Imagem
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -342,6 +342,8 @@ namespace manangerapi.data.Migrations
                         .IsRequired();
 
                     b.Property<string>("Email");
+
+                    b.Property<string>("Imagem");
 
                     b.Property<string>("Login");
 

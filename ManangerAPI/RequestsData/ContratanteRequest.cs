@@ -4,6 +4,7 @@ namespace ManangerAPI.RequestsData
 {
     public class ContratanteRequest 
     {
+        public string Imagem { get; set; }
         public string Nome { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }

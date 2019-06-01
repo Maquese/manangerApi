@@ -341,6 +341,8 @@ namespace manangerapi.data.Migrations
 
                     b.Property<string>("Email");
 
+                    b.Property<string>("Imagem");
+
                     b.Property<string>("Login");
 
                     b.Property<string>("Nome");

@@ -12,7 +12,7 @@ namespace ManangerAPI.Application.ApplicationApp
     {
         public void Cadastrar(string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
                         string telefone,string comentarios,bool termos,string cidade,string estado,string bairro,string cep,
-                        string numero,string complemento, string rua)
+                        string numero,string complemento, string rua, string imagem)
         {
             Contratante contratante = new Contratante
             {   
@@ -27,6 +27,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Comentario = comentarios,
                 Termos = termos,
                 Status = (int)StatusEnum.Ativo,
+                Imagem = imagem,
                 Endereco = new Endereco 
                 {
                     Estado = estado,

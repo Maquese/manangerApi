@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace manangerapi.data.Migrations
 {
-    public partial class Estado : Migration
+    public partial class Imagem : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -129,6 +129,7 @@ namespace manangerapi.data.Migrations
                     Termos = table.Column<bool>(nullable: false),
                     Aprovado = table.Column<bool>(nullable: false),
                     Analisado = table.Column<bool>(nullable: false),
+                    Imagem = table.Column<string>(nullable: true),
                     Discriminator = table.Column<string>(nullable: false),
                     HistoricoProfissional = table.Column<string>(nullable: true),
                     CursosCertificacoes = table.Column<string>(nullable: true)
