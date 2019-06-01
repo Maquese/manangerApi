@@ -30,28 +30,31 @@ namespace ManangerApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"));
+        
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<IApplication,ManangerAPI.Application.ApplicationApp.Application>();            
-            services.AddSingleton<IUsuarioApplication,ManangerAPI.Application.ApplicationApp.Application>();            
-            services.AddSingleton<IContratanteApplication,ManangerAPI.Application.ApplicationApp.Application>();            
-            services.AddSingleton<IAdministradorApplication,ManangerAPI.Application.ApplicationApp.Application>();
-            services.AddSingleton<IPrestadorDeServicoApplication,ManangerAPI.Application.ApplicationApp.Application>();
-            services.AddSingleton<IGestorApplication,ManangerAPI.Application.ApplicationApp.Application>();
-            services.AddSingleton<IBeneficiarioApplication,ManangerAPI.Application.ApplicationApp.Application>();
-            services.AddSingleton<IMailApplication,ManangerAPI.Application.ApplicationApp.Application>();
-            services.AddSingleton<IMedicamentoApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IApplication,ManangerAPI.Application.ApplicationApp.Application>();            
+            services.AddScoped<IUsuarioApplication,ManangerAPI.Application.ApplicationApp.Application>();            
+            services.AddScoped<IContratanteApplication,ManangerAPI.Application.ApplicationApp.Application>();            
+            services.AddScoped<IAdministradorApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IPrestadorDeServicoApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IGestorApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IBeneficiarioApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IMailApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IMedicamentoApplication,ManangerAPI.Application.ApplicationApp.Application>();
 
-            services.AddSingleton<IBeneficiarioRepositorio,BeneficiarioRepositorio>();
-            services.AddSingleton<IAcessoRepositorio,AcessoRepositorio>();
-            services.AddSingleton<IFuncionalidadeRepositorio,FuncionalidadeRepositorio>();
-            services.AddSingleton<IUsuarioRepositorio,UsuarioRepositorio>();            
-            services.AddSingleton<IAdministradorRepositorio,AdministradorRepositorio>();
-            services.AddSingleton<IContratanteRepositorio,ContratanteRepositorio>();
-            services.AddSingleton<IGestorRepositorio,GestorRepositorio>();
-            services.AddSingleton<IPrestadorDeServicoRepositorio,PrestadorDeServicoRepositorio>();            
-            services.AddSingleton<IEnderecoRepositorio,EnderecoRepositorio>();                        
-            services.AddSingleton<IMedicamentoRepositorio,MedicamentoRepositorio>();
-            services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=DESKTOP-TKPA4BQ\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"));
+            services.AddScoped<IBeneficiarioRepositorio,BeneficiarioRepositorio>();
+            services.AddScoped<IAcessoRepositorio,AcessoRepositorio>();
+            services.AddScoped<IFuncionalidadeRepositorio,FuncionalidadeRepositorio>();
+            services.AddScoped<IUsuarioRepositorio,UsuarioRepositorio>();            
+            services.AddScoped<IAdministradorRepositorio,AdministradorRepositorio>();
+            services.AddScoped<IContratanteRepositorio,ContratanteRepositorio>();
+            services.AddScoped<IGestorRepositorio,GestorRepositorio>();
+            services.AddScoped<IPrestadorDeServicoRepositorio,PrestadorDeServicoRepositorio>();            
+            services.AddScoped<IEnderecoRepositorio,EnderecoRepositorio>();                        
+            services.AddScoped<IMedicamentoRepositorio,MedicamentoRepositorio>();
+            services.AddScoped<IEstadoRepositorio,EstadoRepositorio>();
+            services.AddScoped<ICidadeRepositorio,CidadeRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
