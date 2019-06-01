@@ -55,6 +55,8 @@ namespace ManangerApi
             services.AddScoped<IMedicamentoRepositorio,MedicamentoRepositorio>();
             services.AddScoped<IEstadoRepositorio,EstadoRepositorio>();
             services.AddScoped<ICidadeRepositorio,CidadeRepositorio>();
+            services.AddScoped<ICondicaoClinicaRepositorio,CondicaoClinicaRepositorio>();
+            services.AddScoped<ICompetenciaRepositorio,CompetenciaRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

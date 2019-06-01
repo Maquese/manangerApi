@@ -24,7 +24,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Cpf = cpf,
                 Telefone = telefone,
                 Status = (int)StatusEnum.Ativo,
-                Competencias = competencias,
+                //Competencias = competencias,
                 Comentario = comentario,
                 Termos = termos,
                 Endereco = new Endereco
@@ -65,7 +65,7 @@ namespace ManangerAPI.Application.ApplicationApp
             var data = _prestadorDeServicoRepositorio.ListarPorAprovacao(aprovado);
 
             retorno = data.Select(x =>  new PrestadorDeServicoDTO {Id = x.Id, Nome = x.Nome, Email = x.Email,
-                                                                   DataNascimento = x.DataNascimento, Competencias = x.Competencias}).ToList();
+                                                                   DataNascimento = x.DataNascimento}).ToList();
 
             return retorno;
         }

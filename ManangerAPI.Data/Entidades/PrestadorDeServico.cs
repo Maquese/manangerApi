@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace ManangerAPI.Data.Entidades
 {
     public class PrestadorDeServico : Usuario
     {
-        public string Competencias { get; set; }
+        public IList<Competencia> Competencias { get; set; }
     }
 }

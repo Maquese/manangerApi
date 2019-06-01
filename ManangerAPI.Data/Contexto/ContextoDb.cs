@@ -24,6 +24,8 @@ namespace ManangerAPI.Data.Contexto
         public DbSet<Medicamento> Medicamento { get; set; }
         public DbSet<Estado> Estado { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
+        public DbSet<CondicaoClinica> CondicaoClinica { get; set; }
+        public DbSet<Competencia> Competencia { get; set; }
 
         public ContextoDb(DbContextOptions options) : base(options)
         {
