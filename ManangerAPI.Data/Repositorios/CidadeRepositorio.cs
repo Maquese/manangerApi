@@ -16,5 +16,10 @@ namespace ManangerAPI.Data.Repositorios
         {
             return _contexto.Cidade.Select(x => new KeyValuePair<int, string>(x.Id, x.Nome)).ToList();
         }
+
+        public IList<KeyValuePair<int, string>> GerarDropDown(string uf)
+        {
+            return _contexto.Cidade.Where(x => x.Uf == uf).Select(x => new KeyValuePair<int, string>(x.Id, x.Nome)).ToList();
+        }
     }
 }

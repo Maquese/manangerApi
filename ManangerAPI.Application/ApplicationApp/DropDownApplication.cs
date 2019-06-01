@@ -5,9 +5,9 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IDropDownApplication
     {
-        public IList<KeyValuePair<int, string>> DadosCidade()
+        public IList<KeyValuePair<int, string>> DadosCidade(string uf)
         {
-            throw new System.NotImplementedException();
+            return _cidadeRepositorio.GerarDropDown(uf);
         }
 
         public IList<KeyValuePair<int, string>> DadosCompetencia()
