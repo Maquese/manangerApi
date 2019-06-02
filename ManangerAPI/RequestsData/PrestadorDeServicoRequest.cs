@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ManangerAPI.RequestsData
 {
@@ -8,15 +9,15 @@ namespace ManangerAPI.RequestsData
         public string Login { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
-        public DateTime DataNascimento { get; set; }    
+        public DateTime DataNascimento { get; set; }
         public int Sexo { get; set; }
         public string Cpf { get; set; }
-        public string Telefone {get;set;}
+        public string Telefone { get; set; }
         public string Comentario { get; set; }
-        public string Competencias { get; set; }
+        public IList<int> Competencias { get; set; }
         public bool Termos { get; set; }
 
-        public string Estado { get; set; }        
+        public string Estado { get; set; }
         public int Cidade { get; set; }
         public string Bairro { get; set; }
         public string Numero { get; set; }

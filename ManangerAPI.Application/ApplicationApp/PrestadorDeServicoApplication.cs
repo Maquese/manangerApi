@@ -12,7 +12,7 @@ namespace ManangerAPI.Application.ApplicationApp
     {
         public void Cadastrar(string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, string cpf, 
                               string telefone, int cidade, string estado, string bairro, string cep, string rua, string numero, 
-                              string complemento, string competencias, string comentario, bool termos)
+                              string complemento, IList<int> competencias, string comentario, bool termos)
         {
             PrestadorDeServico prestadorServico = new PrestadorDeServico{
                 Nome = nome,
@@ -23,8 +23,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Sexo = sexo,
                 Cpf = cpf,
                 Telefone = telefone,
-                Status = (int)StatusEnum.Ativo,
-                //Competencias = competencias,
+                Status = (int)StatusEnum.Ativo,                
+                PrestadorDeServicoCompetencia = new List<PrestadorDeServicoCompetencia>(),
                 Comentario = comentario,
                 Termos = termos,
                 Endereco = new Endereco
@@ -38,8 +38,18 @@ namespace ManangerAPI.Application.ApplicationApp
                     Status = (int)StatusEnum.Ativo,
                     Cep = cep
                 },
-                Acessos = new List<Acesso>{new Acesso{PerfilId = (int)PerfilEnum.PrestadorDeServico, Status = (int)StatusEnum.Ativo} }
+                Acessos = new List<Acesso>{new Acesso{PerfilId = (int)PerfilEnum.PrestadorDeServico, Status = (int)StatusEnum.Ativo}
+                
+                }
             };
+
+            foreach (var item in competencias)
+            {
+                prestadorServico.PrestadorDeServicoCompetencia.Add(new PrestadorDeServicoCompetencia
+                {
+                    CompetenciaId = item
+                });
+            }
             _prestadorDeServicoRepositorio.Insert(prestadorServico);
             _prestadorDeServicoRepositorio.Save();
         }
