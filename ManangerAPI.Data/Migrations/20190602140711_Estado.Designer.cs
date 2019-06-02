@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190601205648_Imagem")]
-    partial class Imagem
+    [Migration("20190602140711_Estado")]
+    partial class Estado
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -163,11 +163,11 @@ namespace manangerapi.data.Migrations
 
                     b.Property<string>("Cep");
 
-                    b.Property<string>("Cidade");
+                    b.Property<int>("CidadeId");
 
                     b.Property<string>("Complemento");
 
-                    b.Property<string>("Estado");
+                    b.Property<int>("EstadoId");
 
                     b.Property<string>("Numero");
 
@@ -178,6 +178,10 @@ namespace manangerapi.data.Migrations
                     b.Property<int>("UsuarioId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CidadeId");
+
+                    b.HasIndex("EstadoId");
 
                     b.HasIndex("UsuarioId")
                         .IsUnique();
@@ -445,6 +449,16 @@ namespace manangerapi.data.Migrations
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Endereco", b =>
                 {
+                    b.HasOne("ManangerAPI.Data.Entidades.Cidade", "Cidade")
+                        .WithMany()
+                        .HasForeignKey("CidadeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.Estado", "Estado")
+                        .WithMany()
+                        .HasForeignKey("EstadoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("ManangerAPI.Data.Entidades.Usuario", "Usuario")
                         .WithOne("Endereco")
                         .HasForeignKey("ManangerAPI.Data.Entidades.Endereco", "UsuarioId")

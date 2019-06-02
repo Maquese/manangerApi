@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace manangerapi.data.Migrations
 {
-    public partial class Imagem : Migration
+    public partial class Estado : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -230,8 +230,8 @@ namespace manangerapi.data.Migrations
                     Cep = table.Column<string>(nullable: true),
                     Bairro = table.Column<string>(nullable: true),
                     Rua = table.Column<string>(nullable: true),
-                    Cidade = table.Column<string>(nullable: true),
-                    Estado = table.Column<string>(nullable: true),
+                    CidadeId = table.Column<int>(nullable: false),
+                    EstadoId = table.Column<int>(nullable: false),
                     Numero = table.Column<string>(nullable: true),
                     Complemento = table.Column<string>(nullable: true),
                     UsuarioId = table.Column<int>(nullable: false)
@@ -239,6 +239,18 @@ namespace manangerapi.data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Endereco", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Endereco_Cidade_CidadeId",
+                        column: x => x.CidadeId,
+                        principalTable: "Cidade",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Endereco_Estado_EstadoId",
+                        column: x => x.EstadoId,
+                        principalTable: "Estado",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Endereco_Usuario_UsuarioId",
                         column: x => x.UsuarioId,
@@ -354,6 +366,16 @@ namespace manangerapi.data.Migrations
                 column: "CondicaoClinicaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Endereco_CidadeId",
+                table: "Endereco",
+                column: "CidadeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Endereco_EstadoId",
+                table: "Endereco",
+                column: "EstadoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Endereco_UsuarioId",
                 table: "Endereco",
                 column: "UsuarioId",
@@ -389,13 +411,7 @@ namespace manangerapi.data.Migrations
                 name: "BeneficiarioCondicaoClinica");
 
             migrationBuilder.DropTable(
-                name: "Cidade");
-
-            migrationBuilder.DropTable(
                 name: "Endereco");
-
-            migrationBuilder.DropTable(
-                name: "Estado");
 
             migrationBuilder.DropTable(
                 name: "Funcionalidade");
@@ -414,6 +430,12 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "CondicaoClinica");
+
+            migrationBuilder.DropTable(
+                name: "Cidade");
+
+            migrationBuilder.DropTable(
+                name: "Estado");
 
             migrationBuilder.DropTable(
                 name: "Perfil");

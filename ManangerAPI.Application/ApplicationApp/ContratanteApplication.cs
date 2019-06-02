@@ -11,9 +11,10 @@ namespace ManangerAPI.Application.ApplicationApp
     public partial class Application : IContratanteApplication
     {
         public void Cadastrar(string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
-                        string telefone,string comentarios,bool termos,string cidade,string estado,string bairro,string cep,
+                        string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
                         string numero,string complemento, string rua, string imagem)
         {
+
             Contratante contratante = new Contratante
             {   
                 Nome = nome,
@@ -30,8 +31,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Imagem = imagem,
                 Endereco = new Endereco 
                 {
-                    Estado = estado,
-                    Cidade = cidade,
+                    EstadoId = _estadoRepostorio.IdPorUf(estado),
+                    CidadeId = cidade,
                     Bairro = bairro,
                     Cep = cep,
                     Numero = numero,

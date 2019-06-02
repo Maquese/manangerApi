@@ -19,12 +19,12 @@ namespace ManangerAPI.Data.Repositorios
 
         public bool VerificaCpfJaCadastrado(string cfp)
         {
-            return _contexto.Usuario.Where(x => x.Cpf == cfp).First() != null;
+            return _contexto.Usuario.Where(x => x.Cpf == cfp).FirstOrDefault() != null;
         }
 
         public bool VerificaEmailJaCadastrado(string email)
         {
-            return _contexto.Usuario.Where(x => x.Email == email).First() != null;
+            return _contexto.Usuario.Where(x => x.Email == email).FirstOrDefault() != null;
         }
     }
 }

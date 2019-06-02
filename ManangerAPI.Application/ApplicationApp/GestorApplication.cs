@@ -33,7 +33,7 @@ namespace ManangerAPI.Application.ApplicationApp
         /// <param name="historicoProfissional"></param>
         /// <param name="certificacoes"></param>
         public void Cadastrar(string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, string cpf, 
-                              string telefone, string comentarios, bool termos, string cidade, string estado, string bairro, string cep, 
+                              string telefone, string comentarios, bool termos, int cidade, string estado, string bairro, string cep, 
                               string rua, string numero, string complemento, string historicoProfissional, string certificacoes)
         {
             Gestor gestor = new Gestor
@@ -52,8 +52,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Sexo = sexo,
                 Status = (int)StatusEnum.Ativo,
                 Endereco = new Endereco{
-                    Estado = estado,
-                    Cidade = cidade,
+                    EstadoId = _estadoRepostorio.IdPorUf(estado),
+                    CidadeId = cidade,
                     Bairro = bairro,
                     Rua = rua,
                     Numero = numero,

@@ -7,7 +7,7 @@ namespace ManangerAPI.Application.Contratos
     public interface IContratanteApplication
     {
          void Cadastrar(string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
-                        string telefone,string comentarios,bool termos,string cidade,string estado,string bairro,string cep,
+                        string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
                         string numero,string complemento, string rua, string imagem);///entre outras coisas
          IList<ContratanteDTO> ListarPorAnalise(bool analisado);   
 

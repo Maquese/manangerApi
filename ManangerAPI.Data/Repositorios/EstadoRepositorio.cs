@@ -16,5 +16,10 @@ namespace ManangerAPI.Data.Repositorios
         {
             return _contexto.Estado.Select(x => new KeyValuePair<string, string>(x.Uf, x.Nome)).ToList();
         }
+
+        public int IdPorUf(string uf)
+        {
+            return _contexto.Estado.Where(x => x.Uf == uf).FirstOrDefault().Id;
+        }
     }
 }
