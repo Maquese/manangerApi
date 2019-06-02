@@ -30,11 +30,9 @@ namespace ManangerAPI.Application.ApplicationApp
         /// <param name="rua"></param>
         /// <param name="numero"></param>
         /// <param name="complemento"></param>
-        /// <param name="historicoProfissional"></param>
-        /// <param name="certificacoes"></param>
-        public void Cadastrar(string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, string cpf, 
+        public void CadastrarGestor(string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, string cpf, 
                               string telefone, string comentarios, bool termos, int cidade, string estado, string bairro, string cep, 
-                              string rua, string numero, string complemento, string historicoProfissional, string certificacoes)
+                              string rua, string numero, string complemento, string curriculo)
         {
             Gestor gestor = new Gestor
             {
@@ -47,8 +45,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Telefone = telefone,
                 Comentario = comentarios,
                 Termos = termos,
-                CursosCertificacoes = certificacoes,
-                HistoricoProfissional = historicoProfissional,
+                Curriculo = curriculo,
                 Sexo = sexo,
                 Status = (int)StatusEnum.Ativo,
                 Endereco = new Endereco{
@@ -93,7 +90,7 @@ namespace ManangerAPI.Application.ApplicationApp
             var data = _gestorRepositorio.ListarPorAprovacao(aprovado);
 
             retorno = data.Select(x =>  new GestorDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento,
-                                                       HistoricoProfissional = x.HistoricoProfissional, CursosCertificacoes = x.CursosCertificacoes}).ToList();
+                                                       }).ToList();
 
             return retorno;
         }

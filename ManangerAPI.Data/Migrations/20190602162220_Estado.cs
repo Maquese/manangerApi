@@ -131,8 +131,7 @@ namespace manangerapi.data.Migrations
                     Analisado = table.Column<bool>(nullable: false),
                     Imagem = table.Column<string>(nullable: true),
                     Discriminator = table.Column<string>(nullable: false),
-                    HistoricoProfissional = table.Column<string>(nullable: true),
-                    CursosCertificacoes = table.Column<string>(nullable: true)
+                    Curriculo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

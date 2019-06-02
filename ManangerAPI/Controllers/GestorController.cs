@@ -20,13 +20,13 @@ namespace ManangerAPI.Controllers
         [Route("api/gestor/cadastrar")]
         public void Cadastrar(GestorRequest request)
         {
-            _gestorApplication.Cadastrar(request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,request.Cpf,
+            _gestorApplication.CadastrarGestor(request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,request.Cpf,
                                          request.Telefone,request.Comentario,request.Termos,request.Cidade,request.Estado,request.Estado,request.Cep,
-                                         request.Rua, request.Numero,request.Complemento,request.Historico,request.Cursos);
+                                         request.Rua, request.Numero,request.Complemento,request.Curriculo);
         }  
 
         [Route("api/gestor/listarnaoaprovados")]
-        [HttpPost]
+        [HttpPost]  
         public IList<GestorDTO> ListarNaoAprovados()
         {
             return _gestorApplication.ListarPorAprovacao(false);

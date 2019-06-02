@@ -392,9 +392,7 @@ namespace manangerapi.data.Migrations
                 {
                     b.HasBaseType("ManangerAPI.Data.Entidades.Usuario");
 
-                    b.Property<string>("CursosCertificacoes");
-
-                    b.Property<string>("HistoricoProfissional");
+                    b.Property<string>("Curriculo");
 
                     b.ToTable("Gestor");
 

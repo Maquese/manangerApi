@@ -15,9 +15,7 @@ namespace ManangerAPI.RequestsData
         public string Comentario { get; set; }
         public bool Termos { get; set; }
         public int Status { get; set; }   
-        public string Historico { get; set; }
-        public string Cursos { get; set; }
-
+        public string Curriculo { get; set; }
         public string Estado { get; set; }        
         public int Cidade { get; set; }
         public string Bairro { get; set; }

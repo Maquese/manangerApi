@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190602140711_Estado")]
+    [Migration("20190602162220_Estado")]
     partial class Estado
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -394,9 +394,7 @@ namespace manangerapi.data.Migrations
                 {
                     b.HasBaseType("ManangerAPI.Data.Entidades.Usuario");
 
-                    b.Property<string>("CursosCertificacoes");
-
-                    b.Property<string>("HistoricoProfissional");
+                    b.Property<string>("Curriculo");
 
                     b.ToTable("Gestor");
 
