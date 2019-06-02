@@ -47,7 +47,8 @@ namespace ManangerAPI.Application.ApplicationApp
             {
                 prestadorServico.PrestadorDeServicoCompetencia.Add(new PrestadorDeServicoCompetencia
                 {
-                    CompetenciaId = item
+                    CompetenciaId = item,
+                    Status = (int)StatusEnum.Ativo
                 });
             }
             _prestadorDeServicoRepositorio.Insert(prestadorServico);
