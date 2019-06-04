@@ -11,8 +11,10 @@ namespace ManangerAPI.Data.Entidades
         public DateTime DataNascimento { get; set; }
         public int Sexo { get; set; }
         public string Telefone { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
+        public int CidadeId { get; set; }
+        public int EstadoId { get; set; }
+        public virtual Cidade Cidade { get; set; }
+        public virtual Estado Estado { get; set; }
         public string Rua { get; set; }
         public string Bairro { get; set; }
         public string Cep { get; set; }

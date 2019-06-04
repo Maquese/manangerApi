@@ -22,7 +22,7 @@ namespace ManangerAPI.Controllers
         {
             _gestorApplication.CadastrarGestor(request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,request.Cpf,
                                          request.Telefone,request.Comentario,request.Termos,request.Cidade,request.Estado,request.Estado,request.Cep,
-                                         request.Rua, request.Numero,request.Complemento,request.Curriculo);
+                                         request.Rua, request.Numero,request.Complemento,request.Curriculo, request.Imagem);
         }  
 
         [Route("api/gestor/listarnaoaprovados")]

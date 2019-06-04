@@ -32,10 +32,11 @@ namespace ManangerAPI.Application.ApplicationApp
         /// <param name="complemento"></param>
         public void CadastrarGestor(string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, string cpf, 
                               string telefone, string comentarios, bool termos, int cidade, string estado, string bairro, string cep, 
-                              string rua, string numero, string complemento, string curriculo)
+                              string rua, string numero, string complemento, string curriculo, string imagem)
         {
             Gestor gestor = new Gestor
             {
+                Imagem  = imagem,
                 Nome = nome,
                 Login = login,
                 Senha = senha,

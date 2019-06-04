@@ -23,5 +23,6 @@ namespace ManangerAPI.RequestsData
         public string Rua { get; set; }
         public string Complemento { get; set; }
         public string Cep { get; set; }
+        public string Imagem { get; set; }
     }
 }

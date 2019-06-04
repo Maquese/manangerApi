@@ -12,9 +12,10 @@ namespace ManangerAPI.Application.ApplicationApp
     {
         public void Cadastrar(string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, string cpf, 
                               string telefone, int cidade, string estado, string bairro, string cep, string rua, string numero, 
-                              string complemento, IList<int> competencias, string comentario, bool termos)
+                              string complemento, IList<int> competencias, string comentario, bool termos, string imagem)
         {
             PrestadorDeServico prestadorServico = new PrestadorDeServico{
+                Imagem = imagem,
                 Nome = nome,
                 Login = login,
                 Senha = senha,

@@ -11,8 +11,8 @@ namespace ManangerAPI.Application.ApplicationApp
     public partial class Application : IBeneficiarioApplication
     {
         public void Adicionar(int idContratante, string nome, DateTime dataNascimento, int sexo, string telefone, string estado,
-                              string cidade, string bairro, string rua, string numero, string cep, string complemento,
-                              string condicoesClinicas, bool termos)
+                              int cidade, string bairro, string rua, string numero, string cep, string complemento,
+                              IList<int> condicoesClinicas, bool termos)
         {
             var Beneficiario = new Beneficiario
             {
@@ -20,25 +20,31 @@ namespace ManangerAPI.Application.ApplicationApp
                 DataNascimento = dataNascimento,
                 Sexo = sexo,
                 Telefone = telefone,
-                Estado = estado,
-                Cidade = cidade,
+                EstadoId = _estadoRepostorio.IdPorUf(estado),
+                CidadeId =  cidade,
                 Bairro = bairro,
                 Rua = rua,
+                BeneficiarioCondicaoClinica = new List<BeneficiarioCondicaoClinica>(),
                 Numero = numero,
                 Cep = cep,
                 Complemento = complemento,
-                //CondicoesClinicas = condicoesClinicas,
                 TermoDeResponsalidade = termos,
                 Status = (int)StatusEnum.Ativo,
                 ContratanteId = idContratante
             };
+
+            foreach (var item in condicoesClinicas)
+            {
+                Beneficiario.BeneficiarioCondicaoClinica.Add(new BeneficiarioCondicaoClinica{ CondicaoClinicaId = item } );
+            }
+
             _beneficiarioRepositorio.Insert(Beneficiario);
             _beneficiarioRepositorio.Save();
         }
 
         public void Editar(int idBeneficiario, string nome, DateTime dataNascimento, int sexo, string telefone, string estado,
-                              string cidade, string bairro, string rua, string numero, string cep, string complemento,
-                              string condicoesClinicas, bool termos)
+                              int cidade, string bairro, string rua, string numero, string cep, string complemento,
+                              IList<int> condicoesClinicas, bool termos)
         {
             
              var beneficiario = _beneficiarioRepositorio.Encontrar(idBeneficiario);
@@ -46,15 +52,39 @@ namespace ManangerAPI.Application.ApplicationApp
               beneficiario.DataNascimento = dataNascimento;
               beneficiario.Sexo = sexo;
               beneficiario.Telefone = telefone;
-              beneficiario.Estado = estado;
-              beneficiario.Cidade = cidade;
+              beneficiario.EstadoId = _estadoRepostorio.IdPorUf(estado);
+              beneficiario.CidadeId = cidade;
               beneficiario.Bairro = bairro;
               beneficiario.Rua = rua;
               beneficiario.Numero = numero;
               beneficiario.Cep = cep;
               beneficiario.Complemento = complemento;
-              //beneficiario.CondicoesClinicas = condicoesClinicas;
               beneficiario.TermoDeResponsalidade = termos;
+              
+              var condicoes = _beneficiarioCondicaoClinicaRepositorio.EncontrarPorBeneficiarioId(beneficiario.Id);
+
+              foreach (var item in condicoes)
+              {
+                  item.Status = (int)StatusEnum.Inativo;                
+              }
+
+              foreach (var item in condicoesClinicas)
+              {
+                  var condicao = condicoes.Where(x => x.CondicaoClinicaId == item).FirstOrDefault();
+
+                  if(condicao == null)
+                  {
+                      _beneficiarioCondicaoClinicaRepositorio.Insert(new BeneficiarioCondicaoClinica
+                                                                        { 
+                                                                            CondicaoClinicaId = item, 
+                                                                            BeneficiarioId = beneficiario.Id,
+                                                                            Status = (int)StatusEnum.Ativo
+                                                                             });
+                  }else{
+                      condicao.Status = (int)StatusEnum.Ativo;
+                  }
+              }
+
               _beneficiarioRepositorio.Update(beneficiario);
               _beneficiarioRepositorio.Save();
         }
@@ -64,15 +94,15 @@ namespace ManangerAPI.Application.ApplicationApp
             var beneficiario =  _beneficiarioRepositorio.Encontrar(idBeneficiario);
             return new BeneficiarioDTO {
                Nome = beneficiario.Nome,
-               Estado = beneficiario.Estado,
-               Cidade = beneficiario.Cidade,
+               Estado = beneficiario.EstadoId,
+               Cidade = beneficiario.CidadeId,
                Bairro = beneficiario.Bairro,
                Rua = beneficiario.Rua,
                Numero = beneficiario.Numero,
                Cep = beneficiario.Cep,
                Complemento = beneficiario.Complemento,
                DataNascimento = beneficiario.DataNascimento,
-               //CondicoesClinicas = beneficiario.CondicoesClinicas,
+               CondicoesClinicas = _beneficiarioCondicaoClinicaRepositorio.EncontrarPorBeneficiarioId(idBeneficiario).Select(x => x.CondicaoClinicaId).ToList(),
                TermoDeResponsalidade = beneficiario.TermoDeResponsalidade,
                Telefone = beneficiario.Telefone,
                Sexo = beneficiario.Sexo,
@@ -89,7 +119,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Nome = x.Nome,
                 Id = x.Id,
                 DataNascimento = x.DataNascimento,
-                //CondicoesClinicas = x.CondicoesClinicas,
+                Cidade = _cidadeRepositorio.Encontrar(x.CidadeId).Nome,
+                Bairro = x.Bairro,
                 Sexo = x.Sexo
             }).ToList();
 
