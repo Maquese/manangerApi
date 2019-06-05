@@ -14,7 +14,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<BeneficiarioCondicaoClinica> EncontrarPorBeneficiarioId(int id)
         {
-           return _contexto.BeneficiarioCondicaoClinica.Where(x => x.BeneficiarioId == id).ToList();
+           return _contexto.BeneficiarioCondicaoClinica.Where(x => x.BeneficiarioId == id && x.Status == 1).ToList();
         }
     }
 }
