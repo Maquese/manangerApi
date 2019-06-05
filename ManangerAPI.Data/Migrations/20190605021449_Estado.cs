@@ -199,8 +199,8 @@ namespace manangerapi.data.Migrations
                     DataNascimento = table.Column<DateTime>(nullable: false),
                     Sexo = table.Column<int>(nullable: false),
                     Telefone = table.Column<string>(nullable: true),
-                    Cidade = table.Column<string>(nullable: true),
-                    Estado = table.Column<string>(nullable: true),
+                    CidadeId = table.Column<int>(nullable: false),
+                    EstadoId = table.Column<int>(nullable: false),
                     Rua = table.Column<string>(nullable: true),
                     Bairro = table.Column<string>(nullable: true),
                     Cep = table.Column<string>(nullable: true),
@@ -212,9 +212,21 @@ namespace manangerapi.data.Migrations
                 {
                     table.PrimaryKey("PK_Beneficiario", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Beneficiario_Cidade_CidadeId",
+                        column: x => x.CidadeId,
+                        principalTable: "Cidade",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Beneficiario_Usuario_ContratanteId",
                         column: x => x.ContratanteId,
                         principalTable: "Usuario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Beneficiario_Estado_EstadoId",
+                        column: x => x.EstadoId,
+                        principalTable: "Estado",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -350,9 +362,19 @@ namespace manangerapi.data.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Beneficiario_CidadeId",
+                table: "Beneficiario",
+                column: "CidadeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Beneficiario_ContratanteId",
                 table: "Beneficiario",
                 column: "ContratanteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Beneficiario_EstadoId",
+                table: "Beneficiario",
+                column: "EstadoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BeneficiarioCondicaoClinica_BeneficiarioId",
@@ -431,12 +453,6 @@ namespace manangerapi.data.Migrations
                 name: "CondicaoClinica");
 
             migrationBuilder.DropTable(
-                name: "Cidade");
-
-            migrationBuilder.DropTable(
-                name: "Estado");
-
-            migrationBuilder.DropTable(
                 name: "Perfil");
 
             migrationBuilder.DropTable(
@@ -446,7 +462,13 @@ namespace manangerapi.data.Migrations
                 name: "Competencia");
 
             migrationBuilder.DropTable(
+                name: "Cidade");
+
+            migrationBuilder.DropTable(
                 name: "Usuario");
+
+            migrationBuilder.DropTable(
+                name: "Estado");
         }
     }
 }

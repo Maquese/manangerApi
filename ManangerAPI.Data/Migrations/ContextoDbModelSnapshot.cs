@@ -50,7 +50,7 @@ namespace manangerapi.data.Migrations
 
                     b.Property<string>("Cep");
 
-                    b.Property<string>("Cidade");
+                    b.Property<int>("CidadeId");
 
                     b.Property<string>("Complemento");
 
@@ -58,7 +58,7 @@ namespace manangerapi.data.Migrations
 
                     b.Property<DateTime>("DataNascimento");
 
-                    b.Property<string>("Estado");
+                    b.Property<int>("EstadoId");
 
                     b.Property<string>("Nome");
 
@@ -76,7 +76,11 @@ namespace manangerapi.data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CidadeId");
+
                     b.HasIndex("ContratanteId");
+
+                    b.HasIndex("EstadoId");
 
                     b.ToTable("Beneficiario");
                 });
@@ -424,9 +428,19 @@ namespace manangerapi.data.Migrations
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Beneficiario", b =>
                 {
+                    b.HasOne("ManangerAPI.Data.Entidades.Cidade", "Cidade")
+                        .WithMany()
+                        .HasForeignKey("CidadeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("ManangerAPI.Data.Entidades.Contratante", "Usuario")
                         .WithMany("Beneficiarios")
                         .HasForeignKey("ContratanteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.Estado", "Estado")
+                        .WithMany()
+                        .HasForeignKey("EstadoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
