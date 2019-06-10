@@ -35,7 +35,7 @@ namespace ManangerAPI.Application.ApplicationApp
 
             foreach (var item in condicoesClinicas)
             {
-                Beneficiario.BeneficiarioCondicaoClinica.Add(new BeneficiarioCondicaoClinica{ CondicaoClinicaId = item } );
+                Beneficiario.BeneficiarioCondicaoClinica.Add(new BeneficiarioCondicaoClinica{ CondicaoClinicaId = item, Status = (int)StatusEnum.Ativo } );
             }
 
             _beneficiarioRepositorio.Insert(Beneficiario);
@@ -92,9 +92,9 @@ namespace ManangerAPI.Application.ApplicationApp
         public BeneficiarioDTO EncontrarPorId(int idBeneficiario)
         {
             var beneficiario =  _beneficiarioRepositorio.Encontrar(idBeneficiario);
-            return new BeneficiarioDTO {
+            var retorno = new BeneficiarioDTO {
                Nome = beneficiario.Nome,
-               Estado = beneficiario.EstadoId,
+               Estado = _estadoRepostorio.Encontrar(beneficiario.EstadoId).Uf,
                Cidade = beneficiario.CidadeId,
                Bairro = beneficiario.Bairro,
                Rua = beneficiario.Rua,
@@ -109,6 +109,7 @@ namespace ManangerAPI.Application.ApplicationApp
                Id = beneficiario.Id,
                ContratanteId = beneficiario.ContratanteId
                };
+            return retorno;
         }
 
         public IList<BeneficiarioListaDTO> ListarPorContratante(int idContratante)

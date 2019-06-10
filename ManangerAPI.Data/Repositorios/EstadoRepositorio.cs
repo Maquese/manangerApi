@@ -14,7 +14,10 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<KeyValuePair<string, string>> GerarDropDown()
         {
-            return _contexto.Estado.Select(x => new KeyValuePair<string, string>(x.Uf, x.Nome)).ToList();
+             var retorno = new List<KeyValuePair<string,string>>();
+            retorno.Add(new KeyValuePair<string, string>("0","Selecione"));
+            retorno.AddRange(_contexto.Estado.Select(x => new KeyValuePair<string, string>(x.Uf, x.Nome)).ToList());
+            return retorno;
         }
 
         public int IdPorUf(string uf)

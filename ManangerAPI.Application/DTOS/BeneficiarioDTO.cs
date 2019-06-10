@@ -12,7 +12,7 @@ namespace ManangerAPI.Application.DTOS
         public int Sexo { get; set; }
         public string Telefone { get; set; }
         public int Cidade { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
         public string Rua { get; set; }
         public string Bairro { get; set; }
         public string Cep { get; set; }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190605021449_Estado")]
+    [Migration("20190610184521_Estado")]
     partial class Estado
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
