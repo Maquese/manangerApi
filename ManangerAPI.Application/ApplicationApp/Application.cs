@@ -21,6 +21,7 @@ namespace ManangerAPI.Application.ApplicationApp
         private readonly ICondicaoClinicaRepositorio _condicaoClinicaRepositorio;
         private readonly IBeneficiarioCondicaoClinicaRepositorio _beneficiarioCondicaoClinicaRepositorio;
         private readonly IPrestadorDeServicoCompetenciaRepositorio _prestadorDeServicoCompetenciaRepositorio;
+        private readonly IBeneficiarioMedicamentoRepositorio _beneficiarioMedicamentoRepositorio;
 
         public Application(IUsuarioRepositorio usuarioRepositorio, IAdministradorRepositorio administradorRepositorio, 
                            IContratanteRepositorio contratanteRepositorio, IPrestadorDeServicoRepositorio prestadorDeServicoRepositorio,
@@ -30,7 +31,8 @@ namespace ManangerAPI.Application.ApplicationApp
                            IEstadoRepositorio estadoRepositorio, ICidadeRepositorio cidadeRepositorio,
                            ICompetenciaRepositorio competenciaRepositorio, ICondicaoClinicaRepositorio condicaoClinicaRepositorio,
                            IBeneficiarioCondicaoClinicaRepositorio beneficiarioCondicaoClinicaRepositorio,
-                           IPrestadorDeServicoCompetenciaRepositorio prestadorDeServicoCompetenciaRepositorio)
+                           IPrestadorDeServicoCompetenciaRepositorio prestadorDeServicoCompetenciaRepositorio, 
+                           IBeneficiarioMedicamentoRepositorio beneficiarioMedicamentoRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
             _contratanteRepositorio = contratanteRepositorio;
@@ -48,6 +50,7 @@ namespace ManangerAPI.Application.ApplicationApp
             _condicaoClinicaRepositorio = condicaoClinicaRepositorio;
             _beneficiarioCondicaoClinicaRepositorio = beneficiarioCondicaoClinicaRepositorio;
             _prestadorDeServicoCompetenciaRepositorio = prestadorDeServicoCompetenciaRepositorio;
+            _beneficiarioMedicamentoRepositorio = beneficiarioMedicamentoRepositorio;
         }
     }
 }

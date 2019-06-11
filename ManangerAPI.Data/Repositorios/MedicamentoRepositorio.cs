@@ -12,6 +12,14 @@ namespace ManangerAPI.Data.Repositorios
         {
         }
 
+        public IList<KeyValuePair<int, string>> GerarDropDown()
+        {
+             var retorno = new List<KeyValuePair<int,string>>();
+            retorno.Add(new KeyValuePair<int, string>(0,"Selecione"));
+            retorno.AddRange(_contexto.Medicamento.Select(x => new KeyValuePair<int, string>(x.Id, x.Nome)).ToList());
+            return retorno;
+        }
+
         public IList<Medicamento> ListarPorBeneficiario(int idBeneficiario)
         {
             return _contexto.Medicamento.Where(x => x.BeneficiarioId == idBeneficiario && x.Status == 1).ToList();

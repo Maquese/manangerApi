@@ -43,5 +43,12 @@ namespace ManangerAPI.Controllers
            return _idropDownApplication.DadosCondicaoClinica();
         }
 
+        [HttpPost]
+        [Route("api/dropdown/medicamentos")]
+        public IList<KeyValuePair<int,string>> Medicamentos()
+        {
+           return _idropDownApplication.DadosMedicamento();
+        }
+
     }
 }
