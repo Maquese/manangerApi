@@ -15,6 +15,7 @@ namespace ManangerAPI.Application.Contratos
 
          ContratanteDTO DetalharContratante(int idContratante);   
 
-          IList<ContratanteDTO> ListarNaoAnalisadosEAprovados();     
+          IList<ContratanteDTO> ListarNaoAnalisadosEAprovados();    
+          UsuarioEditDTO BuscarContratantePorId(int id); 
     }
 }

@@ -42,5 +42,12 @@ namespace ManangerAPI.Controllers
             return _contratanteApplication.ListarPorAprovacao(false);
         }
 
+        [Route("api/contratante/buscar")]
+        [HttpPost]
+        public UsuarioEditDTO Buscar(BaseRequest request)
+        {
+            return _contratanteApplication.BuscarContratantePorId(request.Id);
+        }
+
     }
 }   

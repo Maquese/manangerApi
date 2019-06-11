@@ -10,6 +10,35 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IPrestadorDeServicoApplication
     {
+        public UsuarioEditDTO BuscarPrestadorPorId(int id)
+        {
+              var prestador = _prestadorDeServicoRepositorio.Encontrar(id);
+            var endereco = _enderecoRepositorio.EncontrarPorUsuario(id);
+            var retorno = new UsuarioEditDTO{
+                Id  = prestador.Id,
+                Nome = prestador.Nome,
+                DataNascimento = prestador.DataNascimento,
+                Login = prestador.Login,
+                Termos = prestador.Termos,
+                Sexo = prestador.Sexo,
+                Imagem = prestador.Imagem,
+                Comentario = prestador.Comentario,
+                Senha = prestador.Senha,
+                Telefone = prestador.Telefone,
+                Estado = _estadoRepostorio.Encontrar(endereco.EstadoId).Uf,
+                Cidade = endereco.CidadeId,
+                Bairro = endereco.Bairro,
+                Cep = endereco.Cep,
+                Complemento = endereco.Complemento,
+                Cpf = prestador.Cpf,
+                Email = prestador.Email,
+                Numero = endereco.Numero,
+                Rua = endereco.Rua,
+                Competencias = _prestadorDeServicoCompetenciaRepositorio.EncontrarPorPrestadorDeServicoId(prestador.Id).Select(x => x.CompetenciaId).ToList()
+            };
+            return retorno;
+        }
+
         public void Cadastrar(string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, string cpf, 
                               string telefone, int cidade, string estado, string bairro, string cep, string rua, string numero, 
                               string complemento, IList<int> competencias, string comentario, bool termos, string imagem)

@@ -15,5 +15,7 @@ namespace ManangerAPI.Application.Contratos
         IList<GestorDTO> ListarNaoAnalisadosEAprovados();
 
          IList<GestorDTO> ListarPorAprovacao(bool aprovado); 
+
+         UsuarioEditDTO EncontrarGestorPorId(int id);
     }
 }

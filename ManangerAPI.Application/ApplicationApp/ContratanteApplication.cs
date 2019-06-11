@@ -10,6 +10,34 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IContratanteApplication
     {
+        public UsuarioEditDTO BuscarContratantePorId(int id)
+        {
+            var contratante = _contratanteRepositorio.Encontrar(id);
+            var endereco = _enderecoRepositorio.EncontrarPorUsuario(id);
+            var retorno = new UsuarioEditDTO{
+                Id  = contratante.Id,
+                Nome = contratante.Nome,
+                DataNascimento = contratante.DataNascimento,
+                Login = contratante.Login,
+                Termos = contratante.Termos,
+                Sexo = contratante.Sexo,
+                Imagem = contratante.Imagem,
+                Comentario = contratante.Comentario,
+                Senha = contratante.Senha,
+                Telefone = contratante.Telefone,
+                Estado = _estadoRepostorio.Encontrar(endereco.EstadoId).Uf,
+                Cidade = endereco.CidadeId,
+                Bairro = endereco.Bairro,
+                Cep = endereco.Cep,
+                Complemento = endereco.Complemento,
+                Cpf = contratante.Cpf,
+                Email = contratante.Email,
+                Numero = endereco.Numero,
+                Rua = endereco.Rua
+            };
+            return retorno;
+        }
+
         public void Cadastrar(string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
                         string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
                         string numero,string complemento, string rua, string imagem)

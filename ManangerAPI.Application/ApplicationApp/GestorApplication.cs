@@ -65,6 +65,35 @@ namespace ManangerAPI.Application.ApplicationApp
             _gestorRepositorio.Save();
         }
 
+        public UsuarioEditDTO EncontrarGestorPorId(int id)
+        {
+             var goestor = _gestorRepositorio.Encontrar(id);
+            var endereco = _enderecoRepositorio.EncontrarPorUsuario(id);
+            var retorno = new UsuarioEditDTO{
+                Id  = goestor.Id,
+                Nome = goestor.Nome,
+                DataNascimento = goestor.DataNascimento,
+                Login = goestor.Login,
+                Termos = goestor.Termos,
+                Sexo = goestor.Sexo,
+                Imagem = goestor.Imagem,
+                Comentario = goestor.Comentario,
+                Senha = goestor.Senha,
+                Telefone = goestor.Telefone,
+                Estado = _estadoRepostorio.Encontrar(endereco.EstadoId).Uf,
+                Cidade = endereco.CidadeId,
+                Bairro = endereco.Bairro,
+                Cep = endereco.Cep,
+                Complemento = endereco.Complemento,
+                Cpf = goestor.Cpf,
+                Email = goestor.Email,
+                Numero = endereco.Numero,
+                Rua = endereco.Rua,
+                Curriculo = goestor.Curriculo
+            };
+            return retorno;
+        }
+
         IList<GestorDTO> IGestorApplication.ListarNaoAnalisadosEAprovados()
         {
             IList<GestorDTO> retorno = null;
