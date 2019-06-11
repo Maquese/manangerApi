@@ -23,6 +23,6 @@ namespace ManangerAPI.Data.Entidades
         public bool TermoDeResponsalidade { get; set; }
         public string Numero { get; set; }
 
-        public virtual IList<Medicamento> Medicamentos {get;set;}
+        public virtual IList<BeneficiarioMedicamento> Medicamentos {get;set;}
     }
 }

@@ -8,9 +8,9 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IMedicamentoApplication
     {
-        public void Cadastrar(int idBeneficiario, string nome, string contraIndicacao, string bula, string indicacao, int tipo, int viaDeUso, string efeitoColateral)
+        public void Cadastrar( string nome, string contraIndicacao, string bula, string indicacao, int tipo, int viaDeUso, string efeitoColateral)
         {
-            var Medicamento = new Medicamento{BeneficiarioId = idBeneficiario, Nome = nome, ContraIndicacao = contraIndicacao, Bula = bula, 
+            var Medicamento = new Medicamento{ Nome = nome, ContraIndicacao = contraIndicacao, Bula = bula, 
                                               Indicao = indicacao, Tipo = tipo, ViaDeUso = viaDeUso, EfeitoColateral = efeitoColateral , Status = (int)StatusEnum.Ativo };
             _medicamentoRepositorio.Insert(Medicamento);
             _medicamentoRepositorio.Save();
@@ -49,9 +49,9 @@ namespace ManangerAPI.Application.ApplicationApp
             _medicamentoRepositorio.Save();
         }
 
-        public IList<MedicamentoListaDTO> Listar(int idBeneficiario)
+        public IList<MedicamentoListaDTO> Listar()
         {
-            return _medicamentoRepositorio.ListarPorBeneficiario(idBeneficiario).Select(x => new MedicamentoListaDTO
+            return _medicamentoRepositorio.Listar().Select(x => new MedicamentoListaDTO
             {
                 Id = x.Id,
                 Nome = x.Nome

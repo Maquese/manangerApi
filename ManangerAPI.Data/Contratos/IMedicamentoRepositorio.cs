@@ -5,7 +5,7 @@ namespace ManangerAPI.Data.Contratos
 {
     public interface IMedicamentoRepositorio : IRepositorio<Medicamento>
     {
-        IList<Medicamento> ListarPorBeneficiario(int idBeneficiario); 
+        //IList<Medicamento> ListarPorBeneficiario(int idBeneficiario); 
 
         IList<KeyValuePair<int,string>> GerarDropDown();
     }

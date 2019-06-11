@@ -19,7 +19,7 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public void Cadastrar(MedicamentoRequest request)
         {
-            _medicamentoApplication.Cadastrar(request.IdBeneficiario,request.Nome,request.ContraIndicacao,request.Bula,
+            _medicamentoApplication.Cadastrar(request.Nome,request.ContraIndicacao,request.Bula,
                                               request.Indicao, request.Tipo, request.ViaDeUso,request.EfeitoColateral);
         }      
 
@@ -42,7 +42,7 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public IList<MedicamentoListaDTO> Listar(BaseRequest request)
         {
-            return _medicamentoApplication.Listar(request.Id);
+            return _medicamentoApplication.Listar();
         }
 
         [Route("api/medicamento/detalhar")]

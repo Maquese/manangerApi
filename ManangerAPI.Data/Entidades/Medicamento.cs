@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ManangerAPI.Data.Entidades
 {
     public class Medicamento : EntidadeBase
@@ -9,7 +11,6 @@ namespace ManangerAPI.Data.Entidades
         public int Tipo { get; set; }///comprimido, gota, efervece
         public int ViaDeUso { get; set; }///oral, etc
         public string EfeitoColateral  { get; set; }
-        public int BeneficiarioId { get; set; }
-        public virtual Beneficiario Beneficiario { get; set; }
+        public virtual IList<BeneficiarioMedicamento> BeneficiarioMedicamento { get; set; }
     }
 }

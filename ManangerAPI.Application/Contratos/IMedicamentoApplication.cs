@@ -5,13 +5,13 @@ namespace ManangerAPI.Application.Contratos
 {
     public interface IMedicamentoApplication
     {
-         void Cadastrar(int idBeneficiario, string nome,string contraIndicacao, string bula, string indicacao, int tipo, int viaDeUso, string efeitoColateral);
+         void Cadastrar( string nome,string contraIndicacao, string bula, string indicacao, int tipo, int viaDeUso, string efeitoColateral);
 
          void Editar(int idMedicamento,string nome,string contraIndicacao, string bula, string indicacao, int tipo, int viaDeUso, string efeitoColateral);
 
          void Remover(int idMedicamento);
 
-         IList<MedicamentoListaDTO> Listar(int idBeneficiario);
+         IList<MedicamentoListaDTO> Listar();
 
          MedicamentoDTO Detalhar(int idBeneficiario);
          
