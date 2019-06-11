@@ -49,5 +49,7 @@ namespace ManangerAPI.Controllers
             return _contratanteApplication.BuscarContratantePorId(request.Id);
         }
 
+        
+
     }
 }   

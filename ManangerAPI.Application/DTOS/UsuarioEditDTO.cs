@@ -13,7 +13,6 @@ namespace ManangerAPI.Application.DTOS
         public DateTime DataNascimento { get; set; } 
         public int Sexo { get; set; }
         public string Cpf { get; set; }
-
         public string Telefone { get; set; }
         public string Comentario { get; set; }
         public bool Termos { get; set; }

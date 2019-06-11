@@ -79,6 +79,38 @@ namespace ManangerAPI.Application.ApplicationApp
             throw new System.NotImplementedException();
         }
 
+        public void EditarContratante(int id, string nome, string login, string senha, string email, DateTime dataNascimento, int sexo,
+                                      string cpf, string telefone, string comentarios, bool termos, int cidade, string estado, 
+                                      string bairro, string cep, string numero, string complemento, string rua, string imagem)
+        {
+            var contratante = _contratanteRepositorio.Encontrar(id);
+            contratante.Nome = nome;
+            contratante.Login = login;
+            contratante.Senha = senha;
+            contratante.Email = email;
+            contratante.DataNascimento = dataNascimento;
+            contratante.Sexo = sexo;
+            contratante.Cpf = cpf;
+            contratante.Telefone = telefone;
+            contratante.Comentario = comentarios;
+            contratante.Termos = termos;
+            contratante.Imagem = imagem;
+
+            var endereco = _enderecoRepositorio.EncontrarPorUsuario(id);
+            endereco.EstadoId = _estadoRepostorio.IdPorUf(estado);
+            endereco.CidadeId = cidade;
+            endereco.Bairro = bairro;
+            endereco.Cep = cep;
+            endereco.Numero = numero;
+            endereco.Complemento = complemento;
+            endereco.Rua = rua;
+            
+            _contratanteRepositorio.Update(contratante);
+            _enderecoRepositorio.Update(endereco);
+            _contratanteRepositorio.Save();
+
+        }
+
         public IList<ContratanteDTO> ListarNaoAnalisadosEAprovados()
         {
             IList<ContratanteDTO>  retorno = null;

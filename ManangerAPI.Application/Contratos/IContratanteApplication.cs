@@ -9,6 +9,9 @@ namespace ManangerAPI.Application.Contratos
          void Cadastrar(string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
                         string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
                         string numero,string complemento, string rua, string imagem);///entre outras coisas
+        void EditarContratante(int id, string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
+                        string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
+                        string numero,string complemento, string rua, string imagem);///entre outras coisas
          IList<ContratanteDTO> ListarPorAnalise(bool analisado);   
 
           IList<ContratanteDTO> ListarPorAprovacao(bool aprovado); 
