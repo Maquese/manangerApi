@@ -14,6 +14,7 @@ insert into Funcionalidade
 (Status,Nome,Path,PerfilId)
 values(1,'board','/board',1),-- admin
 (1,'analise','/analiseCadastro',1),
+(1,'medicamentos','/medicamentos',1),
 
 (1,'board','/board',2),--cotratante
 (1,'perfil','/perfil',2),
