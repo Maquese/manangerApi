@@ -65,6 +65,39 @@ namespace ManangerAPI.Application.ApplicationApp
             _gestorRepositorio.Save();
         }
 
+        public void EditarGestor(int id, string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, 
+                                 string cpf, string telefone, string comentarios, bool termos, int cidade, string estado, string bairro, 
+                                 string cep, string rua, string numero, string complemento, string curriculo, string imagem)
+        {
+            var gestor = _gestorRepositorio.Encontrar(id);
+            gestor.Nome = nome;
+            gestor.Login = login;
+            gestor.Senha = senha;
+            gestor.Email = email;
+            gestor.DataNascimento = dataNascimento;
+            gestor.Sexo = sexo;
+            gestor.Cpf = cpf;
+            gestor.Telefone = telefone;
+            gestor.Comentario = comentarios;
+            gestor.Termos = termos;
+            gestor.Curriculo = curriculo;
+            gestor.Imagem = imagem;
+
+            var endereco = _enderecoRepositorio.EncontrarPorUsuario(id);
+            endereco.EstadoId = _estadoRepostorio.IdPorUf(estado);
+            endereco.CidadeId = cidade;
+            endereco.Bairro = bairro;
+            endereco.Cep  = cep;
+            endereco.Rua = rua;
+            endereco.Numero = numero;
+            endereco.Complemento = complemento;
+            
+            _gestorRepositorio.Update(gestor);
+            _enderecoRepositorio.Update(endereco);
+            _gestorRepositorio.Save();
+
+        }
+
         public UsuarioEditDTO EncontrarGestorPorId(int id)
         {
              var goestor = _gestorRepositorio.Encontrar(id);

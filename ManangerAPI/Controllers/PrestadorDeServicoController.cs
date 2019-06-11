@@ -25,6 +25,7 @@ namespace ManangerAPI.Controllers
                                                      request.Numero,request.Complemento,request.Competencias,request.Comentario,request.Termos, request.Imagem);
         }
 
+        
         [Route("api/prestadordeservico/listarnaoaprovados")]
         [HttpPost]
         public IList<PrestadorDeServicoDTO> ListarNaoAprovados()

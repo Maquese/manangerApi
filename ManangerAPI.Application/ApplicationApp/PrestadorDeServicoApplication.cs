@@ -85,6 +85,64 @@ namespace ManangerAPI.Application.ApplicationApp
             _prestadorDeServicoRepositorio.Save();
         }
 
+        public void EditarPrestadorDeServico(int id, string nome, string login, string senha, string email, DateTime dataNascimento, 
+                                             int sexo, string cpf, string telefone, int cidade, string estado, string bairro, string cep,
+                                             string rua, string numero, string complemento, IList<int> competencias, string comentario,
+                                             bool termos, string imagem)
+        {
+            var prestadorDeServico = _prestadorDeServicoRepositorio.Encontrar(id);
+            prestadorDeServico.Nome = nome;
+            prestadorDeServico.Login = login;
+            prestadorDeServico.Senha = senha;
+            prestadorDeServico.Email = email;
+            prestadorDeServico.DataNascimento = dataNascimento;
+            prestadorDeServico.Sexo = sexo;
+            prestadorDeServico.Cpf = cpf;
+            prestadorDeServico.Telefone = telefone;
+            prestadorDeServico.Comentario = comentario;
+            prestadorDeServico.Termos = termos;
+            prestadorDeServico.Imagem = imagem;
+
+            var endereco = _enderecoRepositorio.EncontrarPorUsuario(id);
+            endereco.EstadoId = _estadoRepostorio.IdPorUf(estado);
+            endereco.CidadeId = cidade;
+            endereco.Bairro = bairro;
+            endereco.Cep  = cep;
+            endereco.Rua = rua;
+            endereco.Numero = numero;
+            endereco.Complemento = complemento;
+
+
+            var prestadorCompetencia = _prestadorDeServicoCompetenciaRepositorio.EncontrarPorPrestadorDeServicoId(id);
+
+              foreach (var item in prestadorCompetencia)
+              {
+                  item.Status = (int)StatusEnum.Inativo;                
+              }
+
+              foreach (var item in competencias)
+              {
+                  var condicao = prestadorCompetencia.Where(x => x.CompetenciaId == item).FirstOrDefault();
+
+                  if(condicao == null)
+                  {
+                      _prestadorDeServicoCompetenciaRepositorio.Insert(new PrestadorDeServicoCompetencia
+                                                                        { 
+                                                                            CompetenciaId = item, 
+                                                                            PrestadorDeServicoId = id,
+                                                                            Status = (int)StatusEnum.Ativo
+                                                                             });
+                  }else{
+                      condicao.Status = (int)StatusEnum.Ativo;
+                  }
+              }
+              _prestadorDeServicoRepositorio.Update(prestadorDeServico);
+              _enderecoRepositorio.Update(endereco);
+              _prestadorDeServicoCompetenciaRepositorio.Save();
+
+
+        }
+
         IList<PrestadorDeServicoDTO> IPrestadorDeServicoApplication.ListarNaoAnalisadosEAprovados()
         {
             throw new NotImplementedException();

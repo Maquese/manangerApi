@@ -23,7 +23,16 @@ namespace ManangerAPI.Controllers
             _gestorApplication.CadastrarGestor(request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,request.Cpf,
                                          request.Telefone,request.Comentario,request.Termos,request.Cidade,request.Estado,request.Bairro,request.Cep,
                                          request.Rua, request.Numero,request.Complemento,request.Curriculo, request.Imagem);
-        }  
+        } 
+
+        [HttpPost]
+        [Route("api/gestor/Editar")]
+        public void Editar(GestorRequest request)
+        {
+            _gestorApplication.EditarGestor(request.Id,request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,request.Cpf,
+                                         request.Telefone,request.Comentario,request.Termos,request.Cidade,request.Estado,request.Bairro,request.Cep,
+                                         request.Rua, request.Numero,request.Complemento,request.Curriculo, request.Imagem);
+        }   
 
         [Route("api/gestor/listarnaoaprovados")]
         [HttpPost]  

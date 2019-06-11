@@ -10,6 +10,11 @@ namespace ManangerAPI.Application.Contratos
                         string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
                         string rua,string numero,string complemento, string curriculo, string imagem);
 
+        void EditarGestor(int id, string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
+                        string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
+                        string rua,string numero,string complemento, string curriculo, string imagem);
+
+
         IList<GestorDTO> ListarPorAnalise(bool analisado);   
 
         IList<GestorDTO> ListarNaoAnalisadosEAprovados();

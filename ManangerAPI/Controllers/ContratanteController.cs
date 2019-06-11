@@ -28,6 +28,16 @@ namespace ManangerAPI.Controllers
                                               contratante.Rua, contratante.Imagem);
         }
 
+        [Route("api/Contratante/Editar")]
+        [HttpPost]
+        public void Editar(ContratanteRequest contratante)
+        {
+            _contratanteApplication.EditarContratante(contratante.Id, contratante.Nome,contratante.Login,contratante.Senha,contratante.Email,contratante.DataNascimento,
+                                              contratante.Sexo, contratante.Cpf,contratante.Telefone,contratante.Comentario,contratante.Termos,
+                                              contratante.Cidade,contratante.Estado,contratante.Bairro,contratante.Cep,contratante.Numero,contratante.Complemento,
+                                              contratante.Rua, contratante.Imagem);
+        }
+
         [Route("api/contratante/listarnaoanalidos")]
         [HttpPost]
         public IList<ContratanteDTO> ListarNaoAnalisados()
