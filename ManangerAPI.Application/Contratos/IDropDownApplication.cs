@@ -11,6 +11,7 @@ namespace ManangerAPI.Application.Contratos
          IList<KeyValuePair<int,string>> DadosMedicamento();
          IList<KeyValuePair<int,string>> DadosViaDeUsoMedicamento();
          IList<KeyValuePair<int,string>> DadosTipoMedicamento();
+         IList<KeyValuePair<int,string>> DadosPosologia();
 
 
     }

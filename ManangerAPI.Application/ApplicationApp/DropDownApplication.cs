@@ -30,6 +30,11 @@ namespace ManangerAPI.Application.ApplicationApp
             return _medicamentoRepositorio.GerarDropDown();
         }
 
+        public IList<KeyValuePair<int, string>> DadosPosologia()
+        {
+            return _posologiaRepositorio.GerarDropDown();
+        }
+
         public IList<KeyValuePair<int, string>> DadosTipoMedicamento()
         {
             return _tipoMedicamentoRepositorio.GerarDropDown();
