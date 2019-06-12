@@ -8,5 +8,7 @@ namespace ManangerAPI.Data.Contratos
         //IList<Medicamento> ListarPorBeneficiario(int idBeneficiario); 
 
         IList<KeyValuePair<int,string>> GerarDropDown();
+
+        string NomeMedicamento(int idMedicamento);
     }
 }

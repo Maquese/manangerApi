@@ -49,7 +49,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 BeneficiarioId = idBeneficiario,
                 MedicamentoId = idMedicamento,
                 PosologiaId = idPosologia,
-                Quantidade = quantidade
+                Quantidade = quantidade,
+                Status = (int)StatusEnum.Ativo
             };
 
             _beneficiarioMedicamentoRepositorio.Insert(medicamento);
@@ -124,6 +125,25 @@ namespace ManangerAPI.Application.ApplicationApp
                ContratanteId = beneficiario.ContratanteId
                };
             return retorno;
+        }
+
+        public IList<BeneficiarioMedicamentoListaDTO> ListarBeneficiarioMedicamento(int idBeneficiario)
+        {
+            var medicamentos = _beneficiarioMedicamentoRepositorio.ListarPorBeneficiarioId(idBeneficiario);
+
+            var retorno = new List<BeneficiarioMedicamentoListaDTO>();
+            foreach (var item in medicamentos)
+            {
+                retorno.Add(new BeneficiarioMedicamentoListaDTO
+                {
+                    Id = item.Id,
+                    NomeMedicamento = _medicamentoRepositorio.NomeMedicamento(item.MedicamentoId),
+                    Posologia = _posologiaRepositorio.Encontrar(item.PosologiaId).Nome,
+                    Quantidade = item.Quantidade
+                });
+            }
+            return retorno;
+
         }
 
         public IList<BeneficiarioListaDTO> ListarPorContratante(int idContratante)

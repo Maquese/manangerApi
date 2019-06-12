@@ -20,5 +20,9 @@ namespace ManangerAPI.Data.Repositorios
             return retorno;
         }
 
+        public string NomeMedicamento(int idMedicamento)
+        {
+            return _contexto.Medicamento.Where(x => x.Id == idMedicamento).Select(x => x.Nome).FirstOrDefault();
+        }
     }
 }

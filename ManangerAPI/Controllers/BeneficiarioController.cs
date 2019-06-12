@@ -54,5 +54,12 @@ namespace ManangerAPI.Controllers
         {
             _beneficiarioApplication.AdicionarMedicamento(request.BeneficiarioId,request.MedicamentoId,request.PosologiaId,request.Quantidade);
         }
+
+        [HttpPost]
+        [Route("api/beneficiario/listarmedicamento")]
+        public void ListarMedicamento(BaseRequest request)
+        {
+            _beneficiarioApplication.ListarBeneficiarioMedicamento(request.Id);
+        }
     }
 }

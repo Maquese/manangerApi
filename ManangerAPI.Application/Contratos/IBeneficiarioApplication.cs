@@ -16,5 +16,8 @@ namespace ManangerAPI.Application.Contratos
         BeneficiarioDTO EncontrarPorId(int idBeneficiario);
 
         void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade);
+
+        IList<BeneficiarioMedicamentoListaDTO> ListarBeneficiarioMedicamento(int idBeneficiario);
+
     }
 }
