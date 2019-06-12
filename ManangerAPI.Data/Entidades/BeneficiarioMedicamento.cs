@@ -4,7 +4,10 @@ namespace ManangerAPI.Data.Entidades
     {
         public int BeneficiarioId { get; set; }
         public int MedicamentoId { get; set; }
+        public int PosologiaId { get; set; }
+        public int Quantidade { get; set; }
         public virtual Beneficiario Beneficiario { get; set; }
         public virtual Medicamento Medicamento { get; set; }
+        public virtual Posologia Posologia { get; set; }
     }
 }

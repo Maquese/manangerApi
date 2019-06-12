@@ -14,5 +14,7 @@ namespace ManangerAPI.Application.Contratos
                              int cidade, string bairro, string rua, string numero, string cep, string complemento,
                              IList<int> condicoesClinicas, bool termos);
         BeneficiarioDTO EncontrarPorId(int idBeneficiario);
+
+        void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade);
     }
 }

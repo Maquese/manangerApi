@@ -47,5 +47,12 @@ namespace ManangerAPI.Controllers
                                                    request.Cidade,request.Bairro, request.Rua, request.Numero,request.Cep,request.Complemento,
                                                    request.CondicoesClinicas,request.TermoDeResponsalidade);
         }
+
+        [HttpPost]
+        [Route("api/beneficiario/adicionarmedicamento")]
+        public void AdicionarMedicamento(BeneficiarioMedicamentoRequest request)
+        {
+            _beneficiarioApplication.AdicionarMedicamento(request.BeneficiarioId,request.MedicamentoId,request.PosologiaId,request.Quantidade);
+        }
     }
 }

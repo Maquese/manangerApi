@@ -42,6 +42,20 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioRepositorio.Save();
         }
 
+        public void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade)
+        {
+            BeneficiarioMedicamento medicamento = new BeneficiarioMedicamento
+            {
+                BeneficiarioId = idBeneficiario,
+                MedicamentoId = idMedicamento,
+                PosologiaId = idPosologia,
+                Quantidade = quantidade
+            };
+
+            _beneficiarioMedicamentoRepositorio.Insert(medicamento);
+            _beneficiarioMedicamentoRepositorio.Save();
+        }
+
         public void Editar(int idBeneficiario, string nome, DateTime dataNascimento, int sexo, string telefone, string estado,
                               int cidade, string bairro, string rua, string numero, string cep, string complemento,
                               IList<int> condicoesClinicas, bool termos)
