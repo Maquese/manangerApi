@@ -116,6 +116,10 @@ namespace manangerapi.data.Migrations
 
                     b.Property<int>("MedicamentoId");
 
+                    b.Property<int>("PosologiaId");
+
+                    b.Property<int>("Quantidade");
+
                     b.Property<int>("Status");
 
                     b.HasKey("Id");
@@ -123,6 +127,8 @@ namespace manangerapi.data.Migrations
                     b.HasIndex("BeneficiarioId");
 
                     b.HasIndex("MedicamentoId");
+
+                    b.HasIndex("PosologiaId");
 
                     b.ToTable("BeneficiarioMedicamento");
                 });
@@ -533,6 +539,11 @@ namespace manangerapi.data.Migrations
                     b.HasOne("ManangerAPI.Data.Entidades.Medicamento", "Medicamento")
                         .WithMany("BeneficiarioMedicamento")
                         .HasForeignKey("MedicamentoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.Posologia", "Posologia")
+                        .WithMany()
+                        .HasForeignKey("PosologiaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

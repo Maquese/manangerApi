@@ -406,7 +406,9 @@ namespace manangerapi.data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Status = table.Column<int>(nullable: false),
                     BeneficiarioId = table.Column<int>(nullable: false),
-                    MedicamentoId = table.Column<int>(nullable: false)
+                    MedicamentoId = table.Column<int>(nullable: false),
+                    PosologiaId = table.Column<int>(nullable: false),
+                    Quantidade = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -421,6 +423,12 @@ namespace manangerapi.data.Migrations
                         name: "FK_BeneficiarioMedicamento_Medicamento_MedicamentoId",
                         column: x => x.MedicamentoId,
                         principalTable: "Medicamento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BeneficiarioMedicamento_Posologia_PosologiaId",
+                        column: x => x.PosologiaId,
+                        principalTable: "Posologia",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -469,6 +477,11 @@ namespace manangerapi.data.Migrations
                 name: "IX_BeneficiarioMedicamento_MedicamentoId",
                 table: "BeneficiarioMedicamento",
                 column: "MedicamentoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BeneficiarioMedicamento_PosologiaId",
+                table: "BeneficiarioMedicamento",
+                column: "PosologiaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Endereco_CidadeId",
@@ -530,9 +543,6 @@ namespace manangerapi.data.Migrations
                 name: "Funcionalidade");
 
             migrationBuilder.DropTable(
-                name: "Posologia");
-
-            migrationBuilder.DropTable(
                 name: "PrestadorDeServicoCompetencia");
 
             migrationBuilder.DropTable(
@@ -549,6 +559,9 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Medicamento");
+
+            migrationBuilder.DropTable(
+                name: "Posologia");
 
             migrationBuilder.DropTable(
                 name: "Perfil");
