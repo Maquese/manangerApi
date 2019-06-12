@@ -31,7 +31,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<T> Listar()
         {
-            return _contexto.Set<T>().ToList();
+            return _contexto.Set<T>().Where(x => x.Status == 1).ToList();
         }
 
         public void LogicDelete(T entidade)
