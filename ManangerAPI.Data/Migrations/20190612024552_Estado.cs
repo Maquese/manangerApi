@@ -111,6 +111,20 @@ namespace manangerapi.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TipoMedicamento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TipoMedicamento", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuario",
                 columns: table => new
                 {
@@ -136,6 +150,20 @@ namespace manangerapi.data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Usuario", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ViaDeUsoMedicamento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ViaDeUsoMedicamento", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -298,6 +326,38 @@ namespace manangerapi.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Medicamento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    ContraIndicacao = table.Column<string>(nullable: true),
+                    Bula = table.Column<string>(nullable: true),
+                    Indicao = table.Column<string>(nullable: true),
+                    TipoMedicamentoId = table.Column<int>(nullable: false),
+                    ViaDeUsoMedicamentoId = table.Column<int>(nullable: false),
+                    EfeitoColateral = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Medicamento", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Medicamento_TipoMedicamento_TipoMedicamentoId",
+                        column: x => x.TipoMedicamentoId,
+                        principalTable: "TipoMedicamento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Medicamento_ViaDeUsoMedicamento_ViaDeUsoMedicamentoId",
+                        column: x => x.ViaDeUsoMedicamentoId,
+                        principalTable: "ViaDeUsoMedicamento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "BeneficiarioCondicaoClinica",
                 columns: table => new
                 {
@@ -325,28 +385,28 @@ namespace manangerapi.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Medicamento",
+                name: "BeneficiarioMedicamento",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Status = table.Column<int>(nullable: false),
-                    Nome = table.Column<string>(nullable: true),
-                    ContraIndicacao = table.Column<string>(nullable: true),
-                    Bula = table.Column<string>(nullable: true),
-                    Indicao = table.Column<string>(nullable: true),
-                    Tipo = table.Column<int>(nullable: false),
-                    ViaDeUso = table.Column<int>(nullable: false),
-                    EfeitoColateral = table.Column<string>(nullable: true),
-                    BeneficiarioId = table.Column<int>(nullable: false)
+                    BeneficiarioId = table.Column<int>(nullable: false),
+                    MedicamentoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Medicamento", x => x.Id);
+                    table.PrimaryKey("PK_BeneficiarioMedicamento", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Medicamento_Beneficiario_BeneficiarioId",
+                        name: "FK_BeneficiarioMedicamento_Beneficiario_BeneficiarioId",
                         column: x => x.BeneficiarioId,
                         principalTable: "Beneficiario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BeneficiarioMedicamento_Medicamento_MedicamentoId",
+                        column: x => x.MedicamentoId,
+                        principalTable: "Medicamento",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -387,6 +447,16 @@ namespace manangerapi.data.Migrations
                 column: "CondicaoClinicaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_BeneficiarioMedicamento_BeneficiarioId",
+                table: "BeneficiarioMedicamento",
+                column: "BeneficiarioId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BeneficiarioMedicamento_MedicamentoId",
+                table: "BeneficiarioMedicamento",
+                column: "MedicamentoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Endereco_CidadeId",
                 table: "Endereco",
                 column: "CidadeId");
@@ -408,9 +478,14 @@ namespace manangerapi.data.Migrations
                 column: "PerfilId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Medicamento_BeneficiarioId",
+                name: "IX_Medicamento_TipoMedicamentoId",
                 table: "Medicamento",
-                column: "BeneficiarioId");
+                column: "TipoMedicamentoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Medicamento_ViaDeUsoMedicamentoId",
+                table: "Medicamento",
+                column: "ViaDeUsoMedicamentoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PrestadorDeServicoCompetencia_CompetenciaId",
@@ -432,13 +507,13 @@ namespace manangerapi.data.Migrations
                 name: "BeneficiarioCondicaoClinica");
 
             migrationBuilder.DropTable(
+                name: "BeneficiarioMedicamento");
+
+            migrationBuilder.DropTable(
                 name: "Endereco");
 
             migrationBuilder.DropTable(
                 name: "Funcionalidade");
-
-            migrationBuilder.DropTable(
-                name: "Medicamento");
 
             migrationBuilder.DropTable(
                 name: "PrestadorDeServicoCompetencia");
@@ -453,10 +528,13 @@ namespace manangerapi.data.Migrations
                 name: "CondicaoClinica");
 
             migrationBuilder.DropTable(
-                name: "Perfil");
+                name: "Beneficiario");
 
             migrationBuilder.DropTable(
-                name: "Beneficiario");
+                name: "Medicamento");
+
+            migrationBuilder.DropTable(
+                name: "Perfil");
 
             migrationBuilder.DropTable(
                 name: "Competencia");
@@ -469,6 +547,12 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Estado");
+
+            migrationBuilder.DropTable(
+                name: "TipoMedicamento");
+
+            migrationBuilder.DropTable(
+                name: "ViaDeUsoMedicamento");
         }
     }
 }

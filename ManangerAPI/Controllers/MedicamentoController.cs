@@ -5,7 +5,8 @@ using ManangerAPI.RequestsData;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ManangerAPI.Controllers
-{
+{   
+    [ApiController]
     public class MedicamentoController : ControllerBase
     {
         private readonly IMedicamentoApplication _medicamentoApplication;
@@ -20,14 +21,14 @@ namespace ManangerAPI.Controllers
         public void Cadastrar(MedicamentoRequest request)
         {
             _medicamentoApplication.Cadastrar(request.Nome,request.ContraIndicacao,request.Bula,
-                                              request.Indicao, request.Tipo, request.ViaDeUso,request.EfeitoColateral);
+                                              request.Indicacao, request.Tipo, request.ViaDeUso,request.EfeitoColateral);
         }      
 
         [Route("api/medicamento/editar")]
         [HttpPost]
         public void Editar(MedicamentoRequest request)
         {
-            _medicamentoApplication.Editar(request.Id, request.Nome, request.ContraIndicacao, request.Bula,request.Indicao,
+            _medicamentoApplication.Editar(request.Id, request.Nome, request.ContraIndicacao, request.Bula,request.Indicacao,
                                            request.Tipo,request.ViaDeUso,request.EfeitoColateral);
         }
 

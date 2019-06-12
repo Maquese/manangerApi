@@ -30,7 +30,16 @@ values(1,'board','/board',1),-- admin
 (1,'board','/board',4),--prestador
 (1,'perfil','/perfil',4);
 
+insert into viadeusomedicamento
+(status,nome)
+values(1,'Oral'),
+(1,'Intra venal');
 
+insert into tipomedicamento
+(status,nome)
+values(1,'Comprimido'),
+(1,'Gota'),
+(1,'Pomada');
 
 insert into Usuario 
 (Nome,Email,Discriminator,Login,Senha,Status,DataNascimento,Sexo,Termos,Aprovado,Analisado)

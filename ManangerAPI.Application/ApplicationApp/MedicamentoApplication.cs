@@ -11,7 +11,7 @@ namespace ManangerAPI.Application.ApplicationApp
         public void Cadastrar( string nome, string contraIndicacao, string bula, string indicacao, int tipo, int viaDeUso, string efeitoColateral)
         {
             var Medicamento = new Medicamento{ Nome = nome, ContraIndicacao = contraIndicacao, Bula = bula, 
-                                              Indicao = indicacao, Tipo = tipo, ViaDeUso = viaDeUso, EfeitoColateral = efeitoColateral , Status = (int)StatusEnum.Ativo };
+                                              Indicao = indicacao, TipoMedicamentoId = tipo, ViaDeUsoMedicamentoId = viaDeUso, EfeitoColateral = efeitoColateral , Status = (int)StatusEnum.Ativo };
             _medicamentoRepositorio.Insert(Medicamento);
             _medicamentoRepositorio.Save();
         }
@@ -28,8 +28,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 ContraIndicacao = medicamento.ContraIndicacao,
                 EfeitoColateral = medicamento.EfeitoColateral,
                 Indicao = medicamento.Indicao, 
-                Tipo = medicamento.Tipo,
-                ViaDeUso = medicamento.ViaDeUso,
+                Tipo = medicamento.TipoMedicamentoId,
+                ViaDeUso = medicamento.ViaDeUsoMedicamentoId,
             };
         }
 
@@ -41,8 +41,8 @@ namespace ManangerAPI.Application.ApplicationApp
             Medicamento.ContraIndicacao = contraIndicacao;
             Medicamento.Bula = bula;
             Medicamento.Indicao = indicacao;
-            Medicamento.Tipo = tipo;
-            Medicamento.ViaDeUso = viaDeUso;
+            Medicamento.TipoMedicamentoId = tipo;
+            Medicamento.ViaDeUsoMedicamentoId = viaDeUso;
             Medicamento.EfeitoColateral = efeitoColateral;
 
             _medicamentoRepositorio.Update(Medicamento);

@@ -22,6 +22,8 @@ namespace ManangerAPI.Application.ApplicationApp
         private readonly IBeneficiarioCondicaoClinicaRepositorio _beneficiarioCondicaoClinicaRepositorio;
         private readonly IPrestadorDeServicoCompetenciaRepositorio _prestadorDeServicoCompetenciaRepositorio;
         private readonly IBeneficiarioMedicamentoRepositorio _beneficiarioMedicamentoRepositorio;
+        private readonly IViaDeUsoMedicamentoRepositorio _viaDeUsoMedicamentoRepositorio;
+        private readonly ITipoMedicamentoRepositorio _tipoMedicamentoRepositorio;
 
         public Application(IUsuarioRepositorio usuarioRepositorio, IAdministradorRepositorio administradorRepositorio, 
                            IContratanteRepositorio contratanteRepositorio, IPrestadorDeServicoRepositorio prestadorDeServicoRepositorio,
@@ -32,7 +34,9 @@ namespace ManangerAPI.Application.ApplicationApp
                            ICompetenciaRepositorio competenciaRepositorio, ICondicaoClinicaRepositorio condicaoClinicaRepositorio,
                            IBeneficiarioCondicaoClinicaRepositorio beneficiarioCondicaoClinicaRepositorio,
                            IPrestadorDeServicoCompetenciaRepositorio prestadorDeServicoCompetenciaRepositorio, 
-                           IBeneficiarioMedicamentoRepositorio beneficiarioMedicamentoRepositorio)
+                           IBeneficiarioMedicamentoRepositorio beneficiarioMedicamentoRepositorio, ITipoMedicamentoRepositorio tipoMedicamentoRepositorio,
+                           IViaDeUsoMedicamentoRepositorio viaDeUsoMedicamentoRepositorio
+                           )
         {
             _usuarioRepositorio = usuarioRepositorio;
             _contratanteRepositorio = contratanteRepositorio;
@@ -51,6 +55,8 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioCondicaoClinicaRepositorio = beneficiarioCondicaoClinicaRepositorio;
             _prestadorDeServicoCompetenciaRepositorio = prestadorDeServicoCompetenciaRepositorio;
             _beneficiarioMedicamentoRepositorio = beneficiarioMedicamentoRepositorio;
+            _viaDeUsoMedicamentoRepositorio = viaDeUsoMedicamentoRepositorio;
+            _tipoMedicamentoRepositorio = tipoMedicamentoRepositorio;
         }
     }
 }

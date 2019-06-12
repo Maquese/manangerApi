@@ -29,6 +29,9 @@ namespace ManangerAPI.Data.Contexto
         public DbSet<BeneficiarioCondicaoClinica> BeneficiarioCondicaoClinica { get; set; }
         public DbSet<PrestadorDeServicoCompetencia> PrestadorDeServicoCompetencia { get; set; }
         public DbSet<BeneficiarioMedicamento> BeneficiarioMedicamento { get; set; }
+        public DbSet<TipoMedicamento> TipoMedicamento { get; set; }
+        public DbSet<ViaDeUsoMedicamento> ViaDeUsoMedicamento { get; set; }
+        
 
         public ContextoDb(DbContextOptions options) : base(options)
         {

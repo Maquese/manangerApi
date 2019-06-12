@@ -106,6 +106,27 @@ namespace manangerapi.data.Migrations
                     b.ToTable("BeneficiarioCondicaoClinica");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.BeneficiarioMedicamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BeneficiarioId");
+
+                    b.Property<int>("MedicamentoId");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BeneficiarioId");
+
+                    b.HasIndex("MedicamentoId");
+
+                    b.ToTable("BeneficiarioMedicamento");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Cidade", b =>
                 {
                     b.Property<int>("Id")
@@ -239,8 +260,6 @@ namespace manangerapi.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BeneficiarioId");
-
                     b.Property<string>("Bula");
 
                     b.Property<string>("ContraIndicacao");
@@ -253,13 +272,15 @@ namespace manangerapi.data.Migrations
 
                     b.Property<int>("Status");
 
-                    b.Property<int>("Tipo");
+                    b.Property<int>("TipoMedicamentoId");
 
-                    b.Property<int>("ViaDeUso");
+                    b.Property<int>("ViaDeUsoMedicamentoId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BeneficiarioId");
+                    b.HasIndex("TipoMedicamentoId");
+
+                    b.HasIndex("ViaDeUsoMedicamentoId");
 
                     b.ToTable("Medicamento");
                 });
@@ -328,6 +349,21 @@ namespace manangerapi.data.Migrations
                     b.ToTable("StatusEntidade");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.TipoMedicamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoMedicamento");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -370,6 +406,21 @@ namespace manangerapi.data.Migrations
                     b.ToTable("Usuario");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Usuario");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.ViaDeUsoMedicamento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ViaDeUsoMedicamento");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Administrador", b =>
@@ -457,6 +508,19 @@ namespace manangerapi.data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.BeneficiarioMedicamento", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.Beneficiario", "Beneficiario")
+                        .WithMany("Medicamentos")
+                        .HasForeignKey("BeneficiarioId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.Medicamento", "Medicamento")
+                        .WithMany("BeneficiarioMedicamento")
+                        .HasForeignKey("MedicamentoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Endereco", b =>
                 {
                     b.HasOne("ManangerAPI.Data.Entidades.Cidade", "Cidade")
@@ -485,9 +549,14 @@ namespace manangerapi.data.Migrations
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Medicamento", b =>
                 {
-                    b.HasOne("ManangerAPI.Data.Entidades.Beneficiario", "Beneficiario")
-                        .WithMany("Medicamentos")
-                        .HasForeignKey("BeneficiarioId")
+                    b.HasOne("ManangerAPI.Data.Entidades.TipoMedicamento", "TipoMedicamento")
+                        .WithMany()
+                        .HasForeignKey("TipoMedicamentoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.ViaDeUsoMedicamento", "ViaDeUsoMedicamento")
+                        .WithMany()
+                        .HasForeignKey("ViaDeUsoMedicamentoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
