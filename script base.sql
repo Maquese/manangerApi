@@ -45,6 +45,11 @@ insert into Usuario
 (Nome,Email,Discriminator,Login,Senha,Status,DataNascimento,Sexo,Termos,Aprovado,Analisado)
 values('Adm','adm@mananger.com','Administrador','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 1,1)
 
+insert into posologia
+(status,nome)
+values(1,'Uma vez por dia'),
+(1,'8 em 8 horas'),
+(1,'6 em 6 horas');
 
 insert into Acesso
 (PerfilId,Status,UsuarioId)

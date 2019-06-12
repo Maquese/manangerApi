@@ -54,7 +54,8 @@ namespace ManangerAPI.Application.ApplicationApp
             return _medicamentoRepositorio.Listar().Select(x => new MedicamentoListaDTO
             {
                 Id = x.Id,
-                Nome = x.Nome
+                Nome = x.Nome,
+                
             }).ToList();
         }
 
