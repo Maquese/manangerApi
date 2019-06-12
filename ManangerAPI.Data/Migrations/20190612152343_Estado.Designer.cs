@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190612024552_Estado")]
+    [Migration("20190612152343_Estado")]
     partial class Estado
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -300,6 +300,21 @@ namespace manangerapi.data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Perfil");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Posologia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Posologia");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.PrestadorDeServicoCompetencia", b =>

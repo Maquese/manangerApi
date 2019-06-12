@@ -300,6 +300,21 @@ namespace manangerapi.data.Migrations
                     b.ToTable("Perfil");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Posologia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Posologia");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.PrestadorDeServicoCompetencia", b =>
                 {
                     b.Property<int>("Id")

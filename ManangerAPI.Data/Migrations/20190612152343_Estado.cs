@@ -84,6 +84,20 @@ namespace manangerapi.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Posologia",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Posologia", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Sexo",
                 columns: table => new
                 {
@@ -514,6 +528,9 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Funcionalidade");
+
+            migrationBuilder.DropTable(
+                name: "Posologia");
 
             migrationBuilder.DropTable(
                 name: "PrestadorDeServicoCompetencia");
