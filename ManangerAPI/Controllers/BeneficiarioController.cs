@@ -57,9 +57,9 @@ namespace ManangerAPI.Controllers
 
         [HttpPost]
         [Route("api/beneficiario/listarmedicamento")]
-        public void ListarMedicamento(BaseRequest request)
+        public IList<BeneficiarioMedicamentoListaDTO> ListarMedicamento(BaseRequest request)
         {
-            _beneficiarioApplication.ListarBeneficiarioMedicamento(request.Id);
+            return _beneficiarioApplication.ListarBeneficiarioMedicamento(request.Id);
         }
     }
 }
