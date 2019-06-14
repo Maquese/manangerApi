@@ -22,5 +22,7 @@ namespace ManangerAPI.Application.Contratos
          IList<GestorDTO> ListarPorAprovacao(bool aprovado); 
 
          UsuarioEditDTO EncontrarGestorPorId(int id);
+
+         IList<ListagemPrestadorGestorDTO> ListarGestoresProximos(int cidadeId);
     }
 }

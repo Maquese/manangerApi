@@ -40,5 +40,12 @@ namespace ManangerAPI.Controllers
         {
             return _gestorApplication.ListarPorAprovacao(false);
         }
+
+        [Route("api/gestor/listargestoresproximos")]
+        [HttpPost]  
+        public IList<ListagemPrestadorGestorDTO> ListarGestoresProximos(BaseRequest request)
+        {
+            return _gestorApplication.ListarGestoresProximos(request.Id);
+        }
     }
 }

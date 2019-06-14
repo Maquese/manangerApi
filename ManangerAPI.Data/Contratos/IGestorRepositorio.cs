@@ -9,5 +9,7 @@ namespace ManangerAPI.Data.Contratos
          IList<Gestor> ListarNaoAnalisadosEReprovados();
          
         IList<Gestor> ListarPorAprovacao(bool aprovado);
+
+        IList<Gestor> ListarGestoresProximos(int cidadeId);
     }
 }

@@ -61,5 +61,7 @@ namespace ManangerAPI.Controllers
         {
             return _beneficiarioApplication.ListarBeneficiarioMedicamento(request.Id);
         }
+
+        
     }
 }

@@ -127,6 +127,17 @@ namespace ManangerAPI.Application.ApplicationApp
             return retorno;
         }
 
+        public IList<ListagemPrestadorGestorDTO> ListarGestoresProximos(int cidadeId)
+        {
+            return _gestorRepositorio.ListarGestoresProximos(cidadeId).Select(x => new ListagemPrestadorGestorDTO
+            {
+                Id = x.Id,
+                DataNascimento = x.DataNascimento,
+                Imagem = x.Imagem,
+                Nome = x.Nome
+            }).ToList();
+        }
+
         IList<GestorDTO> IGestorApplication.ListarNaoAnalisadosEAprovados()
         {
             IList<GestorDTO> retorno = null;

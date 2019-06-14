@@ -3,6 +3,7 @@ using System.Linq;
 using ManangerAPI.Data.Contexto;
 using ManangerAPI.Data.Contratos;
 using ManangerAPI.Data.Entidades;
+using Microsoft.EntityFrameworkCore;
 
 namespace ManangerAPI.Data.Repositorios
 {
@@ -10,6 +11,11 @@ namespace ManangerAPI.Data.Repositorios
     {
         public GestorRepositorio(ContextoDb contexto) : base(contexto)
         {
+        }
+
+        public IList<Gestor> ListarGestoresProximos(int cidadeId)
+        {
+            return _contexto.Gestor.Include("Endereco").Where(x => x.Endereco.CidadeId == cidadeId).ToList();
         }
 
         public IList<Gestor> ListarNaoAnalisadosEReprovados()

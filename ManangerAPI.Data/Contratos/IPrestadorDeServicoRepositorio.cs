@@ -10,5 +10,7 @@ namespace ManangerAPI.Data.Contratos
           IList<PrestadorDeServico> ListarNaoAnalisadosEReprovados();
           
         IList<PrestadorDeServico> ListarPorAprovacao(bool aprovado);
+
+        IList<PrestadorDeServico> ListarPrestadoresProximos(int cidadeId);
     }
 }

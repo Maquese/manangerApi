@@ -143,6 +143,17 @@ namespace ManangerAPI.Application.ApplicationApp
 
         }
 
+        public IList<ListagemPrestadorGestorDTO> ListarPrestadoresProximos(int cidadeId)
+        {
+             return _prestadorDeServicoRepositorio.ListarPrestadoresProximos(cidadeId).Select(x => new ListagemPrestadorGestorDTO
+            {
+                Id = x.Id,
+                DataNascimento = x.DataNascimento,
+                Imagem = x.Imagem,
+                Nome = x.Nome
+            }).ToList();
+        }
+
         IList<PrestadorDeServicoDTO> IPrestadorDeServicoApplication.ListarNaoAnalisadosEAprovados()
         {
             throw new NotImplementedException();

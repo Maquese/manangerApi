@@ -13,7 +13,7 @@ namespace ManangerAPI.Application.Contratos
 
          IList<MedicamentoListaDTO> Listar();
 
-         MedicamentoDTO Detalhar(int idBeneficiario);
+         MedicamentoDTO Detalhar(int idMedicamento);
          
     }
 }

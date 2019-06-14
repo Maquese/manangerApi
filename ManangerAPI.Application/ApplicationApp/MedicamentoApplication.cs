@@ -16,9 +16,9 @@ namespace ManangerAPI.Application.ApplicationApp
             _medicamentoRepositorio.Save();
         }
 
-        public MedicamentoDTO Detalhar(int idBeneficiario)
+        public MedicamentoDTO Detalhar(int idMedicamento)
         {
-            var medicamento = _medicamentoRepositorio.Encontrar(idBeneficiario);
+            var medicamento = _medicamentoRepositorio.Encontrar(idMedicamento);
 
             return new MedicamentoDTO
             {

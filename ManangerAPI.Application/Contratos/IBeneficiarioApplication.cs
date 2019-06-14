@@ -17,7 +17,7 @@ namespace ManangerAPI.Application.Contratos
 
         void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade);
 
-        IList<BeneficiarioMedicamentoListaDTO> ListarBeneficiarioMedicamento(int idBeneficiario);
+        IList<BeneficiarioMedicamentoListaDTO> ListarBeneficiarioMedicamento(int idBeneficiario);  
 
     }
 }
