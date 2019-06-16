@@ -1,8 +1,8 @@
-namespace ManangerAPI.RequestsData
+namespace ManangerAPI.Application.DTOS
 {
-    public class BeneficiarioMedicamentoRequest : BaseRequest
+    public class BeneficiarioMedicamentoDTO
     {
-        public int BeneficiarioId { get; set; }
+        public int Id { get; set; }
         public int MedicamentoId { get; set; }
         public int PosologiaId { get; set; }
         public int Quantidade { get; set; }

@@ -9,6 +9,8 @@ namespace ManangerAPI.Application.Contratos
 
          UsuarioDTO Logar(string login, string senha);
 
+         UsuarioDTO LogarPrestador(string login, string senha);
+
          void Deletar(int id);
 
          void Analisar(int idUsuario, bool aprovado);

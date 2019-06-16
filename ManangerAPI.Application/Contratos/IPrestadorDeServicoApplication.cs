@@ -22,5 +22,7 @@ namespace ManangerAPI.Application.Contratos
         UsuarioEditDTO BuscarPrestadorPorId(int id);
 
         IList<ListagemPrestadorGestorDTO> ListarPrestadoresProximos(int cidadeId);
+
+        
     }
 }

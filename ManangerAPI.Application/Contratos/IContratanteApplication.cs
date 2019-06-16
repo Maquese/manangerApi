@@ -6,19 +6,22 @@ namespace ManangerAPI.Application.Contratos
 {
     public interface IContratanteApplication
     {
-         void Cadastrar(string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
+        void Cadastrar(string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
                         string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
                         string numero,string complemento, string rua, string imagem);///entre outras coisas
         void EditarContratante(int id, string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
                         string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
                         string numero,string complemento, string rua, string imagem);///entre outras coisas
-         IList<ContratanteDTO> ListarPorAnalise(bool analisado);   
+        IList<ContratanteDTO> ListarPorAnalise(bool analisado);   
 
-          IList<ContratanteDTO> ListarPorAprovacao(bool aprovado); 
+        IList<ContratanteDTO> ListarPorAprovacao(bool aprovado); 
 
-         ContratanteDTO DetalharContratante(int idContratante);   
+        ContratanteDTO DetalharContratante(int idContratante);   
 
-          IList<ContratanteDTO> ListarNaoAnalisadosEAprovados();    
-          UsuarioEditDTO BuscarContratantePorId(int id); 
+        IList<ContratanteDTO> ListarNaoAnalisadosEAprovados();
+            
+        UsuarioEditDTO BuscarContratantePorId(int id);
+
+        void SolicitarNovoContrato(int idContratante, int idPrestador); 
     }
 }

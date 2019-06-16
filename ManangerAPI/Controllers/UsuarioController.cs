@@ -43,6 +43,13 @@ namespace ManangerAPI.Controllers
             return _UsuarioApplication.Logar(request.Login,request.Senha);
         }
 
+        [Route("api/usuario/logarprestador")]
+        [HttpPost]
+        public UsuarioDTO LogarPrestador(LoginRequest  request)
+        {
+            return _UsuarioApplication.LogarPrestador(request.Login,request.Senha);
+        }
+
         [Route("api/usuario/deletar")]
         [HttpPost]
         public void Deletar(BaseRequest  request)

@@ -19,5 +19,9 @@ namespace ManangerAPI.Application.Contratos
 
         IList<BeneficiarioMedicamentoListaDTO> ListarBeneficiarioMedicamento(int idBeneficiario);  
 
+        BeneficiarioMedicamentoDTO DetalharBeneficiarioMedicamento(int idBeneficiarioMedicamento);
+
+        void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade);
+
     }
 }

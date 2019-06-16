@@ -140,5 +140,18 @@ namespace ManangerAPI.Application.ApplicationApp
 
             return retorno;
         }
+
+        public void SolicitarNovoContrato(int idContratante, int idPrestador)
+        {
+            var novaSolicitacao = new SolicitacaoContrato{ContratanteId = idContratante, PrestadorDeServicoId = idPrestador, Status = 1, DataSolicitacao = DateTime.Now};
+
+            _solicitacaoContratoRepositorio.Insert(novaSolicitacao);
+            _solicitacaoContratoRepositorio.Save();
+
+            var contratante = _contratanteRepositorio.Encontrar(idContratante);
+            var usuario = _usuarioRepositorio.Encontrar(idPrestador);
+
+            EnviarEmailSolicitacaoContrato(contratante.Nome,usuario.Email,usuario.Nome);
+        }
     }
 }

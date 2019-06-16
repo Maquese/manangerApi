@@ -17,6 +17,16 @@ namespace ManangerAPI.Data.Repositorios
             return _contexto.Usuario.Where(x => x.Login == login && x.Senha == senha && x.Status == 1 && x.Analisado && x.Aprovado).FirstOrDefault();
         }
 
+        public Usuario LogarGestor(string login, string senha)
+        {
+            return  _contexto.Gestor.Where(x => x.Login == login && x.Senha == senha && x.Status == 1 && x.Analisado && x.Aprovado).FirstOrDefault();
+        }
+
+        public Usuario LogarPrestador(string login, string senha)
+        {
+            return _contexto.PrestadorDeServico.Where(x => x.Login == login && x.Senha == senha && x.Status == 1 && x.Analisado && x.Aprovado).FirstOrDefault();
+        }
+
         public bool VerificaCpfJaCadastrado(string cfp)
         {
             return _contexto.Usuario.Where(x => x.Cpf == cfp).FirstOrDefault() != null;

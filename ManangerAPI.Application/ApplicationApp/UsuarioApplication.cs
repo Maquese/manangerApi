@@ -54,7 +54,7 @@ namespace ManangerAPI.Application.ApplicationApp
             UsuarioDTO retorno = null;
             if (usuario != null)
             {
-                retorno = new UsuarioDTO { Id = usuario.Id, Nome = usuario.Nome };
+                retorno = new UsuarioDTO { Id = usuario.Id, Nome = usuario.Nome, DataNascimento = usuario.DataNascimento, Email = usuario.Email };
                 retorno.Acessos = new List<AcessoDTO>();
                 foreach (var item in _acessoRepositorio.AcessoDoUsuario(usuario.Id))
                 {
@@ -62,6 +62,21 @@ namespace ManangerAPI.Application.ApplicationApp
                     acesso.FuncionalidadeDTO = _funcionalidadeRepositorio.ListarPorPerfil(item.PerfilId).Select(x => new FuncionalidadeDTO { Id = x.Id, Path = x.Path }).ToList();
                     retorno.Acessos.Add(acesso);
                 }
+            }
+            return retorno;
+        }
+
+        public UsuarioDTO LogarPrestador(string login, string senha)
+        {
+            var usuario = _usuarioRepositorio.Logar(login, senha);
+            UsuarioDTO retorno = null;
+            if (usuario != null)
+            {
+                var dado = _acessoRepositorio.AcessoDoUsuario(usuario.Id).Where(x => x.PerfilId == (int) PerfilEnum.PrestadorDeServico).FirstOrDefault();
+                if(dado != null)
+                {            
+                    retorno = new UsuarioDTO { Id = usuario.Id, Nome = usuario.Nome, DataNascimento = usuario.DataNascimento, Email = usuario.Email };
+                }                
             }
             return retorno;
         }

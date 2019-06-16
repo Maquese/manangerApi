@@ -32,6 +32,7 @@ namespace ManangerAPI.Data.Contexto
         public DbSet<TipoMedicamento> TipoMedicamento { get; set; }
         public DbSet<ViaDeUsoMedicamento> ViaDeUsoMedicamento { get; set; }
         public DbSet<Posologia> Posologia { get; set; }
+        public DbSet<SolicitacaoContrato> SolicitacaoContrato { get; set; }
         public ContextoDb(DbContextOptions options) : base(options)
         {
             

@@ -7,9 +7,12 @@ namespace ManangerAPI.Data.Contratos
          Usuario Logar(string login, string senha);
 
          bool VerificaEmailJaCadastrado(string email);
-
          
          bool VerificaCpfJaCadastrado(string cfp);
+
+         Usuario LogarGestor(string login, string senha);
+
+         Usuario LogarPrestador(string login, string senha);
 
     }
 }

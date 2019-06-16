@@ -62,6 +62,20 @@ namespace ManangerAPI.Controllers
             return _beneficiarioApplication.ListarBeneficiarioMedicamento(request.Id);
         }
 
+        [HttpPost]
+        [Route("api/beneficiario/detalhesmedicamento")]
+        public BeneficiarioMedicamentoDTO DetalhesMedicamento(BaseRequest request)
+        {
+            return _beneficiarioApplication.DetalharBeneficiarioMedicamento(request.Id);
+        }
+
+        [HttpPost]
+        [Route("api/beneficiario/editarmedicamento")]
+        public void EditarMedicamento(BeneficiarioMedicamentoRequest request)
+        {
+            _beneficiarioApplication.EditarBeneficiarioMedicamento(request.Id,request.MedicamentoId,request.PosologiaId,request.Quantidade);
+        }
+
         
     }
 }

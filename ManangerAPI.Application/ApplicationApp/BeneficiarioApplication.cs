@@ -57,6 +57,17 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioMedicamentoRepositorio.Save();
         }
 
+        public BeneficiarioMedicamentoDTO DetalharBeneficiarioMedicamento(int idBeneficiarioMedicamento)
+        {
+            var dados = _beneficiarioMedicamentoRepositorio.Encontrar(idBeneficiarioMedicamento);
+            return new BeneficiarioMedicamentoDTO {
+                Id = dados.Id,
+                MedicamentoId = dados.MedicamentoId,
+                PosologiaId = dados.PosologiaId,
+                Quantidade = dados.Quantidade
+            };
+        }
+
         public void Editar(int idBeneficiario, string nome, DateTime dataNascimento, int sexo, string telefone, string estado,
                               int cidade, string bairro, string rua, string numero, string cep, string complemento,
                               IList<int> condicoesClinicas, bool termos)
@@ -102,6 +113,16 @@ namespace ManangerAPI.Application.ApplicationApp
 
               _beneficiarioRepositorio.Update(beneficiario);
               _beneficiarioRepositorio.Save();
+        }
+
+        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade)
+        {
+            var dados = _beneficiarioMedicamentoRepositorio.Encontrar(id);
+            dados.MedicamentoId = idMedicamento;
+            dados.PosologiaId = idPosologia;
+            dados.Quantidade = quantidade;
+            _beneficiarioMedicamentoRepositorio.Update(dados);
+            _beneficiarioMedicamentoRepositorio.Save();
         }
 
         public BeneficiarioDTO EncontrarPorId(int idBeneficiario)

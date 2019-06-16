@@ -59,7 +59,13 @@ namespace ManangerAPI.Controllers
             return _contratanteApplication.BuscarContratantePorId(request.Id);
         }
 
-        
+        [Route("api/contratante/solicitarcontrato")]
+        [HttpPost]
+        public void SolicitarContrato(SolicitacaoContratoRequest request)
+        {
+            _contratanteApplication.SolicitarNovoContrato(request.IdContratante,request.IdUsuario);
+        }
+
 
     }
 }   
