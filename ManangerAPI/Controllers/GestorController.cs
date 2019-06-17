@@ -34,6 +34,13 @@ namespace ManangerAPI.Controllers
                                          request.Rua, request.Numero,request.Complemento,request.Curriculo, request.Imagem);
         }   
 
+        [Route("api/gestor/buscar")]
+        [HttpPost]
+        public UsuarioEditDTO Buscar(BaseRequest request)
+        {
+            return _gestorApplication.EncontrarGestorPorId(request.Id);
+        }
+
         [Route("api/gestor/listarnaoaprovados")]
         [HttpPost]  
         public IList<GestorDTO> ListarNaoAprovados()

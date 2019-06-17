@@ -22,8 +22,27 @@ namespace ManangerAPI.Controllers
         {
             _prestadorDeServicoApplication.Cadastrar(request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,
                                                      request.Cpf,request.Telefone,request.Cidade,request.Estado,request.Bairro,request.Cep,request.Rua,
-                                                     request.Numero,request.Complemento,request.Competencias,request.Comentario,request.Termos, request.Imagem);
+                                                     request.Numero,request.Complemento,request.Competencias,request.Comentario,request.Termos, 
+                                                     request.Imagem,request.Curriculo);
         }
+
+        [HttpPost]
+        [Route("api/prestadordeservico/editar")]
+        public void Editar(PrestadorDeServicoRequest request)
+        {
+            _prestadorDeServicoApplication.EditarPrestadorDeServico(request.Id,request.Nome,request.Login,request.Senha,request.Email,request.DataNascimento,request.Sexo,
+                                                     request.Cpf,request.Telefone,request.Cidade,request.Estado,request.Bairro,request.Cep,request.Rua,
+                                                     request.Numero,request.Complemento,request.Competencias,request.Comentario,request.Termos, 
+                                                     request.Imagem,request.Curriculo);
+        }
+
+        [Route("api/prestadordeservico/buscar")]
+        [HttpPost]
+        public UsuarioEditDTO Buscar(BaseRequest request)
+        {
+            return _prestadorDeServicoApplication.BuscarPrestadorPorId(request.Id);
+        }
+
 
         
         [Route("api/prestadordeservico/listarnaoaprovados")]

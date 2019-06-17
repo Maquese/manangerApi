@@ -19,6 +19,7 @@ namespace ManangerAPI.Data.Entidades
         public Endereco Endereco { get; set; }
         public bool Aprovado { get; set; }
         public bool Analisado { get; set; }    
-        public string Imagem { get; set; }
+        public string Imagem { get; set; }        
+        public string Curriculo { get; set; }
     }
 }

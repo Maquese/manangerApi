@@ -41,7 +41,7 @@ namespace ManangerAPI.Application.ApplicationApp
 
         public void Cadastrar(string nome, string login, string senha, string email, DateTime dataNascimento, int sexo, string cpf, 
                               string telefone, int cidade, string estado, string bairro, string cep, string rua, string numero, 
-                              string complemento, IList<int> competencias, string comentario, bool termos, string imagem)
+                              string complemento, IList<int> competencias, string comentario, bool termos, string imagem,string pdf)
         {
             PrestadorDeServico prestadorServico = new PrestadorDeServico{
                 Imagem = imagem,
@@ -57,6 +57,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 PrestadorDeServicoCompetencia = new List<PrestadorDeServicoCompetencia>(),
                 Comentario = comentario,
                 Termos = termos,
+                Curriculo = pdf,
                 Endereco = new Endereco
                 {
                     EstadoId = _estadoRepostorio.IdPorUf(estado),
@@ -88,7 +89,7 @@ namespace ManangerAPI.Application.ApplicationApp
         public void EditarPrestadorDeServico(int id, string nome, string login, string senha, string email, DateTime dataNascimento, 
                                              int sexo, string cpf, string telefone, int cidade, string estado, string bairro, string cep,
                                              string rua, string numero, string complemento, IList<int> competencias, string comentario,
-                                             bool termos, string imagem)
+                                             bool termos, string imagem, string Curriculo)
         {
             var prestadorDeServico = _prestadorDeServicoRepositorio.Encontrar(id);
             prestadorDeServico.Nome = nome;
@@ -102,6 +103,7 @@ namespace ManangerAPI.Application.ApplicationApp
             prestadorDeServico.Comentario = comentario;
             prestadorDeServico.Termos = termos;
             prestadorDeServico.Imagem = imagem;
+            prestadorDeServico.Curriculo = Curriculo;
 
             var endereco = _enderecoRepositorio.EncontrarPorUsuario(id);
             endereco.EstadoId = _estadoRepostorio.IdPorUf(estado);
