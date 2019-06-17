@@ -36,5 +36,10 @@ namespace ManangerAPI.Data.Repositorios
         {
             return _contexto.Usuario.Where(x => x.Email == email).FirstOrDefault() != null;
         }
+
+        public bool VerificaMesmoLogin(string login)
+        {
+             return _contexto.Usuario.Where(x => x.Login == login).FirstOrDefault() != null;
+        }
     }
 }

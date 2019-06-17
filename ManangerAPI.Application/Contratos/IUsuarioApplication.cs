@@ -22,5 +22,7 @@ namespace ManangerAPI.Application.Contratos
          bool VerificaEmailJaCadastrado(string email);
 
          bool VerificaCpfJaCadastrado(string cpf);
+
+          bool VerificaLoginJaCadastrado(string login);
     }
 }

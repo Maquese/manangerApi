@@ -68,14 +68,21 @@ namespace ManangerAPI.Controllers
 
         [Route("api/usuario/verificaremailcadastrado")]
         [HttpPost]
-        public bool VerificarEmail(VerificacaoRequest  request)
+        public bool VerificarEmailCadastrado(VerificacaoRequest  request)
         {
            return _UsuarioApplication.VerificaEmailJaCadastrado(request.Email);   
         }
 
+        [Route("api/usuario/verificarlogincadastrado")]
+        [HttpPost]
+        public bool VerificarLoginCadastrado(VerificacaoRequest  request)
+        {
+           return _UsuarioApplication.VerificaLoginJaCadastrado(request.Login); 
+        }
+
         [Route("api/usuario/verificarcpfcadastrado")]
         [HttpPost]
-        public bool VerificarCpf(VerificacaoRequest  request)
+        public bool VerificarCpfCadastrado(VerificacaoRequest  request)
         {
             return _UsuarioApplication.VerificaCpfJaCadastrado(request.Cpf);         
         }

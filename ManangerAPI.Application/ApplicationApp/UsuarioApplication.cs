@@ -90,5 +90,10 @@ namespace ManangerAPI.Application.ApplicationApp
         {
             return _usuarioRepositorio.VerificaEmailJaCadastrado(email);
         }
+
+        public bool VerificaLoginJaCadastrado(string login)
+        {
+            return _usuarioRepositorio.VerificaMesmoLogin(login);
+        }
     }
 }

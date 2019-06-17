@@ -14,5 +14,7 @@ namespace ManangerAPI.Data.Contratos
 
          Usuario LogarPrestador(string login, string senha);
 
+         bool VerificaMesmoLogin(string login);
+
     }
 }

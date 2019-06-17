@@ -4,5 +4,6 @@ namespace ManangerAPI.RequestsData
     {
         public string Email { get; set; }
         public string Cpf { get; set; }
+        public string Login { get; set; }
     }
 }
