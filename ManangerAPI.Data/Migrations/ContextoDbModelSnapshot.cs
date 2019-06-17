@@ -357,6 +357,29 @@ namespace manangerapi.data.Migrations
                     b.ToTable("Sexo");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.SolicitacaoContrato", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ContratanteId");
+
+                    b.Property<DateTime>("DataSolicitacao");
+
+                    b.Property<int>("PrestadorDeServicoId");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContratanteId");
+
+                    b.HasIndex("PrestadorDeServicoId");
+
+                    b.ToTable("SolicitacaoContrato");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.StatusEntidade", b =>
                 {
                     b.Property<int>("Id")
@@ -595,6 +618,19 @@ namespace manangerapi.data.Migrations
 
                     b.HasOne("ManangerAPI.Data.Entidades.PrestadorDeServico", "PrestadorDeServico")
                         .WithMany("PrestadorDeServicoCompetencia")
+                        .HasForeignKey("PrestadorDeServicoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.SolicitacaoContrato", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.Contratante", "Contratante")
+                        .WithMany()
+                        .HasForeignKey("ContratanteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.PrestadorDeServico", "PrestadorDeServico")
+                        .WithMany()
                         .HasForeignKey("PrestadorDeServicoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

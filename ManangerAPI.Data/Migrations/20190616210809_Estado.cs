@@ -340,6 +340,34 @@ namespace manangerapi.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "SolicitacaoContrato",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    ContratanteId = table.Column<int>(nullable: false),
+                    PrestadorDeServicoId = table.Column<int>(nullable: false),
+                    DataSolicitacao = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SolicitacaoContrato", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SolicitacaoContrato_Usuario_ContratanteId",
+                        column: x => x.ContratanteId,
+                        principalTable: "Usuario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_SolicitacaoContrato_Usuario_PrestadorDeServicoId",
+                        column: x => x.PrestadorDeServicoId,
+                        principalTable: "Usuario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Medicamento",
                 columns: table => new
                 {
@@ -523,6 +551,16 @@ namespace manangerapi.data.Migrations
                 name: "IX_PrestadorDeServicoCompetencia_PrestadorDeServicoId",
                 table: "PrestadorDeServicoCompetencia",
                 column: "PrestadorDeServicoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SolicitacaoContrato_ContratanteId",
+                table: "SolicitacaoContrato",
+                column: "ContratanteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SolicitacaoContrato_PrestadorDeServicoId",
+                table: "SolicitacaoContrato",
+                column: "PrestadorDeServicoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -547,6 +585,9 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sexo");
+
+            migrationBuilder.DropTable(
+                name: "SolicitacaoContrato");
 
             migrationBuilder.DropTable(
                 name: "StatusEntidade");

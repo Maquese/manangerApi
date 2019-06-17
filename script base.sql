@@ -43,7 +43,43 @@ values(1,'Comprimido'),
 
 insert into Usuario 
 (Nome,Email,Discriminator,Login,Senha,Status,DataNascimento,Sexo,Termos,Aprovado,Analisado)
-values('Adm','adm@mananger.com','Administrador','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 1,1)
+values('Adm','adm@mananger.com','Administrador','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 1,1),
+('Rogerio Cardoso','reogerio@mananger.com','Gestor','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
+('Lucas Abreu','lucasabreu@mananger.com','Gestor','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1,0,0),
+('Ana Julia','anajulia@mananger.com','Gestor','adm','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
+('Camila Pamela','camilapamela@mananger.com','PrestadorDeServico','adm','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
+('Samuel ','samuel@mananger.com','PrestadorDeServico','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
+('João','joao@mananger.com','PrestadorDeServico','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
+('Dalilla ','dalilla@mananger.com','PrestadorDeServico','adm','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
+('Sabrina','sabrina@mananger.com','Contratante','adm','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0);
+
+
+insert into Competencia
+(Nome, Status)
+values
+('Serviços de cuidador',1),
+('Enfermagem',1) ,
+('Aplicar medicações',1),
+('Pernoite',1),
+('Dar banho',1);
+
+insert into prestadordeservicocompetencia
+(status,prestadordeservicoid,competenciaid)
+VALUES(1,5,1),
+(1,5,2),
+(1,5,3),
+(1,6,1),
+(1,6,2),
+(1,6,3),
+(1,6,5),
+(1,7,1),
+(1,7,2),
+(1,7,3),
+(1,7,4),
+(1,8,1),
+(1,8,2),
+(1,8,3);
+
 
 insert into posologia
 (status,nome)
@@ -55,14 +91,7 @@ insert into Acesso
 (PerfilId,Status,UsuarioId)
 values(1,1,1);
 
-insert into Competencia
-(Nome, Status)
-values
-('Serviços de cuidador',1),
-('Enfermagem',1) ,
-('Aplicar medicações1',1),
-('Pernoite',1),
-('Dar banho',1);
+
 
 insert into CondicaoClinica
 (Nome,Status)
@@ -5673,3 +5702,16 @@ Insert into Cidade (Codigo, Nome,Uf,Status) values ('5222054','Vicentinópolis',
 Insert into Cidade (Codigo, Nome,Uf,Status) values ('5222203','Vila Boa', 'GO',1);
 Insert into Cidade (Codigo, Nome,Uf,Status) values ('5222302','Vila Propício', 'GO',1);
 Insert into Cidade (Codigo, Nome,Uf,Status) values ('5300108','Brasília', 'DF',1);
+
+
+INSERT into Endereco
+(Status,cep,estadoid,cidadeid,bairro,rua,usuarioid)
+values(1,'11111111',25,3376,'bairro','rua',1),
+(1,'11111111',25,3376,'bairro','rua',2),
+(1,'11111111',25,3376,'bairro','rua',3),
+(1,'11111111',25,3376,'bairro','rua',4),
+(1,'11111111',25,3376,'bairro','rua',5),
+(1,'11111111',25,3377,'bairro','rua',6),
+(1,'11111111',25,3376,'bairro','rua',7),
+(1,'11111111',25,3376,'bairro','rua',8),
+(1,'11111111',25,3376,'bairro','rua',9);
