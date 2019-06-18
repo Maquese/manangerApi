@@ -44,14 +44,14 @@ values(1,'Comprimido'),
 insert into Usuario 
 (Nome,Email,Discriminator,Login,Senha,Status,DataNascimento,Sexo,Termos,Aprovado,Analisado)
 values('Adm','adm@mananger.com','Administrador','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 1,1),
-('Rogerio Cardoso','reogerio@mananger.com','Gestor','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
-('Lucas Abreu','lucasabreu@mananger.com','Gestor','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1,0,0),
-('Ana Julia','anajulia@mananger.com','Gestor','adm','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
-('Camila Pamela','camilapamela@mananger.com','PrestadorDeServico','adm','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
-('Samuel ','samuel@mananger.com','PrestadorDeServico','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
-('João','joao@mananger.com','PrestadorDeServico','adm','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
-('Dalilla ','dalilla@mananger.com','PrestadorDeServico','adm','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
-('Sabrina','sabrina@mananger.com','Contratante','adm','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0);
+('Rogerio Cardoso','reogerio@mananger.com','Gestor','rogerio','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
+('Lucas Abreu','lucasabreu@mananger.com','Gestor','lucasabreu','adm',1,'1990-02-20 00:00:00.0000000',1,1,0,0),
+('Ana Julia','anajulia@mananger.com','Gestor','anajulia','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
+('Camila Pamela','camilapamela@mananger.com','PrestadorDeServico','camilapamela','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
+('Samuel ','samuel@mananger.com','PrestadorDeServico','samuel','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
+('João','joao@mananger.com','PrestadorDeServico','joao','adm',1,'1990-02-20 00:00:00.0000000',1,1, 0,0),
+('Dalilla ','dalilla@mananger.com','PrestadorDeServico','dalilla','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0),
+('Sabrina','sabrina@mananger.com','Contratante','sabrina','adm',1,'1990-02-20 00:00:00.0000000',2,1, 0,0);
 
 
 insert into Competencia

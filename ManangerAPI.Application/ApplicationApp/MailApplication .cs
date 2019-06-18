@@ -23,7 +23,14 @@ namespace ManangerAPI.Application.ApplicationApp
                 smtp.Credentials = new NetworkCredential("lcmananger@gmail.com", "lcmananger123");
 
                 // envia o e-mail
-                smtp.Send(m);   
+               try
+                {                 
+                smtp.Send(m);      
+                }
+                catch (System.Exception)
+                {
+                    
+                }
             }
 
         }
@@ -44,7 +51,14 @@ namespace ManangerAPI.Application.ApplicationApp
                 smtp.Credentials = new NetworkCredential("lcmananger@gmail.com", "lcmananger123");
 
                 // envia o e-mail
-                smtp.Send(m);   
+                try
+                {                 
+                smtp.Send(m);      
+                }
+                catch (System.Exception)
+                {
+                    
+                }
             }
         }
     }
