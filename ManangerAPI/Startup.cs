@@ -30,7 +30,7 @@ namespace ManangerApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=LAPTOP-93KENU91\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"));
+            services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=DESKTOP-02TABC6\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"));
         
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IApplication,ManangerAPI.Application.ApplicationApp.Application>();            

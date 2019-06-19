@@ -89,8 +89,15 @@ values(1,'Uma vez por dia'),
 
 insert into Acesso
 (PerfilId,Status,UsuarioId)
-values(1,1,1);
-
+values(1,1,1),
+(3,1,2),
+(3,1,3),
+(3,1,4),
+(4,1,5),
+(4,1,6),
+(4,1,7),
+(4,1,8),
+(2,1,9);
 
 
 insert into CondicaoClinica
