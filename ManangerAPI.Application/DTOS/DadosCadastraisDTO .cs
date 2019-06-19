@@ -9,7 +9,7 @@ namespace ManangerAPI.Application.DTOS
         public string Telefone { get; set; }
         public string Email { get; set; }
         public  string  Sexo { get; set; }
-        public int Cidade { get; set; }
+        public string Cidade { get; set; }
         public string Comentario { get; set; }
     }
 }

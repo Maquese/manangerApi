@@ -26,7 +26,7 @@ namespace ManangerAPI.Application.ApplicationApp
             retorno.Sexo = ((SexoEnum)usuario.Sexo).ToString();
             retorno.Telefone = usuario.Telefone;
             retorno.Email = usuario.Email;
-            retorno.Cidade = _enderecoRepositorio.EncontrarPorUsuario(idUsuario).CidadeId;
+            retorno.Cidade = _cidadeRepositorio.Encontrar( _enderecoRepositorio.EncontrarPorUsuario(idUsuario).CidadeId).Nome;
             retorno.Comentario = usuario.Comentario;
             return retorno;
         }
