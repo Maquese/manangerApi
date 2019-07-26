@@ -181,5 +181,12 @@ namespace ManangerAPI.Application.ApplicationApp
             }).ToList();
 
         }
+
+        public void RemoverBeneficiarioMedicamento(int id)
+        {
+            var medicamento = _beneficiarioMedicamentoRepositorio.Encontrar(id);
+            medicamento.Status = 2;
+            _beneficiarioMedicamentoRepositorio.Save();
+        }
     }
 }

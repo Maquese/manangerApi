@@ -76,6 +76,13 @@ namespace ManangerAPI.Controllers
             _beneficiarioApplication.EditarBeneficiarioMedicamento(request.Id,request.MedicamentoId,request.PosologiaId,request.Quantidade);
         }
 
+        [HttpPost]
+        [Route("api/beneficiario/removermedicamento")]
+        public void RemoverMedicamento(BeneficiarioMedicamentoRequest request)
+        {
+            _beneficiarioApplication.RemoverBeneficiarioMedicamento(request.Id);
+        }
+
         
     }
 }

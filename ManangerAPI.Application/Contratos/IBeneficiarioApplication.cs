@@ -23,5 +23,7 @@ namespace ManangerAPI.Application.Contratos
 
         void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade);
 
+        void RemoverBeneficiarioMedicamento(int id);
+
     }
 }
