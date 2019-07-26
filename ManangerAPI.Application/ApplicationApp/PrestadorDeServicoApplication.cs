@@ -34,6 +34,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Email = prestador.Email,
                 Numero = endereco.Numero,
                 Rua = endereco.Rua,
+                Curriculo  =  prestador.Curriculo,
                 Competencias = _prestadorDeServicoCompetenciaRepositorio.EncontrarPorPrestadorDeServicoId(prestador.Id).Select(x => x.CompetenciaId).ToList()
             };
             return retorno;
