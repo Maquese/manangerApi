@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ManangerAPI.Controllers
 {
+    [ApiController]
     public class DownloadController : ControllerBase
     {
         private readonly IDownloadApplication _downloadApplication;
@@ -16,6 +17,7 @@ namespace ManangerAPI.Controllers
             _downloadApplication  = downloadApplication;
         }
         
+        [Route("api/download/baixarcurriculoporusuario")]
         [HttpGet]
         public HttpResponseMessage BaixarCurriculoPorUsuario(int id)
         {
