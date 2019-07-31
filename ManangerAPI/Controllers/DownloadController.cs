@@ -19,15 +19,18 @@ namespace ManangerAPI.Controllers
         
         [Route("api/download/baixarcurriculoporusuario")]
         [HttpGet]
-        public HttpResponseMessage BaixarCurriculoPorUsuario(int id)
+        public IActionResult  BaixarCurriculoPorUsuario(int id)
         {
-            var dados = _downloadApplication.BaixarCurriculoPorUsuario(id);
-            var response = new HttpResponseMessage(System.Net.HttpStatusCode.OK);
-            response.Content = new StreamContent(new MemoryStream(dados));
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-            response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
-            response.Content.Headers.ContentDisposition.FileName = "curriculo"+ ".pdf";
-            return response;
+            var dados = new MemoryStream(_downloadApplication.BaixarCurriculoPorUsuario(id));
+            return File(dados, "application/pdf", "curriculo.pdf");
+            //return  new FileStreamResult(new MemoryStream(dados),"application/pdf");
+
+            // response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
+            // response.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
+            // response.Content.Headers.ContentDisposition.FileName = "curriculo"+ ".pdf";
+            // return response;
         }
+
+
     }
 }

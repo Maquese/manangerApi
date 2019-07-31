@@ -7,7 +7,8 @@ namespace ManangerAPI.Application.ApplicationApp
     {
         public byte[] BaixarCurriculoPorUsuario(int idUsuario)
         {
-            return   Convert.FromBase64String(_usuarioRepositorio.Encontrar(idUsuario).Curriculo);
+            var x = _usuarioRepositorio.Encontrar(idUsuario).Curriculo;
+            return   Convert.FromBase64String(x);
         }
     }
 }
