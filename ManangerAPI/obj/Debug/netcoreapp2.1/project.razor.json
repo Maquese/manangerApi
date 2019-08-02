@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\indefinido\\Desktop\\back\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
+  "FilePath": "c:\\Projetos\\Tcc\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2857,5 +2857,6 @@
     "CSharpLanguageVersion": 703
   },
   "RootNamespace": "ManangerApi",
-  "Documents": []
+  "Documents": [],
+  "SerializationFormat": "0.1"
 }
