@@ -12,6 +12,11 @@ namespace ManangerAPI.Data.Repositorios
         {
         }
 
+        public int EncotrarIdPorNome(string nome)
+        {
+            return _contexto.Cidade.Where(x => x.Nome.ToLower() == nome.ToLower()).FirstOrDefault().Id;
+        }
+
         public IList<KeyValuePair<int, string>> GerarDropDown()
         {
             return _contexto.Cidade.Select(x => new KeyValuePair<int, string>(x.Id, x.Nome)).ToList();

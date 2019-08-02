@@ -8,5 +8,7 @@ namespace ManangerAPI.Data.Contratos
          IList<KeyValuePair<int,string>> GerarDropDown();
 
          IList<KeyValuePair<int,string>> GerarDropDown(string uf);
+
+         int EncotrarIdPorNome(string nome);
     }
 }

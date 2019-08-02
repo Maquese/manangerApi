@@ -24,6 +24,7 @@ namespace ManangerAPI.Application.ApplicationApp
             retorno.Complemento = deserialized.complemento;
             retorno.Rua = deserialized.logradouro;
             retorno.Uf = deserialized.uf;
+            retorno.IdCidade = _cidadeRepositorio.EncotrarIdPorNome(deserialized.localidade);
             return retorno;
         }
     }
