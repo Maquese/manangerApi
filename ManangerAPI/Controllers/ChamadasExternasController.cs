@@ -18,7 +18,16 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public EnderecoCepDTO BuscarEnderecoPorCep(string cep)
         {
-           return _cepApplication.BuscarEnderecoPorCepAsync(cep).Result;
+            try
+            {
+                return _cepApplication.BuscarEnderecoPorCepAsync(cep).Result;
+            }
+            catch (System.Exception)
+            {
+
+                throw new System.Exception("Cep inválido.");
+            }
+
         }
     }
 }

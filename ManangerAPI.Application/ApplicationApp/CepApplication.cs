@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using ManangerAPI.Application.Contratos;
 using ManangerAPI.Application.DTOS;
 using Newtonsoft.Json;
+using System;
 
 namespace ManangerAPI.Application.ApplicationApp
 {
@@ -10,8 +11,10 @@ namespace ManangerAPI.Application.ApplicationApp
     {
         public async Task<EnderecoCepDTO> BuscarEnderecoPorCepAsync(string cep)
         {
-            var url = "https://viacep.com.br/ws/"+cep+"/json/";
             var retorno = new EnderecoCepDTO();
+            try{
+            var url = "https://viacep.com.br/ws/"+cep+"/json/";
+            
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -25,6 +28,9 @@ namespace ManangerAPI.Application.ApplicationApp
             retorno.Rua = deserialized.logradouro;
             retorno.Uf = deserialized.uf;
             retorno.IdCidade = _cidadeRepositorio.EncotrarIdPorNome(deserialized.localidade);
+            }catch(Exception e){
+                throw new Exception("Cep inválido.");
+            }
             return retorno;
         }
     }
