@@ -11543,23 +11543,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\indefinido\\.nuget\\packages\\": {},
+    "C:\\Users\\clastech\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
+      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi\\ManangerApi.csproj",
       "projectName": "ManangerApi",
-      "projectPath": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
-      "packagesPath": "C:\\Users\\indefinido\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\ManangerAPI\\obj\\",
+      "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi\\ManangerApi.csproj",
+      "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\indefinido\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -11570,11 +11570,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
-              "projectPath": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.application\\manangerapi.application.csproj"
+            "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.application\\manangerapi.application.csproj": {
+              "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.application\\manangerapi.application.csproj"
             },
-            "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
-              "projectPath": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
+            "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.data\\ManangerApi.Data.csproj": {
+              "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.data\\ManangerApi.Data.csproj"
             }
           }
         }

@@ -45,6 +45,7 @@ namespace ManangerApi
             services.AddScoped<IDropDownApplication,ManangerAPI.Application.ApplicationApp.Application>();
             services.AddScoped<IDownloadApplication,ManangerAPI.Application.ApplicationApp.Application>();            
             services.AddScoped<ICepApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IContratoApplication,ManangerAPI.Application.ApplicationApp.Application>();
 
             services.AddScoped<IBeneficiarioRepositorio,BeneficiarioRepositorio>();
             services.AddScoped<IAcessoRepositorio,AcessoRepositorio>();
