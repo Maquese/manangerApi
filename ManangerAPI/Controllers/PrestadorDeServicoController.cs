@@ -59,5 +59,7 @@ namespace ManangerAPI.Controllers
             return _prestadorDeServicoApplication.ListarPrestadoresProximos(request.Id);
         }
 
+        
+
     }
 }

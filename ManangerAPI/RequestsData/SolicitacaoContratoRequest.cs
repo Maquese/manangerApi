@@ -1,3 +1,5 @@
+using System;
+
 namespace ManangerAPI.RequestsData
 {
     public class SolicitacaoContratoRequest
@@ -5,6 +7,8 @@ namespace ManangerAPI.RequestsData
         public int IdContratante { get; set; }
         public int IdPrestadorDeServico { get; set; }
         public int IdBeneficiario { get; set; }
-        public int IdUsuario { get; set; }
+        public DateTime DataFim { get; set; }
+        public string Comentario { get; set; }
+        public bool TempoIndeterminado { get; set; }
     }
 }

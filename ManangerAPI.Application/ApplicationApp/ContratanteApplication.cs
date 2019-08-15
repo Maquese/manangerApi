@@ -141,9 +141,18 @@ namespace ManangerAPI.Application.ApplicationApp
             return retorno;
         }
 
-        public void SolicitarNovoContrato(int idContratante, int idPrestador)
+        public void SolicitarNovoContrato(int idContratante, int idPrestador, int idBeneficiario, DateTime dataFim, string comentario, bool tempoIndeterminado)
         {
-            var novaSolicitacao = new SolicitacaoContrato{ContratanteId = idContratante, PrestadorDeServicoId = idPrestador, Status = 1, DataSolicitacao = DateTime.Now};
+            var novaSolicitacao = new SolicitacaoContrato{
+                ContratanteId = idContratante, 
+            PrestadorDeServicoId = idPrestador,
+             Status = (int)StatusEnum.Ativo, 
+             DataSolicitacao = DateTime.Now,
+             BeneficiarioId = idBeneficiario,
+             Comentario = comentario,
+             DataFim = dataFim,
+            TempoIndeterminado = tempoIndeterminado
+             };
 
             _solicitacaoContratoRepositorio.Insert(novaSolicitacao);
             _solicitacaoContratoRepositorio.Save();

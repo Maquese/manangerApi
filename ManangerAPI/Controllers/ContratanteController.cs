@@ -63,7 +63,8 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public void SolicitarContrato(SolicitacaoContratoRequest request)
         {
-            _contratanteApplication.SolicitarNovoContrato(request.IdContratante,request.IdUsuario);
+            _contratanteApplication.SolicitarNovoContrato(request.IdContratante,request.IdPrestadorDeServico, request.IdBeneficiario,request.DataFim,
+                                                           request.Comentario, request.TempoIndeterminado);
         }
 
 
