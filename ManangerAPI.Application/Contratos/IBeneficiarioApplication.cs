@@ -25,5 +25,7 @@ namespace ManangerAPI.Application.Contratos
 
         void RemoverBeneficiarioMedicamento(int id);
 
+        IList<SolicitacaoPendenteDTO> ListarSolicitacoesPendentes(int idBeneficiario);
+
     }
 }

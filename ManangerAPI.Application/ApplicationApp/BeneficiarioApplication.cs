@@ -182,6 +182,16 @@ namespace ManangerAPI.Application.ApplicationApp
 
         }
 
+        public IList<SolicitacaoPendenteDTO> ListarSolicitacoesPendentes(int idBeneficiario)
+        {
+            return _solicitacaoContratoRepositorio.ListarSolicitacoesPorBeneficiario(idBeneficiario).Select(x => new SolicitacaoPendenteDTO
+            {
+                Id = x.Id,
+                DataSolicitacao = x.DataSolicitacao,
+                NomePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Nome
+            }).ToList();
+        }
+
         public void RemoverBeneficiarioMedicamento(int id)
         {
             var medicamento = _beneficiarioMedicamentoRepositorio.Encontrar(id);

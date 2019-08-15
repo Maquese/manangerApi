@@ -78,11 +78,18 @@ namespace ManangerAPI.Controllers
 
         [HttpPost]
         [Route("api/beneficiario/removermedicamento")]
-        public void RemoverMedicamento(BeneficiarioMedicamentoRequest request)
+        public void RemoverMedicamento(BaseRequest request)
         {
             _beneficiarioApplication.RemoverBeneficiarioMedicamento(request.Id);
         }
 
+
+        [HttpPost]
+        [Route("api/beneficiario/listarsolicitacoespendentes")]
+        public IList<SolicitacaoPendenteDTO> ListarSolicitacoesPendentes(BaseRequest request)
+        {
+            return _beneficiarioApplication.ListarSolicitacoesPendentes(request.Id);
+        }
         
     }
 }
