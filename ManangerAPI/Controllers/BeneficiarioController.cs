@@ -83,13 +83,18 @@ namespace ManangerAPI.Controllers
             _beneficiarioApplication.RemoverBeneficiarioMedicamento(request.Id);
         }
 
-
         [HttpPost]
         [Route("api/beneficiario/listarsolicitacoespendentes")]
         public IList<SolicitacaoPendenteDTO> ListarSolicitacoesPendentes(BaseRequest request)
         {
             return _beneficiarioApplication.ListarSolicitacoesPendentes(request.Id);
         }
-        
+
+        [HttpPost]
+        [Route("api/beneficiario/cancelarsolicitacaocontrato")]
+        public void CancelarSolicitacaoContrato(BaseRequest request)
+        {
+            _beneficiarioApplication.CancelarSolicitacaoContrato(request.Id);
+        }        
     }
 }

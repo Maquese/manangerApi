@@ -27,5 +27,7 @@ namespace ManangerAPI.Application.Contratos
 
         IList<SolicitacaoPendenteDTO> ListarSolicitacoesPendentes(int idBeneficiario);
 
+         void CancelarSolicitacaoContrato(int idSolicitacao);
+
     }
 }

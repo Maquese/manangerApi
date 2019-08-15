@@ -57,6 +57,16 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioMedicamentoRepositorio.Save();
         }
 
+        public void CancelarSolicitacaoContrato(int idSolicitacao)
+        {
+            var solicitacao = _solicitacaoContratoRepositorio.Encontrar(idSolicitacao);
+            if(solicitacao != null)
+            {
+                solicitacao.Status = (int)StatusEnum.Inativo;
+                _solicitacaoContratoRepositorio.Save();
+            }
+        }
+
         public BeneficiarioMedicamentoDTO DetalharBeneficiarioMedicamento(int idBeneficiarioMedicamento)
         {
             var dados = _beneficiarioMedicamentoRepositorio.Encontrar(idBeneficiarioMedicamento);
