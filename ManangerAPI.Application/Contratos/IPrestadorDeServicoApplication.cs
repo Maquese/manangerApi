@@ -23,6 +23,8 @@ namespace ManangerAPI.Application.Contratos
 
         IList<ListagemPrestadorGestorDTO> ListarPrestadoresProximos(int cidadeId);
 
+        IList<SolicitacaoPendentePrestadorDTO> ListarSolicitacoesPendentes(int idPrestador);
+
         
     }
 }

@@ -59,7 +59,12 @@ namespace ManangerAPI.Controllers
             return _prestadorDeServicoApplication.ListarPrestadoresProximos(request.Id);
         }
 
-        
+        [Route("api/gestor/listarsolicitacoesdecontrato")]
+        [HttpPost]  
+        public IList<SolicitacaoPendentePrestadorDTO> ListarSolicitacoesDeContrato(BaseRequest request)
+        {
+            return _prestadorDeServicoApplication.ListarSolicitacoesPendentes(request.Id);
+        }
 
     }
 }

@@ -182,5 +182,21 @@ namespace ManangerAPI.Application.ApplicationApp
 
             return retorno;
         }
+
+        IList<SolicitacaoPendentePrestadorDTO> IPrestadorDeServicoApplication.ListarSolicitacoesPendentes(int idPrestador)
+        {
+            var retorno = new List<SolicitacaoPendentePrestadorDTO>();
+            foreach (var item in  _solicitacaoContratoRepositorio.ListarSolicitacoesPorPrestador(idPrestador))
+            {
+                retorno.Add(new SolicitacaoPendentePrestadorDTO{
+                    Id  = item.Id,
+                    DataSolicitacao  = item.DataSolicitacao,
+                    NomeBeneficiario = _beneficiarioRepositorio.Encontrar(item.BeneficiarioId).Nome,
+                    NomeContratante = _contratanteRepositorio.Encontrar(item.ContratanteId).Nome,
+
+                });
+            }
+            return retorno;            
+        }
     }
 }
