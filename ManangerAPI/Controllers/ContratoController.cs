@@ -15,11 +15,5 @@ namespace ManangerAPI.Controllers
             _contratoApplication = contratoApplication;
         }
 
-        [Route("api/contratante/buscardadossolicitacaocontratanteprestador")]
-        [HttpPost]
-        public DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContratantePrestador(SolicitacaoContratoRequest request)
-        {
-            return _contratoApplication.BuscarDadosSolicitacaoContrato(request.IdContratante,request.IdPrestadorDeServico,request.IdBeneficiario);   
-        }
     }
 }

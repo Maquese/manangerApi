@@ -38,6 +38,15 @@ namespace ManangerAPI.Application.ApplicationApp
             return retorno;
         }
 
+        public DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContrato(int idBeneficiario, int idContratante, int idPrestador)
+        {
+            return new DadosSolicitacaoContratoDTO{
+                NomeBeneficiario = _beneficiarioRepositorio.Encontrar(idBeneficiario).Nome,
+                NomeContratante = _contratanteRepositorio.Encontrar(idContratante).Nome,
+                NomePrestadorDeServico = _prestadorDeServicoRepositorio.Encontrar(idPrestador).Nome
+            };
+        }
+
         public void Cadastrar(string nome, string login, string senha, string email,DateTime dataNascimento, int sexo, string cpf,
                         string telefone,string comentarios,bool termos,int cidade,string estado,string bairro,string cep,
                         string numero,string complemento, string rua, string imagem)

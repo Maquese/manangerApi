@@ -67,6 +67,11 @@ namespace ManangerAPI.Controllers
                                                            request.Comentario, request.TempoIndeterminado);
         }
 
-
+        [Route("api/contratante/buscardadossolicitacaocontratanteprestador")]
+        [HttpPost]
+        public DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContratantePrestador(SolicitacaoContratoRequest request)
+        {
+            return _contratanteApplication.BuscarDadosSolicitacaoContrato(request.IdBeneficiario,request.IdBeneficiario,request.IdPrestadorDeServico);   
+        }
     }
 }   
