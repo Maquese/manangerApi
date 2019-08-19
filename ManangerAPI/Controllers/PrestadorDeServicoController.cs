@@ -52,14 +52,14 @@ namespace ManangerAPI.Controllers
             return _prestadorDeServicoApplication.ListarPorAprovacao(false);
         }
 
-        [Route("api/gestor/listarprestadoresproximos")]
+        [Route("api/prestadordeservico/listarprestadoresproximos")]
         [HttpPost]  
         public IList<ListagemPrestadorGestorDTO> ListarPrestadoresProximos(BaseRequest request)
         {
             return _prestadorDeServicoApplication.ListarPrestadoresProximos(request.Id);
         }
 
-        [Route("api/gestor/listarsolicitacoesdecontrato")]
+        [Route("api/prestadordeservico/listarsolicitacoesdecontrato")]
         [HttpPost]  
         public IList<SolicitacaoPendentePrestadorDTO> ListarSolicitacoesDeContrato(BaseRequest request)
         {

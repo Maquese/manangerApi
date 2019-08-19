@@ -976,12 +976,10 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -1200,12 +1198,10 @@
       ]
     },
     "Remotion.Linq/2.2.0": {
-      "sha512": "twDAH8dAXXCAf3sRv1Tf94u66eEHvgU75hfn1nn2v4fSWXD50XoDOAk8WpSrbViNuMkB4kN1ElnOGm1c519IHg==",
+      "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "type": "package",
       "path": "remotion.linq/2.2.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "lib/net35/Remotion.Linq.XML",
         "lib/net35/Remotion.Linq.dll",
         "lib/net40/Remotion.Linq.XML",
@@ -1705,12 +1701,10 @@
       ]
     },
     "System.Interactive.Async/3.1.1": {
-      "sha512": "x9y2omkjEudKbIVuhUzeWw7ZlouEzpk4W98woCEq1lq9gJxERBKRKDTHF5JPEws9E0f4/Uei/2vLxEy1IrfmMg==",
+      "sha512": "hZccYiIE5RS1/J9Tb/BNtosAGVggdlsJm4Ojdu+gDV0p4AIi+LUfUogMKkRacljQEJd2AG6vYzvcjhQFkqoZmw==",
       "type": "package",
       "path": "system.interactive.async/3.1.1",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "lib/net45/System.Interactive.Async.dll",
         "lib/net45/System.Interactive.Async.xml",
         "lib/net46/System.Interactive.Async.dll",
@@ -3072,37 +3066,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kenney\\.nuget\\packages\\": {},
+    "C:\\Users\\indefinido\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+      "projectUniqueName": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
       "projectName": "manangerapi.application",
-      "projectPath": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
-      "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi.application\\obj\\",
+      "projectPath": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+      "packagesPath": "C:\\Users\\indefinido\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\indefinido\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Projetos\\Tcc\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
-              "projectPath": "C:\\Projetos\\Tcc\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
+            "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+              "projectPath": "C:\\Users\\indefinido\\Desktop\\back\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
             }
           }
         }
