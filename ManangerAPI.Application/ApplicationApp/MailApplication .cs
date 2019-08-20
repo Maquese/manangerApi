@@ -35,6 +35,33 @@ namespace ManangerAPI.Application.ApplicationApp
 
         }
 
+        public void EnviarEmailRespostaSolicitacaoContrato(string prestadodDeServico, string para, string nome)
+        {
+            MailMessage m = new MailMessage(new MailAddress("lcmananger@gmail.com"), new MailAddress(para));
+            m.Subject = "Resposta a solicitação de contrato";
+            m.Body =  "Olá " + nome + " você tem uma resposta de uma solicitação de contrato feita para o" +prestadodDeServico +"!\n O ";
+
+            using (var smtp = new SmtpClient("smtp.gmail.com",587))
+            {                
+                smtp.EnableSsl = true; // GMail requer SSL
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network; // modo de envio
+                smtp.UseDefaultCredentials = false; // vamos utilizar credencias especificas
+
+                // seu usuário e senha para autenticação
+                smtp.Credentials = new NetworkCredential("lcmananger@gmail.com", "lcmananger123");
+
+                // envia o e-mail
+                try
+                {                 
+                smtp.Send(m);      
+                }
+                catch (System.Exception)
+                {
+                    
+                }
+            }
+        }
+
         public void EnviarEmailSolicitacaoContrato(string contratante, string para, string nome)
         {
              MailMessage m = new MailMessage(new MailAddress("lcmananger@gmail.com"), new MailAddress(para));

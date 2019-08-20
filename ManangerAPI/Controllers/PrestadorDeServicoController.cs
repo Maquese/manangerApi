@@ -66,5 +66,14 @@ namespace ManangerAPI.Controllers
             return _prestadorDeServicoApplication.ListarSolicitacoesPendentes(request.Id);
         }
 
+
+        [Route("api/prestadordeservico/aceitarounaosolicitacao")]
+        [HttpPost]  
+        public void AceitarOuNaoSolicitacao(SolicitacaoContratoRequest request)
+        {
+            _prestadorDeServicoApplication.AceitarOuNaoSolicitacao(request.Id,request.Aceitou);
+        }
+
+
     }
 }

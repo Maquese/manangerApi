@@ -10,6 +10,33 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IPrestadorDeServicoApplication
     {
+        public void AceitarOuNaoSolicitacao(int idSolicitacao, bool aceitou)
+        {
+            var solicitacao = _solicitacaoContratoRepositorio.Encontrar(idSolicitacao);
+            
+            if(solicitacao != null)
+            {
+                var nomePrestador = _prestadorDeServicoRepositorio.Encontrar(solicitacao.PrestadorDeServicoId).Nome;
+                var contratante = _contratanteRepositorio.Encontrar(solicitacao.ContratanteId);
+                solicitacao.DataFim = DateTime.Now;
+                if (aceitou)
+                {
+                    var contrato = new Contrato
+                    {
+                        BeneficiarioId = solicitacao.BeneficiarioId,
+                        ContratanteId = solicitacao.ContratanteId,
+                        SolicitacaoContratoId = solicitacao.Id,
+                        DataInicio = DateTime.Now,
+                        PrestadorDeServicoId = solicitacao.PrestadorDeServicoId,
+                        Status = (int)StatusEnum.Ativo,
+                    };
+                    _contratoRepositorio.Insert(contrato);
+                    EnviarEmailRespostaSolicitacaoContrato(nomePrestador,contratante.Email,contratante.Nome);
+                }                
+                    _contratoRepositorio.Save();
+            }
+        }
+
         public UsuarioEditDTO BuscarPrestadorPorId(int id)
         {
               var prestador = _prestadorDeServicoRepositorio.Encontrar(id);

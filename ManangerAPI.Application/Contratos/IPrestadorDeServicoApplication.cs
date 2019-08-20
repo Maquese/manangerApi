@@ -25,6 +25,8 @@ namespace ManangerAPI.Application.Contratos
 
         IList<SolicitacaoPendentePrestadorDTO> ListarSolicitacoesPendentes(int idPrestador);
 
+        void AceitarOuNaoSolicitacao(int idSolicitacao, bool aceitou);
+
         
     }
 }

@@ -182,6 +182,39 @@ namespace manangerapi.data.Migrations
                     b.ToTable("CondicaoClinica");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Contrato", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BeneficiarioId");
+
+                    b.Property<int>("ContratanteId");
+
+                    b.Property<DateTime>("DataFim");
+
+                    b.Property<DateTime>("DataInicio");
+
+                    b.Property<int>("PrestadorDeServicoId");
+
+                    b.Property<int>("SolicitacaoContratoId");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BeneficiarioId");
+
+                    b.HasIndex("ContratanteId");
+
+                    b.HasIndex("PrestadorDeServicoId");
+
+                    b.HasIndex("SolicitacaoContratoId");
+
+                    b.ToTable("Contrato");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Endereco", b =>
                 {
                     b.Property<int>("Id")
@@ -363,7 +396,13 @@ namespace manangerapi.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("BeneficiarioId");
+
+                    b.Property<string>("Comentario");
+
                     b.Property<int>("ContratanteId");
+
+                    b.Property<DateTime>("DataFim");
 
                     b.Property<DateTime>("DataSolicitacao");
 
@@ -371,7 +410,11 @@ namespace manangerapi.data.Migrations
 
                     b.Property<int>("Status");
 
+                    b.Property<bool>("TempoIndeterminado");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("BeneficiarioId");
 
                     b.HasIndex("ContratanteId");
 
@@ -421,6 +464,8 @@ namespace manangerapi.data.Migrations
                     b.Property<string>("Comentario");
 
                     b.Property<string>("Cpf");
+
+                    b.Property<string>("Curriculo");
 
                     b.Property<DateTime>("DataNascimento");
 
@@ -491,7 +536,6 @@ namespace manangerapi.data.Migrations
                 {
                     b.HasBaseType("ManangerAPI.Data.Entidades.Usuario");
 
-                    b.Property<string>("Curriculo");
 
                     b.ToTable("Gestor");
 
@@ -570,6 +614,29 @@ namespace manangerapi.data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Contrato", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.Beneficiario", "Beneficiario")
+                        .WithMany()
+                        .HasForeignKey("BeneficiarioId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.Contratante", "Contratante")
+                        .WithMany()
+                        .HasForeignKey("ContratanteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.PrestadorDeServico", "PrestadorDeServico")
+                        .WithMany()
+                        .HasForeignKey("PrestadorDeServicoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.SolicitacaoContrato", "SolicitacaoContrato")
+                        .WithMany()
+                        .HasForeignKey("SolicitacaoContratoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Endereco", b =>
                 {
                     b.HasOne("ManangerAPI.Data.Entidades.Cidade", "Cidade")
@@ -624,6 +691,11 @@ namespace manangerapi.data.Migrations
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.SolicitacaoContrato", b =>
                 {
+                    b.HasOne("ManangerAPI.Data.Entidades.Beneficiario", "Beneficiario")
+                        .WithMany()
+                        .HasForeignKey("BeneficiarioId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("ManangerAPI.Data.Entidades.Contratante", "Contratante")
                         .WithMany()
                         .HasForeignKey("ContratanteId")
