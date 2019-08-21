@@ -34,3 +34,12 @@ C:\Users\indefinido\Desktop\back\manangerApi\manangerapi.data\obj\Debug\netstand
 C:\Users\indefinido\Desktop\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.AssemblyInfo.cs
 C:\Users\indefinido\Desktop\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.dll
 C:\Users\indefinido\Desktop\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.pdb
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.deps.json
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.dll
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.pdb
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.csprojAssemblyReference.cache
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.csproj.CoreCompileInputs.cache
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.AssemblyInfoInputs.cache
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.AssemblyInfo.cs
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.dll
+C:\Users\kenney\Documents\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.pdb

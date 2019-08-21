@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VitorLazarettideSa\\Desktop\\PUCC\\TCC\\Back\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {}
+    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VitorLazarettideSa\\Desktop\\PUCC\\TCC\\Back\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VitorLazarettideSa\\Desktop\\PUCC\\TCC\\Back\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+        "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
         "projectName": "ManangerApi.Data",
-        "projectPath": "C:\\Users\\VitorLazarettideSa\\Desktop\\PUCC\\TCC\\Back\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
-        "packagesPath": "C:\\Users\\VitorLazarettideSa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VitorLazarettideSa\\Desktop\\PUCC\\TCC\\Back\\manangerApi\\manangerapi.data\\obj\\",
+        "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+        "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\VitorLazarettideSa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"

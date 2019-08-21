@@ -25,12 +25,19 @@ namespace ManangerApi
             Configuration = configuration;
         }
 
+        
+public static string ConnectionString {  
+    get;  
+    private set;  
+}
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ContextoDb>(x => x.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=Mananger;Trusted_Connection=True;"));
+            
+            ConnectionString =  Configuration.GetValue("ConnectionString","").ToString();
+            services.AddDbContext<ContextoDb>(x => x.UseSqlServer(ConnectionString));
         
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IApplication,ManangerAPI.Application.ApplicationApp.Application>();            
