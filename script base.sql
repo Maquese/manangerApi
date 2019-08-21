@@ -7,7 +7,7 @@ insert into Sexo
 values(1,'Outro'),(1,'Masculino'),(1,'Feminino')
 
 insert into Perfil
-values (1,'Administrador'),(1,'Contratante'), (1,'Gestor'),(1,'Prestador de Servico')
+values (1,'Administrador'),(1,'Contratante'), (1,'Gestor'),(1,'Prestador de Servico');
 
 
 insert into Funcionalidade
@@ -108,6 +108,11 @@ values
 ('Possui drenos',1),
 ('Se locomove',1),
 ('Consegue comer',1);
+
+insert into Medicamento
+(Nome,Status,ContraIndicacao,Bula,Indicao,TipoMedicamentoId,ViaDeUsoMedicamentoId,EfeitoColateral)
+values('Medicamento1',1,'Contra indicacao','bula','indicacao',1,1,'efeitocolateral'),
+('Medicamento2',1,'Contra indicacao','bula','indicacao',2,2,'efeitocolateral');
 
 --Estados
 Insert into Estado (CodigoUf, Nome, Uf,Regiao,Status) values (12, 'Acre', 'AC', 1,1);
