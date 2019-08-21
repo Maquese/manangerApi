@@ -15,7 +15,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<PrestadorDeServico> ListarNaoAnalisadosEReprovados()
         {
-            return _contexto.PrestadorDeServico.Where(x => x.Aprovado  && x.Status == 1).ToList();
+            return _contexto.PrestadorDeServico.Where(x => !x.Aprovado && !x.Analisado && x.Status == 1).ToList();
         }
 
         public IList<PrestadorDeServico> ListarPorAnalise(bool analisado)
@@ -30,7 +30,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<PrestadorDeServico> ListarPrestadoresProximos(int cidadeId)
         {
-            return _contexto.PrestadorDeServico.Include("Endereco").Where(x => x.Endereco.CidadeId == cidadeId).ToList();
+            return _contexto.PrestadorDeServico.Include("Endereco").Where(x => x.Endereco.CidadeId == cidadeId && x.Analisado  && x.Aprovado && x.Status == 1).ToList();
         }
     }
 }
