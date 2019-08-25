@@ -21,13 +21,17 @@ namespace ManangerAPI.Application.ApplicationApp
         {
             var retorno = new DadosCadastraisDTO();
             var usuario = _usuarioRepositorio.Encontrar(idUsuario);
+            var endereco =  _enderecoRepositorio.EncontrarPorUsuario(idUsuario);
             retorno.Nome = usuario.Nome;
             retorno.DataNascimento = usuario.DataNascimento;
             retorno.Sexo = ((SexoEnum)usuario.Sexo).ToString();
             retorno.Telefone = usuario.Telefone;
             retorno.Email = usuario.Email;
-            retorno.Cidade = _cidadeRepositorio.Encontrar( _enderecoRepositorio.EncontrarPorUsuario(idUsuario).CidadeId).Nome;
+            retorno.Cidade = _cidadeRepositorio.Encontrar(endereco.CidadeId).Nome;
             retorno.Comentario = usuario.Comentario;
+            retorno.Imagem = usuario.Imagem;
+            retorno.Curriculo = usuario.Curriculo;
+            retorno.Estado = _estadoRepostorio.Encontrar(endereco.EstadoId).Nome;
             return retorno;
         }
 
