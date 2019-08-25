@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {}
+    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\ManangerApi.csproj": {}
   },
   "projects": {
     "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
@@ -17,12 +17,14 @@
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -79,12 +81,14 @@
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -120,25 +124,27 @@
         }
       }
     },
-    "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {
+    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\ManangerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
+        "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\ManangerApi.csproj",
         "projectName": "ManangerApi",
-        "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
+        "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\ManangerApi.csproj",
         "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\obj\\",
+        "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

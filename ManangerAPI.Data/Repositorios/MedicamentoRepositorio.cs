@@ -16,7 +16,7 @@ namespace ManangerAPI.Data.Repositorios
         {
             var retorno = new List<KeyValuePair<int,string>>();
             retorno.Add(new KeyValuePair<int, string>(0,"Selecione"));
-            retorno.AddRange(_contexto.Medicamento.Select(x => new KeyValuePair<int, string>(x.Id, x.Nome)).ToList());
+            retorno.AddRange(_contexto.Medicamento.Where(x => x.Status == 1).Select(x => new KeyValuePair<int, string>(x.Id, x.Nome)).ToList());
             return retorno;
         }
 
