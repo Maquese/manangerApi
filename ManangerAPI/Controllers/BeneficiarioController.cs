@@ -52,7 +52,7 @@ namespace ManangerAPI.Controllers
         [Route("api/beneficiario/adicionarmedicamento")]
         public void AdicionarMedicamento(BeneficiarioMedicamentoRequest request)
         {
-            _beneficiarioApplication.AdicionarMedicamento(request.BeneficiarioId,request.MedicamentoId,request.PosologiaId,request.Quantidade);
+            _beneficiarioApplication.AdicionarMedicamento(request.BeneficiarioId,request.MedicamentoId,request.PosologiaId,request.Quantidade,request.DataInicio,request.DataFim);
         }
 
         [HttpPost]

@@ -42,7 +42,7 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioRepositorio.Save();
         }
 
-        public void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade)
+        public void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim)
         {
             BeneficiarioMedicamento medicamento = new BeneficiarioMedicamento
             {
@@ -50,7 +50,9 @@ namespace ManangerAPI.Application.ApplicationApp
                 MedicamentoId = idMedicamento,
                 PosologiaId = idPosologia,
                 Quantidade = quantidade,
-                Status = (int)StatusEnum.Ativo
+                Status = (int)StatusEnum.Ativo,
+                DataDeInicio = dataInicio,
+                DataFim = dataFim
             };
 
             _beneficiarioMedicamentoRepositorio.Insert(medicamento);
