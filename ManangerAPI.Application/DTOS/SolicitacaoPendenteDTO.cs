@@ -7,5 +7,6 @@ namespace ManangerAPI.Application.DTOS
         public int Id { get; set; }
         public string NomePrestador { get; set; }
         public DateTime DataSolicitacao { get; set; }
+        public int IdSolicitacao { get; set; }
     }
 }

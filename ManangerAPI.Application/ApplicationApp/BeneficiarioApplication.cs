@@ -198,7 +198,8 @@ namespace ManangerAPI.Application.ApplicationApp
         {
             return _solicitacaoContratoRepositorio.ListarSolicitacoesPorBeneficiario(idBeneficiario).Select(x => new SolicitacaoPendenteDTO
             {
-                Id = x.Id,
+                IdSolicitacao = x.Id,
+                Id = x.PrestadorDeServicoId,
                 DataSolicitacao = x.DataSolicitacao,
                 NomePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Nome
             }).ToList();
