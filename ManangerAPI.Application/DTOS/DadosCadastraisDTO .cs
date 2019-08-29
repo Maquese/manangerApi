@@ -11,8 +11,8 @@ namespace ManangerAPI.Application.DTOS
         public  string  Sexo { get; set; }
         public string Cidade { get; set; }
         public string Comentario { get; set; }
-        public string Imagem { get; internal set; }
-        public string Curriculo { get; internal set; }
-        public string Estado { get; internal set; }
+        public string Imagem { get;  set; }
+        public string Curriculo { get;  set; }
+        public string Estado { get;  set; }
     }
 }

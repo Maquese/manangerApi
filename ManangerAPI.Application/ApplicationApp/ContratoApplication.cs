@@ -48,7 +48,11 @@ namespace ManangerAPI.Application.ApplicationApp
                  DataInicio = x.DataInicio,
                  NomeBeneficiario = _usuarioRepositorio.Encontrar(x.BeneficiarioId).Nome,
                  NomeContratante = _usuarioRepositorio.Encontrar(x.ContratanteId).Nome,
-                 NomePrestadorDeServico = _usuarioRepositorio.Encontrar(x.PrestadorDeServicoId).Nome
+                 NomePrestadorDeServico = _usuarioRepositorio.Encontrar(x.PrestadorDeServicoId).Nome,
+                 Id = x.Id,
+                 DataSolicitacao = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).DataSolicitacao,
+                 Comentario = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).Comentario,
+                 SolicitacaoContratoId = x.SolicitacaoContratoId
             }).ToList();
         }
     }
