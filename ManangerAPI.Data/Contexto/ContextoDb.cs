@@ -34,6 +34,7 @@ namespace ManangerAPI.Data.Contexto
         public DbSet<Posologia> Posologia { get; set; }
         public DbSet<SolicitacaoContrato> SolicitacaoContrato { get; set; }
         public DbSet<Contrato> Contrato { get; set; }
+        public DbSet<Tarefa> Tarefa { get; set; }
         public ContextoDb(DbContextOptions options) : base(options)
         {
             

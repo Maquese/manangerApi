@@ -7,17 +7,17 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace manangerapi.data.Migrations
+namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190820161527_Estado")]
-    partial class Estado
+    [Migration("20190908012425_Tarefa")]
+    partial class Tarefa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -115,6 +115,10 @@ namespace manangerapi.data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("BeneficiarioId");
+
+                    b.Property<DateTime>("DataDeInicio");
+
+                    b.Property<DateTime?>("DataFim");
 
                     b.Property<int>("MedicamentoId");
 
@@ -438,6 +442,33 @@ namespace manangerapi.data.Migrations
                     b.ToTable("StatusEntidade");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Tarefa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ContratoId");
+
+                    b.Property<DateTime?>("DataFim");
+
+                    b.Property<DateTime>("DataInicio");
+
+                    b.Property<TimeSpan>("HoraFim");
+
+                    b.Property<TimeSpan>("HoraInicio");
+
+                    b.Property<int>("Status");
+
+                    b.Property<string>("Titulo");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContratoId");
+
+                    b.ToTable("Tarefa");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.TipoMedicamento", b =>
                 {
                     b.Property<int>("Id")
@@ -706,6 +737,14 @@ namespace manangerapi.data.Migrations
                     b.HasOne("ManangerAPI.Data.Entidades.PrestadorDeServico", "PrestadorDeServico")
                         .WithMany()
                         .HasForeignKey("PrestadorDeServicoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Tarefa", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.Contrato", "Contrato")
+                        .WithMany("Tarefa")
+                        .HasForeignKey("ContratoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

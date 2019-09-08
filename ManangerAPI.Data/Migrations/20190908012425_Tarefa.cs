@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace manangerapi.data.Migrations
+namespace ManangerApi.Data.Migrations
 {
-    public partial class Estado : Migration
+    public partial class Tarefa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -446,7 +446,9 @@ namespace manangerapi.data.Migrations
                     BeneficiarioId = table.Column<int>(nullable: false),
                     MedicamentoId = table.Column<int>(nullable: false),
                     PosologiaId = table.Column<int>(nullable: false),
-                    Quantidade = table.Column<int>(nullable: false)
+                    Quantidade = table.Column<int>(nullable: false),
+                    DataDeInicio = table.Column<DateTime>(nullable: false),
+                    DataFim = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -511,7 +513,32 @@ namespace manangerapi.data.Migrations
                         column: x => x.SolicitacaoContratoId,
                         principalTable: "SolicitacaoContrato",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Tarefa",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Titulo = table.Column<string>(nullable: true),
+                    DataInicio = table.Column<DateTime>(nullable: false),
+                    DataFim = table.Column<DateTime>(nullable: true),
+                    ContratoId = table.Column<int>(nullable: false),
+                    HoraInicio = table.Column<TimeSpan>(nullable: false),
+                    HoraFim = table.Column<TimeSpan>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tarefa", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Tarefa_Contrato_ContratoId",
+                        column: x => x.ContratoId,
+                        principalTable: "Contrato",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(
@@ -639,6 +666,11 @@ namespace manangerapi.data.Migrations
                 name: "IX_SolicitacaoContrato_PrestadorDeServicoId",
                 table: "SolicitacaoContrato",
                 column: "PrestadorDeServicoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tarefa_ContratoId",
+                table: "Tarefa",
+                column: "ContratoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -651,9 +683,6 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "BeneficiarioMedicamento");
-
-            migrationBuilder.DropTable(
-                name: "Contrato");
 
             migrationBuilder.DropTable(
                 name: "Endereco");
@@ -671,6 +700,9 @@ namespace manangerapi.data.Migrations
                 name: "StatusEntidade");
 
             migrationBuilder.DropTable(
+                name: "Tarefa");
+
+            migrationBuilder.DropTable(
                 name: "CondicaoClinica");
 
             migrationBuilder.DropTable(
@@ -680,19 +712,22 @@ namespace manangerapi.data.Migrations
                 name: "Posologia");
 
             migrationBuilder.DropTable(
-                name: "SolicitacaoContrato");
-
-            migrationBuilder.DropTable(
                 name: "Perfil");
 
             migrationBuilder.DropTable(
                 name: "Competencia");
 
             migrationBuilder.DropTable(
+                name: "Contrato");
+
+            migrationBuilder.DropTable(
                 name: "TipoMedicamento");
 
             migrationBuilder.DropTable(
                 name: "ViaDeUsoMedicamento");
+
+            migrationBuilder.DropTable(
+                name: "SolicitacaoContrato");
 
             migrationBuilder.DropTable(
                 name: "Beneficiario");

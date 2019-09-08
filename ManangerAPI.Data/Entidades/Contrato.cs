@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ManangerAPI.Data.Entidades
 {
@@ -14,6 +15,6 @@ namespace ManangerAPI.Data.Entidades
         public int PrestadorDeServicoId { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
-        
+        public virtual IList<Tarefa> Tarefa { get; set; } 
     }
 }

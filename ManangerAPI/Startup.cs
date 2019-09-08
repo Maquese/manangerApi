@@ -52,7 +52,8 @@ public static string ConnectionString {
             services.AddScoped<IDropDownApplication,ManangerAPI.Application.ApplicationApp.Application>();
             services.AddScoped<IDownloadApplication,ManangerAPI.Application.ApplicationApp.Application>();            
             services.AddScoped<ICepApplication,ManangerAPI.Application.ApplicationApp.Application>();
-            services.AddScoped<IContratoApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IContratoApplication,ManangerAPI.Application.ApplicationApp.Application>();            
+            services.AddScoped<ITarefaApplication,ManangerAPI.Application.ApplicationApp.Application>();
 
             services.AddScoped<IBeneficiarioRepositorio,BeneficiarioRepositorio>();
             services.AddScoped<IAcessoRepositorio,AcessoRepositorio>();
@@ -76,7 +77,8 @@ public static string ConnectionString {
             services.AddScoped<IPosologiaRepositorio,PosologiaRepositorio>();
             services.AddScoped<ISolicitacaoContratoRepositorio,SolicitacaoContratoRepositorio>();            
             services.AddScoped<IContratoRepositorio,ContratoRepositorio>();            
-            services.AddScoped<IMedicoBeneficiarioRepositorio,MedicoBeneficiarioRepositorio>();
+            services.AddScoped<IMedicoBeneficiarioRepositorio,MedicoBeneficiarioRepositorio>();            
+            services.AddScoped<ITarefaRepositorio,TarefaRepositorio>();
         }  
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
