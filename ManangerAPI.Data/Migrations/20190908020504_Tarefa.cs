@@ -421,7 +421,7 @@ namespace ManangerApi.Data.Migrations
                         column: x => x.BeneficiarioId,
                         principalTable: "Beneficiario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SolicitacaoContrato_Usuario_ContratanteId",
                         column: x => x.ContratanteId,
@@ -485,7 +485,9 @@ namespace ManangerApi.Data.Migrations
                     BeneficiarioId = table.Column<int>(nullable: false),
                     PrestadorDeServicoId = table.Column<int>(nullable: false),
                     DataInicio = table.Column<DateTime>(nullable: false),
-                    DataFim = table.Column<DateTime>(nullable: false)
+                    DataFim = table.Column<DateTime>(nullable: true),
+                    ComentarioEncerramento = table.Column<string>(nullable: true),
+                    EncerradoPorContratante = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {

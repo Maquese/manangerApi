@@ -14,7 +14,9 @@ namespace ManangerAPI.Data.Entidades
         public int BeneficiarioId { get; set; }
         public int PrestadorDeServicoId { get; set; }
         public DateTime DataInicio { get; set; }
-        public DateTime DataFim { get; set; }
-        public virtual IList<Tarefa> Tarefa { get; set; } 
+        public DateTime? DataFim { get; set; }
+        public virtual IList<Tarefa> Tarefa { get; set; }
+        public string ComentarioEncerramento { get; set; }
+        public bool? EncerradoPorContratante { get; set; } 
     }
 }

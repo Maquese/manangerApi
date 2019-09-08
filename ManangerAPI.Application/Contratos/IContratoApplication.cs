@@ -9,5 +9,8 @@ namespace ManangerAPI.Application.Contratos
         IList<ContratoDTO> ListarContratosVigentesContratante(int idContratante);
          IList<ContratoDTO> ListarContratosVigentesBeneficiario(int idBeneficiario); 
          IList<ContratoDTO> ListarContratosVigentesPrestadorDeServico(int idPrestdorDeServico);
+         void EncerrarContratoPrestador(int contratoId, string comentario);
+         
+         void EncerrarContratoContratante(int contratoId, string comentario);
     }
 }

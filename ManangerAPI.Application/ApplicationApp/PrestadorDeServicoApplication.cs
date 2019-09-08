@@ -29,6 +29,7 @@ namespace ManangerAPI.Application.ApplicationApp
                         DataInicio = DateTime.Now,
                         PrestadorDeServicoId = solicitacao.PrestadorDeServicoId,
                         Status = (int)StatusEnum.Ativo,
+                        
                     };
                     _contratoRepositorio.Insert(contrato);
                     EnviarEmailRespostaSolicitacaoContrato(nomePrestador,contratante.Email,contratante.Nome);

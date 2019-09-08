@@ -194,11 +194,15 @@ namespace ManangerApi.Data.Migrations
 
                     b.Property<int>("BeneficiarioId");
 
+                    b.Property<string>("ComentarioEncerramento");
+
                     b.Property<int>("ContratanteId");
 
-                    b.Property<DateTime>("DataFim");
+                    b.Property<DateTime?>("DataFim");
 
                     b.Property<DateTime>("DataInicio");
+
+                    b.Property<bool?>("EncerradoPorContratante");
 
                     b.Property<int>("PrestadorDeServicoId");
 

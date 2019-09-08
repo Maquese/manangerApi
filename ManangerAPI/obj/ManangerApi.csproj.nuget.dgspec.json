@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\ManangerApi.csproj": {}
+    "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {}
   },
   "projects": {
     "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
@@ -124,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\ManangerApi.csproj": {
+    "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\ManangerApi.csproj",
+        "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
         "projectName": "ManangerApi",
-        "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\ManangerApi.csproj",
+        "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
         "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi\\obj\\",
+        "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\ManangerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

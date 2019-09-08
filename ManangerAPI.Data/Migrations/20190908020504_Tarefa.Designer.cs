@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190908012425_Tarefa")]
+    [Migration("20190908020504_Tarefa")]
     partial class Tarefa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -196,11 +196,15 @@ namespace ManangerApi.Data.Migrations
 
                     b.Property<int>("BeneficiarioId");
 
+                    b.Property<string>("ComentarioEncerramento");
+
                     b.Property<int>("ContratanteId");
 
-                    b.Property<DateTime>("DataFim");
+                    b.Property<DateTime?>("DataFim");
 
                     b.Property<DateTime>("DataInicio");
+
+                    b.Property<bool?>("EncerradoPorContratante");
 
                     b.Property<int>("PrestadorDeServicoId");
 

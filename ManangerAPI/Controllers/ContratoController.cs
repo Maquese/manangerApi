@@ -37,5 +37,19 @@ namespace ManangerAPI.Controllers
             return _contratoApplication.ListarContratosVigentesBeneficiario(request.Id);   
         }
 
+        [Route("api/contrato/encerrarcontratoprestador")]
+        [HttpPost]
+        public void EncerrarContratoPrestador(QuebraDeContratoRequest request)
+        {
+            _contratoApplication.EncerrarContratoPrestador(request.Id,request.Comentario);
+        }
+
+        [Route("api/contrato/encerrarcontratocontratante")]
+        [HttpPost]
+        public void EncerrarContratoContratante(QuebraDeContratoRequest request)
+        {
+            _contratoApplication.EncerrarContratoContratante(request.Id,request.Comentario);
+        }
+
     }
 }

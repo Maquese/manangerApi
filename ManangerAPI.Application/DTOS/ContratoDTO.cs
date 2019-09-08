@@ -10,7 +10,7 @@ namespace ManangerAPI.Application.DTOS
         public int BeneficiarioId { get; set; }
         public int PrestadorDeServicoId { get; set; }
         public DateTime DataInicio { get; set; }
-        public DateTime DataFim { get; set; }
+        public DateTime? DataFim { get; set; }
         public string NomeContratante { get; set; }
         public string NomeBeneficiario { get; set; }
         public string NomePrestadorDeServico { get; set; }
