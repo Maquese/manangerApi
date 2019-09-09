@@ -150,7 +150,7 @@ namespace ManangerAPI.Application.ApplicationApp
             return retorno;
         }
 
-        public void SolicitarNovoContrato(int idContratante, int idPrestador, int idBeneficiario, DateTime dataFim, string comentario, bool tempoIndeterminado)
+        public void SolicitarNovoContrato(int idContratante, int idPrestador, int idBeneficiario, DateTime? dataFim, string comentario, bool tempoIndeterminado)
         {
             var novaSolicitacao = new SolicitacaoContrato{
                 ContratanteId = idContratante, 

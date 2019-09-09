@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ManangerApi.Data.Migrations
+namespace manangerapi.data.Migrations
 {
-    public partial class Tarefa : Migration
+    public partial class Solicitacao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -410,7 +410,7 @@ namespace ManangerApi.Data.Migrations
                     BeneficiarioId = table.Column<int>(nullable: false),
                     DataSolicitacao = table.Column<DateTime>(nullable: false),
                     Comentario = table.Column<string>(nullable: true),
-                    DataFim = table.Column<DateTime>(nullable: false),
+                    DataFim = table.Column<DateTime>(nullable: true),
                     TempoIndeterminado = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -421,7 +421,7 @@ namespace ManangerApi.Data.Migrations
                         column: x => x.BeneficiarioId,
                         principalTable: "Beneficiario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_SolicitacaoContrato_Usuario_ContratanteId",
                         column: x => x.ContratanteId,
@@ -540,7 +540,7 @@ namespace ManangerApi.Data.Migrations
                         column: x => x.ContratoId,
                         principalTable: "Contrato",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

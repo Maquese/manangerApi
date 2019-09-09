@@ -12,7 +12,7 @@ namespace ManangerAPI.Data.Entidades
         public virtual  Beneficiario Beneficiario { get; set; }
         public DateTime DataSolicitacao { get; set; }
         public string Comentario { get; set; }
-        public DateTime DataFim { get; set; }
+        public DateTime? DataFim { get; set; }
         public bool TempoIndeterminado { get; set; }
     }
 }

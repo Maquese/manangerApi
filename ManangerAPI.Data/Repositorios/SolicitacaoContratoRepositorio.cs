@@ -3,6 +3,7 @@ using System.Linq;
 using ManangerAPI.Data.Contexto;
 using ManangerAPI.Data.Contratos;
 using ManangerAPI.Data.Entidades;
+using System;
 
 namespace ManangerAPI.Data.Repositorios
 {
@@ -14,12 +15,14 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<SolicitacaoContrato> ListarSolicitacoesPorBeneficiario(int idBeneficiario)
         {
-            return _contexto.SolicitacaoContrato.Where(x => x.BeneficiarioId == idBeneficiario && x.Status == 1).ToList();
+            var y = _contexto.SolicitacaoContrato.Where(x => x.BeneficiarioId == idBeneficiario && x.Status == 1 && (x.DataFim >= DateTime.Now || x.DataFim == null)).ToList();
+            return y;
+            
         }
 
         public IList<SolicitacaoContrato> ListarSolicitacoesPorPrestador(int idPrestador)
         {
-            return _contexto.SolicitacaoContrato.Where(x => x.PrestadorDeServicoId == idPrestador && x.Status == 1).ToList();
+            return _contexto.SolicitacaoContrato.Where(x => x.PrestadorDeServicoId == idPrestador && x.Status == 1 && (x.DataFim >= DateTime.Now || x.DataFim == null)).ToList();
         }
     }
 }

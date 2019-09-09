@@ -7,17 +7,17 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ManangerApi.Data.Migrations
+namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190908020504_Tarefa")]
-    partial class Tarefa
+    [Migration("20190909144533_Solicitacao")]
+    partial class Solicitacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -412,7 +412,7 @@ namespace ManangerApi.Data.Migrations
 
                     b.Property<int>("ContratanteId");
 
-                    b.Property<DateTime>("DataFim");
+                    b.Property<DateTime?>("DataFim");
 
                     b.Property<DateTime>("DataSolicitacao");
 

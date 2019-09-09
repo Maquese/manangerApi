@@ -15,17 +15,17 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<Contrato> ListarContratoBeneficiario(int beneficiarioId)
         {
-            return _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 && x.DataFim <= DateTime.Now).ToList();
+            return _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 && (x.DataFim <= DateTime.Now || x.DataFim == null)).ToList();
         }
 
         public IList<Contrato> ListarContratoContratante(int contratanteId)
         {
-            return _contexto.Contrato.Where(x => x.ContratanteId == contratanteId && x.Status == 1 && x.DataFim <= DateTime.Now).ToList();
+            return _contexto.Contrato.Where(x => x.ContratanteId == contratanteId && x.Status == 1 && (x.DataFim <= DateTime.Now || x.DataFim == null)).ToList();
         }
 
         public IList<Contrato> ListarContratoPrestador(int prestadorId)
         {
-            return _contexto.Contrato.Where(x => x.PrestadorDeServicoId == prestadorId && x.Status == 1 && x.DataFim <= DateTime.Now).ToList();
+            return _contexto.Contrato.Where(x => x.PrestadorDeServicoId == prestadorId && x.Status == 1 && (x.DataFim <= DateTime.Now || x.DataFim == null)).ToList();
         }
     }
 }

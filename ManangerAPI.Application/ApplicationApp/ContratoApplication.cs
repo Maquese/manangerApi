@@ -73,7 +73,7 @@ namespace ManangerAPI.Application.ApplicationApp
                  ContratanteId = x.ContratanteId,
                  DataFim = x.DataFim,
                  DataInicio = x.DataInicio,
-                 NomeBeneficiario = _usuarioRepositorio.Encontrar(x.BeneficiarioId).Nome,
+                 NomeBeneficiario = _beneficiarioRepositorio.Encontrar(x.BeneficiarioId).Nome,
                  NomeContratante = _usuarioRepositorio.Encontrar(x.ContratanteId).Nome,
                  NomePrestadorDeServico = _usuarioRepositorio.Encontrar(x.PrestadorDeServicoId).Nome,
                  Id = x.Id,

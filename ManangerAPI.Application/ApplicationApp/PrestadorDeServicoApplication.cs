@@ -221,7 +221,9 @@ namespace ManangerAPI.Application.ApplicationApp
                     DataSolicitacao  = item.DataSolicitacao,
                     NomeBeneficiario = _beneficiarioRepositorio.Encontrar(item.BeneficiarioId).Nome,
                     NomeContratante = _contratanteRepositorio.Encontrar(item.ContratanteId).Nome,
-
+                    BeneficiarioId = item.BeneficiarioId,
+                    ContratanteId = item.ContratanteId,
+                    
                 });
             }
             return retorno;            
