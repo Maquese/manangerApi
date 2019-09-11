@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ManangerAPI.Application.Contratos;
 using ManangerAPI.Application.DTOS;
+using ManangerAPI.Application.Enums;
 
 namespace ManangerAPI.Application.ApplicationApp
 {
@@ -14,6 +15,7 @@ namespace ManangerAPI.Application.ApplicationApp
             contrato.DataFim = DateTime.Now;
             contrato.ComentarioEncerramento = comentario;
             contrato.EncerradoPorContratante = true;
+            contrato.Status = (int)StatusEnum.Inativo;
             _contratoRepositorio.Save();
         }
 
@@ -23,6 +25,7 @@ namespace ManangerAPI.Application.ApplicationApp
             contrato.DataFim = DateTime.Now;
             contrato.ComentarioEncerramento = comentario;
             contrato.EncerradoPorContratante = false;
+            contrato.Status = (int)StatusEnum.Inativo;
             _contratoRepositorio.Save();
         }
 
