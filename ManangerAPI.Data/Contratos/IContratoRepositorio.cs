@@ -7,7 +7,7 @@ namespace ManangerAPI.Data.Contratos
     {
          IList<Contrato> ListarContratoPrestador(int prestadorId);
          IList<Contrato> ListarContratoBeneficiario(int beneficiarioId);
-
+         IList<KeyValuePair<int,string>> GerarDropDown(int beneficiarioId);
          IList<Contrato> ListarContratoContratante(int contratanteId);
          
          

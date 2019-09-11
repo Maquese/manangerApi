@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using ManangerAPI.Application.Contratos;
-
+using System.Linq;
 namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IDropDownApplication
@@ -33,6 +33,11 @@ namespace ManangerAPI.Application.ApplicationApp
         public IList<KeyValuePair<int, string>> DadosPosologia()
         {
             return _posologiaRepositorio.GerarDropDown();
+        }
+
+        public IList<KeyValuePair<int, string>> DadosPrestadorContrato(int idBeneficiario)
+        {
+            return _contratoRepositorio.GerarDropDown(idBeneficiario);
         }
 
         public IList<KeyValuePair<int, string>> DadosTipoMedicamento()

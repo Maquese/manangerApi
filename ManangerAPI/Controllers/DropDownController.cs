@@ -70,5 +70,12 @@ namespace ManangerAPI.Controllers
         {
            return _idropDownApplication.DadosPosologia();
         }
+
+        [HttpPost]
+        [Route("api/dropdown/prestadorcontrato")]
+        public IList<KeyValuePair<int,string>> PrestadorContrato(BaseRequest request)
+        {
+           return _idropDownApplication.DadosPrestadorContrato(request.Id);
+        }
     }
 }
