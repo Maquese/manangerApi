@@ -71,7 +71,7 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContratantePrestador(SolicitacaoContratoRequest request)
         {
-            return _contratanteApplication.BuscarDadosSolicitacaoContrato(request.IdBeneficiario,request.IdBeneficiario,request.IdPrestadorDeServico);   
+            return _contratanteApplication.BuscarDadosSolicitacaoContrato(request.IdBeneficiario,request.IdContratante,request.IdPrestadorDeServico);   
         }
     }
 }   
