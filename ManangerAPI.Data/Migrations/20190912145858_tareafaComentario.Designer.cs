@@ -10,14 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190909144533_Solicitacao")]
-    partial class Solicitacao
+    [Migration("20190912145858_tareafaComentario")]
+    partial class tareafaComentario
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -452,7 +452,11 @@ namespace manangerapi.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Comentario");
+
                     b.Property<int>("ContratoId");
+
+                    b.Property<string>("CorHexa");
 
                     b.Property<DateTime?>("DataFim");
 
@@ -465,6 +469,8 @@ namespace manangerapi.data.Migrations
                     b.Property<int>("Status");
 
                     b.Property<string>("Titulo");
+
+                    b.Property<bool>("TodosOsDias");
 
                     b.HasKey("Id");
 

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace manangerapi.data.Migrations
 {
-    public partial class Solicitacao : Migration
+    public partial class tareafaComentario : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -530,7 +530,10 @@ namespace manangerapi.data.Migrations
                     DataFim = table.Column<DateTime>(nullable: true),
                     ContratoId = table.Column<int>(nullable: false),
                     HoraInicio = table.Column<TimeSpan>(nullable: false),
-                    HoraFim = table.Column<TimeSpan>(nullable: false)
+                    HoraFim = table.Column<TimeSpan>(nullable: false),
+                    CorHexa = table.Column<string>(nullable: true),
+                    Comentario = table.Column<string>(nullable: true),
+                    TodosOsDias = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
