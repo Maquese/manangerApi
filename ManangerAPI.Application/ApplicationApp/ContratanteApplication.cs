@@ -38,12 +38,16 @@ namespace ManangerAPI.Application.ApplicationApp
             return retorno;
         }
 
-        public DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContrato(int idBeneficiario, int idContratante, int idPrestador)
+        public DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContrato(int idSolicitacao)
         {
+            var solicitacao = _solicitacaoContratoRepositorio.Encontrar(idSolicitacao);
             return new DadosSolicitacaoContratoDTO{
-                NomeBeneficiario = _beneficiarioRepositorio.Encontrar(idBeneficiario).Nome,
-                NomeContratante = _contratanteRepositorio.Encontrar(idContratante).Nome,
-                NomePrestadorDeServico = _prestadorDeServicoRepositorio.Encontrar(idPrestador).Nome
+                NomeBeneficiario = _beneficiarioRepositorio.Encontrar(solicitacao.BeneficiarioId).Nome,
+                NomeContratante = _contratanteRepositorio.Encontrar(solicitacao.ContratanteId).Nome,
+                NomePrestadorDeServico = _prestadorDeServicoRepositorio.Encontrar(solicitacao.PrestadorDeServicoId).Nome,
+                DataSolicitacao = solicitacao.DataSolicitacao,
+                DataFim = solicitacao.DataFim,
+                Comentario = solicitacao.Comentario
             };
         }
 

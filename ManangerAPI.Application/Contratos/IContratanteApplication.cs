@@ -24,7 +24,7 @@ namespace ManangerAPI.Application.Contratos
 
         void SolicitarNovoContrato(int idContratante, int idPrestador, int idBeneficiario,DateTime? dataFim, string comentario, bool tempoIndeterminado); 
 
-        DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContrato(int idBeneficiario, int idContratante, int idPrestador);
+        DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContrato(int idSolicitacao);
 
     }
 }
