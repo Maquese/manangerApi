@@ -59,6 +59,17 @@ namespace ManangerAPI.Application.ApplicationApp
             return _usuarioRepositorio.Listar().Select(x => new UsuarioDTO { Id = x.Id, Nome = x.Nome }).ToList();
         }
 
+        public IList<UsuarioDTO> ListarUsuariosPorPerfil(PerfilEnum perfilId)
+        {
+            return _usuarioRepositorio.ListarTodosOsUsuariosPorPerfil((int)perfilId).Select(x => new UsuarioDTO
+            {
+                Id = x.Id,
+                Nome = x.Nome,
+                QuantidadeBeneficiario = _beneficiarioRepositorio.ListarPorContratante(x.Id).Count,
+                QuantidadeContratos = PerfilEnum.Contratante == perfilId ? _contratoRepositorio.ListarContratoContratante(x.Id).Count : _contratoRepositorio.ListarContratoPrestador(x.Id).Count
+            }).ToList();
+        }
+
         public UsuarioDTO Logar(string login, string senha)
         {
             var usuario = _usuarioRepositorio.Logar(login, senha);

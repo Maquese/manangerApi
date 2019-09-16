@@ -14,7 +14,9 @@ namespace ManangerAPI.Application.DTOS
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
         public IList<AcessoDTO> Acessos {get;set;}
-        public string Imagem { get; set; }
+        public string Imagem { get; set; }        
+        public int QuantidadeBeneficiario { get; set; }
+        public int QuantidadeContratos { get; set; }
 
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ManangerAPI.Application.DTOS;
+using ManangerAPI.Application.Enums;
 
 namespace ManangerAPI.Application.Contratos
 {
@@ -23,6 +24,8 @@ namespace ManangerAPI.Application.Contratos
 
          bool VerificaCpfJaCadastrado(string cpf);
 
-          bool VerificaLoginJaCadastrado(string login);
+         bool VerificaLoginJaCadastrado(string login);
+        
+        IList<UsuarioDTO> ListarUsuariosPorPerfil(PerfilEnum perfilId);
     }
 }

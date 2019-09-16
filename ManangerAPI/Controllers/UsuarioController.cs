@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ManangerAPI.Application.Contratos;
 using ManangerAPI.Application.DTOS;
+using ManangerAPI.Application.Enums;
 using ManangerAPI.RequestsData;
 using Microsoft.AspNetCore.Mvc;
 
@@ -85,6 +86,13 @@ namespace ManangerAPI.Controllers
         public bool VerificarCpfCadastrado(VerificacaoRequest  request)
         {
             return _UsuarioApplication.VerificaCpfJaCadastrado(request.Cpf);         
+        }
+
+        [Route("api/usuario/listartodosusuariosporperfil")]
+        [HttpPost]
+        public IList<UsuarioDTO> ListarTodosUsuariosPorPerfil(BaseRequest  request)
+        {
+            return _UsuarioApplication.ListarUsuariosPorPerfil((PerfilEnum)request.Id);      
         }
     }
 }

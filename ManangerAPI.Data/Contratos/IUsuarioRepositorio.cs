@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ManangerAPI.Data.Entidades;
 
 namespace ManangerAPI.Data.Contratos
@@ -15,6 +16,8 @@ namespace ManangerAPI.Data.Contratos
          Usuario LogarPrestador(string login, string senha);
 
          bool VerificaMesmoLogin(string login);
+
+         IList<Usuario> ListarTodosOsUsuariosPorPerfil(int perfilId);
 
     }
 }
