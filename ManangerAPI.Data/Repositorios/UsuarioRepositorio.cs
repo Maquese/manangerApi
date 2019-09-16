@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using ManangerAPI.Data.Contexto;
 using ManangerAPI.Data.Contratos;
@@ -10,6 +11,12 @@ namespace ManangerAPI.Data.Repositorios
     {
         public UsuarioRepositorio(ContextoDb contexto) : base(contexto)
         {
+        }
+
+        public IList<Usuario> ListarTodosOsUsuariosPorPerfil(int perfilId)
+        {
+            var acessos =  _contexto.Acesso.Where(x => x.PerfilId == perfilId).Select(x => x.UsuarioId).ToList();
+            return _contexto.Usuario.Where(x => acessos.Contains(x.Id)).ToList();
         }
 
         public Usuario Logar(string login, string senha)
