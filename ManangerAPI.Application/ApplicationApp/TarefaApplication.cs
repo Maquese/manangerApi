@@ -26,6 +26,23 @@ namespace ManangerAPI.Application.ApplicationApp
 
         }
 
+        public IList<TarefaDTO> ListarTarefasPorBeneficiario(int beneficiarioId)
+        {
+            return _tarefaRepositorio.ListarTarefasPorBeneficiario(beneficiarioId).Select(x => new TarefaDTO
+            {
+                ContratoId = x.ContratoId,
+                Titulo = x.Titulo,
+                DataInicio = x.DataInicio,
+                DataFim = x.DataFim,
+                HoraInicio = x.HoraInicio,
+                HoraFim = x.HoraFim,
+                Comentario = x.Comentario,
+                CorHexa = x.CorHexa,
+                Id = x.Id,
+                TodosOsDias = x.TodosOsDias
+            }).ToList();
+        }
+
         public IList<TarefaDTO> ListarTarefasPorContrato(int contratoId)
         {
             return _tarefaRepositorio.ListarTarefasPorContrato(contratoId).Select(x => new TarefaDTO
@@ -36,6 +53,10 @@ namespace ManangerAPI.Application.ApplicationApp
                 DataFim = x.DataFim,
                 HoraInicio = x.HoraInicio,
                 HoraFim = x.HoraFim,
+                Comentario = x.Comentario,
+                CorHexa = x.CorHexa,
+                Id = x.Id,
+                TodosOsDias = x.TodosOsDias
             }).ToList();
         }
     }

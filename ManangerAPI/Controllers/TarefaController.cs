@@ -29,5 +29,12 @@ namespace ManangerAPI.Controllers
         {
             return _tarefaApplication.ListarTarefasPorContrato(request.Id);
         }
+
+        [Route("api/tarefa/listartodastarefasbeneficiarios")]
+        [HttpPost]
+        public IList<TarefaDTO> ListarTodasTarefasBeneficiarios(BaseRequest request)
+        {
+            return _tarefaApplication.ListarTarefasPorBeneficiario(request.Id);
+        }
     }
 }

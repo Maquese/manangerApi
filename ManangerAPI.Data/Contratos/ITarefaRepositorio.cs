@@ -6,5 +6,8 @@ namespace ManangerAPI.Data.Contratos
     public interface ITarefaRepositorio : IRepositorio<Tarefa>
     {
          IList<Tarefa> ListarTarefasPorContrato(int contratoId);
+
+         
+         IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId);
     }
 }

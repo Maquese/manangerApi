@@ -9,5 +9,8 @@ namespace ManangerAPI.Application.Contratos
          void AdicionarTarefa(string titulo, int contratoId, DateTime dataInicio, DateTime dataFim, TimeSpan horaInicio, TimeSpan horaFim);
 
         IList<TarefaDTO> ListarTarefasPorContrato(int contratoId);
+
+        
+        IList<TarefaDTO> ListarTarefasPorBeneficiario(int beneficiarioId);
     }
 }

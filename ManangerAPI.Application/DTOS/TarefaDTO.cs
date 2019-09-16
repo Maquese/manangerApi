@@ -11,5 +11,8 @@ namespace ManangerAPI.Application.DTOS
         public DateTime? DataFim { get; set; }
         public TimeSpan HoraInicio { get; set; }
         public TimeSpan HoraFim { get; set; }
+        public string CorHexa { get; set; }
+        public string Comentario { get; set; }
+        public bool TodosOsDias { get; set; }
     }
 }
