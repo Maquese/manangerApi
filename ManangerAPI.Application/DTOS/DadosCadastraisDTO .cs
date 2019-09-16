@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ManangerAPI.Application.DTOS
 {
@@ -20,5 +21,6 @@ namespace ManangerAPI.Application.DTOS
         public string Numero { get; set; }
         public string Complemento { get; set; }
         public string Cpf { get; set; }
+        public List<int> Competencias { get; set; }
     }
 }

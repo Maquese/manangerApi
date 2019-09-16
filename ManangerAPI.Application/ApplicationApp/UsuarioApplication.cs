@@ -38,6 +38,7 @@ namespace ManangerAPI.Application.ApplicationApp
             retorno.Imagem = usuario.Imagem;
             retorno.Curriculo = usuario.Curriculo;
             retorno.Estado = _estadoRepostorio.Encontrar(endereco.EstadoId).Nome;
+            retorno.Competencias = _prestadorDeServicoCompetenciaRepositorio.EncontrarPorPrestadorDeServicoId(idUsuario).Select(x => x.CompetenciaId).ToList();
             
             return retorno;
         }
