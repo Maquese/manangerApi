@@ -27,11 +27,18 @@ namespace ManangerAPI.Application.ApplicationApp
             retorno.Sexo = ((SexoEnum)usuario.Sexo).ToString();
             retorno.Telefone = usuario.Telefone;
             retorno.Email = usuario.Email;
+            retorno.Cep  = endereco.Cep;
+            retorno.Cpf = usuario.Cpf;
+            retorno.Bairro = endereco.Bairro;
+            retorno.Rua = endereco.Rua;
+            retorno.Numero = endereco.Numero;
+            retorno.Complemento = endereco.Complemento;
             retorno.Cidade = _cidadeRepositorio.Encontrar(endereco.CidadeId).Nome;
             retorno.Comentario = usuario.Comentario;
             retorno.Imagem = usuario.Imagem;
             retorno.Curriculo = usuario.Curriculo;
             retorno.Estado = _estadoRepostorio.Encontrar(endereco.EstadoId).Nome;
+            
             return retorno;
         }
 
