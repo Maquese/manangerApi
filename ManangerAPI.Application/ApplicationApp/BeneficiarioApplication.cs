@@ -76,7 +76,9 @@ namespace ManangerAPI.Application.ApplicationApp
                 Id = dados.Id,
                 MedicamentoId = dados.MedicamentoId,
                 PosologiaId = dados.PosologiaId,
-                Quantidade = dados.Quantidade
+                Quantidade = dados.Quantidade,
+                DataDeInicio = dados.DataDeInicio,
+                DataFim = dados.DataFim
             };
         }
 
