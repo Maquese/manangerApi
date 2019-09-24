@@ -27,7 +27,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Bula = medicamento.Bula,
                 ContraIndicacao = medicamento.ContraIndicacao,
                 EfeitoColateral = medicamento.EfeitoColateral,
-                Indicao = medicamento.Indicao, 
+                Indicacao = medicamento.Indicao, 
                 Tipo = medicamento.TipoMedicamentoId,
                 ViaDeUso = medicamento.ViaDeUsoMedicamentoId,
             };

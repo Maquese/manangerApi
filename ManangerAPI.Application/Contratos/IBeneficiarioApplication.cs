@@ -21,7 +21,7 @@ namespace ManangerAPI.Application.Contratos
 
         BeneficiarioMedicamentoDTO DetalharBeneficiarioMedicamento(int idBeneficiarioMedicamento);
 
-        void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade);
+        void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade,DateTime dataInicio, DateTime? dataFim);
 
         void RemoverBeneficiarioMedicamento(int id);
 

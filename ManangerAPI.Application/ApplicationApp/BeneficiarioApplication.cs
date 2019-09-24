@@ -129,11 +129,13 @@ namespace ManangerAPI.Application.ApplicationApp
               _beneficiarioRepositorio.Save();
         }
 
-        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade)
+        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim)
         {
             var dados = _beneficiarioMedicamentoRepositorio.Encontrar(id);
             dados.MedicamentoId = idMedicamento;
             dados.PosologiaId = idPosologia;
+            dados.DataDeInicio = dataInicio;
+            dados.DataFim = dataFim;
             dados.Quantidade = quantidade;
             _beneficiarioMedicamentoRepositorio.Update(dados);
             _beneficiarioMedicamentoRepositorio.Save();

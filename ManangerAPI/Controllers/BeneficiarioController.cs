@@ -73,7 +73,7 @@ namespace ManangerAPI.Controllers
         [Route("api/beneficiario/editarmedicamento")]
         public void EditarMedicamento(BeneficiarioMedicamentoRequest request)
         {
-            _beneficiarioApplication.EditarBeneficiarioMedicamento(request.Id,request.MedicamentoId,request.PosologiaId,request.Quantidade);
+            _beneficiarioApplication.EditarBeneficiarioMedicamento(request.Id,request.MedicamentoId,request.PosologiaId,request.Quantidade,request.DataInicio,request.DataFim);
         }
 
         [HttpPost]

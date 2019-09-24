@@ -16,7 +16,7 @@ namespace ManangerAPI.Data.Repositorios
         public IList<Usuario> ListarTodosOsUsuariosPorPerfil(int perfilId)
         {
             var acessos =  _contexto.Acesso.Where(x => x.PerfilId == perfilId).Select(x => x.UsuarioId).ToList();
-            return _contexto.Usuario.Where(x => acessos.Contains(x.Id)).ToList();
+            return _contexto.Usuario.Where(x => acessos.Contains(x.Id) && x.Aprovado).ToList();
         }
 
         public Usuario Logar(string login, string senha)
