@@ -106,6 +106,11 @@ namespace ManangerAPI.Application.ApplicationApp
             return retorno;
         }
 
+        public string NomeDaCidade(int cidadeId)
+        {
+            return _cidadeRepositorio.Encontrar(cidadeId).Nome;
+        }
+
         public bool VerificaCpfJaCadastrado(string cpf)
         {
             return _usuarioRepositorio.VerificaCpfJaCadastrado(cpf);

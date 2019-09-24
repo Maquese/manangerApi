@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ManangerAPI.Application.DTOS;
 using ManangerAPI.Application.Enums;
@@ -27,5 +28,7 @@ namespace ManangerAPI.Application.Contratos
          bool VerificaLoginJaCadastrado(string login);
         
         IList<UsuarioDTO> ListarUsuariosPorPerfil(PerfilEnum perfilId);
+
+        String NomeDaCidade(int cidadeId);
     }
 }

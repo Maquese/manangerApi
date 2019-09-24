@@ -94,5 +94,13 @@ namespace ManangerAPI.Controllers
         {
             return _UsuarioApplication.ListarUsuariosPorPerfil((PerfilEnum)request.Id);      
         }
+
+        [Route("api/usuario/nomecidade")]
+        [HttpPost]
+        public string Nome(BaseRequest  request)
+        {
+            return _UsuarioApplication.NomeDaCidade(request.Id);     
+        }
+
     }
 }
