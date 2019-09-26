@@ -13,5 +13,7 @@ namespace ManangerAPI.Data.Entidades
         public virtual Posologia Posologia { get; set; }
         public DateTime DataDeInicio { get; set; }
         public DateTime? DataFim { get; set; }
+        public double EmbalagemQTD { get; set; }
+        public int UnidadeMedida { get; set; }
     }
 }

@@ -12,5 +12,6 @@ namespace ManangerAPI.Application.Contratos
          void EncerrarContratoPrestador(int contratoId, string comentario);
          
          void EncerrarContratoContratante(int contratoId, string comentario);
+
     }
 }

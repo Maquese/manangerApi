@@ -10,5 +10,6 @@ namespace ManangerAPI.Application.DTOS
         public int Quantidade { get; set; }
         public DateTime DataDeInicio { get;  set; }
         public DateTime? DataFim { get;  set; }
+        public int MyProperty { get; set; }
     }
 }

@@ -51,5 +51,7 @@ namespace ManangerAPI.Controllers
             _contratoApplication.EncerrarContratoContratante(request.Id,request.Comentario);
         }
 
+      
+
     }
 }

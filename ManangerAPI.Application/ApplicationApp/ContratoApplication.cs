@@ -9,6 +9,7 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IContratoApplication
     {
+      
         public void EncerrarContratoContratante(int contratoId, string comentario)
         {
             var contrato = _contratoRepositorio.Encontrar(contratoId);
