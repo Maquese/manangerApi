@@ -70,3 +70,15 @@ C:\Users\indefinido\Desktop\gk2v\back\manangerApi\manangerapi.application\obj\De
 C:\Users\indefinido\Desktop\gk2v\back\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.csproj.CopyComplete
 C:\Users\indefinido\Desktop\gk2v\back\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.dll
 C:\Users\indefinido\Desktop\gk2v\back\manangerApi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.pdb
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\bin\Debug\netstandard2.0\manangerapi.application.deps.json
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\bin\Debug\netstandard2.0\manangerapi.application.dll
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\bin\Debug\netstandard2.0\manangerapi.application.pdb
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\bin\Debug\netstandard2.0\ManangerApi.Data.dll
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\bin\Debug\netstandard2.0\ManangerApi.Data.pdb
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.csprojAssemblyReference.cache
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.csproj.CoreCompileInputs.cache
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.AssemblyInfoInputs.cache
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.AssemblyInfo.cs
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.csproj.CopyComplete
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.dll
+C:\Users\Giuliano\Desktop\proj\mananger\manangerapi\manangerapi.application\obj\Debug\netstandard2.0\manangerapi.application.pdb
