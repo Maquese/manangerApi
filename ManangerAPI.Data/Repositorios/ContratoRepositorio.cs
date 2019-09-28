@@ -38,5 +38,20 @@ namespace ManangerAPI.Data.Repositorios
         {
             return _contexto.Contrato.Where(x => x.PrestadorDeServicoId == prestadorId && x.Status == 1 && (x.DataFim <= DateTime.Now || x.DataFim == null)).ToList();
         }
+
+         public IList<Contrato> ListarContratoEncerradosBeneficiario(int beneficiarioId)
+        {
+            return _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 2).ToList();
+        }
+
+        public IList<Contrato> ListarContratoEncerradosContratante(int contratanteId)
+        {
+            return _contexto.Contrato.Where(x => x.ContratanteId == contratanteId && x.Status == 2).ToList();
+        }
+
+        public IList<Contrato> ListarContratoEncerradosPrestador(int prestadorId)
+        {
+            return _contexto.Contrato.Where(x => x.PrestadorDeServicoId == prestadorId && x.Status == 2).ToList();
+        }
     }
 }

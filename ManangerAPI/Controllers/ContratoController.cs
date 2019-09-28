@@ -51,7 +51,26 @@ namespace ManangerAPI.Controllers
             _contratoApplication.EncerrarContratoContratante(request.Id,request.Comentario);
         }
 
-      
+        [Route("api/contrato/listarcontratosencerradosprestador")]
+        [HttpPost]
+        public IList<ContratoDTO> ListarContratosEncerradosPrestador(BaseRequest request)
+        {
+            return _contratoApplication.ListarContratosEncerradosPrestadorDeServico(request.Id);   
+        }
+
+        [Route("api/contrato/listarcontratosencerradoscontratante")]
+        [HttpPost]
+        public IList<ContratoDTO> ListarContratosEncerradosContratante(BaseRequest request)
+        {
+            return _contratoApplication.ListarContratosEncerradosContratante(request.Id);   
+        }
+
+        [Route("api/contrato/listarcontratosencerradosbeneficiario")]
+        [HttpPost]
+        public IList<ContratoDTO> ListarContratosEncerradosBeneficiario(BaseRequest request)
+        {
+            return _contratoApplication.ListarContratosEncerradosBeneficiario(request.Id);   
+        }
 
     }
 }

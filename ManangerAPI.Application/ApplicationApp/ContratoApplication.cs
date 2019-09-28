@@ -30,6 +30,63 @@ namespace ManangerAPI.Application.ApplicationApp
             _contratoRepositorio.Save();
         }
 
+        public IList<ContratoDTO> ListarContratosEncerradosBeneficiario(int idBeneficiario)
+        {
+            return _contratoRepositorio.ListarContratoEncerradosBeneficiario(idBeneficiario).Select(x => new ContratoDTO
+            {
+                 BeneficiarioId = x.BeneficiarioId,
+                 PrestadorDeServicoId = x.PrestadorDeServicoId,
+                 ContratanteId = x.ContratanteId,
+                 DataFim = x.DataFim,
+                 DataInicio = x.DataInicio,
+                 NomeBeneficiario = _beneficiarioRepositorio.Encontrar(x.BeneficiarioId).Nome,
+                 NomeContratante = _usuarioRepositorio.Encontrar(x.ContratanteId).Nome,
+                 NomePrestadorDeServico = _usuarioRepositorio.Encontrar(x.PrestadorDeServicoId).Nome,
+                 Id = x.Id,
+                 DataSolicitacao = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).DataSolicitacao,
+                 Comentario = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).Comentario,
+                 SolicitacaoContratoId = x.SolicitacaoContratoId
+            }).ToList();
+        }
+
+        public IList<ContratoDTO> ListarContratosEncerradosContratante(int idContratante)
+        {
+             return _contratoRepositorio.ListarContratoEncerradosContratante(idContratante).Select(x => new ContratoDTO
+            {
+                 BeneficiarioId = x.BeneficiarioId,
+                 PrestadorDeServicoId = x.PrestadorDeServicoId,
+                 ContratanteId = x.ContratanteId,
+                 DataFim = x.DataFim,
+                 DataInicio = x.DataInicio,
+                 NomeBeneficiario = _beneficiarioRepositorio.Encontrar(x.BeneficiarioId).Nome,
+                 NomeContratante = _usuarioRepositorio.Encontrar(x.ContratanteId).Nome,
+                 NomePrestadorDeServico = _usuarioRepositorio.Encontrar(x.PrestadorDeServicoId).Nome,
+                 Id = x.Id,
+                 DataSolicitacao = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).DataSolicitacao,
+                 Comentario = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).Comentario,
+                 SolicitacaoContratoId = x.SolicitacaoContratoId
+            }).ToList();
+        }
+
+        public IList<ContratoDTO> ListarContratosEncerradosPrestadorDeServico(int idPrestdorDeServico)
+        {
+             return _contratoRepositorio.ListarContratoEncerradosPrestador(idPrestdorDeServico).Select(x => new ContratoDTO
+            {
+                 BeneficiarioId = x.BeneficiarioId,
+                 PrestadorDeServicoId = x.PrestadorDeServicoId,
+                 ContratanteId = x.ContratanteId,
+                 DataFim = x.DataFim,
+                 DataInicio = x.DataInicio,
+                 NomeBeneficiario = _beneficiarioRepositorio.Encontrar(x.BeneficiarioId).Nome,
+                 NomeContratante = _usuarioRepositorio.Encontrar(x.ContratanteId).Nome,
+                 NomePrestadorDeServico = _usuarioRepositorio.Encontrar(x.PrestadorDeServicoId).Nome,
+                 Id = x.Id,
+                 DataSolicitacao = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).DataSolicitacao,
+                 Comentario = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).Comentario,
+                 SolicitacaoContratoId = x.SolicitacaoContratoId
+            }).ToList();
+        }
+
         public IList<ContratoDTO> ListarContratosVigentesBeneficiario(int idBeneficiario)
         {
             return _contratoRepositorio.ListarContratoBeneficiario(idBeneficiario).Select(x => new ContratoDTO
