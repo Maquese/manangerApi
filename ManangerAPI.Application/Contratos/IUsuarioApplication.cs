@@ -30,5 +30,7 @@ namespace ManangerAPI.Application.Contratos
         IList<UsuarioDTO> ListarUsuariosPorPerfil(PerfilEnum perfilId);
 
         String NomeDaCidade(int cidadeId);
+
+        void RecuperarSenha(string email);
     }
 }

@@ -111,6 +111,15 @@ namespace ManangerAPI.Application.ApplicationApp
             return _cidadeRepositorio.Encontrar(cidadeId).Nome;
         }
 
+        public void RecuperarSenha(string email)
+        {
+            var usuario = _usuarioRepositorio.EncontrarPorEmail(email);
+            if(usuario != null)
+            {
+            EnviarEmailRecuperarSenha(usuario.Email,usuario.Nome,usuario.Login,usuario.Senha);
+            }
+        }
+
         public bool VerificaCpfJaCadastrado(string cpf)
         {
             return _usuarioRepositorio.VerificaCpfJaCadastrado(cpf);

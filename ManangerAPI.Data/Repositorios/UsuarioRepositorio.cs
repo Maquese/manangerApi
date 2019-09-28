@@ -13,6 +13,11 @@ namespace ManangerAPI.Data.Repositorios
         {
         }
 
+        public Usuario EncontrarPorEmail(string email)
+        {
+            return _contexto.Usuario.Where(x => x.Email == email).FirstOrDefault();
+        }
+
         public IList<Usuario> ListarTodosOsUsuariosPorPerfil(int perfilId)
         {
             var acessos =  _contexto.Acesso.Where(x => x.PerfilId == perfilId).Select(x => x.UsuarioId).ToList();

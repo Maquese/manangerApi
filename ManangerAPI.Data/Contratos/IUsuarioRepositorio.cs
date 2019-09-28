@@ -19,5 +19,7 @@ namespace ManangerAPI.Data.Contratos
 
          IList<Usuario> ListarTodosOsUsuariosPorPerfil(int perfilId);
 
+         Usuario EncontrarPorEmail(string email);
+
     }
 }

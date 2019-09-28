@@ -7,6 +7,8 @@ namespace ManangerAPI.Application.Contratos
          void EnviarEmailSolicitacaoContrato(string contratante,string para, string nome);
          
          void EnviarEmailRespostaSolicitacaoContrato(string prestadodDeServico,string para, string nome);
+
+         void EnviarEmailRecuperarSenha(string para, string nome, string usuario, string senha);
          
     }
 }

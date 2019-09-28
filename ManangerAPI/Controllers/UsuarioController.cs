@@ -102,5 +102,12 @@ namespace ManangerAPI.Controllers
             return _UsuarioApplication.NomeDaCidade(request.Id);     
         }
 
+        [Route("api/usuario/recuperarsenha")]
+        [HttpPost]
+        public void  RecuperarSenha(VerificacaoRequest  request)
+        {
+            _UsuarioApplication.RecuperarSenha(request.Email);     
+        }
+
     }
 }
