@@ -36,14 +36,11 @@ namespace ManangerAPI.Application.ApplicationApp
             {
                 ContratoId = x.ContratoId,
                 Titulo = x.Titulo,
-                DataInicio = x.DataInicio,
-                DataFim = x.DataFim,
                 HoraInicio = x.HoraInicio,
                 HoraFim = x.HoraFim,
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
                 Id = x.Id,
-                TodosOsDias = x.TodosOsDias
             }).ToList();
         }
 
@@ -53,14 +50,11 @@ namespace ManangerAPI.Application.ApplicationApp
             {
                 ContratoId = x.ContratoId,
                 Titulo = x.Titulo,
-                DataInicio = x.DataInicio,
-                DataFim = x.DataFim,
                 HoraInicio = x.HoraInicio,
                 HoraFim = x.HoraFim,
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
-                Id = x.Id,
-                TodosOsDias = x.TodosOsDias
+                Id = x.Id
             }).ToList();
         }
 
@@ -70,14 +64,11 @@ namespace ManangerAPI.Application.ApplicationApp
             {
                 ContratoId = x.ContratoId,
                 Titulo = x.Titulo,
-                DataInicio = x.DataInicio,
-                DataFim = x.DataFim,
                 HoraInicio = x.HoraInicio,
                 HoraFim = x.HoraFim,
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
                 Id = x.Id,
-                TodosOsDias = x.TodosOsDias
             }).ToList();
         }
     }
