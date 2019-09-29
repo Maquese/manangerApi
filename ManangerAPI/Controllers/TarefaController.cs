@@ -20,7 +20,7 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public void Adicionar(TarefaRequest request)
         {
-            _tarefaApplication.AdicionarTarefa(request.Titulo,request.ContratoId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim);
+            _tarefaApplication.AdicionarTarefa(request.Titulo,request.ContratoId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim, request.CorHexa,request.Comentario,request.TodosOsDias);
         }
 
         [Route("api/tarefa/listartarefasporcontrato")]
@@ -36,5 +36,14 @@ namespace ManangerAPI.Controllers
         {
             return _tarefaApplication.ListarTarefasPorBeneficiario(request.Id);
         }
+
+        [Route("api/tarefa/listartodastarefasbeneficiariospordia")]
+        [HttpPost]
+        public IList<TarefaDTO> ListarTodasTarefasBeneficiariosPorDia(TarefaRequest request)
+        {
+            return _tarefaApplication.ListarTarefasPorBeneficiario(request.Id, request.Data);
+        }
+
+
     }
 }

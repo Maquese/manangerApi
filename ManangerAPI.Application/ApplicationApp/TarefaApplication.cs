@@ -10,7 +10,7 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : ITarefaApplication
     {
-        public void AdicionarTarefa(string titulo, int contratoId, DateTime dataInicio, DateTime dataFim, TimeSpan horaInicio, TimeSpan horaFim)
+        public void AdicionarTarefa(string titulo, int contratoId, DateTime dataInicio, DateTime? dataFim, TimeSpan horaInicio, TimeSpan horaFim, string corHexa, string comentario, bool todosOsDias)
         {
             _tarefaRepositorio.Insert(new Tarefa
             {
@@ -20,7 +20,10 @@ namespace ManangerAPI.Application.ApplicationApp
                 DataFim = dataFim,
                 HoraInicio = horaInicio,
                 HoraFim = horaFim,
-                Status = (int)StatusEnum.Ativo
+                Status = (int)StatusEnum.Ativo,
+                CorHexa = corHexa,
+                Comentario = comentario,
+                TodosOsDias = todosOsDias
             });
             _tarefaRepositorio.Save();
 
@@ -41,6 +44,11 @@ namespace ManangerAPI.Application.ApplicationApp
                 Id = x.Id,
                 TodosOsDias = x.TodosOsDias
             }).ToList();
+        }
+
+        public IList<TarefaDTO> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime dia)
+        {
+            throw new NotImplementedException();
         }
 
         public IList<TarefaDTO> ListarTarefasPorContrato(int contratoId)

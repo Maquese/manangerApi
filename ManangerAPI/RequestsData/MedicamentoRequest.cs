@@ -10,5 +10,7 @@ namespace ManangerAPI.RequestsData
         public int ViaDeUso { get; set; }///oral, etc
         public string EfeitoColateral  { get; set; }
         public int IdBeneficiario { get; set; }
+        public int UnidadeMedida { get; set; }
+        public int MyProperty { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ManangerAPI.Data.Entidades;
 
@@ -9,5 +10,7 @@ namespace ManangerAPI.Data.Contratos
 
          
          IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId);
+
+         IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime data);
     }
 }

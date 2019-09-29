@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ManangerAPI.Data.Entidades
 {
@@ -14,5 +15,6 @@ namespace ManangerAPI.Data.Entidades
         public string CorHexa { get; set; }
         public string Comentario { get; set; }
         public bool TodosOsDias { get; set; }
+        public virtual IList<TarefaRealizada> TarefasRealizada { get; set; }
     }
 }

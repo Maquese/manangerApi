@@ -78,7 +78,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 PosologiaId = dados.PosologiaId,
                 Quantidade = dados.Quantidade,
                 DataDeInicio = dados.DataDeInicio,
-                DataFim = dados.DataFim
+                DataFim = dados.DataFim,
             };
         }
 

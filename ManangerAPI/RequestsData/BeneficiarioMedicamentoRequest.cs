@@ -10,5 +10,6 @@ namespace ManangerAPI.RequestsData
         public int Quantidade { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime? DataFim { get; set; }
+        public int UnidadeDeMedida { get; set; }
     }
 }

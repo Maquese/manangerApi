@@ -10,6 +10,12 @@ namespace ManangerAPI.Application.DTOS
         public int Quantidade { get; set; }
         public DateTime DataDeInicio { get;  set; }
         public DateTime? DataFim { get;  set; }
-        public int MyProperty { get; set; }
+        public string Nome { get; set; }
+        public string ContraIndicacao { get; set; }
+        public string Bula { get; set; }
+        public string Indicao { get; set; }
+        public String TipoMedicamento { get; set; }///comprimido, gota, efervece
+        public String ViaDeUsoMedicamento { get; set; }///oral, etc
+        public string EfeitoColateral  { get; set; }
     }
 }
