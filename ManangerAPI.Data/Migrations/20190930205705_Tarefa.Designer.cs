@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190912145858_tareafaComentario")]
-    partial class tareafaComentario
+    [Migration("20190930205705_Tarefa")]
+    partial class Tarefa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -120,6 +120,8 @@ namespace manangerapi.data.Migrations
 
                     b.Property<DateTime?>("DataFim");
 
+                    b.Property<double>("EmbalagemQTD");
+
                     b.Property<int>("MedicamentoId");
 
                     b.Property<int>("PosologiaId");
@@ -127,6 +129,8 @@ namespace manangerapi.data.Migrations
                     b.Property<int>("Quantidade");
 
                     b.Property<int>("Status");
+
+                    b.Property<int>("UnidadeMedida");
 
                     b.HasKey("Id");
 
@@ -479,6 +483,29 @@ namespace manangerapi.data.Migrations
                     b.ToTable("Tarefa");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.TarefaRealizada", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comentario");
+
+                    b.Property<DateTime>("Data");
+
+                    b.Property<TimeSpan>("Hora");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("TarefaId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TarefaId");
+
+                    b.ToTable("TarefaRalizada");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.TipoMedicamento", b =>
                 {
                     b.Property<int>("Id")
@@ -755,6 +782,14 @@ namespace manangerapi.data.Migrations
                     b.HasOne("ManangerAPI.Data.Entidades.Contrato", "Contrato")
                         .WithMany("Tarefa")
                         .HasForeignKey("ContratoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.TarefaRealizada", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.Tarefa", "Tarefa")
+                        .WithMany("TarefasRealizada")
+                        .HasForeignKey("TarefaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

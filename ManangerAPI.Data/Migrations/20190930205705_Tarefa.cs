@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace manangerapi.data.Migrations
 {
-    public partial class tareafaComentario : Migration
+    public partial class Tarefa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -448,7 +448,9 @@ namespace manangerapi.data.Migrations
                     PosologiaId = table.Column<int>(nullable: false),
                     Quantidade = table.Column<int>(nullable: false),
                     DataDeInicio = table.Column<DateTime>(nullable: false),
-                    DataFim = table.Column<DateTime>(nullable: true)
+                    DataFim = table.Column<DateTime>(nullable: true),
+                    EmbalagemQTD = table.Column<double>(nullable: false),
+                    UnidadeMedida = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -542,6 +544,29 @@ namespace manangerapi.data.Migrations
                         name: "FK_Tarefa_Contrato_ContratoId",
                         column: x => x.ContratoId,
                         principalTable: "Contrato",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TarefaRalizada",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    TarefaId = table.Column<int>(nullable: false),
+                    Comentario = table.Column<string>(nullable: true),
+                    Data = table.Column<DateTime>(nullable: false),
+                    Hora = table.Column<TimeSpan>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TarefaRalizada", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TarefaRalizada_Tarefa_TarefaId",
+                        column: x => x.TarefaId,
+                        principalTable: "Tarefa",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -676,6 +701,11 @@ namespace manangerapi.data.Migrations
                 name: "IX_Tarefa_ContratoId",
                 table: "Tarefa",
                 column: "ContratoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TarefaRalizada_TarefaId",
+                table: "TarefaRalizada",
+                column: "TarefaId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -705,7 +735,7 @@ namespace manangerapi.data.Migrations
                 name: "StatusEntidade");
 
             migrationBuilder.DropTable(
-                name: "Tarefa");
+                name: "TarefaRalizada");
 
             migrationBuilder.DropTable(
                 name: "CondicaoClinica");
@@ -723,13 +753,16 @@ namespace manangerapi.data.Migrations
                 name: "Competencia");
 
             migrationBuilder.DropTable(
-                name: "Contrato");
+                name: "Tarefa");
 
             migrationBuilder.DropTable(
                 name: "TipoMedicamento");
 
             migrationBuilder.DropTable(
                 name: "ViaDeUsoMedicamento");
+
+            migrationBuilder.DropTable(
+                name: "Contrato");
 
             migrationBuilder.DropTable(
                 name: "SolicitacaoContrato");
