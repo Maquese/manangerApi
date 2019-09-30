@@ -28,7 +28,7 @@ namespace ManangerAPI.Application.ApplicationApp
             retorno.Rua = deserialized.logradouro;
             retorno.Uf = deserialized.uf;
             retorno.IdCidade = _cidadeRepositorio.EncotrarIdPorNome(deserialized.localidade);
-            }catch(Exception e){
+            }catch(Exception ){
                 throw new Exception("Cep inválido.");
             }
             return retorno;
