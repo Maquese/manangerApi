@@ -44,6 +44,12 @@ namespace ManangerAPI.Controllers
             return _tarefaApplication.ListarTarefasPorBeneficiario(request.Id, request.Data);
         }
 
+        [Route("api/tarefa/listartodastarefasprestadorpordia")]
+        [HttpPost]
+        public IList<TarefaDTO> ListarTodasTarefasPrestadorPorDia(TarefaRequest request)
+        {
+            return _tarefaApplication.ListarTarefasPorPrestadorDeServico(request.Id, request.Data);
+        }
 
     }
 }

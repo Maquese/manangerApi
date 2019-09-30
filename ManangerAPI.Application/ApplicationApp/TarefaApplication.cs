@@ -71,5 +71,19 @@ namespace ManangerAPI.Application.ApplicationApp
                 Id = x.Id,
             }).ToList();
         }
+
+        public IList<TarefaDTO> ListarTarefasPorPrestadorDeServico(int prestadorId, DateTime dia)
+        {
+           return _tarefaRepositorio.ListarTarefasPorPrestador(prestadorId,dia).Select(x => new TarefaDTO
+            {
+                ContratoId = x.ContratoId,
+                Titulo = x.Titulo,
+                HoraInicio = x.HoraInicio,
+                HoraFim = x.HoraFim,
+                Comentario = x.Comentario,
+                CorHexa = x.CorHexa,
+                Id = x.Id
+            }).ToList();
+        }
     }
 }

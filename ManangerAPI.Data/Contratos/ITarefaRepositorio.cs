@@ -12,5 +12,7 @@ namespace ManangerAPI.Data.Contratos
          IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId);
 
          IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime data);
+         
+         IList<Tarefa> ListarTarefasPorPrestador(int beneficiarioId, DateTime data);
     }
 }
