@@ -32,9 +32,9 @@ namespace ManangerAPI.Controllers
 
         [Route("api/tarefa/listartodastarefasbeneficiarios")]
         [HttpPost]
-        public IList<TarefaDTO> ListarTodasTarefasBeneficiarios(BaseRequest request)
+        public IList<TarefaDTO> ListarTodasTarefasBeneficiarios(TarefaRequest request)
         {
-            return _tarefaApplication.ListarTarefasPorBeneficiario(request.Id);
+            return _tarefaApplication.ListarTarefasPorBeneficiario(request.Id,request.DataInicio, request.DataFim.Value);
         }
 
         [Route("api/tarefa/listartodastarefasbeneficiariospordia")]

@@ -13,11 +13,13 @@ namespace ManangerAPI.Data.Repositorios
         {
         }
 
-        public IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId)
+        public IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime dataInicio, DateTime dataFim)
         {
             var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 
                                                      && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Where(x => contratos.Contains(x.ContratoId) && x.Status == 1).ToList();
+            return _contexto.Tarefa.Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || 
+                                                                                                    (x.DataInicio <= dataInicio && x.DataFim >= dataInicio || 
+                                                                                                     x.DataInicio <= dataFim && x.DataFim >= dataFim))).ToList();
             
         }
 
