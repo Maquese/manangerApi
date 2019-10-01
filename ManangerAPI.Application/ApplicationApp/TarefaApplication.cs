@@ -61,6 +61,7 @@ namespace ManangerAPI.Application.ApplicationApp
                          Comentario = item.Comentario,
                          CorHexa = item.CorHexa,
                          Data = dataInicio,
+                         DataString = dataInicio.Date.ToString(),
                         Id = item.Id,
                     });
                 }

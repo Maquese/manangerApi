@@ -12,5 +12,6 @@ namespace ManangerAPI.Application.DTOS
         public TimeSpan HoraFim { get; set; }
         public string CorHexa { get; set; }
         public string Comentario { get; set; }
+        public string DataString { get; set; }
     }
 }
