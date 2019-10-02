@@ -50,8 +50,7 @@ namespace ManangerAPI.Application.ApplicationApp
 
             while (dataInicio <= dataFim)
             {
-                foreach (var item in dados.Where(x => x.TodosOsDias || (x.DataInicio <= dataInicio && x.DataFim >= dataInicio 
-                                                 || x.DataInicio <= dataFim && x.DataFim >= dataFim)))
+                foreach (var item in dados.Where(x => x.TodosOsDias || (x.DataInicio <= dataInicio && x.DataFim >= dataInicio)))
                 {
                     retorno.Add(new TarefaDTO {
                          ContratoId = item.ContratoId,

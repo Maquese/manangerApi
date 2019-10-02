@@ -3035,23 +3035,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\clastech\\.nuget\\packages\\": {},
+    "C:\\Users\\Giuliano\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
       "projectName": "ManangerApi.Data",
-      "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
-      "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\obj\\",
+      "projectPath": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+      "packagesPath": "C:\\Users\\Giuliano\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi.data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Giuliano\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
