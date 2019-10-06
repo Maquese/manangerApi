@@ -35,11 +35,13 @@ namespace ManangerAPI.Data.Repositorios
             return _contexto.Tarefa.Where(x => x.Status == 1 && x.ContratoId == contratoId).ToList();
         }
 
-        public IList<Tarefa> ListarTarefasPorPrestador(int prestadorId, DateTime data)
+        public IList<Tarefa> ListarTarefasPorPrestador(int contratoId, DateTime data)
         {
-            var contratos = _contexto.Contrato.Where(x => x.PrestadorDeServicoId == prestadorId && x.Status == 1 
-                                                     && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || x.DataInicio <= data && x.DataFim >= data)).ToList();
+            var contrato = _contexto.Contrato.Where(x => x.Id == contratoId && x.Status == 1 ).Select(y => new  {y.Id, y.BeneficiarioId}).FirstOrDefault();
+
+            var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == contrato.BeneficiarioId && x.Status == 1).Select(y => y.Id).ToList();
+
+            return _contexto.Tarefa.Where(x => contratos.Contains(x.ContratoId)  && x.Status == 1 && (x.TodosOsDias || x.DataInicio <= data && x.DataFim >= data)).ToList();
         }
     }
 }
