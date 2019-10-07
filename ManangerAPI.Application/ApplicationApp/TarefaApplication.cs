@@ -101,9 +101,9 @@ namespace ManangerAPI.Application.ApplicationApp
             }).ToList();
         }
 
-        public IList<TarefaDTO> ListarTarefasPorPrestadorDeServico(int prestadorId, DateTime dia)
+        public IList<TarefaDTO> ListarTarefasPorPrestadorDeServico(int contratoId, DateTime dia)
         {
-           return _tarefaRepositorio.ListarTarefasPorPrestador(prestadorId,dia).Select(x => new TarefaDTO
+           return _tarefaRepositorio.ListarTarefasPorPrestador(contratoId,dia).Select(x => new TarefaDTO
             {
                 ContratoId = x.ContratoId,
                 Titulo = x.Titulo,
