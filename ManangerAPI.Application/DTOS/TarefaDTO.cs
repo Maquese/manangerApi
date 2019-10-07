@@ -13,5 +13,6 @@ namespace ManangerAPI.Application.DTOS
         public string CorHexa { get; set; }
         public string Comentario { get; set; }
         public string DataString { get; set; }
+        public bool TarefaRealizada { get;  set; }
     }
 }

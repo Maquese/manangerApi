@@ -8,6 +8,7 @@ namespace ManangerAPI.Data.Repositorios
     {
         public TarefaRealizadaRepositorio(ContextoDb contexto) : base(contexto)
         {
+            
         }
     }
 }
