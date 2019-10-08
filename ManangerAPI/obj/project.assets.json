@@ -11845,11 +11845,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\ManangerApi.csproj",
+      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
       "projectName": "ManangerApi",
-      "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\ManangerApi.csproj",
+      "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
       "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\obj\\",
+      "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11910,13 +11910,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\obj\\ManangerApi.csproj.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

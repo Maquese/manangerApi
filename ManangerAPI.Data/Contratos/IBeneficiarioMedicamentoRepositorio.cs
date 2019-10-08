@@ -6,5 +6,8 @@ namespace ManangerAPI.Data.Contratos
     public interface IBeneficiarioMedicamentoRepositorio : IRepositorio<BeneficiarioMedicamento>
     {
          IList<BeneficiarioMedicamento> ListarPorBeneficiarioId(int idBeneficiario);
+
+         BeneficiarioMedicamento EncontrarCompleto(int beneficiarioMedicamentoId);
+
     }
 }

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\ManangerApi.csproj": {}
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {}
   },
   "projects": {
     "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
@@ -124,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\ManangerApi.csproj": {
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\ManangerApi.csproj",
+        "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
         "projectName": "ManangerApi",
-        "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\ManangerApi.csproj",
+        "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
         "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerApi\\obj\\",
+        "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

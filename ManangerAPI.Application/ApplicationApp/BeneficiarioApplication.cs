@@ -71,7 +71,7 @@ namespace ManangerAPI.Application.ApplicationApp
 
         public BeneficiarioMedicamentoDTO DetalharBeneficiarioMedicamento(int idBeneficiarioMedicamento)
         {
-            var dados = _beneficiarioMedicamentoRepositorio.Encontrar(idBeneficiarioMedicamento);
+            var dados = _beneficiarioMedicamentoRepositorio.EncontrarCompleto(idBeneficiarioMedicamento);
             return new BeneficiarioMedicamentoDTO {
                 Id = dados.Id,
                 MedicamentoId = dados.MedicamentoId,
@@ -79,6 +79,13 @@ namespace ManangerAPI.Application.ApplicationApp
                 Quantidade = dados.Quantidade,
                 DataDeInicio = dados.DataDeInicio,
                 DataFim = dados.DataFim,
+                Bula = dados.Medicamento.Bula,
+                EfeitoColateral = dados.Medicamento.EfeitoColateral,
+                ContraIndicacao = dados.Medicamento.ContraIndicacao,
+                Indicao = dados.Medicamento.Indicao,
+                Nome = dados.Medicamento.Nome,
+                TipoMedicamentoId = dados.Medicamento.TipoMedicamentoId,
+                ViaDeUsoMedicamentoId = dados.Medicamento.ViaDeUsoMedicamentoId
             };
         }
 
