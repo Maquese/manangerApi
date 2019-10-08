@@ -18,6 +18,16 @@ namespace ManangerAPI.Data.Repositorios
             return _contexto.BeneficiarioMedicamento.Include("Medicamento").Where(x => x.Id == beneficiarioMedicamentoId).FirstOrDefault();
         }
 
+        public IList<KeyValuePair<int, string>> GerarDropDown(int beneficiarioId)
+        {
+            var retorno = new List<KeyValuePair<int,string>>();
+            retorno.Add(new KeyValuePair<int, string>(0,"Selecione"));
+            retorno.AddRange(_contexto.BeneficiarioMedicamento.Include("Medicamento")
+                   .Where(x => x.BeneficiarioId == beneficiarioId)
+                   .Select(x => new KeyValuePair<int, string>(x.Id, x.Medicamento.Nome)).ToList());
+            return retorno;
+        }
+
         public IList<BeneficiarioMedicamento> ListarPorBeneficiarioId(int idBeneficiario)
         {
             return _contexto.BeneficiarioMedicamento.Where(x => x.BeneficiarioId == idBeneficiario && x.Status == 1).ToList();

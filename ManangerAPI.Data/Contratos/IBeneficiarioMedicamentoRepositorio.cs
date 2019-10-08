@@ -9,5 +9,7 @@ namespace ManangerAPI.Data.Contratos
 
          BeneficiarioMedicamento EncontrarCompleto(int beneficiarioMedicamentoId);
 
+         IList<KeyValuePair<int,string>> GerarDropDown(int beneficiarioId);
+
     }
 }

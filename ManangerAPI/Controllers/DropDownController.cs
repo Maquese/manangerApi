@@ -77,6 +77,13 @@ namespace ManangerAPI.Controllers
         {
            return _idropDownApplication.DadosPrestadorContrato(request.Id);
         }
+
+        [HttpPost]
+        [Route("api/dropdown/medicamentosbeneficiario")]
+        public IList<KeyValuePair<int,string>> MedicamnetosBeneficiario(BaseRequest request)
+        {
+           return _idropDownApplication.DadosBeneficiarioMedicamento(request.Id);
+        }
         
     }
 }

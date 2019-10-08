@@ -5,6 +5,11 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IDropDownApplication
     {
+        public IList<KeyValuePair<int, string>> DadosBeneficiarioMedicamento(int beneficiarioId)
+        {
+            return _beneficiarioMedicamentoRepositorio.GerarDropDown(beneficiarioId);
+        }
+
         public IList<KeyValuePair<int, string>> DadosCidade(string uf)
         {
             return _cidadeRepositorio.GerarDropDown(uf);
