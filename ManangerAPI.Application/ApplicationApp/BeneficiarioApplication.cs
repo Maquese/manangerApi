@@ -59,6 +59,13 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioMedicamentoRepositorio.Save();
         }
 
+        public void AdicionarQuantidadeMedicamento(int idMedicamento, int quantidade)
+        {
+            var medicamentoBeneficiario = _beneficiarioMedicamentoRepositorio.Encontrar(idMedicamento);
+            medicamentoBeneficiario.Quantidade = quantidade;
+            _beneficiarioMedicamentoRepositorio.Save();
+        }
+
         public void CancelarSolicitacaoContrato(int idSolicitacao)
         {
             var solicitacao = _solicitacaoContratoRepositorio.Encontrar(idSolicitacao);

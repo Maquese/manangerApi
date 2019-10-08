@@ -29,5 +29,7 @@ namespace ManangerAPI.Application.Contratos
 
          void CancelarSolicitacaoContrato(int idSolicitacao);
 
+         void AdicionarQuantidadeMedicamento(int idMedicamento, int quantidade);
+
     }
 }

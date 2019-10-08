@@ -95,6 +95,14 @@ namespace ManangerAPI.Controllers
         public void CancelarSolicitacaoContrato(BaseRequest request)
         {
             _beneficiarioApplication.CancelarSolicitacaoContrato(request.Id);
-        }        
+        }  
+
+
+        [HttpPost]
+        [Route("api/beneficiario/entradamedicamento")]
+        public void EntradaMedicamento(BeneficiarioMedicamentoRequest request)
+        {
+            _beneficiarioApplication.AdicionarQuantidadeMedicamento(request.Id,request.Quantidade);
+        }    
     }
 }
