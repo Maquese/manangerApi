@@ -15,13 +15,13 @@ namespace ManangerAPI.Application.Contratos
                              IList<int> condicoesClinicas, bool termos);
         BeneficiarioDTO EncontrarPorId(int idBeneficiario);
 
-        void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim);
+        void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim, int unidadeMedida);
 
         IList<BeneficiarioMedicamentoListaDTO> ListarBeneficiarioMedicamento(int idBeneficiario);  
 
         BeneficiarioMedicamentoDTO DetalharBeneficiarioMedicamento(int idBeneficiarioMedicamento);
 
-        void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade,DateTime dataInicio, DateTime? dataFim);
+        void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade,DateTime dataInicio, DateTime? dataFim, int unidadeMedida);
 
         void RemoverBeneficiarioMedicamento(int id);
 

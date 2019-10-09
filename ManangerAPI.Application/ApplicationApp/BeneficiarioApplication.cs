@@ -42,7 +42,7 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioRepositorio.Save();
         }
 
-        public void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim)
+        public void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim, int unidadeMedida)
         {
             BeneficiarioMedicamento medicamento = new BeneficiarioMedicamento
             {
@@ -52,7 +52,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Quantidade = quantidade,
                 Status = (int)StatusEnum.Ativo,
                 DataDeInicio = dataInicio,
-                DataFim = dataFim
+                DataFim = dataFim,
+                UnidadeMedida = unidadeMedida
             };
 
             _beneficiarioMedicamentoRepositorio.Insert(medicamento);
@@ -144,7 +145,7 @@ namespace ManangerAPI.Application.ApplicationApp
               _beneficiarioRepositorio.Save();
         }
 
-        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim)
+        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim,int unidadeMedida)
         {
             var dados = _beneficiarioMedicamentoRepositorio.Encontrar(id);
             dados.MedicamentoId = idMedicamento;
@@ -152,6 +153,7 @@ namespace ManangerAPI.Application.ApplicationApp
             dados.DataDeInicio = dataInicio;
             dados.DataFim = dataFim;
             dados.Quantidade = quantidade;
+            dados.UnidadeMedida = unidadeMedida;
             _beneficiarioMedicamentoRepositorio.Update(dados);
             _beneficiarioMedicamentoRepositorio.Save();
         }
