@@ -84,6 +84,13 @@ namespace ManangerAPI.Controllers
         {
            return _idropDownApplication.DadosBeneficiarioMedicamento(request.Id);
         }
+
+        [HttpPost]
+        [Route("api/dropdown/unidademedida")]
+        public IList<KeyValuePair<int,string>> UnidadeDeMedida()
+        {
+           return _idropDownApplication.DadosUnidadeMedida();
+        }
         
     }
 }

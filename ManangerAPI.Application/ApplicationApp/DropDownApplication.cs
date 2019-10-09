@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using ManangerAPI.Application.Contratos;
 using System.Linq;
+using ManangerAPI.Application.Enums;
+
 namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IDropDownApplication
@@ -48,6 +50,21 @@ namespace ManangerAPI.Application.ApplicationApp
         public IList<KeyValuePair<int, string>> DadosTipoMedicamento()
         {
             return _tipoMedicamentoRepositorio.GerarDropDown();
+        }
+
+        public IList<KeyValuePair<int, string>> DadosUnidadeMedida()
+        {
+            var lista = new List<KeyValuePair<int,string>>();
+            lista.Add(new KeyValuePair<int, string>((int)UnidadeMedidaEnum.Litro,UnidadeMedidaEnum.Litro.ToString()));
+            
+            lista.Add(new KeyValuePair<int, string>((int)UnidadeMedidaEnum.ML,UnidadeMedidaEnum.ML.ToString()));
+            
+            lista.Add(new KeyValuePair<int, string>((int)UnidadeMedidaEnum.Grama,UnidadeMedidaEnum.Grama.ToString()));
+            
+            lista.Add(new KeyValuePair<int, string>((int)UnidadeMedidaEnum.Unidade,UnidadeMedidaEnum.Unidade.ToString()));
+
+            lista.Add(new KeyValuePair<int, string>((int)UnidadeMedidaEnum.Comprimido,UnidadeMedidaEnum.Comprimido.ToString()));
+            return lista;
         }
 
         public IList<KeyValuePair<int, string>> DadosViaDeUsoMedicamento()

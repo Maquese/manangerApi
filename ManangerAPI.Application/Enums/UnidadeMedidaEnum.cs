@@ -5,6 +5,7 @@ namespace ManangerAPI.Application.Enums
         Litro = 1,
         ML = 2,
         Grama = 3,
-        Unidade = 4
+        Unidade = 4,
+        Comprimido = 5
     }
 }
