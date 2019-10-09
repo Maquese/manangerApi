@@ -52,7 +52,7 @@ namespace ManangerAPI.Controllers
         [Route("api/beneficiario/adicionarmedicamento")]
         public void AdicionarMedicamento(BeneficiarioMedicamentoRequest request)
         {
-            _beneficiarioApplication.AdicionarMedicamento(request.BeneficiarioId,request.MedicamentoId,request.PosologiaId,request.Quantidade,request.DataInicio,request.DataFim);
+            _beneficiarioApplication.AdicionarMedicamento(request.BeneficiarioId,request.MedicamentoId,request.PosologiaId,request.Quantidade,request.DataInicio,request.DataFim, request.UnidadeDeMedida);
         }
 
         [HttpPost]
@@ -73,7 +73,7 @@ namespace ManangerAPI.Controllers
         [Route("api/beneficiario/editarmedicamento")]
         public void EditarMedicamento(BeneficiarioMedicamentoRequest request)
         {
-            _beneficiarioApplication.EditarBeneficiarioMedicamento(request.Id,request.MedicamentoId,request.PosologiaId,request.Quantidade,request.DataInicio,request.DataFim);
+            _beneficiarioApplication.EditarBeneficiarioMedicamento(request.Id,request.MedicamentoId,request.PosologiaId,request.Quantidade,request.DataInicio,request.DataFim,request.UnidadeDeMedida);
         }
 
         [HttpPost]
