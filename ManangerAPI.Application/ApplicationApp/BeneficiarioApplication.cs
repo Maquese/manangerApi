@@ -193,7 +193,8 @@ namespace ManangerAPI.Application.ApplicationApp
                     Id = item.Id,
                     NomeMedicamento = _medicamentoRepositorio.NomeMedicamento(item.MedicamentoId),
                     Posologia = _posologiaRepositorio.Encontrar(item.PosologiaId).Nome,
-                    Quantidade = item.Quantidade
+                    Quantidade = item.Quantidade,
+                    UnidadeMedidaNome =  ((UnidadeMedidaEnum)item.UnidadeMedida).ToString()
                 });
             }
             return retorno;

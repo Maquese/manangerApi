@@ -6,5 +6,6 @@ namespace ManangerAPI.Application.DTOS
         public int Quantidade { get; set; }
         public string NomeMedicamento { get; set; }
         public string Posologia { get; set; }
+        public string UnidadeMedidaNome { get; set; }
     }
 }
