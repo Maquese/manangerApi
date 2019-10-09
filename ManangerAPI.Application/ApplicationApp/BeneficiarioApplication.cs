@@ -92,7 +92,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Indicao = dados.Medicamento.Indicao,
                 Nome = dados.Medicamento.Nome,
                 TipoMedicamentoId = dados.Medicamento.TipoMedicamentoId,
-                ViaDeUsoMedicamentoId = dados.Medicamento.ViaDeUsoMedicamentoId
+                ViaDeUsoMedicamentoId = dados.Medicamento.ViaDeUsoMedicamentoId,
+                UnidadeMedida = dados.UnidadeMedida
             };
         }
 

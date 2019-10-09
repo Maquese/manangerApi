@@ -19,5 +19,6 @@ namespace ManangerAPI.Application.DTOS
         public String ViaDeUsoMedicamento { get; set; }///oral, etc
         public int ViaDeUsoMedicamentoId { get; set; }
         public string EfeitoColateral  { get; set; }
+        public int UnidadeMedida { get;  set; }
     }
 }
