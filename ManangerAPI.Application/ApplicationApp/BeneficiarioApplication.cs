@@ -63,7 +63,7 @@ namespace ManangerAPI.Application.ApplicationApp
         public void AdicionarQuantidadeMedicamento(int idMedicamento, int quantidade)
         {
             var medicamentoBeneficiario = _beneficiarioMedicamentoRepositorio.Encontrar(idMedicamento);
-            medicamentoBeneficiario.Quantidade = quantidade;
+            medicamentoBeneficiario.Quantidade += quantidade;
             _beneficiarioMedicamentoRepositorio.Save();
         }
 
