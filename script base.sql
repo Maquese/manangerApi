@@ -15,12 +15,21 @@ insert into Funcionalidade
 values(1,'board','/board',1),-- admin
 (1,'analise','/analiseCadastro',1),
 (1,'medicamentos','/medicamentos',1),
+(1,'usuarios','/usarioCadastrados',1),
+(1,'home','/home',1),
+(1,'cadastro','/cadastro',1),
+(1,'calendario','/calendario',1),
 
 (1,'board','/board',2),--cotratante
 (1,'perfil','/perfil',2),
 (1,'crud paciente','/cadastroPaciente',2),
 (1,'medicamentos','/medicamentos',2),
-
+(1,'colaboradores','/funcionarios',2),
+(1,'home','/home',2),--cotratante
+(1,'login','/login',2),
+(1,'cadastro','/cadastro',2),
+(1,'calendario','/calendario',2),
+(1,'cadastro prestador','/cadastroPrestador',2),
 
 (1,'board','/board',3),--gestor
 (1,'perfil','/perfil',3),
@@ -28,7 +37,13 @@ values(1,'board','/board',1),-- admin
 (1,'medicamentos','/medicamentos',3),
 
 (1,'board','/board',4),--prestador
-(1,'perfil','/perfil',4);
+(1,'perfil','/perfil',4),
+(1,'home','/home',4),--prestador
+(1,'login','/login',4),
+(1,'cadastro','/cadastro',4),--prestador
+(1,'medicamentos','/medicamentos',4),
+(1,'calendario','/calendario',4),--prestador
+(1,'cadatro contratante','/cadastroContratante',4);
 
 insert into viadeusomedicamento
 (status,nome)

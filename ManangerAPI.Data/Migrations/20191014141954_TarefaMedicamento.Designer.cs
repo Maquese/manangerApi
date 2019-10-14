@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20190930205705_Tarefa")]
-    partial class Tarefa
+    [Migration("20191014141954_TarefaMedicamento")]
+    partial class TarefaMedicamento
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -456,6 +456,8 @@ namespace manangerapi.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BeneficiarioMedicamentoId");
+
                     b.Property<string>("Comentario");
 
                     b.Property<int>("ContratoId");
@@ -469,6 +471,8 @@ namespace manangerapi.data.Migrations
                     b.Property<TimeSpan>("HoraFim");
 
                     b.Property<TimeSpan>("HoraInicio");
+
+                    b.Property<int?>("QuantidadeMedicamento");
 
                     b.Property<int>("Status");
 

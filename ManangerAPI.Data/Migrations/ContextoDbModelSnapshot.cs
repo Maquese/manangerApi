@@ -454,6 +454,8 @@ namespace manangerapi.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BeneficiarioMedicamentoId");
+
                     b.Property<string>("Comentario");
 
                     b.Property<int>("ContratoId");
@@ -467,6 +469,8 @@ namespace manangerapi.data.Migrations
                     b.Property<TimeSpan>("HoraFim");
 
                     b.Property<TimeSpan>("HoraInicio");
+
+                    b.Property<int?>("QuantidadeMedicamento");
 
                     b.Property<int>("Status");
 
