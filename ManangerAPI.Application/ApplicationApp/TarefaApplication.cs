@@ -139,6 +139,14 @@ namespace ManangerAPI.Application.ApplicationApp
 
         public void TarefaRealizada(int tarefaId, string comentario, DateTime data, TimeSpan hora)
         {
+
+            var tarefa = _tarefaRepositorio.Encontrar(tarefaId);
+            if(tarefa.BeneficiarioMedicamentoId != null && tarefa.BeneficiarioMedicamentoId != 0)
+            {
+                var medicamento = _beneficiarioMedicamentoRepositorio.Encontrar(tarefa.BeneficiarioMedicamentoId.Value);
+                medicamento.Quantidade -= tarefa.QuantidadeMedicamento.Value;
+            }
+
             _tarefaRealizadaRepositorio.Insert(new Data.Entidades.TarefaRealizada
             {
                 Status = 1,
@@ -146,7 +154,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Data = data,
                 Hora = hora,
                 TarefaId = tarefaId
-            });
+            });            
 
             _tarefaRealizadaRepositorio.Save();
         }
