@@ -14,5 +14,8 @@ namespace ManangerAPI.Application.DTOS
         public string Comentario { get; set; }
         public string DataString { get; set; }
         public bool TarefaRealizada { get;  set; }
+        public int? QuantidadeMedicamento { get; set; }
+        public string NomeMedicamento { get; set; }
+        public int? BeneficiarioMedicamentoId { get; set; }
     }
 }

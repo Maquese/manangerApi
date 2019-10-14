@@ -11,7 +11,7 @@ namespace ManangerAPI.Application.ApplicationApp
     public partial class Application : ITarefaApplication
     {
         public void AdicionarTarefa(string titulo, int contratoId, DateTime dataInicio, DateTime? dataFim, TimeSpan horaInicio, 
-                                    TimeSpan horaFim, string corHexa, string comentario, bool todosOsDias)
+                                    TimeSpan horaFim, string corHexa, string comentario, bool todosOsDias, int? BeneficiarioMedicamentoId, int? QuantidadeMedicamento)
         {
             _tarefaRepositorio.Insert(new Tarefa
             {
@@ -25,12 +25,15 @@ namespace ManangerAPI.Application.ApplicationApp
                 CorHexa = corHexa,
                 Comentario = comentario,
                 TodosOsDias = todosOsDias,
+                BeneficiarioMedicamentoId = BeneficiarioMedicamentoId,
+                QuantidadeMedicamento = QuantidadeMedicamento
             });
             _tarefaRepositorio.Save();
 
         }
 
-        public void EditarTarefa(int tarefaId, string titulo, int contratoId, DateTime dataInicio, DateTime? dataFim, TimeSpan horaInicio, TimeSpan horaFim, string corHexa, string comentario, bool todosOsDias)
+        public void EditarTarefa(int tarefaId, string titulo, int contratoId, DateTime dataInicio, DateTime? dataFim, TimeSpan horaInicio, 
+                                 TimeSpan horaFim, string corHexa, string comentario, bool todosOsDias, int? BeneficiarioMedicamentoId, int? QuantidadeMedicamento)
         {
             var tarefa = _tarefaRepositorio.Encontrar(tarefaId);
             tarefa.Titulo = titulo;
@@ -43,6 +46,8 @@ namespace ManangerAPI.Application.ApplicationApp
             tarefa.CorHexa = corHexa;
             tarefa.Comentario = comentario;
             tarefa.TodosOsDias = todosOsDias;
+            tarefa.BeneficiarioMedicamentoId = BeneficiarioMedicamentoId;
+            tarefa.QuantidadeMedicamento = QuantidadeMedicamento;
             _tarefaRepositorio.Update(tarefa);
             _tarefaRepositorio.Save();
         }
@@ -57,7 +62,9 @@ namespace ManangerAPI.Application.ApplicationApp
                 HoraFim = x.HoraFim,
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
-                Id = x.Id
+                Id = x.Id,
+                QuantidadeMedicamento = x.QuantidadeMedicamento,
+                BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId
             }).ToList();
         }
         public IList<TarefaDTO> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime dataInicio, DateTime dataFim)
@@ -79,7 +86,9 @@ namespace ManangerAPI.Application.ApplicationApp
                          Data = dataInicio,
                          DataString = dataInicio.Date.ToString(),                         
                          TarefaRealizada = item.TarefasRealizada.Where(x => x.Data == dataInicio).FirstOrDefault() != null,
-                        Id = item.Id,
+                         Id = item.Id,
+                         QuantidadeMedicamento = item.QuantidadeMedicamento,
+                         BeneficiarioMedicamentoId = item.BeneficiarioMedicamentoId
                     });
                 }
                 dataInicio = dataInicio.AddDays(1);
@@ -98,6 +107,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
                 Id = x.Id,
+                QuantidadeMedicamento = x.QuantidadeMedicamento,
+                BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId
             }).ToList();
         }
 
@@ -113,7 +124,9 @@ namespace ManangerAPI.Application.ApplicationApp
                 CorHexa = x.CorHexa,
                 Data = dia,
                 TarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() != null,
-                Id = x.Id
+                Id = x.Id,
+                QuantidadeMedicamento = x.QuantidadeMedicamento,
+                BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId
             }).ToList();
         }
 

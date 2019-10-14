@@ -15,6 +15,8 @@ namespace ManangerAPI.Data.Entidades
         public string CorHexa { get; set; }
         public string Comentario { get; set; }
         public bool TodosOsDias { get; set; }
+        public int? BeneficiarioMedicamentoId { get; set; }
+        public int? QuantidadeMedicamento { get; set; }
         public virtual IList<TarefaRealizada> TarefasRealizada { get; set; }
     }
 }

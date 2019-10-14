@@ -13,6 +13,8 @@ namespace ManangerAPI.RequestsData
         public bool TodosOsDias { get; set; }
         public string CorHexa { get; set; }
         public string Comentario { get; set; }
-        public DateTime Data { get; set; }
+        public DateTime Data { get; set; }        
+        public int? BeneficiarioMedicamentoId { get; set; }
+        public int? QuantidadeMedicamento { get; set; }
     }
 }

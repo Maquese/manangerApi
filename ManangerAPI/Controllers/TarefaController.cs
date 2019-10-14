@@ -20,14 +20,16 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public void Adicionar(TarefaRequest request)
         {
-            _tarefaApplication.AdicionarTarefa(request.Titulo,request.ContratoId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim, request.CorHexa,request.Comentario,request.TodosOsDias);
+            _tarefaApplication.AdicionarTarefa(request.Titulo,request.ContratoId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim, 
+                                               request.CorHexa,request.Comentario,request.TodosOsDias,request.BeneficiarioMedicamentoId,request.QuantidadeMedicamento);
         }
 
         [Route("api/tarefa/editar")]
         [HttpPost]
         public void Editar(TarefaRequest request)
         {
-            _tarefaApplication.EditarTarefa(request.Id,request.Titulo,request.ContratoId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim, request.CorHexa,request.Comentario,request.TodosOsDias);
+            _tarefaApplication.EditarTarefa(request.Id,request.Titulo,request.ContratoId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim,
+                                            request.CorHexa,request.Comentario,request.TodosOsDias,request.BeneficiarioMedicamentoId,request.QuantidadeMedicamento);
         }
 
         [Route("api/tarefa/listartarefasporcontrato")]
