@@ -17,5 +17,8 @@ namespace ManangerAPI.Application.DTOS
         public int? QuantidadeMedicamento { get; set; }
         public string NomeMedicamento { get; set; }
         public int? BeneficiarioMedicamentoId { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime? DataFim { get; set; }
+        public bool TodosOsDias { get; set; }
     }
 }

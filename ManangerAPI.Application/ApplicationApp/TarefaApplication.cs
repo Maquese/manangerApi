@@ -88,7 +88,10 @@ namespace ManangerAPI.Application.ApplicationApp
                          TarefaRealizada = item.TarefasRealizada.Where(x => x.Data == dataInicio).FirstOrDefault() != null,
                          Id = item.Id,
                          QuantidadeMedicamento = item.QuantidadeMedicamento,
-                         BeneficiarioMedicamentoId = item.BeneficiarioMedicamentoId
+                         BeneficiarioMedicamentoId = item.BeneficiarioMedicamentoId,
+                         DataInicio = item.DataInicio,
+                         DataFim = item.DataFim,
+                         TodosOsDias = item.TodosOsDias
                     });
                 }
                 dataInicio = dataInicio.AddDays(1);
