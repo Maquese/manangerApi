@@ -67,6 +67,12 @@ namespace ManangerAPI.Controllers
             _tarefaApplication.TarefaRealizada(request.TarefaId,request.Comentario,request.Data,request.Hora);
         }
 
+        [Route("api/tarefa/removertarefa")]
+        [HttpPost]
+        public void RemoverTarefa(TarefaRealizadaRequest request)
+        {
+            _tarefaApplication.RemoverTarefa(request.TarefaId);
+        }
 
     }
 }

@@ -4,6 +4,8 @@ namespace ManangerAPI.Data.Entidades
     {
         public string Nome { get; set; }
         public string Especialidade { get; set; }
+        //public int Telefone { get; set; }
+
         
     }
 }

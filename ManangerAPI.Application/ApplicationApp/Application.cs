@@ -29,6 +29,7 @@ namespace ManangerAPI.Application.ApplicationApp
         private readonly IContratoRepositorio _contratoRepositorio;
         private readonly ITarefaRepositorio _tarefaRepositorio;
         private readonly ITarefaRealizadaRepositorio _tarefaRealizadaRepositorio;
+        private readonly IMedicoBeneficiarioRepositorio _medicoBeneficiarioRepositorio;
 
         public Application(IUsuarioRepositorio usuarioRepositorio, IAdministradorRepositorio administradorRepositorio, 
                            IContratanteRepositorio contratanteRepositorio, IPrestadorDeServicoRepositorio prestadorDeServicoRepositorio,
@@ -42,7 +43,8 @@ namespace ManangerAPI.Application.ApplicationApp
                            IBeneficiarioMedicamentoRepositorio beneficiarioMedicamentoRepositorio, ITipoMedicamentoRepositorio tipoMedicamentoRepositorio,
                            IViaDeUsoMedicamentoRepositorio viaDeUsoMedicamentoRepositorio, IPosologiaRepositorio posologiaRepositorio,
                            ISolicitacaoContratoRepositorio solicitacaoContratoRepositorio,IContratoRepositorio contratoRepositorio,
-                           ITarefaRepositorio tarefaRepositorio, ITarefaRealizadaRepositorio tarefaRealizadaRepositorio
+                           ITarefaRepositorio tarefaRepositorio, ITarefaRealizadaRepositorio tarefaRealizadaRepositorio,
+                           IMedicoBeneficiarioRepositorio medicoBeneficiarioRepositorio
                            )
         {
             _usuarioRepositorio = usuarioRepositorio;
@@ -69,6 +71,7 @@ namespace ManangerAPI.Application.ApplicationApp
             _contratoRepositorio = contratoRepositorio;
             _tarefaRepositorio = tarefaRepositorio;
             _tarefaRealizadaRepositorio = tarefaRealizadaRepositorio;
+            _medicoBeneficiarioRepositorio = medicoBeneficiarioRepositorio;
         }
     }
 }
