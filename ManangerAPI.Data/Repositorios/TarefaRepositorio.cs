@@ -18,7 +18,7 @@ namespace ManangerAPI.Data.Repositorios
         {
             var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 
                                                      && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Include("TarefaRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || 
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || 
                                                                                                     (x.DataInicio >= dataInicio && x.DataInicio <= dataFim || 
                                                                                                      x.DataFim >= dataInicio && x.DataFim <= dataFim))).ToList();
             
@@ -28,12 +28,12 @@ namespace ManangerAPI.Data.Repositorios
         {
             var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 
                                                      && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Include("TarefaRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || x.DataInicio <= data && x.DataFim >= data)).ToList();
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || x.DataInicio <= data && x.DataFim >= data)).ToList();
         }
 
         public IList<Tarefa> ListarTarefasPorContrato(int contratoId)
         {
-            return _contexto.Tarefa.Include("TarefaRealizada").Where(x => x.Status == 1 && x.ContratoId == contratoId).ToList();
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => x.Status == 1 && x.ContratoId == contratoId).ToList();
         }
 
         public IList<Tarefa> ListarTarefasPorPrestador(int contratoId, DateTime data)
