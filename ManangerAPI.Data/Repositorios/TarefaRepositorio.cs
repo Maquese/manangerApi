@@ -18,7 +18,7 @@ namespace ManangerAPI.Data.Repositorios
         {
             var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 
                                                      && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || 
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias && x.DataInicio >= dataInicio || 
                                                                                                     (x.DataInicio >= dataInicio && x.DataInicio <= dataFim || 
                                                                                                      x.DataFim >= dataInicio && x.DataFim <= dataFim))).ToList();
             
@@ -28,7 +28,7 @@ namespace ManangerAPI.Data.Repositorios
         {
             var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 
                                                      && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || x.DataInicio <= data && x.DataFim >= data)).ToList();
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias && x.DataInicio <= data || x.DataInicio <= data && x.DataFim >= data)).ToList();
         }
 
         public IList<Tarefa> ListarTarefasPorContrato(int contratoId)
@@ -42,7 +42,7 @@ namespace ManangerAPI.Data.Repositorios
 
             var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == contrato.BeneficiarioId && x.Status == 1).Select(y => y.Id).ToList();
 
-            return _contexto.Tarefa.Where(x => contratos.Contains(x.ContratoId)  && x.Status == 1 && (x.TodosOsDias || x.DataInicio <= data && x.DataFim >= data)).ToList();
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId)  && x.Status == 1 && (x.TodosOsDias && x.DataInicio <= data  || x.DataInicio <= data && x.DataFim >= data)).ToList();
         }
     }
 }
