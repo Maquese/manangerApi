@@ -21,7 +21,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Sexo = sexo,
                 Telefone = telefone,
                 EstadoId = _estadoRepostorio.IdPorUf(estado),
-                CidadeId =  cidade,
+                CidadeId = cidade,
                 Bairro = bairro,
                 Rua = rua,
                 BeneficiarioCondicaoClinica = new List<BeneficiarioCondicaoClinica>(),
@@ -35,7 +35,7 @@ namespace ManangerAPI.Application.ApplicationApp
 
             foreach (var item in condicoesClinicas)
             {
-                Beneficiario.BeneficiarioCondicaoClinica.Add(new BeneficiarioCondicaoClinica{ CondicaoClinicaId = item, Status = (int)StatusEnum.Ativo } );
+                Beneficiario.BeneficiarioCondicaoClinica.Add(new BeneficiarioCondicaoClinica { CondicaoClinicaId = item, Status = (int)StatusEnum.Ativo });
             }
 
             _beneficiarioRepositorio.Insert(Beneficiario);
@@ -67,10 +67,33 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioMedicamentoRepositorio.Save();
         }
 
+        public void CadastrarNovoMedico(int idBeneficiario, string nome, int telefoneConsultorio, int celular, int especialidadeId, bool convenio, string cep,
+                                        string bairro, string rua, int cidadeId, string uf, string numero, string complemento)
+        {
+            _medicoBeneficiarioRepositorio.Insert(new MedicoBeneficiario
+            {
+                BeneficiarioId = idBeneficiario,
+                Nome = nome,
+                TelefoneConsultorio = telefoneConsultorio,
+                Celular = celular,
+                EspecialidadeMedicoId = especialidadeId,
+                Convenio = convenio,
+                Cep = cep,
+                Bairro = bairro,
+                Rua = rua,
+                CidadeId = cidadeId,
+                EstadoId = _estadoRepostorio.IdPorUf(uf),
+                Numero = numero,
+                Complemento = complemento,
+                Status = (int)StatusEnum.Ativo
+            });
+            _medicoBeneficiarioRepositorio.Save();
+        }
+
         public void CancelarSolicitacaoContrato(int idSolicitacao)
         {
             var solicitacao = _solicitacaoContratoRepositorio.Encontrar(idSolicitacao);
-            if(solicitacao != null)
+            if (solicitacao != null)
             {
                 solicitacao.Status = (int)StatusEnum.Inativo;
                 _solicitacaoContratoRepositorio.Save();
@@ -80,7 +103,8 @@ namespace ManangerAPI.Application.ApplicationApp
         public BeneficiarioMedicamentoDTO DetalharBeneficiarioMedicamento(int idBeneficiarioMedicamento)
         {
             var dados = _beneficiarioMedicamentoRepositorio.EncontrarCompleto(idBeneficiarioMedicamento);
-            return new BeneficiarioMedicamentoDTO {
+            return new BeneficiarioMedicamentoDTO
+            {
                 Id = dados.Id,
                 MedicamentoId = dados.MedicamentoId,
                 PosologiaId = dados.PosologiaId,
@@ -98,54 +122,77 @@ namespace ManangerAPI.Application.ApplicationApp
             };
         }
 
+        public MedicoBeneficiarioDTO DetalharMedico(int medicoId)
+        {
+            var medico =  _medicoBeneficiarioRepositorio.Encontrar(medicoId);
+            return new MedicoBeneficiarioDTO{
+                Id = medicoId,
+                Nome = medico.Nome,
+                EspecialidadeMedicoId = medico.EspecialidadeMedicoId,
+                TelefoneConsultorio = medico.TelefoneConsultorio,
+                Celular = medico.Celular,
+                Convenio = medico.Convenio,
+                Cep = medico.Cep,
+                EstadoId = medico.EstadoId,
+                CidadeId = medico.CidadeId,
+                Bairro = medico.Bairro,
+                Rua = medico.Bairro,
+                Complemento = medico.Complemento,
+                Numero = medico.Numero,
+                EstadoUf = _estadoRepostorio.Encontrar(medico.EstadoId).Uf
+            };
+        }
+
         public void Editar(int idBeneficiario, string nome, DateTime dataNascimento, int sexo, string telefone, string estado,
                               int cidade, string bairro, string rua, string numero, string cep, string complemento,
                               IList<int> condicoesClinicas, bool termos)
         {
-            
-             var beneficiario = _beneficiarioRepositorio.Encontrar(idBeneficiario);
-              beneficiario.Nome = nome;
-              beneficiario.DataNascimento = dataNascimento;
-              beneficiario.Sexo = sexo;
-              beneficiario.Telefone = telefone;
-              beneficiario.EstadoId = _estadoRepostorio.IdPorUf(estado);
-              beneficiario.CidadeId = cidade;
-              beneficiario.Bairro = bairro;
-              beneficiario.Rua = rua;
-              beneficiario.Numero = numero;
-              beneficiario.Cep = cep;
-              beneficiario.Complemento = complemento;
-              beneficiario.TermoDeResponsalidade = termos;
-              
-              var condicoes = _beneficiarioCondicaoClinicaRepositorio.EncontrarPorBeneficiarioId(beneficiario.Id);
 
-              foreach (var item in condicoes)
-              {
-                  item.Status = (int)StatusEnum.Inativo;                
-              }
+            var beneficiario = _beneficiarioRepositorio.Encontrar(idBeneficiario);
+            beneficiario.Nome = nome;
+            beneficiario.DataNascimento = dataNascimento;
+            beneficiario.Sexo = sexo;
+            beneficiario.Telefone = telefone;
+            beneficiario.EstadoId = _estadoRepostorio.IdPorUf(estado);
+            beneficiario.CidadeId = cidade;
+            beneficiario.Bairro = bairro;
+            beneficiario.Rua = rua;
+            beneficiario.Numero = numero;
+            beneficiario.Cep = cep;
+            beneficiario.Complemento = complemento;
+            beneficiario.TermoDeResponsalidade = termos;
 
-              foreach (var item in condicoesClinicas)
-              {
-                  var condicao = condicoes.Where(x => x.CondicaoClinicaId == item).FirstOrDefault();
+            var condicoes = _beneficiarioCondicaoClinicaRepositorio.EncontrarPorBeneficiarioId(beneficiario.Id);
 
-                  if(condicao == null)
-                  {
-                      _beneficiarioCondicaoClinicaRepositorio.Insert(new BeneficiarioCondicaoClinica
-                                                                        { 
-                                                                            CondicaoClinicaId = item, 
-                                                                            BeneficiarioId = beneficiario.Id,
-                                                                            Status = (int)StatusEnum.Ativo
-                                                                             });
-                  }else{
-                      condicao.Status = (int)StatusEnum.Ativo;
-                  }
-              }
+            foreach (var item in condicoes)
+            {
+                item.Status = (int)StatusEnum.Inativo;
+            }
 
-              _beneficiarioRepositorio.Update(beneficiario);
-              _beneficiarioRepositorio.Save();
+            foreach (var item in condicoesClinicas)
+            {
+                var condicao = condicoes.Where(x => x.CondicaoClinicaId == item).FirstOrDefault();
+
+                if (condicao == null)
+                {
+                    _beneficiarioCondicaoClinicaRepositorio.Insert(new BeneficiarioCondicaoClinica
+                    {
+                        CondicaoClinicaId = item,
+                        BeneficiarioId = beneficiario.Id,
+                        Status = (int)StatusEnum.Ativo
+                    });
+                }
+                else
+                {
+                    condicao.Status = (int)StatusEnum.Ativo;
+                }
+            }
+
+            _beneficiarioRepositorio.Update(beneficiario);
+            _beneficiarioRepositorio.Save();
         }
 
-        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim,int unidadeMedida)
+        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim, int unidadeMedida)
         {
             var dados = _beneficiarioMedicamentoRepositorio.Encontrar(id);
             dados.MedicamentoId = idMedicamento;
@@ -158,26 +205,48 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioMedicamentoRepositorio.Save();
         }
 
+        public void EditarNovoMedico(int medicoId, string nome, int telefoneConsultorio, int celular, int especialidadeId, bool convenio, string cep, string bairro,
+                                     string rua, int cidadeId, string uf, string numero, string complemento)
+        {
+            var medico = _medicoBeneficiarioRepositorio.Encontrar(medicoId);
+
+            medico.Nome = nome;
+            medico.TelefoneConsultorio = telefoneConsultorio;
+            medico.Celular = celular;
+            medico.EspecialidadeMedicoId = especialidadeId;
+            medico.Convenio = convenio;
+            medico.Cep = cep;
+            medico.Bairro = bairro;
+            medico.Rua = rua;
+            medico.CidadeId = cidadeId;
+            medico.EstadoId = _estadoRepostorio.IdPorUf(uf);
+            medico.Numero = numero;
+            medico.Complemento = complemento;
+
+            _medicoBeneficiarioRepositorio.Save();
+        }
+
         public BeneficiarioDTO EncontrarPorId(int idBeneficiario)
         {
-            var beneficiario =  _beneficiarioRepositorio.Encontrar(idBeneficiario);
-            var retorno = new BeneficiarioDTO {
-               Nome = beneficiario.Nome,
-               Estado = _estadoRepostorio.Encontrar(beneficiario.EstadoId).Uf,
-               Cidade = beneficiario.CidadeId,
-               Bairro = beneficiario.Bairro,
-               Rua = beneficiario.Rua,
-               Numero = beneficiario.Numero,
-               Cep = beneficiario.Cep,
-               Complemento = beneficiario.Complemento,
-               DataNascimento = beneficiario.DataNascimento,
-               CondicoesClinicas = _beneficiarioCondicaoClinicaRepositorio.EncontrarPorBeneficiarioId(idBeneficiario).Select(x => x.CondicaoClinicaId).ToList(),
-               TermoDeResponsalidade = beneficiario.TermoDeResponsalidade,
-               Telefone = beneficiario.Telefone,
-               Sexo = beneficiario.Sexo,
-               Id = beneficiario.Id,
-               ContratanteId = beneficiario.ContratanteId
-               };
+            var beneficiario = _beneficiarioRepositorio.Encontrar(idBeneficiario);
+            var retorno = new BeneficiarioDTO
+            {
+                Nome = beneficiario.Nome,
+                Estado = _estadoRepostorio.Encontrar(beneficiario.EstadoId).Uf,
+                Cidade = beneficiario.CidadeId,
+                Bairro = beneficiario.Bairro,
+                Rua = beneficiario.Rua,
+                Numero = beneficiario.Numero,
+                Cep = beneficiario.Cep,
+                Complemento = beneficiario.Complemento,
+                DataNascimento = beneficiario.DataNascimento,
+                CondicoesClinicas = _beneficiarioCondicaoClinicaRepositorio.EncontrarPorBeneficiarioId(idBeneficiario).Select(x => x.CondicaoClinicaId).ToList(),
+                TermoDeResponsalidade = beneficiario.TermoDeResponsalidade,
+                Telefone = beneficiario.Telefone,
+                Sexo = beneficiario.Sexo,
+                Id = beneficiario.Id,
+                ContratanteId = beneficiario.ContratanteId
+            };
             return retorno;
         }
 
@@ -194,11 +263,31 @@ namespace ManangerAPI.Application.ApplicationApp
                     NomeMedicamento = _medicamentoRepositorio.NomeMedicamento(item.MedicamentoId),
                     Posologia = _posologiaRepositorio.Encontrar(item.PosologiaId).Nome,
                     Quantidade = item.Quantidade,
-                    UnidadeMedidaNome =  ((UnidadeMedidaEnum)item.UnidadeMedida).ToString()
+                    UnidadeMedidaNome = ((UnidadeMedidaEnum)item.UnidadeMedida).ToString()
                 });
             }
             return retorno;
 
+        }
+
+        public IList<MedicoBeneficiarioDTO> ListarMedicosBenficiario(int beneficiarioId)
+        {
+            return _medicoBeneficiarioRepositorio.ListarPorBeneficiario(beneficiarioId).Select(medico => new MedicoBeneficiarioDTO{
+                Id = medico.Id,
+                Nome = medico.Nome,
+                EspecialidadeMedicoId = medico.EspecialidadeMedicoId,
+                TelefoneConsultorio = medico.TelefoneConsultorio,
+                Celular = medico.Celular,
+                Convenio = medico.Convenio,
+                Cep = medico.Cep,
+                EstadoId = medico.EstadoId,
+                CidadeId = medico.CidadeId,
+                Bairro = medico.Bairro,
+                Rua = medico.Bairro,
+                Complemento = medico.Complemento,
+                Numero = medico.Numero,
+                EstadoUf = _estadoRepostorio.Encontrar(medico.EstadoId).Uf
+            }).ToList();
         }
 
         public IList<BeneficiarioListaDTO> ListarPorContratante(int idContratante)
@@ -232,6 +321,13 @@ namespace ManangerAPI.Application.ApplicationApp
             var medicamento = _beneficiarioMedicamentoRepositorio.Encontrar(id);
             medicamento.Status = 2;
             _beneficiarioMedicamentoRepositorio.Save();
+        }
+
+        public void RemoverMedico(int medicoId)
+        {
+            var medico = _medicoBeneficiarioRepositorio.Encontrar(medicoId);
+            medico.Status = (int)StatusEnum.Inativo;
+            _medicoBeneficiarioRepositorio.Save();
         }
     }
 }

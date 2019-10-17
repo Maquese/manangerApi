@@ -80,6 +80,7 @@ public static string ConnectionString {
             services.AddScoped<IMedicoBeneficiarioRepositorio,MedicoBeneficiarioRepositorio>();            
             services.AddScoped<ITarefaRepositorio,TarefaRepositorio>();
             services.AddScoped<ITarefaRealizadaRepositorio,TarefaRealizadaRepositorio>();
+            services.AddScoped<IEspecialidadeMedicaRepositorio,EspecialidadeMedicaRepositorio>();
         }  
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

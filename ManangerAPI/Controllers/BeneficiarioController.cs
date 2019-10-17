@@ -16,6 +16,8 @@ namespace ManangerAPI.Controllers
             _beneficiarioApplication = beneficiarioApplication;
         }
 
+
+        #region Beneficiario
         [HttpPost]
         [Route("api/beneficiario/adicionar")]
         public void Adicionar(BeneficiarioCriarRequest request)
@@ -48,6 +50,9 @@ namespace ManangerAPI.Controllers
                                                    request.CondicoesClinicas,request.TermoDeResponsalidade);
         }
 
+        #endregion 
+
+        #region  Medicamento
         [HttpPost]
         [Route("api/beneficiario/adicionarmedicamento")]
         public void AdicionarMedicamento(BeneficiarioMedicamentoRequest request)
@@ -84,6 +89,14 @@ namespace ManangerAPI.Controllers
         }
 
         [HttpPost]
+        [Route("api/beneficiario/entradamedicamento")]
+        public void EntradaMedicamento(BeneficiarioMedicamentoRequest request)
+        {
+            _beneficiarioApplication.AdicionarQuantidadeMedicamento(request.Id,request.Quantidade);
+        } 
+        #endregion
+
+        [HttpPost]
         [Route("api/beneficiario/listarsolicitacoespendentes")]
         public IList<SolicitacaoPendenteDTO> ListarSolicitacoesPendentes(BaseRequest request)
         {
@@ -98,11 +111,42 @@ namespace ManangerAPI.Controllers
         }  
 
 
+        #region  Medicos 
         [HttpPost]
-        [Route("api/beneficiario/entradamedicamento")]
-        public void EntradaMedicamento(BeneficiarioMedicamentoRequest request)
+        [Route("api/beneficiario/inserirmedico")]
+        public void InserirMedico(MedicoBeneficiarioRequest request)
         {
-            _beneficiarioApplication.AdicionarQuantidadeMedicamento(request.Id,request.Quantidade);
-        }    
+            _beneficiarioApplication.CadastrarNovoMedico(request.BeneficiarioId,request.Nome,request.TelefoneConsultorio,request.Celular,request.EspecialidadeMedicoId,
+                                                         request.Convenio,request.Cep,request.Bairro,request.Rua, request.CidadeId,request.EstadoUf,request.Numero,request.Complemento);
+        }  
+
+        [Route("api/beneficiario/detalharmedico")]
+        public MedicoBeneficiarioDTO DetalharMedico(BaseRequest request)
+        {
+            return _beneficiarioApplication.DetalharMedico(request.Id);    
+        }  
+
+        [Route("api/beneficiario/editarmedico")]
+        public void EditarMedico(MedicoBeneficiarioRequest request)
+        {
+            _beneficiarioApplication.EditarNovoMedico(request.Id,request.Nome,request.TelefoneConsultorio,request.Celular,request.EspecialidadeMedicoId,
+                                                         request.Convenio,request.Cep,request.Bairro,request.Rua, request.CidadeId,request.EstadoUf,request.Numero,request.Complemento);
+        }
+
+        [Route("api/beneficiario/removermedico")]
+        public void RemoverMedico(BaseRequest request)
+        {
+            _beneficiarioApplication.RemoverMedico(request.Id);    
+        } 
+
+        [Route("api/beneficiario/listarmedico")]
+        public IList<MedicoBeneficiarioDTO> ListarMedico(BaseRequest request)
+        {
+            return _beneficiarioApplication.ListarMedicosBenficiario(request.Id);    
+        }  
+
+        #endregion
+        
+                  
     }
 }

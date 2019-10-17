@@ -27,6 +27,11 @@ namespace ManangerAPI.Application.ApplicationApp
             return _condicaoClinicaRepositorio.GerarDropDown();
         }
 
+        public IList<KeyValuePair<int, string>> DadosEspecialidadesMedicas()
+        {
+            return _especialidadeMedicaRepositorio.GerarDropDown();
+        }
+
         public IList<KeyValuePair<string, string>> DadosEstado()
         {
             return _estadoRepostorio.GerarDropDown();

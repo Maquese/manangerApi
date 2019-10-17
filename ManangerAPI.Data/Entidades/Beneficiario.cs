@@ -22,7 +22,7 @@ namespace ManangerAPI.Data.Entidades
         public virtual IList<BeneficiarioCondicaoClinica> BeneficiarioCondicaoClinica { get; set; }
         public bool TermoDeResponsalidade { get; set; }
         public string Numero { get; set; }
-
         public virtual IList<BeneficiarioMedicamento> Medicamentos {get;set;}
+        public virtual IList<MedicoBeneficiario> MedicosBeneficiario { get; set; }
     }
 }

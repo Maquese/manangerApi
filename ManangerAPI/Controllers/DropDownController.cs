@@ -23,6 +23,14 @@ namespace ManangerAPI.Controllers
         }
 
         [HttpPost]
+        [Route("api/dropdown/especialidadesmedicas")]
+        public IList<KeyValuePair<int,string>> EspecialidadesMedicas()
+        {
+           return _idropDownApplication.DadosEspecialidadesMedicas();
+        }
+
+
+        [HttpPost]
         [Route("api/dropdown/cidadeporestado")]
         public IList<KeyValuePair<int,string>> CidadePorEstado(DropDownRequest equest)
         {

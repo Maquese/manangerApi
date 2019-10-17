@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace manangerapi.data.Migrations
+namespace ManangerApi.Data.Migrations
 {
-    public partial class TarefaMedicamento : Migration
+    public partial class Medicos : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,6 +50,21 @@ namespace manangerapi.data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CondicaoClinica", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EspecialidadeMedica",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    Descricao = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EspecialidadeMedica", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -399,6 +414,57 @@ namespace manangerapi.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MedicoBeneficiario",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Status = table.Column<int>(nullable: false),
+                    BeneficiarioId = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    TelefoneConsultorio = table.Column<int>(nullable: false),
+                    Celular = table.Column<int>(nullable: false),
+                    EspecialidadeMedicoId = table.Column<int>(nullable: false),
+                    EspecialidadeMedicaId = table.Column<int>(nullable: true),
+                    Convenio = table.Column<bool>(nullable: false),
+                    Cep = table.Column<string>(nullable: true),
+                    Bairro = table.Column<string>(nullable: true),
+                    Rua = table.Column<string>(nullable: true),
+                    CidadeId = table.Column<int>(nullable: false),
+                    EstadoId = table.Column<int>(nullable: false),
+                    Numero = table.Column<string>(nullable: true),
+                    Complemento = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MedicoBeneficiario", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MedicoBeneficiario_Beneficiario_BeneficiarioId",
+                        column: x => x.BeneficiarioId,
+                        principalTable: "Beneficiario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MedicoBeneficiario_Cidade_CidadeId",
+                        column: x => x.CidadeId,
+                        principalTable: "Cidade",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_MedicoBeneficiario_EspecialidadeMedica_EspecialidadeMedicaId",
+                        column: x => x.EspecialidadeMedicaId,
+                        principalTable: "EspecialidadeMedica",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_MedicoBeneficiario_Estado_EstadoId",
+                        column: x => x.EstadoId,
+                        principalTable: "Estado",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "SolicitacaoContrato",
                 columns: table => new
                 {
@@ -675,6 +741,26 @@ namespace manangerapi.data.Migrations
                 column: "ViaDeUsoMedicamentoId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MedicoBeneficiario_BeneficiarioId",
+                table: "MedicoBeneficiario",
+                column: "BeneficiarioId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MedicoBeneficiario_CidadeId",
+                table: "MedicoBeneficiario",
+                column: "CidadeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MedicoBeneficiario_EspecialidadeMedicaId",
+                table: "MedicoBeneficiario",
+                column: "EspecialidadeMedicaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MedicoBeneficiario_EstadoId",
+                table: "MedicoBeneficiario",
+                column: "EstadoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PrestadorDeServicoCompetencia_CompetenciaId",
                 table: "PrestadorDeServicoCompetencia",
                 column: "CompetenciaId");
@@ -728,6 +814,9 @@ namespace manangerapi.data.Migrations
                 name: "Funcionalidade");
 
             migrationBuilder.DropTable(
+                name: "MedicoBeneficiario");
+
+            migrationBuilder.DropTable(
                 name: "PrestadorDeServicoCompetencia");
 
             migrationBuilder.DropTable(
@@ -750,6 +839,9 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Perfil");
+
+            migrationBuilder.DropTable(
+                name: "EspecialidadeMedica");
 
             migrationBuilder.DropTable(
                 name: "Competencia");

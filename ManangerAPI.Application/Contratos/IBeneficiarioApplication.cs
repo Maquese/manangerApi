@@ -31,5 +31,17 @@ namespace ManangerAPI.Application.Contratos
 
          void AdicionarQuantidadeMedicamento(int idMedicamento, int quantidade);
 
+         void CadastrarNovoMedico(int idBeneficiario, string nome, int telefoneConsultorio, int celular, int especialidadeId, bool convenio, string cep, string bairro,
+                                  string rua, int cidadeId, string uf, string numero, string complemento);
+
+          void EditarNovoMedico(int medicoId, string nome, int telefoneConsultorio, int celular, int especialidadeId, bool convenio, string cep, string bairro,
+                                  string rua, int cidadeId, string uf, string numero, string complemento);
+          void RemoverMedico(int medicoId);
+          
+          IList<MedicoBeneficiarioDTO> ListarMedicosBenficiario(int beneficiarioId);
+
+          MedicoBeneficiarioDTO DetalharMedico(int medicoId);
+
+
     }
 }

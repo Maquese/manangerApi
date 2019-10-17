@@ -1,5 +1,67 @@
 use Mananger
 
+
+INSERT INTO EspecialidadeMedica (Status,Nome,Descricao)
+VALUES
+(1,'Acupuntura','ramo da medicina tradicional chinesa e um método de tratamento chamado complementar de acordo com a nova terminologia da OMS.'),
+(1,'Alergia e Imunologia',' diagnóstico e tratamento das doenças alérgicas e do sistema imunológico.'),
+(1,'Anestesiologia','  área da Medicina que envolve o tratamento da dor, a hipnose e o manejo intensivo do paciente sob intervenção cirúrgica ou procedimentos.'),
+(1,'Angiologia','  é a área da medicina que estuda o tratamento das doenças do aparelho circulatório.'),
+(1,'Cancerologia (oncologia)','  é a especialidade que trata dos tumores malignos ou câncer.'),
+(1,'Cardiologia','  aborda as doenças relacionadas com o coração e sistema vascular.'),
+(1,'Cirurgia Cardiovascular',' tratamento cirúrgico de doenças do coração.'),
+(1,'Cirurgia da Mão',' sub-especialidade da Ortopedia que aborda os problemas de saúde relacionados as mãos.'),
+(1,'Cirurgia de cabeça e pescoço',' tratamento cirúrgico de doenças da cabeça e do pescoço.'),
+(1,'Cirurgia do Aparelho Digestivo',' tratamento clínico e cirúrgico dos órgãos do aparelho digestório, como o esôfago, estômago, intestinos, fígado e vias biliares, e pâncreas.'),
+(1,'Cirurgia Geral',' é a área que engloba todas as áreas cirúrgicas, sendo também subdividida.'),
+(1,'Cirurgia Pediátrica',' cirurgia geral em crianças.'),
+(1,'Cirurgia Plástica',' correção das deformidades, malformações ou lesões que comprometem funções dos órgãos através de cirurgia de caráter reparador ou cirurgias estéticas.'),
+(1,'Cirurgia Torácica',' atua na cirurgia da caixa torácica e vias aéreas.'),
+(1,'Cirurgia Vascular',' tratamento das veias e artérias, através de cirurgia, procedimentos endovasculares ou tratamentos clínicos.'),
+(1,'Clínica Médica (Medicina interna) ',' é a área que engloba todas as áreas não cirúrgicas, sendo subdividida em várias outras especialidades.'),
+(1,'Coloproctologia',' é a parte da medicina que estuda e trata os problemas do intestino grosso (cólon), sigmoide e doenças do reto, canal anal e ânus.'),
+(1,'Dermatologia',' é o estudo da pele anexos (pelos, glândulas), tratamento e prevenção das as doenças.'),
+(1,'Endocrinologia e Metabologia',' é a área da Medicina responsável pelo cuidados aos hormônios, crescimento e glândulas como adrenal, tireoide, hipófise, pâncreas endócrino e outros.'),
+(1,'Endoscopia',' Esta especialidade médica ocupa-se do estudo dos mecanismo fisiopatológicos, diagnóstico e tratamento de enfermidades passíveis de abordagem por procedimentos endoscópicos e minimamente invasivos.'),
+(1,'Gastroenterologia',' é o estudo, diagnóstico, tratamento e prevenção de doenças relacionadas ao aparelho digestivo, desde erros inatos do metabolismo, doença do trato gastrointestinal, doenças do fígado e cânceres.'),
+(1,'Genética médica',' é a área da responsável pelo estudo das doenças genéticas humanas e aconselhamento genético.'),
+(1,'Geriatria',' é a subespecialidade médica que cuida dos idosos e articula seu tratamento com outras especialidades.'),
+(1,'Ginecologia e obstetrícia',' é a especialidade médica que aborda de forma integral a mulher., Trata desde as doenças infecciosas sexuais, gestação, alterações hormonais, reprodução.'),
+(1,'Hematologia e Hemoterapia',' é o estudo dos elementos figurados do sangue (hemácias, leucócitos, plaquetas) e da produção desses elementos nos órgãos hematopoiéticos (medula óssea, baço, linfonódos), além de tratar das anemias, linfomas, leucemias e outros cânceres, hemofilia e doenças da coagulação.'),
+(1,'Homeopatia',' é a prática médica pseudocientífica baseada na Lei dos Semelhantes., Esta é, por sua vez, uma pseudociência em consenso pela comunidade científica, já que apresenta provas científicas da sua não-eficácia.'),
+(1,'Infectologia',' prevenção, diagnóstico e tratamentos de infecções causadas por vírus, bactérias, fungos e parasitas (helmintologia, protozoologia, entomologia e artropodologia).'),
+(1,'Mastologia',' subespecialidade que trata da mama, suas doenças, alterações benignas e estéticas.'),
+(1,'Medicina de Família e Comunidade',' é a área da medicina que trata do indivíduo em seu ambiente familiar e comunitário, com foco na prevenção e tratamento das doenças mais comuns, sendo o articulador do encaminhamento aos especialistas quando necessária abordagem mais aprofundada das doenças.'),
+(1,'Medicina de Emergência',' especialidade que atua no cuidado de pacientes com doenças ou lesões que requerem atenção médica imediata, atuando nas Emergências, pronto-atendimentos e serviços pré-hospitalares.'),
+(1,'Medicina do Trabalho',' trata do processo de trabalho e da relação deste com as doenças., Atua desde a prevenção dos agravos, a minimização dos efeitos destes e do tratamento das doenças do trabalho quando já estabelecidas.'),
+(1,'Medicina do Tráfego',' manutenção da saúde no indivíduo que se desloca, qualquer que seja o meio, cuidando das interações deste deslocamento com o indivíduo.'),
+(1,'Medicina Esportiva',' abordagem do atleta de uma forma global, desde a fisiologia do exercício à prevenção de lesões, passando pelo controle de treino e resolução de problemas de saúde que envolvam o praticante do exercício físico.'),
+(1,'Medicina Física e Reabilitação',' diagnóstico e terapêutica de diferentes entidades tais como doenças traumáticas, do sistema nervoso central e periférico, orto-traumatológica, cardiorrespiratória.'),
+(1,'Medicina Intensiva',' é o ramo da medicina que se ocupa dos cuidados dos doentes graves ou instáveis, que emprega maior número de recursos tecnológicos e humanos no tratamento de doenças ou complicações de doenças, congregando conhecimento da maioria das especialidades médicas e outras áreas de saúde.'),
+(1,'Medicina Legal e Perícia Médica (ou medicina forense)',' é a especialidade que aplica os conhecimentos médicos aos interesses da Justiça, na elaboração de leis e na adequada caracterização dos fenômenos biológicos que possam interessar às autoridades no sentido da aplicação das leis., Assim a Medicina Legal caracteriza a lesão corporal, a morte (sua causa, o momento em que ocorreu, que agente a produziu), a embriaguez pelo álcool ou pelas demais drogas, a violência sexual de qualquer natureza, etc.'),
+(1,'Medicina Nuclear',' é o estudo imaginológico ou terapia pelo uso de radiofármacos.'),
+(1,'Medicina Preventiva e Social',' se dedica especificamente à prevenção de doenças gerais (de várias áreas), porém não unicamente, já que cada área ou especialidade está também capacitada para tal.'),
+(1,'Nefrologia',' é a parte da medicina que estuda e trata clinicamente as doenças do rim, como insuficiência renal.'),
+(1,'Neurocirurgia',' atua no tratamento de doenças do sistema nervoso central e periférico passíveis de abordagem cirúrgica.'),
+(1,'Neurologia',' é a parte da medicina que estuda e trata o sistema nervoso.'),
+(1,'Nutrologia',' diagnóstico, prevenção e tratamento de doenças do comportamento alimentar.'),
+(1,'Obstetrícia',' é a área da medicina atrelada à Ginecologia que cuida das mulheres em relação ao processo da gestação (pré, pós-parto, puerpério, gestação e outros).'),
+(1,'Oftalmologia',' é a parte da medicina que estuda e trata os distúrbios dos olhos.'),
+(1,'Ortopedia e Traumatologia',' é a parte da medicina que estuda e trata as doenças do sistema osteomuscular, locomoção, crescimento, deformidades e as fraturas.'),
+(1,'Otorrinolaringologia',' é a parte da medicina que estuda e trata as doenças da orelha, nariz, seios paranasais, faringe e laringe.'),
+(1,'Patologia',' (também anatomia patológica ou patologia cirúrgica) é a especialidade que se ocupa da análise macroscópica, microscópica e molecular das doenças em autópsias, espécimes cirúrgicos, biópsias e preparados citológicos., Ela faz a ligação entre a ciência básica e a prática clínica.'),
+(1,'Patologia Clínica/Medicina laboratorial',' No Brasil, de forma geral é uma especialidade médica investigativa e atua como parte do processo diagnóstico das doenças.'),
+(1,'Pediatria',' é a parte da medicina que estuda e trata crianças.'),
+(1,'Pneumologia',' é a parte da medicina que estuda e trata o sistema respiratório.'),
+(1,'Psiquiatria',' é a parte da medicina que previne e trata ao transtornos mentais e comportamentais.'),
+(1,'Radiologia e Diagnóstico por Imagem',' realização e interpretação de exames de imagem como raio-X, ultrassonografia, Doppler colorido, Tomografia Computadorizada, Ressonância Magnética, entre outros.'),
+(1,'Radioterapia',' tratamento empregado em doenças várias, com o uso de raio X ou outra forma de energia radiante.'),
+(1,'Reumatologia',' é a especialidade médica que trata das doenças do tecido conjuntivo, articulações e doenças autoimunes., Diferente do senso comum o reumatologista não trata somente reumatismo.'),
+(1,'Urologia',' é a parte da medicina que estuda e trata cirurgicamente e clinicamente os problemas do sistema urinário e do sistema reprodutor masculino e feminino.');
+
+
+
+
 insert into StatusEntidade
 values('Ativo'),('Inativo')
 
