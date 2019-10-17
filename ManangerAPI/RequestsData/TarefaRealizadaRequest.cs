@@ -8,5 +8,6 @@ namespace ManangerAPI.RequestsData
         public string Comentario { get; set; }
         public DateTime Data { get; set; }
         public TimeSpan Hora { get; set; }
+        public bool Realizada { get; set; }
     }
 }

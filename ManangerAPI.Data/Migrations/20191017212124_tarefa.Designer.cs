@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20191017003722_Medicos")]
-    partial class Medicos
+    [Migration("20191017212124_tarefa")]
+    partial class tarefa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -564,6 +564,8 @@ namespace ManangerApi.Data.Migrations
                     b.Property<DateTime>("Data");
 
                     b.Property<TimeSpan>("Hora");
+
+                    b.Property<bool?>("Realizada");
 
                     b.Property<int>("Status");
 

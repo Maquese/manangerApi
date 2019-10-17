@@ -563,6 +563,8 @@ namespace ManangerApi.Data.Migrations
 
                     b.Property<TimeSpan>("Hora");
 
+                    b.Property<bool?>("Realizada");
+
                     b.Property<int>("Status");
 
                     b.Property<int>("TarefaId");

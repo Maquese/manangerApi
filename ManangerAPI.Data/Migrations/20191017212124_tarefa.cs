@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ManangerApi.Data.Migrations
 {
-    public partial class Medicos : Migration
+    public partial class tarefa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -443,7 +443,7 @@ namespace ManangerApi.Data.Migrations
                         column: x => x.BeneficiarioId,
                         principalTable: "Beneficiario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_MedicoBeneficiario_Cidade_CidadeId",
                         column: x => x.CidadeId,
@@ -626,7 +626,8 @@ namespace ManangerApi.Data.Migrations
                     TarefaId = table.Column<int>(nullable: false),
                     Comentario = table.Column<string>(nullable: true),
                     Data = table.Column<DateTime>(nullable: false),
-                    Hora = table.Column<TimeSpan>(nullable: false)
+                    Hora = table.Column<TimeSpan>(nullable: false),
+                    Realizada = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {

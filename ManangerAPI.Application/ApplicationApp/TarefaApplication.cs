@@ -85,7 +85,7 @@ namespace ManangerAPI.Application.ApplicationApp
                          CorHexa = item.CorHexa,
                          Data = dataInicio,
                          DataString = dataInicio.Date.ToString(),                         
-                         TarefaRealizada = item.TarefasRealizada.Where(x => x.Data == dataInicio).FirstOrDefault() != null,
+                         TarefaRealizada = item.TarefasRealizada.Where(y => y.Data == dataInicio).FirstOrDefault() == null ? null : item.TarefasRealizada.Where(y => y.Data == dataInicio).FirstOrDefault().Realizada,
                          Id = item.Id,
                          QuantidadeMedicamento = item.QuantidadeMedicamento,
                          BeneficiarioMedicamentoId = item.BeneficiarioMedicamentoId,
@@ -126,10 +126,11 @@ namespace ManangerAPI.Application.ApplicationApp
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
                 Data = dia,
-                TarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() != null,
+                TarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Realizada,
                 Id = x.Id,
                 QuantidadeMedicamento = x.QuantidadeMedicamento,
-                BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId
+                BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId,
+                ComentarioTarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Comentario,
             }).ToList();
         }
 
@@ -140,7 +141,7 @@ namespace ManangerAPI.Application.ApplicationApp
             _tarefaRepositorio.Save();
         }
 
-        public void TarefaRealizada(int tarefaId, string comentario, DateTime data, TimeSpan hora)
+        public void TarefaRealizada(int tarefaId, string comentario, DateTime data, TimeSpan hora, bool realizada)
         {
 
             var tarefa = _tarefaRepositorio.Encontrar(tarefaId);
@@ -150,13 +151,14 @@ namespace ManangerAPI.Application.ApplicationApp
                 medicamento.Quantidade -= tarefa.QuantidadeMedicamento.Value;
             }
 
-            _tarefaRealizadaRepositorio.Insert(new Data.Entidades.TarefaRealizada
+            _tarefaRealizadaRepositorio.Insert(new TarefaRealizada
             {
-                Status = 1,
+                Status = (int)StatusEnum.Ativo,
                 Comentario = comentario,
                 Data = data,
                 Hora = hora,
-                TarefaId = tarefaId
+                TarefaId = tarefaId,
+                Realizada = realizada
             });            
 
             _tarefaRealizadaRepositorio.Save();

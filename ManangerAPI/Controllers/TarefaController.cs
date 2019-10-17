@@ -64,7 +64,7 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public void RealizarTarefa(TarefaRealizadaRequest request)
         {
-            _tarefaApplication.TarefaRealizada(request.TarefaId,request.Comentario,request.Data,request.Hora);
+            _tarefaApplication.TarefaRealizada(request.TarefaId,request.Comentario,request.Data,request.Hora,request.Realizada);
         }
 
         [Route("api/tarefa/removertarefa")]
