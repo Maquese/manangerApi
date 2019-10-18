@@ -41,14 +41,28 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public void EncerrarContratoPrestador(QuebraDeContratoRequest request)
         {
-            _contratoApplication.EncerrarContratoPrestador(request.Id,request.Comentario);
+            _contratoApplication.EncerrarContratoPrestador(request.Id,request.Comentario,request.Avaliacao);
         }
 
         [Route("api/contrato/encerrarcontratocontratante")]
         [HttpPost]
         public void EncerrarContratoContratante(QuebraDeContratoRequest request)
         {
-            _contratoApplication.EncerrarContratoContratante(request.Id,request.Comentario);
+            _contratoApplication.EncerrarContratoContratante(request.Id,request.Comentario,request.Avaliacao);
+        }
+
+        [Route("api/contrato/avaliacaoposteriorcontratante")]
+        [HttpPost]
+        public void AvaliacaoPosteriorContratante(QuebraDeContratoRequest request)
+        {
+            _contratoApplication.AvaliarContratoContratante(request.Id,request.Comentario,request.Avaliacao);
+        }
+
+        [Route("api/contrato/avaliacaoposteriorprestador")]
+        [HttpPost]
+        public void AvaliacaoPosteriorPrestador(QuebraDeContratoRequest request)
+        {
+            _contratoApplication.AvaliarContratoPrestador(request.Id,request.Comentario,request.Avaliacao);
         }
 
         [Route("api/contrato/listarcontratosencerradosprestador")]

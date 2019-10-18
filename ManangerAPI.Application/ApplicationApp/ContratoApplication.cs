@@ -9,23 +9,40 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : IContratoApplication
     {
-      
-        public void EncerrarContratoContratante(int contratoId, string comentario)
+        public void AvaliarContratoContratante(int contratoId,string comentario, double avaliacao)
         {
-            var contrato = _contratoRepositorio.Encontrar(contratoId);
-            contrato.DataFim = DateTime.Now;
-            contrato.ComentarioEncerramento = comentario;
-            contrato.EncerradoPorContratante = true;
-            contrato.Status = (int)StatusEnum.Inativo;
+            var contrato  = _contratoRepositorio.Encontrar(contratoId);
+            contrato.AvaliacaoPrestador = avaliacao;
+            contrato.ComentarioEncerramentoPrestador = comentario;
             _contratoRepositorio.Save();
         }
 
-        public void EncerrarContratoPrestador(int contratoId, string comentario)
+        public void AvaliarContratoPrestador(int contratoId,string comentario, double avaliacao)
+        {
+            var contrato  = _contratoRepositorio.Encontrar(contratoId);
+            contrato.AvaliacaoContratante = avaliacao;
+            contrato.ComentarioEncerramentoContratante = comentario;
+            _contratoRepositorio.Save();
+        }
+
+        public void EncerrarContratoContratante(int contratoId, string comentario, double avaliacao)
+        {
+            var contrato = _contratoRepositorio.Encontrar(contratoId);
+            contrato.DataFim = DateTime.Now;
+            contrato.ComentarioEncerramentoContratante = comentario;
+            contrato.EncerradoPorContratante = true;
+            contrato.Status = (int)StatusEnum.Inativo;
+            contrato.AvaliacaoPrestador = avaliacao;
+            _contratoRepositorio.Save();
+        }
+
+        public void EncerrarContratoPrestador(int contratoId, string comentario,double avaliacao)
         {            
             var contrato = _contratoRepositorio.Encontrar(contratoId);
             contrato.DataFim = DateTime.Now;
-            contrato.ComentarioEncerramento = comentario;
+            contrato.ComentarioEncerramentoPrestador = comentario;
             contrato.EncerradoPorContratante = false;
+            contrato.AvaliacaoContratante = avaliacao;
             contrato.Status = (int)StatusEnum.Inativo;
             _contratoRepositorio.Save();
         }

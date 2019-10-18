@@ -78,7 +78,7 @@ namespace ManangerAPI.Application.ApplicationApp
             if (usuario != null)
             {
                 retorno = new UsuarioDTO { Id = usuario.Id, Nome = usuario.Nome, DataNascimento = usuario.DataNascimento, 
-                                           Email = usuario.Email, Imagem = usuario.Imagem };
+                                           Email = usuario.Email, Imagem = usuario.Imagem,  };
                 retorno.Acessos = new List<AcessoDTO>();
                 foreach (var item in _acessoRepositorio.AcessoDoUsuario(usuario.Id))
                 {

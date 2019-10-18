@@ -17,6 +17,6 @@ namespace ManangerAPI.Application.DTOS
         public string Imagem { get; set; }        
         public int QuantidadeBeneficiario { get; set; }
         public int QuantidadeContratos { get; set; }
-
+        public IList<ListaContratoEncerradoDTO> Contratos {get;set;}
     }
 }
