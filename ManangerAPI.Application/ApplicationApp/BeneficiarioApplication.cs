@@ -276,6 +276,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Id = medico.Id,
                 Nome = medico.Nome,
                 EspecialidadeMedicoId = medico.EspecialidadeMedicoId,
+                EspecialidadeNome = _especialidadeMedicaRepositorio.Encontrar(medico.EspecialidadeMedicoId).Nome,
                 TelefoneConsultorio = medico.TelefoneConsultorio,
                 Celular = medico.Celular,
                 Convenio = medico.Convenio,

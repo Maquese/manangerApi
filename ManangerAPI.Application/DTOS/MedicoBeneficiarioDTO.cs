@@ -19,5 +19,6 @@ namespace ManangerAPI.Application.DTOS
         public string Numero { get; set; }
         public string Complemento { get; set; }
         public string EstadoUf { get; set; }
+        public string EspecialidadeNome { get; set; }
     }
 }
