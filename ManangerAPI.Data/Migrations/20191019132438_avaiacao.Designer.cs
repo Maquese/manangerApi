@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20191017212124_tarefa")]
-    partial class tarefa
+    [Migration("20191019132438_avaiacao")]
+    partial class avaiacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -198,9 +198,15 @@ namespace ManangerApi.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<double?>("AvaliacaoContratante");
+
+                    b.Property<double?>("AvaliacaoPrestador");
+
                     b.Property<int>("BeneficiarioId");
 
-                    b.Property<string>("ComentarioEncerramento");
+                    b.Property<string>("ComentarioEncerramentoContratante");
+
+                    b.Property<string>("ComentarioEncerramentoPrestador");
 
                     b.Property<int>("ContratanteId");
 

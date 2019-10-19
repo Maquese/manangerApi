@@ -196,9 +196,15 @@ namespace ManangerApi.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<double?>("AvaliacaoContratante");
+
+                    b.Property<double?>("AvaliacaoPrestador");
+
                     b.Property<int>("BeneficiarioId");
 
-                    b.Property<string>("ComentarioEncerramento");
+                    b.Property<string>("ComentarioEncerramentoContratante");
+
+                    b.Property<string>("ComentarioEncerramentoPrestador");
 
                     b.Property<int>("ContratanteId");
 
