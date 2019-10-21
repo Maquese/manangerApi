@@ -28,7 +28,7 @@ namespace ManangerAPI.Data.Repositorios
         {
             var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 
                                                      && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias && x.DataInicio <= data || x.DataInicio <= data && x.DataFim >= data)).ToList();
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias && x.DataInicio.Date <= data.Date || x.DataInicio.Date <= data.Date && x.DataFim.Value.Date >= data.Date)).ToList();
         }
 
         public IList<Tarefa> ListarTarefasPorContrato(int contratoId)

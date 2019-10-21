@@ -64,7 +64,12 @@ namespace ManangerAPI.Application.ApplicationApp
                 CorHexa = x.CorHexa,
                 Id = x.Id,
                 QuantidadeMedicamento = x.QuantidadeMedicamento,
-                BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId
+                BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId,
+                TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Id,
+                TarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Realizada,
+                ComentarioTarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Comentario,
+            
+                
             }).ToList();
         }
         public IList<TarefaDTO> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime dataInicio, DateTime dataFim)
@@ -74,7 +79,7 @@ namespace ManangerAPI.Application.ApplicationApp
 
             while (dataInicio <= dataFim)
             {
-                foreach (var item in dados.Where(x => x.TodosOsDias || (x.DataInicio <= dataInicio && x.DataFim >= dataInicio)))
+                foreach (var item in dados.Where(x => x.TodosOsDias || (x.DataInicio.Date <= dataInicio.Date && x.DataFim.Value.Date >= dataInicio.Date)))
                 {
                     retorno.Add(new TarefaDTO {
                          ContratoId = item.ContratoId,
@@ -84,8 +89,9 @@ namespace ManangerAPI.Application.ApplicationApp
                          Comentario = item.Comentario,
                          CorHexa = item.CorHexa,
                          Data = dataInicio,
+                         TarefaRealizadaId =  item.TarefasRealizada.Where(y => y.Data.Date == dataInicio.Date).FirstOrDefault() == null ? 0 : item.TarefasRealizada.Where(y => y.Data.Date == dataInicio.Date).FirstOrDefault().Id,
                          DataString = dataInicio.Date.ToString(),                         
-                         TarefaRealizada = item.TarefasRealizada.Where(y => y.Data == dataInicio).FirstOrDefault() == null ? null : item.TarefasRealizada.Where(y => y.Data == dataInicio).FirstOrDefault().Realizada,
+                         TarefaRealizada = item.TarefasRealizada.Where(y => y.Data.Date == dataInicio.Date).FirstOrDefault() == null ? null : item.TarefasRealizada.Where(y => y.Data.Date == dataInicio.Date).FirstOrDefault().Realizada,
                          Id = item.Id,
                          QuantidadeMedicamento = item.QuantidadeMedicamento,
                          BeneficiarioMedicamentoId = item.BeneficiarioMedicamentoId,
@@ -126,6 +132,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
                 Data = dia,
+                TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Id,
                 TarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Realizada,
                 Id = x.Id,
                 QuantidadeMedicamento = x.QuantidadeMedicamento,
@@ -141,7 +148,7 @@ namespace ManangerAPI.Application.ApplicationApp
             _tarefaRepositorio.Save();
         }
 
-        public void TarefaRealizada(int tarefaId, string comentario, DateTime data, TimeSpan hora, bool realizada)
+        public void TarefaRealizada(int tarefaId, string comentario, DateTime data, TimeSpan hora, bool realizada,int? tarefaRealizadaId)
         {
 
             var tarefa = _tarefaRepositorio.Encontrar(tarefaId);
@@ -151,6 +158,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 medicamento.Quantidade -= tarefa.QuantidadeMedicamento.Value;
             }
 
+            if(tarefaRealizadaId == null || tarefaRealizadaId == 0)
+            {
             _tarefaRealizadaRepositorio.Insert(new TarefaRealizada
             {
                 Status = (int)StatusEnum.Ativo,
@@ -159,7 +168,14 @@ namespace ManangerAPI.Application.ApplicationApp
                 Hora = hora,
                 TarefaId = tarefaId,
                 Realizada = realizada
-            });            
+            });    
+            }else{
+                var tarefaRealizada = _tarefaRealizadaRepositorio.Encontrar(tarefaRealizadaId.Value);
+                tarefaRealizada.Comentario = comentario;
+                tarefaRealizada.Data = data;
+                tarefaRealizada.Hora = hora;
+                tarefaRealizada.Realizada = realizada;
+            }       
 
             _tarefaRealizadaRepositorio.Save();
         }
