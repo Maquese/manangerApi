@@ -157,7 +157,10 @@ namespace ManangerAPI.Application.ApplicationApp
                  Id = x.Id,
                  DataSolicitacao = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).DataSolicitacao,
                  Comentario = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).Comentario,
-                 SolicitacaoContratoId = x.SolicitacaoContratoId
+                 SolicitacaoContratoId = x.SolicitacaoContratoId,
+                 SexoNome = ((SexoEnum)_beneficiarioRepositorio.Encontrar(x.BeneficiarioId).Sexo).ToString(),
+                 BeneficiarioDataNascimento = _beneficiarioRepositorio.Encontrar(x.BeneficiarioId).DataNascimento,
+                 BeneficiarioBairro = _beneficiarioRepositorio.Encontrar(x.BeneficiarioId).Bairro,
             }).ToList();
         }
     }

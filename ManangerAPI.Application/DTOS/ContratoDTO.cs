@@ -16,5 +16,8 @@ namespace ManangerAPI.Application.DTOS
         public string NomePrestadorDeServico { get; set; }
         public DateTime DataSolicitacao { get; set; }         
         public string Comentario { get; set; }
+        public string SexoNome { get; set; }
+        public DateTime BeneficiarioDataNascimento { get; set; }
+        public string BeneficiarioBairro { get; set; }
     }
 }
