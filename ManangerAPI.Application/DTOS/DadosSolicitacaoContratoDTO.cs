@@ -10,5 +10,7 @@ namespace ManangerAPI.Application.DTOS
         public DateTime DataSolicitacao { get; set; }
         public DateTime? DataFim { get; set; }
         public string Comentario { get; set; }
+        public string TelefonePrestador { get; set; }
+        public string TelefoneContratante { get;  set; }
     }
 }

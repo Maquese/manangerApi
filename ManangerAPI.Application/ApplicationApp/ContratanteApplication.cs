@@ -47,7 +47,9 @@ namespace ManangerAPI.Application.ApplicationApp
                 NomePrestadorDeServico = _prestadorDeServicoRepositorio.Encontrar(solicitacao.PrestadorDeServicoId).Nome,
                 DataSolicitacao = solicitacao.DataSolicitacao,
                 DataFim = solicitacao.DataFim,
-                Comentario = solicitacao.Comentario
+                Comentario = solicitacao.Comentario,
+                TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(solicitacao.PrestadorDeServicoId).Telefone,
+                TelefoneContratante = _contratanteRepositorio.Encontrar(solicitacao.ContratanteId).Telefone, 
             };
         }
 
