@@ -21,6 +21,8 @@ namespace ManangerAPI.Application.DTOS
         public DateTime? DataFim { get; set; }
         public bool TodosOsDias { get; set; }
         public string ComentarioTarefaRealizada { get; set; }
-        public int? TarefaRealizadaId { get; internal set; }
+        public int? TarefaRealizadaId { get;  set; }
+        public string HoraInicioString { get;  set; }
+        public string HoraFimString { get;  set; }
     }
 }

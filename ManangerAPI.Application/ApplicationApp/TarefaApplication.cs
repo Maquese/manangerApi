@@ -60,6 +60,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Titulo = x.Titulo,
                 HoraInicio = x.HoraInicio,
                 HoraFim = x.HoraFim,
+                HoraInicioString = String.Concat(x.HoraInicio.Hours, ":",x.HoraInicio.Minutes),
+                HoraFimString = String.Concat(x.HoraFim.Hours, ":",x.HoraFim.Minutes),
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
                 Id = x.Id,
