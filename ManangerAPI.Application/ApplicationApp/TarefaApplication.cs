@@ -97,6 +97,7 @@ namespace ManangerAPI.Application.ApplicationApp
                          Id = item.Id,
                          QuantidadeMedicamento = item.QuantidadeMedicamento,
                          BeneficiarioMedicamentoId = item.BeneficiarioMedicamentoId,
+                         NomeMedicamento = item.BeneficiarioMedicamentoId.HasValue ? _medicamentoRepositorio.Encontrar(_beneficiarioMedicamentoRepositorio.Encontrar(item.BeneficiarioMedicamentoId.Value).MedicamentoId).Nome : "",
                          DataInicio = item.DataInicio,
                          DataFim = item.DataFim,
                          TodosOsDias = item.TodosOsDias
