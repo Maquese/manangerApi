@@ -60,11 +60,12 @@ namespace ManangerAPI.Application.ApplicationApp
                 Titulo = x.Titulo,
                 HoraInicio = x.HoraInicio,
                 HoraFim = x.HoraFim,
-                HoraInicioString = String.Concat(x.HoraInicio.Hours, ":",x.HoraInicio.Minutes),
-                HoraFimString = String.Concat(x.HoraFim.Hours, ":",x.HoraFim.Minutes),
+                HoraInicioString = x.HoraInicio.ToString().Substring(0,x.HoraInicio.ToString().Length - 3),
+                HoraFimString = x.HoraFim.ToString().Substring(0,x.HoraFim.ToString().Length - 3),
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
                 Id = x.Id,
+                NomeMedicamento = x.BeneficiarioMedicamentoId.HasValue ? _medicamentoRepositorio.Encontrar(_beneficiarioMedicamentoRepositorio.Encontrar(x.BeneficiarioMedicamentoId.Value).MedicamentoId).Nome : "",
                 QuantidadeMedicamento = x.QuantidadeMedicamento,
                 BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId,
                 TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Id,
@@ -81,7 +82,7 @@ namespace ManangerAPI.Application.ApplicationApp
 
             while (dataInicio <= dataFim)
             {
-                foreach (var item in dados.Where(x => x.TodosOsDias || (x.DataInicio.Date <= dataInicio.Date && x.DataFim.Value.Date >= dataInicio.Date)))
+                foreach (var item in dados.Where(x => (x.TodosOsDias && x.DataInicio.Date >= dataInicio.Date ) || (x.DataInicio.Date <= dataInicio.Date && x.DataFim.Value.Date >= dataInicio.Date)))
                 {
                     retorno.Add(new TarefaDTO {
                          ContratoId = item.ContratoId,
