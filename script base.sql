@@ -5804,3 +5804,7 @@ values(1,'11111111',25,3376,'bairro','rua',1),
 (1,'11111111',25,3376,'bairro','rua',7),
 (1,'11111111',25,3376,'bairro','rua',8),
 (1,'11111111',25,3376,'bairro','rua',9);
+
+insert into Acesso
+(PerfilId , Status, UsuarioId)
+values(2,1,5)

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {}
+    "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi\\ManangerApi.csproj": {}
   },
   "projects": {
     "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
@@ -124,14 +124,14 @@
         }
       }
     },
-    "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {
+    "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi\\ManangerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
+        "projectUniqueName": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi\\ManangerApi.csproj",
         "projectName": "ManangerApi",
-        "projectPath": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
+        "projectPath": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi\\ManangerApi.csproj",
         "packagesPath": "C:\\Users\\Giuliano\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\ManangerAPI\\obj\\",
+        "outputPath": "C:\\Users\\Giuliano\\Desktop\\proj\\mananger\\manangerApi\\manangerapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
