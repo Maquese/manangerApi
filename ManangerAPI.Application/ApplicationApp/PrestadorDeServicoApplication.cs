@@ -181,7 +181,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Id = x.Id,
                 DataNascimento = x.DataNascimento,
                 Imagem = x.Imagem,
-                Nome = x.Nome
+                Nome = x.Nome,
+                Telefone = x.Telefone
             }).ToList();
         }
 
@@ -223,6 +224,8 @@ namespace ManangerAPI.Application.ApplicationApp
                     NomeContratante = _contratanteRepositorio.Encontrar(item.ContratanteId).Nome,
                     BeneficiarioId = item.BeneficiarioId,
                     ContratanteId = item.ContratanteId,
+                    TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(item.PrestadorDeServicoId).Telefone,
+                    TelefoneContratante = _contratanteRepositorio.Encontrar(item.ContratanteId).Telefone
                     
                 });
             }

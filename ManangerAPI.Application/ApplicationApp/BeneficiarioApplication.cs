@@ -313,7 +313,9 @@ namespace ManangerAPI.Application.ApplicationApp
                 IdSolicitacao = x.Id,
                 Id = x.PrestadorDeServicoId,
                 DataSolicitacao = x.DataSolicitacao,
-                NomePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Nome
+                NomePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Nome,
+                TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Telefone,
+                TelefoneContratante = _contratanteRepositorio.Encontrar(x.ContratanteId).Telefone
             }).ToList();
         }
 
