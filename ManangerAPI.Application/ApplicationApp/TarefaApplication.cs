@@ -82,7 +82,7 @@ namespace ManangerAPI.Application.ApplicationApp
 
             while (dataInicio <= dataFim)
             {
-                foreach (var item in dados.Where(x => (x.TodosOsDias && x.DataInicio.Date >= dataInicio.Date ) || (x.DataInicio.Date <= dataInicio.Date && x.DataFim.Value.Date >= dataInicio.Date)))
+                foreach (var item in dados.Where(x => (x.TodosOsDias && x.DataInicio.Date <= dataInicio.Date ) || (x.DataInicio.Date <= dataInicio.Date && (x.DataFim == null || x.DataFim.Value.Date >= dataInicio.Date))))
                 {
                     retorno.Add(new TarefaDTO {
                          ContratoId = item.ContratoId,

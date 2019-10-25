@@ -20,6 +20,8 @@ namespace ManangerAPI.Application.DTOS
         public DateTime BeneficiarioDataNascimento { get; set; }
         public string BeneficiarioBairro { get; set; }
         public string TelefonePrestador { get; set; }
-        public string TelefoneContratante { get; set; }          
+        public string TelefoneContratante { get; set; }
+        public string ComentarioEncerramentoPrestador { get;  set; }
+        public string ComentarioEncerramentoContratante { get; set; }
     }
 }

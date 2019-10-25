@@ -64,7 +64,9 @@ namespace ManangerAPI.Application.ApplicationApp
                  Comentario = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).Comentario,
                  SolicitacaoContratoId = x.SolicitacaoContratoId,
                  TelefoneContratante = _contratanteRepositorio.Encontrar(x.ContratanteId).Telefone,
-                 TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Telefone
+                 TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Telefone,
+                 ComentarioEncerramentoPrestador = x.ComentarioEncerramentoPrestador,
+                 ComentarioEncerramentoContratante = x.ComentarioEncerramentoContratante
             }).ToList();
         }
 
@@ -85,7 +87,9 @@ namespace ManangerAPI.Application.ApplicationApp
                  Comentario = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).Comentario,
                  SolicitacaoContratoId = x.SolicitacaoContratoId,
                  TelefoneContratante = _contratanteRepositorio.Encontrar(x.ContratanteId).Telefone,
-                 TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Telefone
+                 TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Telefone,
+                 ComentarioEncerramentoPrestador = x.ComentarioEncerramentoPrestador,
+                 ComentarioEncerramentoContratante = x.ComentarioEncerramentoContratante
             }).ToList();
         }
 
@@ -106,7 +110,9 @@ namespace ManangerAPI.Application.ApplicationApp
                  Comentario = _solicitacaoContratoRepositorio.Encontrar(x.SolicitacaoContratoId).Comentario,
                  SolicitacaoContratoId = x.SolicitacaoContratoId,
                  TelefoneContratante = _contratanteRepositorio.Encontrar(x.ContratanteId).Telefone,
-                 TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Telefone
+                 TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(x.PrestadorDeServicoId).Telefone,
+                 ComentarioEncerramentoPrestador = x.ComentarioEncerramentoPrestador,
+                 ComentarioEncerramentoContratante = x.ComentarioEncerramentoContratante
             }).ToList();
         }
 
