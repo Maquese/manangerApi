@@ -139,6 +139,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Id,
                 TarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Realizada,
                 Id = x.Id,
+                NomeMedicamento = x.BeneficiarioMedicamentoId.HasValue ? _medicamentoRepositorio.Encontrar(_beneficiarioMedicamentoRepositorio.Encontrar(x.BeneficiarioMedicamentoId.Value).MedicamentoId).Nome : "",
                 QuantidadeMedicamento = x.QuantidadeMedicamento,
                 BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId,
                 ComentarioTarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Comentario,

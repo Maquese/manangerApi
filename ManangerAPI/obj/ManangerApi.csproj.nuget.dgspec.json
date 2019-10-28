@@ -1,0 +1,197 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+        "projectName": "manangerapi.application",
+        "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+        "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+                "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+        "projectName": "ManangerApi.Data",
+        "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+        "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
+        "projectName": "ManangerApi",
+        "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\ManangerApi.csproj",
+        "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\ManangerAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
+                "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj"
+              },
+              "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+                "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
