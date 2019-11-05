@@ -13,6 +13,8 @@ namespace ManangerAPI.Data.Contratos
          IList<Contrato> ListarContratoEncerradosPrestador(int prestadorId);
          IList<Contrato> ListarContratoEncerradosBeneficiario(int beneficiarioId);
          IList<Contrato> ListarContratoEncerradosContratante(int contratanteId);
+
+         IList<int> ListarContratosEncerradosUsuario(int perfil, int usuarioId);
          
          
     }

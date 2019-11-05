@@ -8,6 +8,7 @@ namespace ManangerAPI.Application.DTOS
         public UsuarioDTO()
         {
             Acessos = new List<AcessoDTO>();
+            Contratos = new List<ListaContratoEncerradoDTO>();
         }
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -17,6 +18,8 @@ namespace ManangerAPI.Application.DTOS
         public string Imagem { get; set; }        
         public int QuantidadeBeneficiario { get; set; }
         public int QuantidadeContratos { get; set; }
-        public IList<ListaContratoEncerradoDTO> Contratos {get;set;}
+        public List<ListaContratoEncerradoDTO> Contratos {get;set;}
+
+        
     }
 }
