@@ -11,5 +11,6 @@ namespace ManangerAPI.Application.DTOS
         public int ContratanteId { get;  set; }
         public string TelefonePrestador { get; set; }
         public string TelefoneContratante { get; set; }
+        public double RatingContratante { get; set; }
     }
 }

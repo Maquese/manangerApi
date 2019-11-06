@@ -27,6 +27,8 @@ namespace ManangerAPI.Application.Contratos
 
         void AceitarOuNaoSolicitacao(int idSolicitacao, bool aceitou);
 
+        double RatingPrestador(int idPrestador);
+
         
     }
 }

@@ -9,5 +9,6 @@ namespace ManangerAPI.Application.DTOS
         public DateTime DataNascimento { get; set; }
         public string Imagem { get; set; }
         public string Telefone { get; set; }
+        public double Rating { get; set; }
     }
 }

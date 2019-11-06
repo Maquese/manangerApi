@@ -182,8 +182,19 @@ namespace ManangerAPI.Application.ApplicationApp
                 DataNascimento = x.DataNascimento,
                 Imagem = x.Imagem,
                 Nome = x.Nome,
-                Telefone = x.Telefone
+                Telefone = x.Telefone,
+                Rating = RatingPrestador(x.Id)
             }).ToList();
+        }
+
+        public double RatingPrestador(int idPrestador)
+        {
+            double retorno = 0;
+
+            var contratos = _contratoRepositorio.ListarContratoEncerradosPrestador(idPrestador).Where(x => x.AvaliacaoPrestador.HasValue).ToList();
+            retorno = contratos.Sum(x => x.AvaliacaoPrestador.Value) / contratos.Count();
+
+            return retorno;
         }
 
         IList<PrestadorDeServicoDTO> IPrestadorDeServicoApplication.ListarNaoAnalisadosEAprovados()
@@ -225,8 +236,8 @@ namespace ManangerAPI.Application.ApplicationApp
                     BeneficiarioId = item.BeneficiarioId,
                     ContratanteId = item.ContratanteId,
                     TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(item.PrestadorDeServicoId).Telefone,
-                    TelefoneContratante = _contratanteRepositorio.Encontrar(item.ContratanteId).Telefone
-                    
+                    TelefoneContratante = _contratanteRepositorio.Encontrar(item.ContratanteId).Telefone,
+                    RatingContratante = RatingContratante(item.ContratanteId)
                 });
             }
             return retorno;            

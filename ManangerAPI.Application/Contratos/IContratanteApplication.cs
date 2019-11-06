@@ -26,5 +26,7 @@ namespace ManangerAPI.Application.Contratos
 
         DadosSolicitacaoContratoDTO BuscarDadosSolicitacaoContrato(int idSolicitacao);
 
+        double RatingContratante(int idContratante);
+
     }
 }

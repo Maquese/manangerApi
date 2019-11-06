@@ -17,5 +17,6 @@ namespace ManangerAPI.Data.Contratos
          IList<int> ListarContratosEncerradosUsuario(int perfil, int usuarioId);
          
          
+         
     }
 }

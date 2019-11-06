@@ -19,7 +19,6 @@ namespace ManangerAPI.Application.DTOS
         public int QuantidadeBeneficiario { get; set; }
         public int QuantidadeContratos { get; set; }
         public List<ListaContratoEncerradoDTO> Contratos {get;set;}
-
-        
+        public double RatingUsuario { get; set; }
     }
 }

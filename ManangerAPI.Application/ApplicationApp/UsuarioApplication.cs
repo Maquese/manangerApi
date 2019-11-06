@@ -67,7 +67,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 Id = x.Id,
                 Nome = x.Nome,
                 QuantidadeBeneficiario = _beneficiarioRepositorio.ListarPorContratante(x.Id).Count,
-                QuantidadeContratos = PerfilEnum.Contratante == perfilId ? _contratoRepositorio.ListarContratoContratante(x.Id).Count : _contratoRepositorio.ListarContratoPrestador(x.Id).Count
+                QuantidadeContratos = PerfilEnum.Contratante == perfilId ? _contratoRepositorio.ListarContratoContratante(x.Id).Count : _contratoRepositorio.ListarContratoPrestador(x.Id).Count,
+                RatingUsuario = PerfilEnum.Contratante == perfilId ? RatingContratante(x.Id) : RatingPrestador(x.Id)
             }).ToList();
         }
 

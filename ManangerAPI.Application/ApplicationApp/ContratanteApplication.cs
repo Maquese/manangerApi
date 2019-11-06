@@ -50,6 +50,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Comentario = solicitacao.Comentario,
                 TelefonePrestador = _prestadorDeServicoRepositorio.Encontrar(solicitacao.PrestadorDeServicoId).Telefone,
                 TelefoneContratante = _contratanteRepositorio.Encontrar(solicitacao.ContratanteId).Telefone, 
+                RatingPrestador = RatingPrestador(solicitacao.PrestadorDeServicoId)
             };
         }
 
@@ -153,6 +154,15 @@ namespace ManangerAPI.Application.ApplicationApp
 
             retorno = data.Select(x => new ContratanteDTO {Id = x.Id, Nome = x.Nome, Email = x.Email, DataNascimento = x.DataNascimento }).ToList();
 
+            return retorno;
+        }
+
+        public double RatingContratante(int idContratante)
+        {
+            double retorno = 0;
+            var contratos = _contratoRepositorio.ListarContratoEncerradosContratante(idContratante).Where(x=> x.AvaliacaoContratante.HasValue).ToList();
+
+            retorno = contratos.Sum(x => x.AvaliacaoContratante.Value) / contratos.Count;
             return retorno;
         }
 

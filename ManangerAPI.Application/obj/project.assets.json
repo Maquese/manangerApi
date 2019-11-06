@@ -3134,11 +3134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.application\\manangerapi.application.csproj",
       "projectName": "manangerapi.application",
-      "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+      "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.application\\manangerapi.application.csproj",
       "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\obj\\",
+      "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3157,8 +3157,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
-              "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
+            "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.data\\ManangerApi.Data.csproj": {
+              "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerapi\\manangerapi.data\\ManangerApi.Data.csproj"
             }
           }
         }
