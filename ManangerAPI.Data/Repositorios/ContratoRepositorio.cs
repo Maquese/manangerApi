@@ -58,9 +58,9 @@ namespace ManangerAPI.Data.Repositorios
         {
               if(perfil == 2)   
               {
-                  return _contexto.Contrato.Where(x => x.ContratanteId == usuarioId && x.Status == 2 && !x.AvaliacaoContratante.HasValue).Select(x => x.Id).ToList();
+                  return _contexto.Contrato.Where(x => x.ContratanteId == usuarioId && x.Status == 2 && x.AvaliacaoContratante.HasValue).Select(x => x.Id).ToList();
               }else{
-                  return _contexto.Contrato.Where(x => x.PrestadorDeServicoId == usuarioId && x.Status == 2 && x.AvaliacaoContratante.HasValue).Select(x => x.Id).ToList();
+                  return _contexto.Contrato.Where(x => x.PrestadorDeServicoId == usuarioId && x.Status == 2 && !x.AvaliacaoContratante.HasValue).Select(x => x.Id).ToList();
               }
         }
     }
