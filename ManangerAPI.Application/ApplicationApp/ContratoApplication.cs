@@ -12,7 +12,7 @@ namespace ManangerAPI.Application.ApplicationApp
         public void AvaliarContratoContratante(int contratoId,string comentario, double avaliacao)
         {
             var contrato  = _contratoRepositorio.Encontrar(contratoId);
-            contrato.AvaliacaoPrestador = avaliacao;
+            contrato.AvaliacaoContratante = avaliacao;
             contrato.ComentarioEncerramentoPrestador = comentario;
             _contratoRepositorio.Save();
         }
@@ -20,7 +20,7 @@ namespace ManangerAPI.Application.ApplicationApp
         public void AvaliarContratoPrestador(int contratoId,string comentario, double avaliacao)
         {
             var contrato  = _contratoRepositorio.Encontrar(contratoId);
-            contrato.AvaliacaoContratante = avaliacao;
+            contrato.AvaliacaoPrestador = avaliacao;
             contrato.ComentarioEncerramentoContratante = comentario;
             _contratoRepositorio.Save();
         }

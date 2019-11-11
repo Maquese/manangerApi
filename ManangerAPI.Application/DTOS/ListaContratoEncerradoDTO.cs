@@ -4,5 +4,7 @@ namespace ManangerAPI.Application.DTOS
     {
         public int ContratoId { get; set; }
         public int PerfilId { get; set; }
+        public int ContratanteId { get; set; }
+        public int PrestadorId { get; set; }
     }
 }

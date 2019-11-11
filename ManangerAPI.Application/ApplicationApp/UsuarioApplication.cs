@@ -83,9 +83,9 @@ namespace ManangerAPI.Application.ApplicationApp
                 retorno.Acessos = new List<AcessoDTO>();
                 foreach (var item in _acessoRepositorio.AcessoDoUsuario(usuario.Id))
                 {
-                    foreach (var idContrato in _contratoRepositorio.ListarContratosEncerradosUsuario(item.PerfilId ,item.UsuarioId))
+                    foreach (var contrato in _contratoRepositorio.ListarContratosEncerradosUsuario(item.PerfilId ,item.UsuarioId))
                     {                        
-                        retorno.Contratos.Add(new ListaContratoEncerradoDTO{PerfilId = item.PerfilId, ContratoId = idContrato});
+                        retorno.Contratos.Add(new ListaContratoEncerradoDTO{PerfilId = item.PerfilId, ContratoId = contrato.Id, ContratanteId = contrato.ContratanteId , PrestadorId = contrato.PrestadorDeServicoId});
                     }
                     var acesso = new AcessoDTO { Perfil = (PerfilEnum)item.PerfilId };
                     acesso.FuncionalidadeDTO = _funcionalidadeRepositorio.ListarPorPerfil(item.PerfilId).Select(x => new FuncionalidadeDTO { Id = x.Id, Path = x.Path }).ToList();
