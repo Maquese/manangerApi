@@ -85,7 +85,10 @@ namespace ManangerAPI.Application.ApplicationApp
                 {
                     foreach (var contrato in _contratoRepositorio.ListarContratosEncerradosUsuario(item.PerfilId ,item.UsuarioId))
                     {                        
-                        retorno.Contratos.Add(new ListaContratoEncerradoDTO{PerfilId = item.PerfilId, ContratoId = contrato.Id, ContratanteId = contrato.ContratanteId , PrestadorId = contrato.PrestadorDeServicoId});
+                        retorno.Contratos.Add(new ListaContratoEncerradoDTO{PerfilId = item.PerfilId, ContratoId = contrato.Id, ContratanteId = contrato.ContratanteId ,
+                                                                            PrestadorId = contrato.PrestadorDeServicoId, NomeBeneficiario = contrato.Beneficiario.Nome, 
+                                                                            NomeContratante = contrato.Contratante.Nome, ColaboradorNome =  contrato.PrestadorDeServico.Nome,
+                                                                            Data = contrato.DataFim });
                     }
                     var acesso = new AcessoDTO { Perfil = (PerfilEnum)item.PerfilId };
                     acesso.FuncionalidadeDTO = _funcionalidadeRepositorio.ListarPorPerfil(item.PerfilId).Select(x => new FuncionalidadeDTO { Id = x.Id, Path = x.Path }).ToList();
