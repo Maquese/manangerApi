@@ -162,7 +162,10 @@ namespace ManangerAPI.Application.ApplicationApp
             double retorno = 0;
             var contratos = _contratoRepositorio.ListarContratoEncerradosContratante(idContratante).Where(x=> x.AvaliacaoContratante.HasValue).ToList();
 
-            retorno = contratos.Sum(x => x.AvaliacaoContratante.Value) / contratos.Count;
+            if(contratos.Count > 0)
+            {
+                retorno = contratos.Sum(x => x.AvaliacaoContratante.Value) / contratos.Count;
+            }
             return retorno;
         }
 
