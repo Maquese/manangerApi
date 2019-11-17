@@ -71,8 +71,8 @@ namespace ManangerAPI.Application.ApplicationApp
                 TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Id,
                 TarefaRealizada = x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Realizada,
                 ComentarioTarefaRealizada = x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Comentario,
+                HoraRealizada = x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Hora.ToString(),
             
-                
             }).ToList();
         }
         public IList<TarefaDTO> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime dataInicio, DateTime dataFim)
@@ -101,7 +101,9 @@ namespace ManangerAPI.Application.ApplicationApp
                          NomeMedicamento = item.BeneficiarioMedicamentoId.HasValue ? _medicamentoRepositorio.Encontrar(_beneficiarioMedicamentoRepositorio.Encontrar(item.BeneficiarioMedicamentoId.Value).MedicamentoId).Nome : "",
                          DataInicio = item.DataInicio,
                          DataFim = item.DataFim,
-                         TodosOsDias = item.TodosOsDias
+                         TodosOsDias = item.TodosOsDias,
+                        HoraRealizada = item.TarefasRealizada.Where(y => y.Data.Date == dataInicio).FirstOrDefault() == null ? "" : item.TarefasRealizada.Where(y => y.Data.Date == dataInicio).FirstOrDefault().Hora.ToString(),
+            
                     });
                 }
                 dataInicio = dataInicio.AddDays(1);
@@ -136,13 +138,13 @@ namespace ManangerAPI.Application.ApplicationApp
                 Comentario = x.Comentario,
                 CorHexa = x.CorHexa,
                 Data = dia,
-                TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Id,
-                TarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Realizada,
+                TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Id,
+                TarefaRealizada = x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Realizada,
                 Id = x.Id,
                 NomeMedicamento = x.BeneficiarioMedicamentoId.HasValue ? _medicamentoRepositorio.Encontrar(_beneficiarioMedicamentoRepositorio.Encontrar(x.BeneficiarioMedicamentoId.Value).MedicamentoId).Nome : "",
                 QuantidadeMedicamento = x.QuantidadeMedicamento,
                 BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId,
-                ComentarioTarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Comentario,
+                ComentarioTarefaRealizada = x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Comentario,
             }).ToList();
         }
 

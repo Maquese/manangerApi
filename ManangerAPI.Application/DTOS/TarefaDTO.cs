@@ -24,5 +24,6 @@ namespace ManangerAPI.Application.DTOS
         public int? TarefaRealizadaId { get;  set; }
         public string HoraInicioString { get;  set; }
         public string HoraFimString { get;  set; }
+        public string HoraRealizada { get;  set; }
     }
 }
