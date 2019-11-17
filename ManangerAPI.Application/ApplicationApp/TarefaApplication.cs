@@ -68,9 +68,9 @@ namespace ManangerAPI.Application.ApplicationApp
                 NomeMedicamento = x.BeneficiarioMedicamentoId.HasValue ? _medicamentoRepositorio.Encontrar(_beneficiarioMedicamentoRepositorio.Encontrar(x.BeneficiarioMedicamentoId.Value).MedicamentoId).Nome : "",
                 QuantidadeMedicamento = x.QuantidadeMedicamento,
                 BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId,
-                TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Id,
-                TarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Realizada,
-                ComentarioTarefaRealizada = x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data == dia).FirstOrDefault().Comentario,
+                TarefaRealizadaId =  x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? 0 : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Id,
+                TarefaRealizada = x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? null : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Realizada,
+                ComentarioTarefaRealizada = x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault() == null ? "" : x.TarefasRealizada.Where(y => y.Data.Date == dia).FirstOrDefault().Comentario,
             
                 
             }).ToList();

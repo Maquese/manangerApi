@@ -74,3 +74,8 @@ C:\Users\kenney\Documents\manangerApi\ManangerAPI\obj\Debug\netcoreapp2.1\Manang
 C:\Users\kenney\Documents\manangerApi\ManangerAPI\obj\Debug\netcoreapp2.1\ManangerApi.csproj.CopyComplete
 C:\Users\kenney\Documents\manangerApi\ManangerAPI\obj\Debug\netcoreapp2.1\ManangerApi.dll
 C:\Users\kenney\Documents\manangerApi\ManangerAPI\obj\Debug\netcoreapp2.1\ManangerApi.pdb
+C:\Users\Giu\Desktop\back\ManangerApi.deps.json
+C:\Users\Giu\Desktop\back\ManangerApi.runtimeconfig.json
+C:\Users\Giu\Desktop\back\ManangerApi.runtimeconfig.dev.json
+C:\Users\Giu\Desktop\back\ManangerApi.dll
+C:\Users\Giu\Desktop\back\ManangerApi.pdb
