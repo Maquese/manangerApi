@@ -3,29 +3,28 @@ using System;
 using ManangerAPI.Data.Contexto;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20191019132438_avaiacao")]
-    partial class avaiacao
+    [Migration("20191230140755_postgresteste")]
+    partial class postgresteste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
                 .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Acesso", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("PerfilId");
 
@@ -45,8 +44,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Beneficiario", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Bairro");
 
@@ -90,8 +88,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.BeneficiarioCondicaoClinica", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("BeneficiarioId");
 
@@ -111,8 +108,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.BeneficiarioMedicamento", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("BeneficiarioId");
 
@@ -146,8 +142,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Cidade", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Codigo");
 
@@ -165,8 +160,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Competencia", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
 
@@ -180,8 +174,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.CondicaoClinica", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
 
@@ -195,8 +188,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Contrato", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<double?>("AvaliacaoContratante");
 
@@ -238,8 +230,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Endereco", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Bairro");
 
@@ -274,8 +265,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.EspecialidadeMedica", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Descricao");
 
@@ -291,8 +281,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Estado", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("CodigoUf");
 
@@ -312,8 +301,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Funcionalidade", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
 
@@ -333,8 +321,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Medicamento", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Bula");
 
@@ -364,8 +351,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.MedicoBeneficiario", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Bairro");
 
@@ -413,8 +399,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Perfil", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
 
@@ -428,8 +413,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Posologia", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
 
@@ -443,8 +427,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.PrestadorDeServicoCompetencia", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("CompetenciaId");
 
@@ -464,8 +447,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Sexo", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
 
@@ -479,8 +461,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.SolicitacaoContrato", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("BeneficiarioId");
 
@@ -512,8 +493,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.StatusEntidade", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Referencia");
 
@@ -525,8 +505,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Tarefa", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int?>("BeneficiarioMedicamentoId");
 
@@ -562,8 +541,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.TarefaRealizada", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Comentario");
 
@@ -587,8 +565,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.TipoMedicamento", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
 
@@ -602,8 +579,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Usuario", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<bool>("Analisado");
 
@@ -648,8 +624,7 @@ namespace ManangerApi.Data.Migrations
             modelBuilder.Entity("ManangerAPI.Data.Entidades.ViaDeUsoMedicamento", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
 

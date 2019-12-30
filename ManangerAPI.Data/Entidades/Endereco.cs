@@ -6,7 +6,7 @@ namespace ManangerAPI.Data.Entidades
         public string Bairro { get; set; }
         public string Rua { get; set; }
         public int CidadeId { get; set; }
-        public virtual Cidade Cidade { get; set; }
+        public virtual Cidade Cidade { get; set; }  
         public int EstadoId { get; set; }
         public virtual Estado Estado { get; set; }
         public string Numero { get; set; }

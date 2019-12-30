@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {}
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+        "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
         "projectName": "manangerapi.application",
-        "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
-        "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\obj\\",
+        "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+        "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
-                "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
+              "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+                "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
               }
             }
           }
@@ -58,6 +58,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.1.1, )"
             }
           },
           "imports": [
@@ -68,20 +72,20 @@
         }
       }
     },
-    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+        "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
         "projectName": "ManangerApi.Data",
-        "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
-        "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\obj\\",
+        "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+        "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -114,6 +118,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.1.1, )"
             }
           },
           "imports": [

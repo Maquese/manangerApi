@@ -1,10 +1,10 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ManangerApi.Data.Migrations
 {
-    public partial class avaiacao : Migration
+    public partial class postgresteste : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Codigo = table.Column<string>(nullable: true),
                     Nome = table.Column<string>(nullable: true),
@@ -29,7 +29,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true)
                 },
@@ -43,7 +43,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true)
                 },
@@ -57,7 +57,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
                     Descricao = table.Column<string>(nullable: true)
@@ -72,7 +72,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     CodigoUf = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
@@ -89,7 +89,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true)
                 },
@@ -103,7 +103,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true)
                 },
@@ -117,7 +117,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true)
                 },
@@ -131,7 +131,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Referencia = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -144,7 +144,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true)
                 },
@@ -158,7 +158,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
                     Login = table.Column<string>(nullable: true),
@@ -186,7 +186,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true)
                 },
@@ -200,7 +200,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
                     Path = table.Column<string>(nullable: true),
@@ -222,7 +222,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     UsuarioId = table.Column<int>(nullable: false),
                     PerfilId = table.Column<int>(nullable: false)
@@ -249,7 +249,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     ContratanteId = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
@@ -293,7 +293,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Cep = table.Column<string>(nullable: true),
                     Bairro = table.Column<string>(nullable: true),
@@ -332,7 +332,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     PrestadorDeServicoId = table.Column<int>(nullable: false),
                     CompetenciaId = table.Column<int>(nullable: false)
@@ -359,7 +359,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
                     ContraIndicacao = table.Column<string>(nullable: true),
@@ -391,7 +391,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     BeneficiarioId = table.Column<int>(nullable: false),
                     CondicaoClinicaId = table.Column<int>(nullable: false)
@@ -406,7 +406,7 @@ namespace ManangerApi.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BeneficiarioCondicaoClinica_CondicaoClinica_CondicaoClinicaId",
+                        name: "FK_BeneficiarioCondicaoClinica_CondicaoClinica_CondicaoClinica~",
                         column: x => x.CondicaoClinicaId,
                         principalTable: "CondicaoClinica",
                         principalColumn: "Id",
@@ -418,7 +418,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     BeneficiarioId = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
@@ -449,7 +449,7 @@ namespace ManangerApi.Data.Migrations
                         column: x => x.CidadeId,
                         principalTable: "Cidade",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_MedicoBeneficiario_EspecialidadeMedica_EspecialidadeMedicaId",
                         column: x => x.EspecialidadeMedicaId,
@@ -461,7 +461,7 @@ namespace ManangerApi.Data.Migrations
                         column: x => x.EstadoId,
                         principalTable: "Estado",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -469,7 +469,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     ContratanteId = table.Column<int>(nullable: false),
                     PrestadorDeServicoId = table.Column<int>(nullable: false),
@@ -487,19 +487,19 @@ namespace ManangerApi.Data.Migrations
                         column: x => x.BeneficiarioId,
                         principalTable: "Beneficiario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SolicitacaoContrato_Usuario_ContratanteId",
                         column: x => x.ContratanteId,
                         principalTable: "Usuario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SolicitacaoContrato_Usuario_PrestadorDeServicoId",
                         column: x => x.PrestadorDeServicoId,
                         principalTable: "Usuario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -507,7 +507,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     BeneficiarioId = table.Column<int>(nullable: false),
                     MedicamentoId = table.Column<int>(nullable: false),
@@ -546,7 +546,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     SolicitacaoContratoId = table.Column<int>(nullable: false),
                     ContratanteId = table.Column<int>(nullable: false),
@@ -568,25 +568,25 @@ namespace ManangerApi.Data.Migrations
                         column: x => x.BeneficiarioId,
                         principalTable: "Beneficiario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Contrato_Usuario_ContratanteId",
                         column: x => x.ContratanteId,
                         principalTable: "Usuario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Contrato_Usuario_PrestadorDeServicoId",
                         column: x => x.PrestadorDeServicoId,
                         principalTable: "Usuario",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Contrato_SolicitacaoContrato_SolicitacaoContratoId",
                         column: x => x.SolicitacaoContratoId,
                         principalTable: "SolicitacaoContrato",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -594,7 +594,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     Titulo = table.Column<string>(nullable: true),
                     DataInicio = table.Column<DateTime>(nullable: false),
@@ -624,7 +624,7 @@ namespace ManangerApi.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Status = table.Column<int>(nullable: false),
                     TarefaId = table.Column<int>(nullable: false),
                     Comentario = table.Column<string>(nullable: true),

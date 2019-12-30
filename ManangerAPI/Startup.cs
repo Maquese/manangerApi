@@ -37,7 +37,7 @@ public static string ConnectionString {
         {
             
             ConnectionString =  Configuration.GetValue("ConnectionString","").ToString();
-            services.AddDbContext<ContextoDb>(x => x.UseSqlServer(ConnectionString));
+            services.AddDbContext<ContextoDb>(x => x.UseNpgsql(ConnectionString));
         
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IApplication,ManangerAPI.Application.ApplicationApp.Application>();            
