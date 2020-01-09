@@ -1,11 +1,39 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.1 
+FROM microsoft/dotnet:2.1-sdk as build
 
 
-COPY ManangerApi/bin/Release/netcoreapp2.1/publish/ ./
+WORKDIR /app
 
-ENTRYPOINT ["dotnet", "manangerapi.dll"]
+WORKDIR /app/ManangerAPI
 
+COPY ./ManangerAPI .
 
+WORKDIR /app/manangerapi.application
+
+COPY ./ManangerAPI.Application .
+
+COPY ./ManangerAPI.Application/*csproj ./manangerapi.application.csproj
+
+WORKDIR /app/manangerapi.data
+
+COPY ./ManangerAPI.Data .
+
+COPY ./ManangerAPI.Data/*csproj ./ManangerApi.Data.csproj
+
+WORKDIR /app/ManangerAPI
+
+#RUN dotnet restore 
+
+RUN dotnet build
+
+WORKDIR /app/ManangerAPI/
+
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
+WORKDIR /app
+COPY --from=build /app/ManangerAPI/out .
+ENTRYPOINT ["dotnet", "ManangerApi.dll"]
 
 
 

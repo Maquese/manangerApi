@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "ManangerApi.Application/1.0.0": {
+      "manangerapi.application/1.0.0": {
         "dependencies": {
           "ManangerApi.Data": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
@@ -16,7 +16,7 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.1.1"
         },
         "runtime": {
-          "ManangerApi.Application.dll": {}
+          "manangerapi.application.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore/2.1.1": {
@@ -654,7 +654,7 @@
     }
   },
   "libraries": {
-    "ManangerApi.Application/1.0.0": {
+    "manangerapi.application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

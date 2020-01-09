@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {}
+    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+    "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+        "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
         "projectName": "ManangerApi.Data",
-        "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
-        "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\obj\\",
+        "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj",
+        "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
