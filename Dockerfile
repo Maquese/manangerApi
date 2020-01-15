@@ -1,5 +1,6 @@
 FROM microsoft/dotnet:2.1-sdk as build
 
+EXPOSE 80
 
 WORKDIR /app
 
@@ -21,9 +22,7 @@ COPY ./ManangerAPI.Data/*csproj ./ManangerApi.Data.csproj
 
 WORKDIR /app/ManangerAPI
 
-#RUN dotnet restore 
-
-RUN dotnet build
+RUN dotnet restore 
 
 WORKDIR /app/ManangerAPI/
 
@@ -33,7 +32,7 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
 WORKDIR /app
 COPY --from=build /app/ManangerAPI/out .
-ENTRYPOINT ["dotnet", "ManangerApi.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet ManangerApi.dll
 
 
 
