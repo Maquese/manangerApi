@@ -11,8 +11,6 @@ namespace ManangerAPI.Data.Entidades
         public virtual Beneficiario Beneficiario { get; set; }
         public virtual Medicamento Medicamento { get; set; }
         public virtual Posologia Posologia { get; set; }
-        public DateTime DataDeInicio { get; set; }
-        public DateTime? DataFim { get; set; }  
         public double EmbalagemQTD { get; set; }
         public int UnidadeMedida { get; set; }  
     }

@@ -42,7 +42,7 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioRepositorio.Save();
         }
 
-        public void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim, int unidadeMedida)
+        public void AdicionarMedicamento(int idBeneficiario, int idMedicamento, int idPosologia, int quantidade, int unidadeMedida)
         {
             BeneficiarioMedicamento medicamento = new BeneficiarioMedicamento
             {
@@ -51,8 +51,6 @@ namespace ManangerAPI.Application.ApplicationApp
                 PosologiaId = idPosologia,
                 Quantidade = quantidade,
                 Status = (int)StatusEnum.Ativo,
-                DataDeInicio = dataInicio,
-                DataFim = dataFim,
                 UnidadeMedida = unidadeMedida
             };
 
@@ -109,8 +107,6 @@ namespace ManangerAPI.Application.ApplicationApp
                 MedicamentoId = dados.MedicamentoId,
                 PosologiaId = dados.PosologiaId,
                 Quantidade = dados.Quantidade,
-                DataDeInicio = dados.DataDeInicio,
-                DataFim = dados.DataFim,
                 Bula = dados.Medicamento.Bula,
                 EfeitoColateral = dados.Medicamento.EfeitoColateral,
                 ContraIndicacao = dados.Medicamento.ContraIndicacao,
@@ -192,13 +188,11 @@ namespace ManangerAPI.Application.ApplicationApp
             _beneficiarioRepositorio.Save();
         }
 
-        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade, DateTime dataInicio, DateTime? dataFim, int unidadeMedida)
+        public void EditarBeneficiarioMedicamento(int id, int idMedicamento, int idPosologia, int quantidade, int unidadeMedida)
         {
             var dados = _beneficiarioMedicamentoRepositorio.Encontrar(id);
             dados.MedicamentoId = idMedicamento;
             dados.PosologiaId = idPosologia;
-            dados.DataDeInicio = dataInicio;
-            dados.DataFim = dataFim;
             dados.Quantidade = quantidade;
             dados.UnidadeMedida = unidadeMedida;
             _beneficiarioMedicamentoRepositorio.Update(dados);
