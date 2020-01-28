@@ -5,7 +5,6 @@ namespace ManangerAPI.Application.DTOS
     public class TarefaDTO
     {
         public int Id { get; set; }
-        public int ContratoId { get; set; }
         public string Titulo { get; set; }
         public DateTime Data { get; set; }
         public TimeSpan HoraInicio { get; set; }

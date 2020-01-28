@@ -10,13 +10,13 @@ namespace ManangerAPI.Application.ApplicationApp
 {
     public partial class Application : ITarefaApplication
     {
-        public void AdicionarTarefa(string titulo, int contratoId, DateTime dataInicio, DateTime? dataFim, TimeSpan horaInicio, 
+        public void AdicionarTarefa(string titulo, int beneficiarioId, DateTime dataInicio, DateTime? dataFim, TimeSpan horaInicio, 
                                     TimeSpan horaFim, string corHexa, string comentario, bool todosOsDias, int? BeneficiarioMedicamentoId, int? QuantidadeMedicamento)
         {
             _tarefaRepositorio.Insert(new Tarefa
             {
                 Titulo = titulo,
-                ContratoId = contratoId,
+                BeneficiarioId = beneficiarioId,
                 DataInicio = dataInicio,
                 DataFim = dataFim,
                 HoraInicio = horaInicio,
@@ -32,12 +32,12 @@ namespace ManangerAPI.Application.ApplicationApp
 
         }
 
-        public void EditarTarefa(int tarefaId, string titulo, int contratoId, DateTime dataInicio, DateTime? dataFim, TimeSpan horaInicio, 
+        public void EditarTarefa(int tarefaId, string titulo, int beneficiarioId, DateTime dataInicio, DateTime? dataFim, TimeSpan horaInicio, 
                                  TimeSpan horaFim, string corHexa, string comentario, bool todosOsDias, int? BeneficiarioMedicamentoId, int? QuantidadeMedicamento)
         {
             var tarefa = _tarefaRepositorio.Encontrar(tarefaId);
             tarefa.Titulo = titulo;
-            tarefa.ContratoId = contratoId;
+            tarefa.BeneficiarioId = beneficiarioId;
             tarefa.DataInicio = dataInicio;
             tarefa.DataFim = dataFim;
             tarefa.HoraInicio = horaInicio;
@@ -56,7 +56,6 @@ namespace ManangerAPI.Application.ApplicationApp
         {
             return _tarefaRepositorio.ListarTarefasPorBeneficiario(beneficiarioId,dia).Select(x => new TarefaDTO
             {
-                ContratoId = x.ContratoId,
                 Titulo = x.Titulo,
                 HoraInicio = x.HoraInicio,
                 HoraFim = x.HoraFim,
@@ -85,7 +84,6 @@ namespace ManangerAPI.Application.ApplicationApp
                 foreach (var item in dados.Where(x => (x.TodosOsDias && x.DataInicio.Date <= dataInicio.Date ) || (x.DataInicio.Date <= dataInicio.Date && (x.DataFim == null || x.DataFim.Value.Date >= dataInicio.Date))))
                 {
                     retorno.Add(new TarefaDTO {
-                         ContratoId = item.ContratoId,
                          Titulo = item.Titulo,
                          HoraInicio = item.HoraInicio,
                          HoraFim = item.HoraFim,
@@ -111,27 +109,26 @@ namespace ManangerAPI.Application.ApplicationApp
             return retorno;
         }
 
-        public IList<TarefaDTO> ListarTarefasPorContrato(int contratoId)
-        {
-            return _tarefaRepositorio.ListarTarefasPorContrato(contratoId).Select(x => new TarefaDTO
-            {
-                ContratoId = x.ContratoId,
-                Titulo = x.Titulo,
-                HoraInicio = x.HoraInicio,
-                HoraFim = x.HoraFim,
-                Comentario = x.Comentario,
-                CorHexa = x.CorHexa,
-                Id = x.Id,
-                QuantidadeMedicamento = x.QuantidadeMedicamento,
-                BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId
-            }).ToList();
-        }
+        // public IList<TarefaDTO> ListarTarefasPorContrato(int contratoId)
+        // {
+        //     return _tarefaRepositorio.ListarTarefasPorContrato(contratoId).Select(x => new TarefaDTO
+        //     {
+        //         ContratoId = x.ContratoId,
+        //         Titulo = x.Titulo,
+        //         HoraInicio = x.HoraInicio,
+        //         HoraFim = x.HoraFim,
+        //         Comentario = x.Comentario,
+        //         CorHexa = x.CorHexa,
+        //         Id = x.Id,
+        //         QuantidadeMedicamento = x.QuantidadeMedicamento,
+        //         BeneficiarioMedicamentoId = x.BeneficiarioMedicamentoId
+        //     }).ToList();
+        // }
 
         public IList<TarefaDTO> ListarTarefasPorPrestadorDeServico(int contratoId, DateTime dia)
         {
            return _tarefaRepositorio.ListarTarefasPorPrestador(contratoId,dia).Select(x => new TarefaDTO
             {
-                ContratoId = x.ContratoId,
                 Titulo = x.Titulo,
                 HoraInicio = x.HoraInicio,
                 HoraFim = x.HoraFim,

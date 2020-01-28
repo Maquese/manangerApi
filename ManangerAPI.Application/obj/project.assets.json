@@ -3286,23 +3286,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\clastech\\.nuget\\packages\\": {},
+    "C:\\Users\\kenney\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+      "projectUniqueName": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
       "projectName": "manangerapi.application",
-      "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
-      "packagesPath": "C:\\Users\\clastech\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.application\\obj\\",
+      "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\manangerapi.application.csproj",
+      "packagesPath": "C:\\Users\\kenney\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\clastech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kenney\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3315,8 +3315,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
-              "projectPath": "C:\\Users\\clastech\\Desktop\\rwe\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
+            "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj": {
+              "projectPath": "C:\\Users\\kenney\\Documents\\manangerApi\\manangerapi.data\\ManangerApi.Data.csproj"
             }
           }
         }

@@ -16,9 +16,7 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime dataInicio, DateTime dataFim)
         {
-            var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 
-                                                     && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias || 
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 && (x.TodosOsDias || 
                                                                                                     (x.DataInicio <= dataInicio && x.DataFim <= dataFim || 
                                                                                                      x.DataInicio >= dataInicio && x.DataFim >= dataFim)
                                                                                                      || x.DataInicio >= dataInicio && x.DataFim <= dataFim)).ToList();
@@ -27,15 +25,14 @@ namespace ManangerAPI.Data.Repositorios
 
         public IList<Tarefa> ListarTarefasPorBeneficiario(int beneficiarioId, DateTime data)
         {
-            var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 
-                                                     && (x.DataFim <= DateTime.Now || x.DataFim == null)).Select(y => y.Id).ToList();
-            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId) && x.Status == 1 && (x.TodosOsDias && x.DataInicio.Date <= data.Date || x.DataInicio.Date <= data.Date && x.DataFim.Value.Date >= data.Date)).ToList();
+            
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => x.BeneficiarioId == beneficiarioId && x.Status == 1 && (x.TodosOsDias && x.DataInicio.Date <= data.Date || x.DataInicio.Date <= data.Date && x.DataFim.Value.Date >= data.Date)).ToList();
         }
 
-        public IList<Tarefa> ListarTarefasPorContrato(int contratoId)
-        {
-            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => x.Status == 1 && x.ContratoId == contratoId).ToList();
-        }
+        // public IList<Tarefa> ListarTarefasPorContrato(int contratoId)
+        // {
+        //     return _contexto.Tarefa.Include("TarefasRealizada").Where(x => x.Status == 1 && x.ContratoId == contratoId).ToList();
+        // }
 
         public IList<Tarefa> ListarTarefasPorPrestador(int contratoId, DateTime data)
         {
@@ -43,7 +40,7 @@ namespace ManangerAPI.Data.Repositorios
 
             var contratos = _contexto.Contrato.Where(x => x.BeneficiarioId == contrato.BeneficiarioId && x.Status == 1).Select(y => y.Id).ToList();
 
-            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => contratos.Contains(x.ContratoId)  && x.Status == 1 && (x.TodosOsDias && x.DataInicio <= data  || x.DataInicio <= data && x.DataFim >= data)).ToList();
+            return _contexto.Tarefa.Include("TarefasRealizada").Where(x => x.BeneficiarioId == contrato.BeneficiarioId  && x.Status == 1 && (x.TodosOsDias && x.DataInicio <= data  || x.DataInicio <= data && x.DataFim >= data)).ToList();
         }
     }
 }

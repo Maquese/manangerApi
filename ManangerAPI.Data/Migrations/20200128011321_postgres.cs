@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ManangerApi.Data.Migrations
 {
-    public partial class postgresteste : Migration
+    public partial class postgres : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -513,8 +513,6 @@ namespace ManangerApi.Data.Migrations
                     MedicamentoId = table.Column<int>(nullable: false),
                     PosologiaId = table.Column<int>(nullable: false),
                     Quantidade = table.Column<int>(nullable: false),
-                    DataDeInicio = table.Column<DateTime>(nullable: false),
-                    DataFim = table.Column<DateTime>(nullable: true),
                     EmbalagemQTD = table.Column<double>(nullable: false),
                     UnidadeMedida = table.Column<int>(nullable: false)
                 },
@@ -598,25 +596,32 @@ namespace ManangerApi.Data.Migrations
                     Status = table.Column<int>(nullable: false),
                     Titulo = table.Column<string>(nullable: true),
                     DataInicio = table.Column<DateTime>(nullable: false),
+                    BeneficiarioId = table.Column<int>(nullable: false),
                     DataFim = table.Column<DateTime>(nullable: true),
-                    ContratoId = table.Column<int>(nullable: false),
                     HoraInicio = table.Column<TimeSpan>(nullable: false),
                     HoraFim = table.Column<TimeSpan>(nullable: false),
                     CorHexa = table.Column<string>(nullable: true),
                     Comentario = table.Column<string>(nullable: true),
                     TodosOsDias = table.Column<bool>(nullable: false),
                     BeneficiarioMedicamentoId = table.Column<int>(nullable: true),
-                    QuantidadeMedicamento = table.Column<int>(nullable: true)
+                    QuantidadeMedicamento = table.Column<int>(nullable: true),
+                    ContratoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tarefa", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Tarefa_Beneficiario_BeneficiarioId",
+                        column: x => x.BeneficiarioId,
+                        principalTable: "Beneficiario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Tarefa_Contrato_ContratoId",
                         column: x => x.ContratoId,
                         principalTable: "Contrato",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -788,6 +793,11 @@ namespace ManangerApi.Data.Migrations
                 name: "IX_SolicitacaoContrato_PrestadorDeServicoId",
                 table: "SolicitacaoContrato",
                 column: "PrestadorDeServicoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tarefa_BeneficiarioId",
+                table: "Tarefa",
+                column: "BeneficiarioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tarefa_ContratoId",

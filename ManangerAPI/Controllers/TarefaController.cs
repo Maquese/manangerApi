@@ -32,12 +32,12 @@ namespace ManangerAPI.Controllers
                                             request.CorHexa,request.Comentario,request.TodosOsDias,request.BeneficiarioMedicamentoId,request.QuantidadeMedicamento);
         }
 
-        [Route("api/tarefa/listartarefasporcontrato")]
-        [HttpPost]
-        public IList<TarefaDTO> ListarTarefasPorContrato(BaseRequest request)
-        {
-            return _tarefaApplication.ListarTarefasPorContrato(request.Id);
-        }
+        // [Route("api/tarefa/listartarefasporcontrato")]
+        // [HttpPost]
+        // public IList<TarefaDTO> ListarTarefasPorContrato(BaseRequest request)
+        // {
+        //     return _tarefaApplication.ListarTarefasPorContrato(request.Id);
+        // }
 
         [Route("api/tarefa/listartodastarefasbeneficiarios")]
         [HttpPost]

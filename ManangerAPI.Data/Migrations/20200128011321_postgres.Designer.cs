@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20191230140755_postgresteste")]
-    partial class postgresteste
+    [Migration("20200128011321_postgres")]
+    partial class postgres
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,10 +111,6 @@ namespace ManangerApi.Data.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("BeneficiarioId");
-
-                    b.Property<DateTime>("DataDeInicio");
-
-                    b.Property<DateTime?>("DataFim");
 
                     b.Property<double>("EmbalagemQTD");
 
@@ -507,11 +503,13 @@ namespace ManangerApi.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("BeneficiarioId");
+
                     b.Property<int?>("BeneficiarioMedicamentoId");
 
                     b.Property<string>("Comentario");
 
-                    b.Property<int>("ContratoId");
+                    b.Property<int?>("ContratoId");
 
                     b.Property<string>("CorHexa");
 
@@ -532,6 +530,8 @@ namespace ManangerApi.Data.Migrations
                     b.Property<bool>("TodosOsDias");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BeneficiarioId");
 
                     b.HasIndex("ContratoId");
 
@@ -854,10 +854,14 @@ namespace ManangerApi.Data.Migrations
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Tarefa", b =>
                 {
-                    b.HasOne("ManangerAPI.Data.Entidades.Contrato", "Contrato")
-                        .WithMany("Tarefa")
-                        .HasForeignKey("ContratoId")
+                    b.HasOne("ManangerAPI.Data.Entidades.Beneficiario", "Beneficiario")
+                        .WithMany()
+                        .HasForeignKey("BeneficiarioId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("ManangerAPI.Data.Entidades.Contrato")
+                        .WithMany("Tarefa")
+                        .HasForeignKey("ContratoId");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.TarefaRealizada", b =>

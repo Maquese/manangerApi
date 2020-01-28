@@ -7,9 +7,9 @@ namespace ManangerAPI.Data.Entidades
     {
         public string Titulo { get; set; }
         public DateTime DataInicio { get; set; }
+        public int BeneficiarioId { get; set; }
+        public Beneficiario Beneficiario { get; set; }
         public DateTime? DataFim { get; set; }
-        public int ContratoId { get; set; }
-        public virtual Contrato Contrato { get; set; }
         public TimeSpan HoraInicio { get; set; }
         public TimeSpan HoraFim { get; set; }
         public string CorHexa { get; set; }
