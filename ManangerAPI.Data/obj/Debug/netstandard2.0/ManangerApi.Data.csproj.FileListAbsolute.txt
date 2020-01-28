@@ -37,3 +37,12 @@ C:\Users\kenney\Documents\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\
 C:\Users\Giu\Desktop\back\ManangerApi.Data.deps.json
 C:\Users\Giu\Desktop\back\ManangerApi.Data.dll
 C:\Users\Giu\Desktop\back\ManangerApi.Data.pdb
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.deps.json
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.dll
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\bin\Debug\netstandard2.0\ManangerApi.Data.pdb
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.csprojAssemblyReference.cache
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.csproj.CoreCompileInputs.cache
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.AssemblyInfoInputs.cache
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.AssemblyInfo.cs
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.dll
+C:\Users\Giuliano\Desktop\lcm\back\manangerApi\manangerapi.data\obj\Debug\netstandard2.0\ManangerApi.Data.pdb
