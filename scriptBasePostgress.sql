@@ -1,11 +1,11 @@
 
 insert into "StatusEntidade"
 ("Referencia")
-values('Ativo'),('Inativo')
+values('Ativo'),('Inativo');
 
 
 insert into "Sexo" ("Status","Nome")
-values(1,'Outro'),(1,'Masculino'),(1,'Feminino')
+values(1,'Outro'),(1,'Masculino'),(1,'Feminino');
 
 
 
@@ -5757,4 +5757,4 @@ values(1,'11111111',25,3376,'bairro','rua',1),
 
 insert into "Acesso"
 ("PerfilId" , "Status", "UsuarioId")
-values(2,1,5)
+values(2,1,5);

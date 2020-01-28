@@ -20,7 +20,7 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public void Adicionar(TarefaRequest request)
         {
-            _tarefaApplication.AdicionarTarefa(request.Titulo,request.ContratoId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim, 
+            _tarefaApplication.AdicionarTarefa(request.Titulo,request.BeneficiarioId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim, 
                                                request.CorHexa,request.Comentario,request.TodosOsDias,request.BeneficiarioMedicamentoId,request.QuantidadeMedicamento);
         }
 
@@ -28,7 +28,7 @@ namespace ManangerAPI.Controllers
         [HttpPost]
         public void Editar(TarefaRequest request)
         {
-            _tarefaApplication.EditarTarefa(request.Id,request.Titulo,request.ContratoId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim,
+            _tarefaApplication.EditarTarefa(request.Id,request.Titulo,request.BeneficiarioId,request.DataInicio,request.DataFim,request.HoraInicio, request.HoraFim,
                                             request.CorHexa,request.Comentario,request.TodosOsDias,request.BeneficiarioMedicamentoId,request.QuantidadeMedicamento);
         }
 
