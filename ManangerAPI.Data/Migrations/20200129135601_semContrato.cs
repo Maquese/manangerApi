@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace ManangerApi.Data.Migrations
+namespace manangerapi.data.Migrations
 {
-    public partial class postgres : Migration
+    public partial class semContrato : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -503,6 +503,36 @@ namespace ManangerApi.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Tarefa",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Titulo = table.Column<string>(nullable: true),
+                    DataInicio = table.Column<DateTime>(nullable: false),
+                    BeneficiarioId = table.Column<int>(nullable: false),
+                    DataFim = table.Column<DateTime>(nullable: true),
+                    HoraInicio = table.Column<TimeSpan>(nullable: false),
+                    HoraFim = table.Column<TimeSpan>(nullable: false),
+                    CorHexa = table.Column<string>(nullable: true),
+                    Comentario = table.Column<string>(nullable: true),
+                    TodosOsDias = table.Column<bool>(nullable: false),
+                    BeneficiarioMedicamentoId = table.Column<int>(nullable: true),
+                    QuantidadeMedicamento = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tarefa", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Tarefa_Beneficiario_BeneficiarioId",
+                        column: x => x.BeneficiarioId,
+                        principalTable: "Beneficiario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "BeneficiarioMedicamento",
                 columns: table => new
                 {
@@ -585,43 +615,6 @@ namespace ManangerApi.Data.Migrations
                         principalTable: "SolicitacaoContrato",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Tarefa",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    Status = table.Column<int>(nullable: false),
-                    Titulo = table.Column<string>(nullable: true),
-                    DataInicio = table.Column<DateTime>(nullable: false),
-                    BeneficiarioId = table.Column<int>(nullable: false),
-                    DataFim = table.Column<DateTime>(nullable: true),
-                    HoraInicio = table.Column<TimeSpan>(nullable: false),
-                    HoraFim = table.Column<TimeSpan>(nullable: false),
-                    CorHexa = table.Column<string>(nullable: true),
-                    Comentario = table.Column<string>(nullable: true),
-                    TodosOsDias = table.Column<bool>(nullable: false),
-                    BeneficiarioMedicamentoId = table.Column<int>(nullable: true),
-                    QuantidadeMedicamento = table.Column<int>(nullable: true),
-                    ContratoId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Tarefa", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Tarefa_Beneficiario_BeneficiarioId",
-                        column: x => x.BeneficiarioId,
-                        principalTable: "Beneficiario",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Tarefa_Contrato_ContratoId",
-                        column: x => x.ContratoId,
-                        principalTable: "Contrato",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -800,11 +793,6 @@ namespace ManangerApi.Data.Migrations
                 column: "BeneficiarioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tarefa_ContratoId",
-                table: "Tarefa",
-                column: "ContratoId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TarefaRalizada_TarefaId",
                 table: "TarefaRalizada",
                 column: "TarefaId");
@@ -820,6 +808,9 @@ namespace ManangerApi.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "BeneficiarioMedicamento");
+
+            migrationBuilder.DropTable(
+                name: "Contrato");
 
             migrationBuilder.DropTable(
                 name: "Endereco");
@@ -852,6 +843,9 @@ namespace ManangerApi.Data.Migrations
                 name: "Posologia");
 
             migrationBuilder.DropTable(
+                name: "SolicitacaoContrato");
+
+            migrationBuilder.DropTable(
                 name: "Perfil");
 
             migrationBuilder.DropTable(
@@ -868,12 +862,6 @@ namespace ManangerApi.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "ViaDeUsoMedicamento");
-
-            migrationBuilder.DropTable(
-                name: "Contrato");
-
-            migrationBuilder.DropTable(
-                name: "SolicitacaoContrato");
 
             migrationBuilder.DropTable(
                 name: "Beneficiario");

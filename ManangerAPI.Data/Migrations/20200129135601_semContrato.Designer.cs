@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace ManangerApi.Data.Migrations
+namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20200128011321_postgres")]
-    partial class postgres
+    [Migration("20200129135601_semContrato")]
+    partial class semContrato
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -509,8 +509,6 @@ namespace ManangerApi.Data.Migrations
 
                     b.Property<string>("Comentario");
 
-                    b.Property<int?>("ContratoId");
-
                     b.Property<string>("CorHexa");
 
                     b.Property<DateTime?>("DataFim");
@@ -532,8 +530,6 @@ namespace ManangerApi.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BeneficiarioId");
-
-                    b.HasIndex("ContratoId");
 
                     b.ToTable("Tarefa");
                 });
@@ -858,10 +854,6 @@ namespace ManangerApi.Data.Migrations
                         .WithMany()
                         .HasForeignKey("BeneficiarioId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ManangerAPI.Data.Entidades.Contrato")
-                        .WithMany("Tarefa")
-                        .HasForeignKey("ContratoId");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.TarefaRealizada", b =>
