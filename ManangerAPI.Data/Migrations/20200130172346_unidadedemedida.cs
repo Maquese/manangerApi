@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace manangerapi.data.Migrations
 {
-    public partial class semContrato : Migration
+    public partial class unidadedemedida : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -151,6 +151,21 @@ namespace manangerapi.data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TipoMedicamento", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UnidadeDeMedida",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    Descricao = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UnidadeDeMedida", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -832,6 +847,9 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "TarefaRalizada");
+
+            migrationBuilder.DropTable(
+                name: "UnidadeDeMedida");
 
             migrationBuilder.DropTable(
                 name: "CondicaoClinica");

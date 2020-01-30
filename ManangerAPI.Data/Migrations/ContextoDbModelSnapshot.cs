@@ -570,6 +570,22 @@ namespace manangerapi.data.Migrations
                     b.ToTable("TipoMedicamento");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.UnidadeDeMedida", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UnidadeDeMedida");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Usuario", b =>
                 {
                     b.Property<int>("Id")

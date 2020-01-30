@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace manangerapi.data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20200129135601_semContrato")]
-    partial class semContrato
+    [Migration("20200130172346_unidadedemedida")]
+    partial class unidadedemedida
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -570,6 +570,22 @@ namespace manangerapi.data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TipoMedicamento");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.UnidadeDeMedida", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UnidadeDeMedida");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Usuario", b =>

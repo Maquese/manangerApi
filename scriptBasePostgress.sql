@@ -5,7 +5,7 @@ values('Ativo'),('Inativo');
 
 
 insert into "UnidadeDeMedida" ("Status","Nome")
-values(1,"Litro"),(1,"Litro"),(1,"ML"),(1,"Grama"),(1,"Unidade"),(1,"Comprimido");
+values(1,'Litro'),(1,'Litro'),(1,'ML'),(1,'Grama'),(1,'Unidade'),(1,'Comprimido');
 
 
     
