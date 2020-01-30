@@ -38,6 +38,7 @@ namespace ManangerAPI.Data.Contexto
         public DbSet<TarefaRealizada> TarefaRalizada { get; set; }
         public DbSet<EspecialidadeMedica> EspecialidadeMedica { get; set; }
         public DbSet<MedicoBeneficiario> MedicoBeneficiario { get; set; }
+        public DbSet<UnidadeDeMedida> UnidadeDeMedida { get; set; }
         public ContextoDb(DbContextOptions options) : base(options)
         {
             

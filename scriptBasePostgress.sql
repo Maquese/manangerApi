@@ -4,6 +4,11 @@ insert into "StatusEntidade"
 values('Ativo'),('Inativo');
 
 
+insert into "UnidadeDeMedida" ("Status","Nome")
+values(1,"Litro"),(1,"Litro"),(1,"ML"),(1,"Grama"),(1,"Unidade"),(1,"Comprimido");
+
+
+    
 insert into "Sexo" ("Status","Nome")
 values(1,'Outro'),(1,'Masculino'),(1,'Feminino');
 
