@@ -294,6 +294,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 Id = x.Id,
                 DataNascimento = x.DataNascimento,
                 Cidade = _cidadeRepositorio.Encontrar(x.CidadeId).Nome,
+                CidadeId = x.CidadeId,
                 Bairro = x.Bairro,
                 Sexo = x.Sexo
             }).ToList();
