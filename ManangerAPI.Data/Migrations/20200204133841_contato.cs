@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace manangerapi.data.Migrations
+namespace ManangerApi.Data.Migrations
 {
-    public partial class unidadedemedida : Migration
+    public partial class contato : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -140,6 +140,20 @@ namespace manangerapi.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TipoContato",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Status = table.Column<int>(nullable: false),
+                    Descricao = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TipoContato", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TipoMedicamento",
                 columns: table => new
                 {
@@ -228,6 +242,29 @@ namespace manangerapi.data.Migrations
                         name: "FK_Funcionalidade_Perfil_PerfilId",
                         column: x => x.PerfilId,
                         principalTable: "Perfil",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Contato",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Status = table.Column<int>(nullable: false),
+                    TipoContatoId = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Comentario = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contato", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Contato_TipoContato_TipoContatoId",
+                        column: x => x.TipoContatoId,
+                        principalTable: "TipoContato",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -707,6 +744,11 @@ namespace manangerapi.data.Migrations
                 column: "PosologiaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Contato_TipoContatoId",
+                table: "Contato",
+                column: "TipoContatoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Contrato_BeneficiarioId",
                 table: "Contrato",
                 column: "BeneficiarioId");
@@ -825,6 +867,9 @@ namespace manangerapi.data.Migrations
                 name: "BeneficiarioMedicamento");
 
             migrationBuilder.DropTable(
+                name: "Contato");
+
+            migrationBuilder.DropTable(
                 name: "Contrato");
 
             migrationBuilder.DropTable(
@@ -859,6 +904,9 @@ namespace manangerapi.data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Posologia");
+
+            migrationBuilder.DropTable(
+                name: "TipoContato");
 
             migrationBuilder.DropTable(
                 name: "SolicitacaoContrato");

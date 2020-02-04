@@ -54,6 +54,7 @@ public static string ConnectionString {
             services.AddScoped<ICepApplication,ManangerAPI.Application.ApplicationApp.Application>();
             services.AddScoped<IContratoApplication,ManangerAPI.Application.ApplicationApp.Application>();            
             services.AddScoped<ITarefaApplication,ManangerAPI.Application.ApplicationApp.Application>();
+            services.AddScoped<IContatoApplication,ManangerAPI.Application.ApplicationApp.Application>();
 
             services.AddScoped<IBeneficiarioRepositorio,BeneficiarioRepositorio>();
             services.AddScoped<IAcessoRepositorio,AcessoRepositorio>();
@@ -82,6 +83,9 @@ public static string ConnectionString {
             services.AddScoped<ITarefaRealizadaRepositorio,TarefaRealizadaRepositorio>();
             services.AddScoped<IEspecialidadeMedicaRepositorio,EspecialidadeMedicaRepositorio>();
             services.AddScoped<IUnidadeDeMedidaRepositorio,UnidadeDeMedidaRepositorio>();
+            services.AddScoped<IContatoRepositorio,ContatoRepositorio>();
+            services.AddScoped<ITipoContatoRepositorio,TipoContatoRepositorio>();
+            
         }  
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

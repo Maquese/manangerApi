@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace manangerapi.data.Migrations
+namespace ManangerApi.Data.Migrations
 {
     [DbContext(typeof(ContextoDb))]
-    [Migration("20200130172346_unidadedemedida")]
-    partial class unidadedemedida
+    [Migration("20200204133841_contato")]
+    partial class contato
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -179,6 +179,28 @@ namespace manangerapi.data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CondicaoClinica");
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Contato", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Comentario");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("Status");
+
+                    b.Property<int>("TipoContatoId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TipoContatoId");
+
+                    b.ToTable("Contato");
                 });
 
             modelBuilder.Entity("ManangerAPI.Data.Entidades.Contrato", b =>
@@ -558,6 +580,20 @@ namespace manangerapi.data.Migrations
                     b.ToTable("TarefaRalizada");
                 });
 
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.TipoContato", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoContato");
+                });
+
             modelBuilder.Entity("ManangerAPI.Data.Entidades.TipoMedicamento", b =>
                 {
                     b.Property<int>("Id")
@@ -746,6 +782,14 @@ namespace manangerapi.data.Migrations
                     b.HasOne("ManangerAPI.Data.Entidades.Posologia", "Posologia")
                         .WithMany()
                         .HasForeignKey("PosologiaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ManangerAPI.Data.Entidades.Contato", b =>
+                {
+                    b.HasOne("ManangerAPI.Data.Entidades.TipoContato", "TipoContato")
+                        .WithMany()
+                        .HasForeignKey("TipoContatoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
