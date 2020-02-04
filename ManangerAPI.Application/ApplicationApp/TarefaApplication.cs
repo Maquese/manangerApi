@@ -152,10 +152,15 @@ namespace ManangerAPI.Application.ApplicationApp
             _tarefaRepositorio.Save();
         }
 
-        public void TarefaRealizada(int tarefaId, string comentario, DateTime data, TimeSpan hora, bool realizada,int? tarefaRealizadaId)
+        public void TarefaRealizada(int tarefaId, string comentario, DateTime data, TimeSpan hora, bool realizada,int? tarefaRealizadaId,int usuarioId)
         {
-
             var tarefa = _tarefaRepositorio.Encontrar(tarefaId);
+
+            var contratos = _contratoRepositorio.ListarContratoBeneficiario(tarefa.BeneficiarioId).Where(x => x.Status == (int)StatusEnum.Ativo).ToList();
+
+            if( contratos.FirstOrDefault().ContratanteId == usuarioId || contratos.Select(x => x.PrestadorDeServicoId).Contains(usuarioId))
+            {
+
             if(tarefa.BeneficiarioMedicamentoId != null && tarefa.BeneficiarioMedicamentoId != 0)
             {
                 var medicamento = _beneficiarioMedicamentoRepositorio.Encontrar(tarefa.BeneficiarioMedicamentoId.Value);
@@ -182,6 +187,9 @@ namespace ManangerAPI.Application.ApplicationApp
             }       
 
             _tarefaRealizadaRepositorio.Save();
+            }else {
+                throw new Exception("Usuario não tem permissão para realizar a tarefa.");
+            }
         }
     }
 }

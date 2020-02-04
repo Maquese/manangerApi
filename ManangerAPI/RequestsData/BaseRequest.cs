@@ -1,6 +1,6 @@
 namespace ManangerAPI.RequestsData
 {
-    public class BaseRequest
+    public abstract class BaseRequest
     {
         public int Id { get; set; }
     }

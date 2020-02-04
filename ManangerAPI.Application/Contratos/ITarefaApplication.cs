@@ -14,7 +14,7 @@ namespace ManangerAPI.Application.Contratos
         IList<TarefaDTO> ListarTarefasPorBeneficiario(int beneficiarioId,DateTime dataInicio, DateTime dataFim);        
         IList<TarefaDTO> ListarTarefasPorBeneficiario(int beneficiarioId,DateTime dia);
         IList<TarefaDTO> ListarTarefasPorPrestadorDeServico(int prestadorId,DateTime dia);
-        void TarefaRealizada(int tarefaId,string comentario, DateTime data, TimeSpan hora,bool realizada, int? tarefaRealizada);
+        void TarefaRealizada(int tarefaId,string comentario, DateTime data, TimeSpan hora,bool realizada, int? tarefaRealizada,int usuarioId);
         void RemoverTarefa(int tarefaId);
     }
 }

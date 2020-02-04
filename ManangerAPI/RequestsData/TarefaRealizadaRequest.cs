@@ -2,7 +2,7 @@ using System;
 
 namespace ManangerAPI.RequestsData
 {
-    public class TarefaRealizadaRequest
+    public class TarefaRealizadaRequest : BaseRequest
     {
         public int TarefaId { get; set; }
         public string Comentario { get; set; }
