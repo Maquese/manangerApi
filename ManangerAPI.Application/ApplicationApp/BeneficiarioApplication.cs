@@ -132,7 +132,7 @@ namespace ManangerAPI.Application.ApplicationApp
                 EstadoId = medico.EstadoId,
                 CidadeId = medico.CidadeId,
                 Bairro = medico.Bairro,
-                Rua = medico.Bairro,
+                Rua = medico.Rua,
                 Complemento = medico.Complemento,
                 Numero = medico.Numero,
                 EstadoUf = _estadoRepostorio.Encontrar(medico.EstadoId).Uf
